@@ -31,12 +31,12 @@ body {
     padding: 0 20px;
 }
 
-/* --- 導航欄 --- */
+/* --- 導航欄優化版 (防止破圖) --- */
 nav {
     background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
     color: #fff;
-    padding: 15px 0;
+    padding: 10px 0; /* 縮減上下高度 */
     position: sticky;
     top: 0;
     z-index: 500;
@@ -45,37 +45,40 @@ nav {
 
 nav .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* 讓 Logo 在左，選單在右 */
     align-items: center;
+    flex-wrap: nowrap; /* 強制不換行 */
 }
-
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* 手機版略縮小，原本 1.5 太大 */
     font-weight: 800;
     color: var(--primary-color);
     text-decoration: none;
+    flex-shrink: 0; /* 確保 Logo 不會被擠壓變形 */
+    margin-right: 10px;
 }
 
 nav ul {
-    width: 60%;
     display: flex;
     list-style: none;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    scrollbar-width: none; 
+    margin: 0;
+    padding: 0;
+    overflow-x: auto; /* 若按鍵真的太多，允許水平滑動但不破壞版面 */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* 隱藏捲軸 */
 }
 
 nav ul::-webkit-scrollbar {
-    display: none; /* 隱藏 Chrome/Safari 捲軸 */
+    display: none; /* 隱藏捲軸 (Chrome/Safari) */
 }
 
 nav ul li a {
     color: #eee;
     text-decoration: none;
-    padding: 8px 16px;
-    font-size: 0.95rem;
+    padding: 8px 12px; /* 縮減左右間距 */
+    font-size: 0.9rem; /* 字體微調小一點 */
     transition: var(--transition);
+    white-space: nowrap; /* 確保文字不會斷行 */
 }
 
 nav ul li a.active {
@@ -273,10 +276,18 @@ input:focus {
     box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
 }
 
-/* --- 手機版適配 --- */
+/* --- 手機版專屬微調 (針對 768px 以下) --- */
 @media (max-width: 768px) {
-    .coach-profile { flex-direction: column; text-align: center; }
-    .pb-card { flex-direction: column; gap: 10px; text-align: center; }
-    .hero h1 { font-size: 2.2rem; }
-    form input[type="text"] { width: 100%; }
+    nav .container {
+        padding: 0 10px;
+    }
+
+    .logo {
+        font-size: 1.1rem; /* 手機版 Logo 再小一點點 */
+    }
+
+    nav ul li a {
+        padding: 8px 6px; /* 5個按鍵時，間距必須更小 */
+        font-size: 0.85rem; /* 字體縮小以容納 5 個按鈕 */
+    }
 }
