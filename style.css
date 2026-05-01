@@ -1,5 +1,5 @@
 /* ==========================================
-   跑班網站全域樣式 - 修正破圖最終版
+   跑班網站全域樣式 - 最終整合版
    ========================================== */
 
 :root {
@@ -22,88 +22,111 @@ body {
     font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
     line-height: 1.8;
     color: var(--text-color);
-    background-color: var(--white);
-    padding-top: 0; /* 導航欄已設定 sticky */
+    background-color: var(--white); /* 主體為白底 */
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
-/* --- 導航欄 (解決按鈕切到問題) --- */
+/* --- 導航欄優化版 (防止破圖) --- */
 nav {
-    background: rgba(26, 26, 26, 0.98);
+    background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
     color: #fff;
-    padding: 10px 0;
+    padding: 10px 0; /* 縮減上下高度 */
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 500;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 nav .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* 讓 Logo 在左，選單在右 */
     align-items: center;
     flex-wrap: nowrap; /* 強制不換行 */
 }
-
 .logo {
-    font-size: 1.1rem; /* 手機版 Logo 縮小避免佔位 */
+    font-size: 1.3rem; /* 手機版略縮小，原本 1.5 太大 */
     font-weight: 800;
     color: var(--primary-color);
     text-decoration: none;
-    flex-shrink: 0;
+    flex-shrink: 0; /* 確保 Logo 不會被擠壓變形 */
     margin-right: 10px;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    padding: 0;
     margin: 0;
-    overflow-x: auto; /* 若螢幕太窄，允許左右滑動按鈕 */
-    white-space: nowrap;
+    padding: 0;
+    overflow-x: auto; /* 若按鍵真的太多，允許水平滑動但不破壞版面 */
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; 
+    scrollbar-width: none; /* 隱藏捲軸 */
 }
 
 nav ul::-webkit-scrollbar {
-    display: none; /* 隱藏捲軸 */
+    display: none; /* 隱藏捲軸 (Chrome/Safari) */
 }
 
 nav ul li a {
     color: #eee;
     text-decoration: none;
-    padding: 8px 6px; /* 極致縮減左右間距，確保5個按鈕並排 */
-    font-size: 0.82rem; /* 稍微縮小字體防止溢出 */
+    padding: 8px 12px; /* 縮減左右間距 */
+    font-size: 0.9rem; /* 字體微調小一點 */
     transition: var(--transition);
+    white-space: nowrap; /* 確保文字不會斷行 */
 }
 
 nav ul li a.active {
     color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
     font-weight: bold;
 }
 
-/* --- 教練個人主視覺 (修正英文切到) --- */
+nav ul li a:hover { color: var(--primary-color); }
+
+/* --- 英雄區 --- */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+
+/* --- 通用設定 --- */
+section { padding: 60px 0; }
+h2 { font-size: 2rem; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
+h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 4px; background: var(--primary-color); }
+
+/* --- 教練資歷：個人主視覺 --- */
 .coach-profile {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 30px 0;
+    gap: 30px;
+    padding: 40px 0;
     border-bottom: 1px solid #eee;
 }
 
 .profile-image-wrapper {
     flex-shrink: 0;
-    width: 120px; /* 手機版略縮小 */
-    height: 120px;
+    width: 150px;
+    height: 150px;
     overflow: hidden;
     border-radius: 50%;
     border: 3px solid var(--accent-green);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .profile-img {
@@ -113,69 +136,51 @@ nav ul li a.active {
     object-position: center top;
 }
 
-.coach-info h1 {
-    font-size: 1.8rem;
-    display: flex;
-    flex-direction: column; /* 中英文上下排，避免橫向擠壓 */
-}
+.coach-info h1 { font-size: 2.2rem; }
+.en-name { font-size: 1.1rem; color: #888; margin-left: 10px; }
+.affiliation { color: var(--accent-green); font-weight: bold; margin: 10px 0; }
 
-.en-name {
-    font-size: 0.9rem;
-    color: #888;
-    margin-top: 5px;
-}
-
-.affiliation {
-    color: var(--accent-green);
-    font-weight: bold;
-    font-size: 0.95rem;
-    margin: 8px 0;
-}
-
-.social-links { margin-top: 10px; }
 .social-links a {
     color: #555;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-right: 15px;
+    transition: var(--transition);
 }
 
-/* --- PB 卡片 (修正文字重疊與擠壓) --- */
+.social-links a:hover { color: var(--primary-color); }
+
+/* --- 教練資歷：PB 卡片 --- */
 .pb-card {
     background: #fdfdfd;
-    padding: 20px;
+    padding: 25px;
     border-radius: 12px;
-    border: 1px solid #eee;
     display: flex;
-    flex-direction: column; /* 手機版預設上下排，防止擠壓 */
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #eee;
     box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-}
-
-.pb-detail h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
+    margin-bottom: 30px;
 }
 
 .pb-time {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 900;
-    color: #b8860b;
-    text-align: right; /* 數字靠右顯示 */
+    color: #b8860b; /* 深金色，確保白底清晰 */
 }
 
-/* --- 跑步經歷 (時間軸美化) --- */
+/* --- 教練資歷：時間軸經歷清單 --- */
 .exp-list {
     list-style: none;
+    padding: 0;
     position: relative;
-    padding-top: 10px;
 }
 
 .exp-list::before {
     content: '';
     position: absolute;
     left: 7px;
-    top: 0;
-    bottom: 0;
+    top: 10px;
+    bottom: 10px;
     width: 2px;
     background: linear-gradient(to bottom, var(--accent-green), #ddd);
 }
@@ -183,14 +188,14 @@ nav ul li a.active {
 .exp-list li {
     display: flex;
     position: relative;
-    padding: 0 0 25px 30px;
+    padding: 0 0 25px 35px;
 }
 
 .exp-list li::after {
     content: '';
     position: absolute;
     left: 0;
-    top: 8px;
+    top: 5px;
     width: 14px;
     height: 14px;
     background-color: #fff;
@@ -200,47 +205,89 @@ nav ul li a.active {
 }
 
 .year {
+    font-size: 1.1rem;
     font-weight: 800;
-    color: #1a1a1a;
-    width: 50px;
+    color: #1a1a1a; /* 深色文字 */
+    width: 60px;
     flex-shrink: 0;
-    font-size: 1rem;
 }
+
+.desc { line-height: 1.4; }
 
 .desc small {
     display: block;
-    color: #d97706;
+    margin-top: 4px;
+    color: #d97706; /* 琥珀橘色，白底對比度高 */
+    font-size: 0.95rem;
     font-weight: 600;
 }
 
-/* --- 響應式優化 (平板與電腦版) --- */
-@media (min-width: 600px) {
-    .coach-profile { gap: 40px; padding: 40px 0; }
-    .profile-image-wrapper { width: 150px; height: 150px; }
-    .coach-info h1 { flex-direction: row; align-items: baseline; font-size: 2.2rem; }
-    .en-name { margin-left: 15px; }
-    
-    .pb-card { flex-direction: row; padding: 25px; }
-    .pb-time { font-size: 2.5rem; text-align: right; }
-    
-    nav ul li a { padding: 8px 16px; font-size: 0.95rem; }
-    .logo { font-size: 1.3rem; }
+/* --- 表單樣式 --- */
+form {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
 }
 
-/* --- 區塊標題 --- */
-h2 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-    position: relative;
-    padding-bottom: 10px;
+.form-group {
+    margin-bottom: 40px; 
 }
 
-h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 40px;
-    height: 4px;
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"], 
+form input[type="email"], 
+textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.3);
+}
+
+/* --- 按鈕 --- */
+.btn, input[type="submit"], input[type="reset"] {
+    display: inline-block;
+    padding: 12px 35px;
     background: var(--primary-color);
+    color: var(--dark-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+}
+
+/* --- 手機版專屬微調 (針對 768px 以下) --- */
+@media (max-width: 768px) {
+    nav .container {
+        padding: 0 10px;
+    }
+
+    .logo {
+        font-size: 1.1rem; /* 手機版 Logo 再小一點點 */
+    }
+
+    nav ul li a {
+        padding: 8px 6px; /* 5個按鍵時，間距必須更小 */
+        font-size: 0.85rem; /* 字體縮小以容納 5 個按鈕 */
+    }
 }
