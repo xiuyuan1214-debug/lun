@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>跑班訓練營 | 跑出更好的自己</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <script>
+    function fnHello() {
+      alert("hello javaScript");
+    }
+    function showHideDiv() {
+      var showHideDiv = document.getElementById("myDiv");
+      var showBtn = document.getElementById("showBtn");
+
+      if (showHideDiv.style.display == "none") {
+        showHideDiv.style.display = "block";
+        showBtn.style.display = "none";
+      }
+      else {
+        showHideDiv.style.display = "none";
+        showBtn.style.display = "block";
+      }
+    }
+
+  </script>
+
+
+  <div style="position:fixed;right:0px;top:0px;z-index: 550;">
+    <div id="myDiv">
+
+      <a href="https://www.gotop.com.tw/books/BookDetails.aspx?Types=v&bn=AEL022900">
+        <img src="book.jpg" style="display: block;">
+      </a>
+      <button onclick="showHideDiv()" style="float: right; font-size: large;">隱藏</button>
+    </div>
+    <button onclick="showHideDiv()" id="showBtn" style="display: none;font-size: large;">顯示</button>
+  </div>
+
+
+  <style>
+    .Endorsement {
+      position: absolute;
+      /* border: 3px solid red; */
+      z-index: 600;
+
+    }
+
+    .Endorsement img {
+      width: 100%;
+      transform: translate(-50px, 0px);
+    }
+
+    #before {
+      width: 300px;
+      margin-top: 163px;
+      transform-origin: top;
+      animation-name: logo_animation;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+
+    #after {
+      width: 300px;
+      height: 300px;
+      animation-name: logo_animation;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+
+    #stick {
+      width: 20px;
+      /* transition: 1.5s; */
+      transform: translate(140px, 60px) rotate(-6deg);
+    }
+
+    #stick:active {
+      /* transform: translate(140px, 30px) rotate(6deg); */
+      animation-name: subAni;
+      animation-duration: 5s;
+      animation-iteration-count: 1;
+      
+    }
+    
+    @keyframes subAni {
+      0% {
+        transform: translate(140px,60px);
+      }
+      25% {
+        transform: translate(140px,-100px);
+      }
+      50%{/*50%-100%效果一樣，花一半時間停止  */
+        transform: translate(500px,300px) scale(3) ;
+      }
+      100%{
+        transform: translate(500px,300px) scale(3) ;
+      }
+    }
+
+    @keyframes logo_animation {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(15deg);
+      }
+
+      50% {
+        transform: rotate(-15deg);
+      }
+
+      75% {
+        transform: rotate(15deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+
+  <div id="after" class="Endorsement"><img src="Endorsement/Endorsement_after.png"></div>
+  <div id="stick" class="Endorsement"><img src="Endorsement/stick.png"></div>
+  <div id="before" class="Endorsement"><img src="Endorsement/Endorsement_before.png"></div>
+
+  <!-- <nav>
+        <div class="container">
+            <a href="index.html" class="logo">跑班訓練營</a>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="about.html">教練資歷</a></li>
+                <li><a href="courses.html">課程簡介</a></li>
+                <li><a href="tools.html">配速工具</a></li>
+                <li><a href="testimonials.html">學員見證</a></li>
+              </ul>
+        </div>
+    </nav> -->
+
+  <!-- <script src="nav_bar.js"></script></script> -->
+  <div id="navBar"></div>
+<script>
+    window.onload=function(){
+      document.getElementById("navBar").innerHTML =`<nav>
+        <div class="container">
+            <a href="index.html" class="logo">跑班訓練營</a>
+            <ul>
+                <li><a href="index.html">回到首頁</a></li>
+                <li><a href="about.html">教練資歷</a></li>
+                <li><a href="courses.html">課程簡介</a></li>
+                <li><a href="tools.html">配速工具</a></li>
+                <li><a href="testimonials.html">學員見證</a></li>
+              </ul>
+        </div>
+    </nav>`;
+    }
+</script>
+  <style>
+    .h1_text1 {
+      background: #14d56b;
+      animation-name: h1_ani_1;
+      animation-duration: 5s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+
+      /* linear：全程等速。
+    ease-in：慢進快出。
+    ease-out：快進慢出。
+    ease-in-out：慢進慢出（對稱） */
+      animation-timing-function: ease-in-out;
+
+      /* 使用貝茲曲線 (x1, y1, x2, y2)*/
+      /* cubic-bezier.com，可以視覺化調整曲線並直接複製代碼 */
+      /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+    }
+
+    /* @keyframes h1_ani_1{
+    from{
+      background: #a31111;
+    }
+    to{
+      background: #2711a3;
+    }
+  } */
+    @keyframes h1_ani_1 {
+      0% {
+        background: #a31111;
+        transform: rotate(0deg);
+      }
+
+      50% {
+        background: #2711a3;
+        transform: rotate(181deg);
+      }
+
+      100% {
+        background: #a31111;
+        transform: rotate(360deg);
+      }
+    }
+
+    /* .submit1{
+    display: inline-block;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border: 0px solid #00f;
+    border-radius: 50px;
+    padding: 12px 35px;
+    background-color: aqua;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);bic-bezier(0.075, 0.82, 0.165, 1);
+   }
+   .submit1:hover{
+    transform: scale(1.2,1.2);
+   } */
+
+    .submit1 {
+      display: inline-block;
+      background-color: aqua;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 12px 35px;
+      border-radius: 50px;
+      transition-duration: 0.5s;
+      transition-timing-function: ease-in-out;
+      transform-origin: center;
+    }
+
+    .submit1:hover {
+      transform: rotate(360deg);
+
+
+    }
+
+
+    .h1_text {
+      background-color: #2711a3;
+      animation-name: h1_ani;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes h1_ani {
+      0% {
+        background-color: #2711a3;
+        transform: scale(1);
+      }
+
+      50% {
+        background-color: #a31111;
+        transform: scale(1);
+      }
+
+      100% {
+        background-color: #2711a3;
+        transform: scale(1);
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .testBtn {
+      display: inline-block;
+      background-color: blueviolet;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      transition-duration: 0.3s;
+      /* transform-origin: top; */
+      /* transition-timing-function: ease-in-out; */
+      transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .testBtn:hover {
+      transform: scale(2);
+      /* transform: rotate(360deg); */
+    }
+  </style>
+  <header class="hero">
+    <div class="container">
+      <h1 class="h1_text">animation effect</h1>
+      <p>專業科學化訓練，助你突破個人 PB</p><br>
+      <a href="courses.html" class="btn">查看課程</a><br><br>
+      <a href="#" class="submit1">submit transition</a><br><br>
+      <a href="#" class="testBtn">test button</a>
+      <input type="button" class="testBtn" style="background-color: aquamarine;" onclick="fnHello()" value="hello js">
+    </div class="submit">
+
+  </header>
+
+  <br>
+
+  <!-- 點擊觸發 fntime，並傳入停止秒數 5 -->
+  <input type="button" value="開始計時 (5秒後自動停止)" onclick="fntime()">
+  <input type="button" value="手動停止" onclick="stopClock()">
+
+  <h1 id="display">0</h1>
+
+  <script>
+    let timer = null;
+    let count = 0;
+
+    setInterval(fntime, 1000);
+
+    function fntime() {
+      // 1. 如果已經在計時，先清除舊的，避免重複啟動加速
+      //if (timer !== null) clearInterval(timer);
+
+      // 2. 重置數字（看你需求，是否每次都從 0 開始）
+      count++;
+      document.getElementById('display').innerText = count;
+
+      // 3. 啟動定時器
+
+      document.getElementById('display').innerText = count;
+
+
+    }
+
+
+
+    function fntimea(stopSecond) {
+      // 1. 如果已經在計時，先清除舊的，避免重複啟動加速
+      if (timer !== null) clearInterval(timer);
+
+      // 2. 重置數字（看你需求，是否每次都從 0 開始）
+      count = 0;
+      document.getElementById('display').innerText = count;
+
+      // 3. 啟動定時器
+      timer = setInterval(() => {
+        count++;
+        document.getElementById('display').innerText = count;
+
+        // 4. 判斷是否到達參數設定的秒數
+        if (count >= stopSecond) {
+          stopClock();
+          alert("時間到！自動停止");
+        }
+      }, 1000);
+    }
+
+    function stopClock() {
+      clearInterval(timer);
+      timer = null;
+    }
+  </script>
+
+  <br>
+  <style>
+    .flash-text {
+      /* 設定動畫名稱、持續時間、循環次數 */
+      animation: blackToRed 2s infinite;
+    }
+
+    @keyframes blackToRed {
+
+      0%,
+      100% {
+        color: black;
+      }
+
+      /* 開始與結束是黑色 */
+      50% {
+        color: red;
+      }
+
+      /* 中間變紅色 */
+    }
+  </style>
+
+  <h1 class="flash-text">CSS我會變色喔！</h1>
+
+  <h1 id="myText">JS我會變色喔！</h1>
+
+  <script>
+    /**/
+    const text = document.getElementById('myText');
+
+    setInterval(() => {
+      // 判斷目前顏色，如果是黑色就變紅，否則變黑
+      if (text.style.color === 'black' || text.style.color === '') {
+        text.style.color = 'red';
+      } else {
+        text.style.color = 'black';
+      }
+    }, 1000); // 每秒切換一次
+
+  </script>
+
+  <!--
+
+<div id="result"></div>
+-->
+  <script>
+    const a = document.getElementById('result');
+    let output = "";
+
+    for (let i = 1; i <= 9; i++) {
+      //output += `2 * ${i} = ${2*i}<br>`;
+      output = output + "2 * " + i + " = " + 2 * i + "<br>"
+    }
+
+    a.innerHTML = output;
+
+  </script>
+
+  <br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

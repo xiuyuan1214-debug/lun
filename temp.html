@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>純 JS 複利計算機 (修正版)</title>
+    <style>
+        /* 基礎樣式 */
+        body { font-size: 1.2rem; line-height: 1.6; padding: 20px; font-family: sans-serif; }
+        .result-box { 
+            background-color: #f9f9f9; 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin-top: 10px; 
+            border: 1px solid #ddd;
+            opacity: 0; 
+            transition: opacity 0.8s ease-in-out; 
+        }
+        .result-box.show { opacity: 1; }
+        .highlight { color: #d9534f; font-weight: bold; }
+        hr { border: 0; border-top: 1px solid #eee; margin: 15px 0; }
+        button { padding: 5px 15px; cursor: pointer; }
+    </style> </head>
+<body>
+    <h2>💰 理財試算小工具 (純 JS 版)</h2>
+    
+    <p>本金：<input type="number" value="1000000" id="base"></p>
+    <p>利率：<input type="number" value="5" id="rate"> %</p>
+    <p>年期：<input type="number" value="3" id="year"></p>
+    
+    <p>計算方式：
+        <select id="cCondition">
+            <option value="s">單利計算</option>
+            <option value="c">複利計算</option>
+        </select>
+        <button id="btn" onclick="fnC()">開始計算</button>
+    </p>
+
+    <div id="showDiv" class="result-box">尚未計算，請點擊按鈕。</div>
+
+    <script>
+        function fnC() {
+            var base = parseInt(document.getElementById("base").value);
+            var rate = parseInt(document.getElementById("rate").value);
+            var year = parseInt(document.getElementById("year").value);
+            var cCondition = document.getElementById("cCondition").value;
+            var showDiv = document.getElementById("showDiv");
+
+            var income_records = []; 
+            var income_list = ""; 
+            var income_total = 0;
+
+            for (var i = 1; i <= year; i++) {
+                var income_1 = base * (rate / 100);
+                if (cCondition == "c") {
+                    base += income_1;
+                }
+                income_total += income_1;
+                income_records.push(parseInt(income_1));
+                income_list += "第 " + i + " 年收益：$" + parseInt(income_1).toLocaleString() + "<br>";
+            }
+
+            var arrayInfo = "<hr><b>陣列分析摘要：</b><br>" +
+                            "紀錄總筆數：" + income_records.length + " 筆<br>" +
+                            "首年收益：$" + income_records[0].toLocaleString() + "<br>" +
+                            "末年收益：$" + income_records[income_records.length - 1].toLocaleString();
+
+            // 特效處理
+            showDiv.classList.remove("show"); 
+            
+            setTimeout(function() {
+                showDiv.innerHTML = income_list + "<hr>總收益：<span class='highlight'>$" + 
+                                   parseInt(income_total).toLocaleString() + "</span>" + arrayInfo;
+                showDiv.classList.add("show");
+            }, 50);
+        }
+    </script>
+</body>
+</html>

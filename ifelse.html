@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        #tResult {
+            background-color: #f8f9fa;
+            padding: 5px 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            min-width: 100px;
+        }
+    </style>
+    <script>
+        //fnT()----------還沒拿到 rBase , rRate , rYear -------
+        //   function fnT(){
+        //     var rBase = 1000000;
+        //     var rRate = 5;
+        //     var rYear = 1;
+        //     var rResult = rBase * rRate / 100 * rYear;
+        //     document.getElementById("tResult").innerHTML = rResult;
+        //   }
+
+
+        //fn()--------------沒有加if else------------
+        //   function fnT(){
+        //     var rBase = parseInt(document.getElementById("tBase").value);
+        //     var rRate = parseInt(document.getElementById("tRate").value);
+        //     var rYear = parseInt(document.getElementById("tYear").value);
+        //     var rResult = rBase * rRate / 100 * rYear;
+        //     document.getElementById("tResult").innerHTML = rResult;
+        //   }
+
+        //fn()-----完全版-------------------------
+        function fnT() {
+            // 1. 取得數值 (Value)
+            var rBase = parseInt(document.getElementById("tBase").value);
+            var rRate = parseInt(document.getElementById("tRate").value);
+            var rYear = parseInt(document.getElementById("tYear").value);
+
+            // 2. 取得顯示目標 (Element)
+            var rResult = document.getElementById("tResult");
+
+            // 3. 使用 if...else 進行防呆判斷與計算
+            if (isNaN(rBase) || isNaN(rRate) || isNaN(rYear)) {
+                // 如果漏填資料
+                rResult.innerHTML = "請輸入完整數字";
+                rResult.style.color = "red";
+            }
+            else if (rBase < 0 || rYear < 0) {
+                // 如果輸入負數
+                rResult.innerHTML = "數值不能為負數";
+                rResult.style.color = "orange";
+            }
+            else {
+                // 一切正常，執行計算並顯示
+                var total = rBase * rRate / 100 * rYear;
+                rResult.innerHTML = total + " 元";
+                rResult.style.color = "green";
+
+                // 將「本金」與「算出來的總收益」傳給畫圖功能
+                drawChart(rBase, total);
+            }
+        }
+
+        // ----全域變數，用來儲存圖表物件----start------------
+        var chartInstance = null;
+
+        function drawChart(base, profit) {
+            var ctx = document.getElementById('myPieChart').getContext('2d');
+
+            // 防呆：如果原本就有圖表，先把它銷毀再畫新的
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            chartInstance = new Chart(ctx, {
+                type: 'pie', // 指定類型為圓餅圖,可改bar看效果
+                data: {
+                    labels: ['本金', '預期收益'],
+                    datasets: [{
+                        data: [base, profit], // 放入我們算出來的數字
+                        backgroundColor: ['#999999', '#ffc107'], // 你的專屬配色：深黑與活力黃
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'top' }
+                    }
+                }
+            });
+        }
+        // ----全域變數，用來儲存圖表物件----end------------
+
+    </script>
+</head>
+
+<body>
+    <script src="nav_bar.js"></script>
+    </script>
+    <div id="navBar"></div>
+
+    <style>
+        .sSum {
+            display: inline-block;
+            padding: 10px;
+            font-size: larger;
+            border-radius: 35px;
+        }
+                .div-all {
+            width: 100%;
+            /* height: 100px; */
+            background: rgb(255, 255, 255);
+            margin-top: 10px;
+            margin-left: 10px;
+            display:inline-block;
+
+            /* float 會讓元素徹底脫離文字排隊的邏輯，它不認得「空白字元」，所以它會強行貼在一起。 */
+            /* display: block;
+            float:left; */
+
+
+            padding: 10px;
+        }
+            .div-area {
+            width: 50%;
+            height: 100%;
+            float: left;
+        }
+    </style>
+    <section class="container">
+        <div class="div-all">
+        <div class="div-area">
+            <h2>利率計算機</h2>
+            <div class="sSum">本金</div><input type="number" id="tBase" min="" value="1000000" />
+            <p>
+            <div class="sSum">利率</div><input type="number" id="tRate" min="" value="5"/>
+            <div class="sSum">%</div>
+            <p>
+            <div class="sSum">年&emsp;</div><input type="number" id="tYear" min="" value="1" />
+            <p>
+            <p>總收益：&emsp;<label id="tResult" style="color: #666;">--------</label></p>
+            <p><input type="button" value="計算" onclick="fnT()" class="btn" style="margin: 30px 0px;" /></p>
+
+            
+        </div>
+        <div class="div-area">
+            <div style="width: 300px; margin: 20px auto;float: left;"><canvas id="myPieChart"></canvas></div>
+        </div>
+        </div>
+    </section>
+</body>
+
+</html>
