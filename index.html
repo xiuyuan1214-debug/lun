@@ -167,25 +167,7 @@
       animation-direction: alternate;
       animation-iteration-count: infinite;
 
-      /* linear：全程等速。
-    ease-in：慢進快出。
-    ease-out：快進慢出。
-    ease-in-out：慢進慢出（對稱） */
-      animation-timing-function: ease-in-out;
-
-      /* 使用貝茲曲線 (x1, y1, x2, y2)*/
-      /* cubic-bezier.com，可以視覺化調整曲線並直接複製代碼 */
-      /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
-    }
-
-    /* @keyframes h1_ani_1{
-    from{
-      background: #a31111;
-    }
-    to{
-      background: #2711a3;
-    }
-  } */
+    
     @keyframes h1_ani_1 {
       0% {
         background: #a31111;
@@ -203,22 +185,7 @@
       }
     }
 
-    /* .submit1{
-    display: inline-block;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-    border: 0px solid #00f;
-    border-radius: 50px;
-    padding: 12px 35px;
-    background-color: aqua;
-    transition-duration: 1s;
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);bic-bezier(0.075, 0.82, 0.165, 1);
-   }
-   .submit1:hover{
-    transform: scale(1.2,1.2);
-   } */
-
+    
     .submit1 {
       display: inline-block;
       background-color: aqua;
@@ -263,18 +230,6 @@
       }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
     .testBtn {
       display: inline-block;
       background-color: blueviolet;
@@ -284,8 +239,6 @@
       padding: 15px 30px;
       border-radius: 50px;
       transition-duration: 0.3s;
-      /* transform-origin: top; */
-      /* transition-timing-function: ease-in-out; */
       transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 
@@ -299,9 +252,6 @@
       <h1 class="h1_text">LUN </h1>
       <p>專業科學化訓練，助你突破個人 PB</p><br>
       <a href="courses.html" class="btn">查看課程</a><br><br>
-      <a href="#" class="submit1">submit transition</a><br><br>
-      <a href="#" class="testBtn">test button</a>
-      <input type="button" class="testBtn" style="background-color: aquamarine;" onclick="fnHello()" value="hello js">
     </div class="submit">
 
   </header>
@@ -314,7 +264,7 @@
   
 
   <br>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br>
 </body>
 
 </html>
