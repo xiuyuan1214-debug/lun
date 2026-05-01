@@ -1,0 +1,183 @@
+/* ==========================================
+   跑班網站全域樣式 - 最終整合版
+   ========================================== */
+
+:root {
+    --primary-color: #ffc107;
+    --dark-color: #1a1a1a;
+    --light-bg: #f8f9fa;
+    --text-color: #333;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+    font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 導航欄 */
+nav {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 15px 0;
+    position: sticky;/* 開啟黏貼定位 */
+    top: 0;/* 黏在螢幕最上方 */
+    z-index: 500;/* 確保它在所有卡片和內容之上 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+   
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+nav ul {
+    width: 60%;
+    display: flex;/*水平排列*/
+    list-style: none;/*移黑點*/
+    overflow-x: auto;/*按鍵太多左右滑動*/
+    overflow-y: hidden;/*按鍵禁止上下滑動*/
+    white-space: nowrap;/*防止按鍵斷行*/
+    flex:0 0 auto;/*按鍵寬度自動調整*/
+    /* 針對不同瀏覽器隱藏捲軸 */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+
+
+}
+
+nav ul li a {
+    color: #eee;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+/* 新增：當前頁面的發亮效果 */
+nav ul li a.active {
+    color: var(--primary-color); /* 變成活力黃 */
+    border-bottom: 2px solid var(--primary-color); /* 下方加一條線 */
+    font-weight: bold;
+}
+
+nav ul li a:hover { color: var(--primary-color); }
+
+/* 英雄區 */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+
+/* 通用設定 */
+section { padding: 60px 0; }
+h2 { font-size: 2rem; margin-bottom: 30px; position: relative; padding-bottom: 10px; }
+h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 4px; background: var(--primary-color); }
+
+/* 卡片與表格 */
+.row { display: flex; flex-wrap: wrap; gap: 30px; }
+.col { flex: 1; min-width: 280px; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border-top: 5px solid var(--primary-color); }
+
+table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 20px 0; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+table th { background: var(--dark-color); color: #fff; padding: 15px; }
+table td { padding: 15px; border-bottom: 1px solid #eee; text-align: center; }
+
+form {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 80px; /* 讓每一組報名資料之間隔開 */
+}
+.form-group label {
+    display: block;
+    margin-bottom: 10px; /* 標籤跟輸入框保持親近 */
+    font-weight: bold;
+}
+
+form input[type="text"],input[type="email"],textarea {
+    width: 60%;
+    padding: 3px;
+    margin: 5px;
+    border: 2px solid   #6d6d6d;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+
+form fieldset{
+    padding: 30px;
+    margin: 30px;
+    border-radius: 20px;
+}
+
+form legend{
+    color: rgb(58, 58, 58);
+    font-size: larger;
+    font-weight: 800;
+}
+
+
+
+
+input:focus, select:focus, textarea:focus {
+    outline:color(from color srgb r g b);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgb(255, 7, 7);
+}
+
+.btn,form input[type="submit"],input[type="reset"],.submit { display: inline-block; padding: 12px 35px; background: var(--primary-color); color: var(--dark-color); text-decoration: none; border-radius: 50px; font-weight: bold; transition: var(--transition); border: none; cursor: pointer; }
+
+/* 手機版適配區 */
+@media (max-width: 768px) {
+    nav .container { padding: 0 10px; }
+    nav ul li a { padding: 8px 4px; font-size: 0.82rem; letter-spacing: -0.5px; }
+    .logo { font-size: 1.1rem; }
+    
+    section { padding: 30px 15px; }
+    .hero h1 { font-size: 2.2rem; }
+    
+
+}
+
+
+.hero-promo {
+    transition: color 0.5s ease, transform 0.2s ease;
+    display: block;
+    cursor: default;
+}
