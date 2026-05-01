@@ -132,8 +132,18 @@ h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; he
 .profile-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    object-fit: cover; /* 保持比例填滿 */
+    
+    /* 關鍵調整：將圖片顯示中心上移 */
+    /* center 代表水平置中，20% 代表垂直位置（數字越小越往頭部靠攏） */
+    object-position: center 70%; 
+    
+    transition: var(--transition);
+}
+
+/* 如果滑鼠移上去想要有一點動態感，可以加這個 */
+.profile-image-wrapper:hover .profile-img {
+    transform: scale(1.1); /* 輕微放大 */
 }
 
 .coach-info h1 { font-size: 2.2rem; }
