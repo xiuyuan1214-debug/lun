@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>Runner Service Center</title>
+    <title>跑者服務中心</title>
     <style>
         body {
             margin: 0;
@@ -10,176 +10,143 @@
             font-family: -apple-system, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
             background-color: #fdfaf5;
             color: #4a3c31;
-            display: flex;
-            justify-content: center;
         }
 
-        .phone-mockup {
+        .main-container {
             width: 100%;
-            max-width: 414px; /* 模擬手機寬度 */
-            background: white;
-            min-height: 100vh;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
         }
 
-        /* 頂部黃色資訊區：參考 IMG_5382_3.jpg */
-        .header-section {
+        /* 頂部區域：還原自 IMG_5382_5.jpg */
+        .header {
             background-color: #fff9e6;
-            padding: 35px 25px 20px 25px;
+            padding: 40px 25px;
+        }
+        .header h1 { font-size: 22px; margin: 0; }
+        .header .sub-en { font-size: 12px; color: #b5a48d; letter-spacing: 2px; margin-bottom: 25px; }
+        .header .slogan { font-weight: bold; color: #b5a48d; margin-bottom: 15px; }
+        .header p { font-size: 14px; line-height: 1.8; margin-bottom: 15px; }
+        .header .service-time { font-size: 11px; color: #b5a48d; margin-top: 25px; }
+
+        /* 表單內容區 */
+        .form-area {
+            padding: 30px 25px;
         }
 
-        .title-group h1 {
-            font-size: 20px;
-            margin: 0;
-            color: #4a3c31;
-        }
-
-        .title-group .en-sub {
-            font-size: 10px;
-            color: #b5a48d;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-
-        .slogan {
-            font-size: 14px;
-            font-weight: bold;
-            color: #b5a48d;
-            margin-bottom: 12px;
-        }
-
-        .intro-text {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .service-hours {
-            font-size: 10px;
-            color: #b5a48d;
-            margin-top: 25px;
-        }
-
-        /* 表單區域 */
-        .form-content {
-            padding: 25px;
-            background: white;
-            border-radius: 20px 20px 0 0;
-            margin-top: -15px;
-        }
-
-        /* 關鍵：統一標題大小 */
-        .label-text {
-            font-size: 16px;
+        /* 關鍵設定：所有標題文字大小統一 */
+        .label-title {
+            font-size: 18px; 
             font-weight: bold;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: #4a3c31;
         }
 
-        /* 關鍵：表格內文字完全不要有框框 */
+        /* 關鍵設定：輸入欄位要有框線 */
         input, select, textarea {
             width: 100%;
-            border: none !important; /* 徹底移除框線 */
-            background: none !important;
+            box-sizing: border-box; /* 確保寬度包含框線 */
+            border: 1px solid #e0e0e0; /* 顯示灰色框線 */
+            border-radius: 8px; /* 圓角效果，參考圖片視覺 */
+            background: #fff;
             font-size: 14px;
-            color: #ccc;
-            padding: 5px 0 15px 0; /* 底部留一點間距代替框線感 */
+            color: #4a3c31;
+            padding: 12px 15px;
+            margin-bottom: 25px;
             outline: none;
-            -webkit-appearance: none;
             font-family: inherit;
         }
 
-        .flex-row {
+        /* 焦點狀態 */
+        input:focus, textarea:focus {
+            border-color: #b5a48d;
+        }
+
+        .row {
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
+        .col { flex: 1; }
 
-        .flex-item {
-            flex: 1;
-        }
-
-        .captcha-row {
+        /* 驗證碼區塊 */
+        .captcha-group {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-top: 5px;
+            gap: 15px;
+            margin-bottom: 25px;
         }
-
-        .captcha-box {
+        .captcha-input {
+            width: 100px;
+            margin-bottom: 0;
+        }
+        .captcha-code {
             background-color: #f2ede4;
-            padding: 8px 15px;
+            padding: 10px 20px;
             font-style: italic;
             font-weight: bold;
-            letter-spacing: 4px;
-            border-radius: 4px;
+            letter-spacing: 5px;
+            border-radius: 8px;
+            color: #4a3c31;
         }
 
         /* 針對文字區域的 placeholder 顏色 */
         ::placeholder {
-            color: #ccc;
-            opacity: 1;
+            color: #cccccc;
         }
     </style>
 </head>
 <body>
 
-    <div class="phone-mockup">
-        <!-- 參考 IMG_5382_3.jpg 頂部文字 -->
-        <div class="header-section">
-            <div class="title-group">
-                <h1>跑者服務中心</h1>
-                <div class="en-sub">RUNNER SERVICE CENTER</div>
-            </div>
-            
+    <div class="main-container">
+        <!-- 頂部資訊區 -->
+        <div class="header">
+            <h1>跑者服務中心</h1>
+            <div class="sub-en">RUNNER SERVICE CENTER</div>
             <div class="slogan">讓我們聽見您的腳步聲</div>
-            
-            <div class="intro-text">
-                無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈
-            </div>
-            <div class="intro-text">
-                您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。
-            </div>
-            <div class="intro-text">
-                讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。
-            </div>
-            
-            <div class="service-hours">☀️ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些進動時間)</div>
+            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
+            <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
+            <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
+            <div class="service-time">☀️ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些進動時間)</div>
         </div>
 
-        <div class="form-content">
-            <!-- 標題統一 16px，輸入文字無框線 -->
-            <label class="label-text">姓名 / Name</label>
+        <!-- 表單區 -->
+        <div class="form-area">
+            <label class="label-title">姓名 / Name</label>
             <input type="text" placeholder="請輸入您的姓名">
 
-            <label class="label-text">電子信箱 / E-mail</label>
+            <label class="label-title">電子信箱 / E-mail</label>
             <input type="email" placeholder="runner@example.com">
 
-            <label class="label-text">跑者屬性</label>
+            <label class="label-title">跑者屬性</label>
             <select>
                 <option>新手跑者</option>
+                <option>進階跑者</option>
+                <option>專業跑者</option>
             </select>
 
-            <div class="flex-row">
-                <div class="flex-item">
-                    <label class="label-text">跑步最佳成績 (PB)</label>
+            <div class="row">
+                <div class="col">
+                    <label class="label-title">跑步最佳成績 (PB)</label>
                     <input type="text" placeholder="例如：全馬3:30:00">
                 </div>
-                <div class="flex-item">
-                    <label class="label-text">目標成績</label>
+                <div class="col">
+                    <label class="label-title">目標成績</label>
                     <input type="text" placeholder="例如：全馬2:59:59">
                 </div>
             </div>
 
-            <label class="label-text">慣用穿戴配備</label>
+            <label class="label-title">慣用穿戴配備</label>
             <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
 
-            <label class="label-text">您的問題</label>
-            <textarea placeholder="每一滴汗水，都值得被聽見..." rows="3"></textarea>
+            <label class="label-title">您的問題</label>
+            <textarea rows="4" placeholder="每一滴汗水，都值得被聽見..."></textarea>
 
-            <label class="label-text">驗證碼：</label>
-            <div class="captcha-row">
-                <input type="text" placeholder="輸入碼" style="width: 80px; padding-bottom: 5px;">
-                <div class="captcha-box">A 5 2 G</div>
+            <label class="label-title">驗證碼：</label>
+            <div class="captcha-group">
+                <input type="text" placeholder="輸入碼" class="captcha-input">
+                <div class="captcha-code">A 5 2 G</div>
             </div>
         </div>
     </div>
