@@ -22,29 +22,29 @@
             margin: 0;
             padding: 40px 20px;
             color: #333;
-            text-align: center; /* 整體置中 */
+            text-align: center;
         }
         .container {
             max-width: 700px;
             margin: 0 auto;
         }
 
-        /* 區塊容器：完全移除所有底線與邊框 */
+        /* 服務區塊：純淨、無邊框、無任何底線 */
         .card {
             border-radius: 20px;
             padding: 40px 30px;
             margin-bottom: 40px;
-            border: none !important; /* 確保沒有邊界線 */
-            box-shadow: none; /* 移除陰影以保持乾淨 */
+            border: none !important;
         }
 
-        /* 標題設定：移除所有 border-bottom 或橫線裝飾 */
+        /* 標題：徹底禁用所有橫線裝飾 */
         .title-main {
             font-size: 26px;
             font-weight: bold;
             margin: 0 0 10px 0;
             color: #2c3e50;
-            border-bottom: none !important; /* 強制刪除黃色底線 */
+            border-bottom: none !important;
+            padding-bottom: 0 !important;
         }
         .title-sub {
             font-size: 14px;
@@ -53,17 +53,20 @@
             margin-bottom: 30px;
             font-weight: 600;
             display: block;
-            border-bottom: none !important; /* 強制刪除黃色底線 */
+            border-bottom: none !important;
+            padding-bottom: 0 !important;
         }
 
-        /* 核心重點方塊：僅保留左側垂直色條 */
+        /* 核心方塊：僅保留左側色條，其餘三面完全無邊 */
         .highlight-box {
             background: #ffffff;
             border-radius: 12px;
             padding: 20px;
             margin: 0 auto 30px auto;
-            border: none !important;
-            border-left: 5px solid !important; /* 只准許左側有線 */
+            border-left: 5px solid !important; 
+            border-top: none !important;
+            border-right: none !important;
+            border-bottom: none !important;
             display: inline-flex;
             align-items: flex-start;
             text-align: left;
@@ -76,7 +79,7 @@
             margin-top: 2px;
         }
 
-        /* 清單樣式：符號緊貼文字 */
+        /* 清單：點符號緊貼文字 */
         .detail-list {
             list-style: none;
             padding: 0;
@@ -88,7 +91,7 @@
             font-size: 15px;
             margin-bottom: 15px;
             line-height: 1.7;
-            padding-left: 12px; /* 縮小與符號距離 */
+            padding-left: 12px; 
             position: relative;
             color: #4a4a4a;
         }
@@ -101,7 +104,7 @@
             line-height: 0.8;
         }
 
-        /* 顏色主題設定 - 嚴格禁止黃色 */
+        /* 顏色設定 */
         .online { background-color: #f1f7fd; }
         .online .title-sub { color: #3498db; }
         .online .highlight-box { border-left-color: #3498db !important; }
@@ -141,14 +144,12 @@
             <span class="icon">𖤐</span>
             <div>核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。</div>
         </div>
-        <div>
-            <ul class="detail-list">
-                <li class="detail-item">週期化備賽規劃：針對馬拉松、半馬或10K 目標，科學化安排基礎期、強化期、巔峰期與減量期。</li>
-                <li class="detail-item">數據即時反饋：串聯穿戴裝置數據，教練遠端即時監測訓練與恢復狀態。</li>
-                <li class="detail-item">動態調整：根據每週訓練數據與跑者回報的狀態，隨時調整下週課表，避免運動傷害。</li>
-                <li class="detail-item">線上諮詢機制：透過文字等方式，定期討論訓練成效，解答跑者在執行過程中的疑難雜症。</li>
-            </ul>
-        </div>
+        <ul class="detail-list">
+            <li class="detail-item">週期化備賽規劃：針對馬拉松、半馬或10K 目標，科學化安排基礎期、強化期、巔峰期與減量期。</li>
+            <li class="detail-item">數據即時反饋：串聯穿戴裝置數據，教練遠端即時監測訓練與恢復狀態。</li>
+            <li class="detail-item">動態調整：根據每週訓練數據與跑者回報的狀態，隨時調整下週課表，避免運動傷害。</li>
+            <li class="detail-item">線上諮詢機制：透過文字等方式，定期討論訓練成效，解答跑者在執行過程中的疑難雜症。</li>
+        </ul>
     </div>
 
     <!-- 私人教學 -->
@@ -159,14 +160,12 @@
             <span class="icon">𖤐</span>
             <div>核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</div>
         </div>
-        <div>
-            <ul class="detail-list">
-                <li class="detail-item">跑姿校正：透過錄影回放與即時拆解分析，並根據跑者身體結構，使肌肉記憶正確動作，有效發揮跑步經濟性。</li>
-                <li class="detail-item">體感配速建立：透過教練現場陪跑，協助跑者建立對各心率區間的配速感知。</li>
-                <li class="detail-item">動態負荷調控：根據跑者當下的體力、疲勞程度等狀態，即時調整訓練強度。</li>
-                <li class="detail-item">跑者專項強化引導：針對跑者較薄弱環節，設計輔助訓練，轉化為跑道上的推進力。</li>
-            </ul>
-        </div>
+        <ul class="detail-list">
+            <li class="detail-item">跑姿校正：透過錄影回放與即時拆解分析，並根據跑者身體結構，使肌肉記憶正確動作，有效發揮跑步經濟性。</li>
+            <li class="detail-item">體感配速建立：透過教練現場陪跑，協助跑者建立對各心率區間的配速感知。</li>
+            <li class="detail-item">動態負荷調控：根據跑者當下的體力、疲勞程度等狀態，即時調整訓練強度。</li>
+            <li class="detail-item">跑者專項強化引導：針對跑者較薄弱環節，設計輔助訓練，轉化為跑道上的推進力。</li>
+        </ul>
     </div>
 
     <!-- 企業包班 -->
@@ -177,13 +176,11 @@
             <span class="icon">𖤐</span>
             <div>核心價值：職場健康與活力、團體共榮，將運動融入企業文化。</div>
         </div>
-        <div>
-            <ul class="detail-list">
-                <li class="detail-item">提升團隊凝聚力：在共同挑戰目標的過程中，建立跨部門的情感連結與默契。</li>
-                <li class="detail-item">企業賽事推動：協助企業組隊參與路跑賽事，塑造健康正面的企業品牌形象。</li>
-                <li class="detail-item">職場壓力紓解：透過團體運動釋放員工壓力，提升團隊韌性與工作效率。</li>
-            </ul>
-        </div>
+        <ul class="detail-list">
+            <li class="detail-item">提升團隊凝聚力：在共同挑戰目標的過程中，建立跨部門的情感連結與默契。</li>
+            <li class="detail-item">企業賽事推動：協助企業組隊參與路跑賽事，塑造健康正面的企業品牌形象。</li>
+            <li class="detail-item">職場壓力紓解：透過團體運動釋放員工壓力，提升團隊韌性與工作效率。</li>
+        </ul>
     </div>
 
     <div class="footer">
@@ -192,6 +189,9 @@
     </div>
 
 </div>
+
+</body>
+</html>
 
 </body>
 </html>
