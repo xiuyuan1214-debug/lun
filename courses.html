@@ -31,13 +31,16 @@
             font-weight: 500;
             text-align: center;
             padding-top: 40px;
-            margin-bottom: -20px;
+            margin-bottom: -10px;
         }
 
-        .wrapper { display: flex; flex-direction: column; gap: 15px; }
-        .section { width: 100%; padding: 60px 25px; }
+        /* 區塊間的巨大白色縫隙 (對應紅圈) */
+        .wrapper { display: flex; flex-direction: column; gap: 40px; } 
+
+        .section { width: 100%; padding: 75px 25px; }
         .container { max-width: 500px; margin: 0 auto; }
 
+        /* 顏色定義 */
         .bg-blue { background-color: #f1f7fe; }
         .text-blue { color: #64a7d4; }
         .bg-red { background-color: #fff4f4; }
@@ -45,13 +48,22 @@
         .bg-green { background-color: #f2f9f5; }
         .text-green { color: #4e9a78; }
 
-        .main-title { font-size: 24px; color: #333333; font-weight: 700; margin-bottom: 4px; text-align: center; }
-        .sub-title { font-size: 14px; font-weight: 700; letter-spacing: 1px; margin-bottom: 30px; text-align: center; display: block; }
+        /* 標題設定 */
+        .main-title { font-size: 24px; color: #333333; font-weight: 700; margin-bottom: 6px; text-align: center; }
+        .sub-title { 
+            font-size: 15px; 
+            font-weight: 800; /* 強制加粗 */
+            letter-spacing: 1.2px; 
+            margin-bottom: 35px; 
+            text-align: center; 
+            display: block; 
+        }
 
+        /* 白色方塊 */
         .card {
             background-color: #ffffff;
             border-radius: 12px;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
             display: flex;
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0,0,0,0.02);
@@ -62,15 +74,22 @@
         .bar-orange { background-color: #D97B30; }
         .bar-green { background-color: #4e9a78; }
 
-        .card-content { padding: 24px 20px; font-size: 16px; line-height: 1.7; color: #444444; }
-        .star { color: #999999; font-size: 18px; margin-right: 4px; vertical-align: middle; }
+        .card-content { padding: 26px 22px; font-size: 16px; line-height: 1.7; color: #444444; }
+        .star { color: #999999; font-size: 18px; margin-right: 4px; vertical-align: middle; font-weight: normal; }
 
+        /* 列表樣式 (對應打勾處間隔) */
         .list { list-style: none; }
-        .list-item { font-size: 14px; margin-bottom: 12px; color: #666666; display: flex; line-height: 1.6; }
-        .dot { font-size: 20px; margin-right: 8px; line-height: 0.8; }
+        .list-item { 
+            font-size: 14px; 
+            margin-bottom: 18px; /* 加大列表項目的間距 */
+            color: #666666; 
+            display: flex; 
+            line-height: 1.6; 
+        }
+        .dot { font-size: 20px; margin-right: 8px; line-height: 0.8; font-weight: 900; }
 
-        .footer { padding: 80px 20px; text-align: center; }
-        .btn { background-color: #333333; color: #ffffff; padding: 16px 70px; border-radius: 8px; display: inline-block; font-size: 16px; }
+        .footer { padding: 100px 20px; text-align: center; }
+        .btn { background-color: #333333; color: #ffffff; padding: 18px 75px; border-radius: 8px; display: inline-block; font-size: 16px; }
     </style>
 </head>
 <body>
@@ -136,6 +155,9 @@
     <p style="color:#999; font-size:14px; margin-bottom:30px;">讓我們一起跑出健康快樂的每一步 ᴗ̈</p>
     <a href="#" class="btn">預約一份溫暖的諮詢</a>
 </div>
+
+</body>
+</html>
 
 </body>
 </html>
