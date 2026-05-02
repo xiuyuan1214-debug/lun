@@ -5,119 +5,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跑者服務中心 Runner Service Center</title>
     <style>
-        body { margin: 0; padding: 0; font-family: -apple-system, "Noto Sans TC", sans-serif; background-color: #ffffff; color: #4a3c31; }
-        
-        /* 1. 標題區塊：對齊 IMG_5426.jpg */
-        .header-v3 { background-color: #fff9e6; padding: 30px 20px 20px 25px; text-align: left; }
-        .limit-v3 { max-width: 500px; margin: 0 auto; }
-        
-        .title-main { font-size: 22px; font-weight: bold; margin-bottom: 5px; color: #4a3c31; }
-        .title-sub { font-size: 10px; color: #b5a48d; margin-bottom: 25px; font-weight: normal; letter-spacing: 1px; }
-        
-        .slogan-v3 { font-size: 14px; font-weight: bold; margin-bottom: 15px; color: #4a3c31; }
-        .p-v3 { font-size: 13.5px; line-height: 1.8; margin-bottom: 18px; color: #4a3c31; }
-        
-        /* 2. 服務時間：極微型化 (強制縮小至 0.3) */
-        .hours-v3 { 
-            font-size: 10px !important; 
-            color: #b5a48d; 
-            margin-top: 20px; 
-            display: inline-block;
-            transform: scale(0.3) !important; 
-            transform-origin: left top;
-            opacity: 0.6;
-            white-space: nowrap;
-            border-top: 0.5px solid #e0e0e0;
-            padding-top: 10px;
+        /* 全域樣式設定 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
         }
 
-        /* 3. 框框窄化：對齊要求縮小寬度 */
-        .form-v3 { padding: 25px; background-color: #ffffff; }
-        .label-v3 { font-size: 14px; font-weight: bold; display: block; margin-bottom: 8px; color: #4a3c31; }
-        
-        .input-v3 { 
-            width: 75% !important; /* 強制縮窄至 75% */
-            max-width: 300px;
-            box-sizing: border-box; 
-            border: 1px solid #e0e0e0; 
-            border-radius: 8px; 
-            padding: 10px 15px; 
-            font-size: 13px;   
-            margin-bottom: 20px; 
-            outline: none; 
-            background: #fdfdfd;
-            color: #4a3c31;
+        .container {
+            width: 100%;
+            max-width: 500px; /* 適合手機瀏覽的寬度 */
+            background-color: #ffffff;
         }
-        
-        .row-v3 { display: flex; gap: 15px; width: 75%; max-width: 300px; }
-        .col-v3 { flex: 1; }
-        .col-v3 .input-v3 { width: 100% !important; }
 
-        .btn-v3 { 
-            width: 75%; 
-            max-width: 300px;
-            background-color: #4a3c31; 
-            color: white; 
-            border: none; 
-            padding: 12px; 
-            font-size: 14px; 
-            font-weight: bold; 
-            border-radius: 5px; 
-            cursor: pointer; 
+        /* 上方黃色區塊：對照 IMG_5316.jpg */
+        .header-section {
+            background-color: #f7f1d5; /* 淡黃色背景 */
+            padding: 30px 25px;
+            border-radius: 0 0 20px 20px; /* 底部大圓角 */
+            margin-bottom: 20px;
         }
+
+        .title-main {
+            color: #614e1a; /* 深咖啡色 */
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+        }
+
+        .title-sub {
+            color: #b5a48d; /* 金褐色副標 */
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .slogan {
+            color: #614e1a;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .intro-p {
+            color: #8c7e6a; /* 內文灰褐色 */
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .service-hours {
+            font-size: 11px;
+            color: #b5a48d;
+            border-top: 1px solid #e0dab9;
+            padding-top: 15px;
+            margin-top: 20px;
+        }
+
+        /* 下方表單區塊 */
+        .form-section {
+            padding: 0 25px 50px 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #614e1a; /* 標籤咖啡色 */
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        /* 統一輸入框樣式：對照圖中圓角與淡米色背景 */
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            background-color: #fffef9; /* 欄位米色背景 */
+            border: 1px solid #e8e2c8;
+            border-radius: 10px; /* 圓角設計 */
+            padding: 12px 15px;
+            font-size: 14px;
+            color: #614e1a;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        /* 雙欄位排版 (最佳成績與目標成績) */
+        .flex-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .flex-item {
+            flex: 1;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        ::placeholder {
+            color: #ccc;
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="header-v3">
-        <div class="limit-v3">
-            <div class="title-main">跑者服務中心</div>
-            <div class="title-sub">RUNNER SERVICE CENTER</div>
-            
-            <div class="slogan-v3">讓我們聽見您的腳步聲</div>
-            
-            <p class="p-v3">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
-            <p class="p-v3">您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
-            <p class="p-v3">讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
-            
-            <div class="hours-v3">✻ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
+<div class="container">
+    <!-- 標題與簡介區塊 -->
+    <div class="header-section">
+        <div class="title-main">跑者服務中心</div>
+        <div class="title-sub">RUNNER SERVICE CENTER</div>
+        
+        <div class="slogan">讓我們聽見您的腳步聲</div>
+        
+        <div class="intro-p">
+            無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺
+        </div>
+        
+        <div class="intro-p">
+            您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。
+        </div>
+
+        <div class="intro-p">
+            讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。
+        </div>
+
+        <div class="service-hours">
+            ☀ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
         </div>
     </div>
 
-    <div class="form-v3">
-        <div class="limit-v3">
-            <label class="label-v3">姓名 / Name</label>
-            <input type="text" class="input-v3" placeholder="請輸入您的姓名">
-            
-            <label class="label-v3">電子信箱 / E-mail</label>
-            <input type="email" class="input-v3" placeholder="runner@example.com">
+    <!-- 表單區塊 -->
+    <div class="form-section">
+        <form>
+            <div class="form-group">
+                <label>姓名 / Name</label>
+                <input type="text" placeholder="請輸入您的姓名">
+            </div>
 
-            <label class="label-v3">跑者屬性</label>
-            <select class="input-v3">
-                <option>新手跑者</option>
-                <option>馬拉松選手</option>
-            </select>
+            <div class="form-group">
+                <label>電子信箱 / E-mail</label>
+                <input type="email" placeholder="runner@example.com">
+            </div>
 
-            <div class="row-v3">
-                <div class="col-v3">
-                    <label class="label-v3">跑步最佳成績 (PB)</label>
-                    <input type="text" class="input-v3" placeholder="例如：全馬3:30:00">
+            <div class="form-group">
+                <label>跑者屬性</label>
+                <select>
+                    <option value="" disabled selected>請選擇</option>
+                    <option value="beginner">新手跑者</option>
+                    <option value="marathon">馬拉松選手</option>
+                </select>
+            </div>
+
+            <div class="flex-group">
+                <div class="form-group flex-item">
+                    <label>跑步最佳成績 (PB)</label>
+                    <input type="text" placeholder="例如：全馬3:30:00">
                 </div>
-                <div class="col-v3">
-                    <label class="label-v3">目標成績</label>
-                    <input type="text" class="input-v3" placeholder="例如：全馬2:59:59">
+                <div class="form-group flex-item">
+                    <label>目標成績</label>
+                    <input type="text" placeholder="例如：全馬2:59:59">
                 </div>
             </div>
 
-            <label class="label-v3">慣用穿戴配備</label>
-            <input type="text" class="input-v3" placeholder="例如：Garmin, Apple Watch, Coros">
+            <div class="form-group">
+                <label>慣用穿戴配備</label>
+                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
+            </div>
 
-            <label class="label-v3">您的問題</label>
-            <textarea class="input-v3" style="height: 100px; width: 85% !important;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
-            
-            <button type="submit" class="btn-v3">送出表單</button>
-        </div>
+            <div class="form-group">
+                <label>您的問題</label>
+                <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
+            </div>
+        </form>
     </div>
+</div>
 
 </body>
 </html>
