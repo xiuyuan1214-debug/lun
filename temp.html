@@ -4,31 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跑者服務中心</title>
-    
     <style>
-        /* 這裡放你截圖 IMG_5365.jpg 裡面的那些 CSS 代碼 */
+        /* 基本設定 */
         body {
             margin: 0;
             padding: 0;
-            font-family: "PingFang TC", sans-serif;
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
             background-color: #f9f9f9;
             color: #5d4a26;
             line-height: 1.6;
         }
-        /* ... 其他 CSS ... */
+
+        /* 上方黃色區塊 */
+        .service-header {
+            background-color: #fdf6d8;
+            padding: 40px 25px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .service-header h1 {
+            font-size: 24px;
+            margin: 0 0 5px 0;
+        }
+
+        .en-title {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #a89a78;
+            margin: 0 0 30px 0;
+            text-transform: uppercase;
+        }
+
+        .content-text h3 {
+            margin: 0 0 15px 0;
+            color: #8c764b;
+            font-size: 18px;
+        }
+
+        .content-text p {
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #e2d8b5;
+            margin: 30px 0 15px 0;
+        }
+
+        .service-time {
+            font-size: 12px;
+            color: #a89a78;
+            margin: 0;
+        }
+
+        /* 下方表單區塊 */
+        .form-container {
+            background-color: #ffffff;
+            margin-top: -15px;
+            padding: 30px 25px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #eee7d5;
+            border-radius: 10px;
+            background-color: #fffef9;
+            box-sizing: border-box;
+            font-size: 14px;
+            color: #5d4a26;
+            outline: none;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        ::placeholder {
+            color: #ccc;
+        }
     </style>
 </head>
 <body>
 
-    <!-- 把之前的 HTML 內容全部貼在 <body> 標籤裡面 -->
     <header class="service-header">
         <h1>跑者服務中心</h1>
-        <!-- ... 略 ... -->
+        <p class="en-title">RUNNER SERVICE CENTER</p>
+        
+        <div class="content-text">
+            <h3>讓我們聽見您的腳步聲</h3>
+            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
+            <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
+            <p>讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
+        </div>
+
+        <hr>
+        <p class="service-time">☀ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</p>
     </header>
 
     <main class="form-container">
         <form>
-            <!-- ... 表單內容 ... -->
+            <div class="form-group">
+                <label>姓名 / Name</label>
+                <input type="text" placeholder="請輸入您的姓名">
+            </div>
+
+            <div class="form-group">
+                <label>電子信箱 / E-mail</label>
+                <input type="email" placeholder="runner@example.com">
+            </div>
+
+            <div class="form-group">
+                <label>跑者屬性</label>
+                <select>
+                    <option>新手跑者</option>
+                    <option>進階跑者</option>
+                    <option>馬拉松選手</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>跑步最佳成績 (PB)</label>
+                    <input type="text" placeholder="例如：全馬3:30:00">
+                </div>
+                <div class="form-group">
+                    <label>目標成績</label>
+                    <input type="text" placeholder="例如：全馬2:59:59">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>慣用穿戴配備</label>
+                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
+            </div>
+
+            <div class="form-group">
+                <label>您的問題</label>
+                <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
+            </div>
         </form>
     </main>
 
