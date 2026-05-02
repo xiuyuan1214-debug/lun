@@ -12,7 +12,7 @@
             color: #4a3c31;
         }
 
-        /* 導覽列：修正跳轉功能 */
+        /* 導覽列：具備點擊跳轉功能 */
         .nav-bar {
             background-color: #333333;
             padding: 10px 20px;
@@ -27,16 +27,10 @@
             letter-spacing: 1px;
             padding: 5px;
             cursor: pointer;
-            transition: color 0.2s;
         }
-        .nav-item:hover {
-            color: #b5a48d;
-        }
-        .nav-item:active {
-            opacity: 0.6;
-        }
+        .nav-item:hover { color: #b5a48d; }
 
-        /* 頂部黃色區域 */
+        /* 頂部區域 */
         .header-section {
             background-color: #fff9e6;
             padding: 30px 20px;
@@ -56,6 +50,7 @@
         .title-main { font-size: 20px; margin: 0; font-weight: bold; }
         .title-en { font-size: 10px; color: #b5a48d; letter-spacing: 2px; margin-top: 5px; }
 
+        /* 關鍵修正：統一文字大小為 14px */
         .slogan { 
             font-size: 14px; 
             font-weight: bold; 
@@ -63,17 +58,20 @@
             margin-bottom: 12px; 
         }
 
-        /* 嚴格保留所有原始文字 */
-        .intro-p { font-size: 13px; line-height: 1.7; margin-bottom: 12px; }
+        .intro-p { 
+            font-size: 14px; 
+            line-height: 1.7; 
+            margin-bottom: 12px; 
+        }
 
         .service-hours { 
-            font-size: 10px; 
+            font-size: 11px; 
             color: #b5a48d; 
             margin-top: 20px;
             display: block;
         }
 
-        /* 表單區域：極致縮小框框 */
+        /* 表單區域：維持縮小的框框 */
         .form-section {
             padding: 20px 20px;
             width: 100%;
@@ -88,13 +86,12 @@
             color: #4a3c31;
         }
 
-        /* 修正：padding 調至極窄 3px，高度大幅壓縮 */
         .input-box {
             width: 100%;
             box-sizing: border-box;
             border: 1px solid #eeeeee;
             border-radius: 4px;
-            padding: 3px 10px; 
+            padding: 3px 10px; /* 極窄高度 */
             font-size: 13px;
             margin-bottom: 10px; 
             outline: none;
@@ -137,7 +134,6 @@
 </head>
 <body>
 
-    <!-- 導覽列：已加入連結路徑 -->
     <div class="nav-bar">
         <a href="resume.html" class="nav-item">教練資歷</a>
         <a href="course.html" class="nav-item">課程簡介</a>
@@ -153,9 +149,9 @@
                 <div class="title-en">RUNNER SERVICE CENTER</div>
             </div>
             
+            <!-- 文字大小統一為 14px -->
             <div class="slogan">讓我們聽見您の腳步聲</div>
             
-            <!-- 完整補回文字 -->
             <p class="intro-p">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
             <p class="intro-p">您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
             <p class="intro-p">讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
