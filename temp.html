@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跑者服務中心</title>
     <style>
-        /* 基本設定 */
         body {
             margin: 0;
             padding: 0;
@@ -15,19 +14,18 @@
             line-height: 1.8;
         }
 
-        /* 上方黃色區塊 - 強化標題感 */
+        /* 上方黃色區塊：凸顯標題 */
         .service-header {
             background-color: #fdf6d8;
-            padding: 60px 30px; /* 增加上下間距讓標題更透氣 */
+            padding: 60px 30px;
             border-radius: 0 0 25px 25px;
-            text-align: left;
         }
 
         .main-title {
-            font-size: 36px; /* 放大主標題 */
+            font-size: 36px;
             margin: 0;
-            font-weight: 900; /* 加重字體重量 */
-            color: #4a3b1e; /* 深一點的顏色更穩重 */
+            font-weight: 900;
+            color: #4a3b1e;
             display: block;
         }
 
@@ -37,24 +35,21 @@
             color: #a89a78;
             margin: 5px 0 35px 0;
             text-transform: uppercase;
-            font-weight: bold;
         }
 
-        /* 凸顯第二行文字 */
         .highlight-title {
-            font-size: 24px; /* 放大字體 */
+            font-size: 24px;
             font-weight: 800;
-            color: #5d4a26; /* 使用深褐色凸顯 */
+            color: #5d4a26;
             margin-bottom: 25px;
             display: block;
-            border-left: 5px solid #5d4a26; /* 左側加入裝飾線增加設計感 */
+            border-left: 6px solid #5d4a26;
             padding-left: 15px;
         }
 
         .content-text p {
             font-size: 16px;
             margin-bottom: 20px;
-            text-align: justify;
         }
 
         hr {
@@ -68,7 +63,7 @@
             color: #a89a78;
         }
 
-        /* 下方表單區塊 */
+        /* 表單區塊：統一文字大小 */
         .form-container {
             background-color: #ffffff;
             margin-top: -20px;
@@ -80,28 +75,28 @@
             margin-bottom: 25px;
         }
 
+        /* 關鍵：統一標籤與內容的字體大小 */
         .form-group label {
             display: block;
             font-weight: bold;
             margin-bottom: 12px;
-            font-size: 16px; /* 統一標籤大小 */
+            font-size: 18px; /* 統一標題大小 */
+            color: #5d4a26;
         }
 
-        /* 統一所有表單欄位文字大小與樣式 */
         input[type="text"],
         input[type="email"],
         select,
         textarea {
             width: 100%;
-            padding: 14px 15px; /* 統一內距 */
+            padding: 15px;
             border: 1px solid #eee7d5;
-            border-radius: 10px;
+            border-radius: 12px;
             background-color: #fffef9;
             box-sizing: border-box;
-            font-size: 16px; /* 統一文字大小為 16px */
+            font-size: 16px; /* 統一輸入框文字大小 */
             color: #5d4a26;
             outline: none;
-            font-family: inherit; /* 確保字體一致 */
         }
 
         .form-row {
@@ -118,9 +113,9 @@
             resize: none;
         }
 
-        /* 驗證碼區塊精修 */
+        /* 驗證碼區塊：縮小並統一文字 */
         .captcha-container {
-            max-width: 320px;
+            max-width: 350px;
         }
 
         .captcha-row {
@@ -130,24 +125,22 @@
         }
 
         .captcha-input {
-            width: 150px !important; /* 保持較窄格式 */
-            font-size: 16px !important; /* 強制與其他欄位字體一致 */
+            width: 130px !important;
+            font-size: 16px !important;
         }
 
         .captcha-code {
             background-color: #eee7d5;
             color: #5d4a26;
-            padding: 10px 18px;
+            padding: 10px 20px;
             font-weight: bold;
             font-style: italic;
             letter-spacing: 5px;
-            border-radius: 8px;
+            border-radius: 10px;
             border: 1px dashed #a89a78;
             font-size: 18px;
-            white-space: nowrap;
         }
 
-        /* 送出按鈕 */
         .submit-container {
             text-align: center;
             margin-top: 40px;
@@ -164,16 +157,6 @@
             cursor: pointer;
             transition: 0.3s;
         }
-
-        .submit-btn:hover {
-            background-color: #4a3b1e;
-            transform: scale(1.05);
-        }
-
-        ::placeholder {
-            color: #ccc;
-            font-size: 16px; /* 提示文字也統一大小 */
-        }
     </style>
 </head>
 <body>
@@ -181,16 +164,12 @@
     <header class="service-header">
         <span class="main-title">跑者服務中心</span>
         <p class="en-title">RUNNER SERVICE CENTER</p>
-        
         <div class="content-text">
             <span class="highlight-title">讓我們聽見您の腳步聲</span>
-            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
-            <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
-            <p>讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
+            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮...</p>
         </div>
-
         <hr>
-        <p class="service-time">☀ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</p>
+        <p class="service-time">☀ 服務時間：週一至週五 09:00 - 18:00</p>
     </header>
 
     <main class="form-container">
@@ -205,15 +184,6 @@
                 <input type="email" placeholder="runner@example.com">
             </div>
 
-            <div class="form-group">
-                <label>跑者屬性</label>
-                <select>
-                    <option>新手跑者</option>
-                    <option>進階跑者</option>
-                    <option>馬拉松選手</option>
-                </select>
-            </div>
-
             <div class="form-row">
                 <div class="form-group">
                     <label>跑步最佳成績 (PB)</label>
@@ -226,16 +196,11 @@
             </div>
 
             <div class="form-group">
-                <label>慣用穿戴配備</label>
-                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
-            </div>
-
-            <div class="form-group">
                 <label>您的問題</label>
                 <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
 
-            <!-- 驗證碼：保持縮小但字體統一 -->
+            <!-- 驗證碼：標題大小與上方統一 -->
             <div class="form-group captcha-container">
                 <label>驗證碼：</label>
                 <div class="captcha-row">
@@ -249,6 +214,5 @@
             </div>
         </form>
     </main>
-
 </body>
 </html>
