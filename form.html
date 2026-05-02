@@ -4,52 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跑者服務中心 | 聯絡我們</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        /* 確保選單的基本外觀 */
-        .nav-bar {
-            background-color: #333;
-            padding: 12px 20px;
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
+        body { margin: 0; padding: 0; font-family: -apple-system, "Noto Sans TC", sans-serif; background-color: #ffffff; color: #4a3c31; }
+        
+        /* 導覽列預設樣式 */
+        .nav-bar { background-color: #333333; padding: 12px 20px; display: flex; justify-content: center; gap: 20px; }
+        .nav-item { color: #ffffff; text-decoration: none; font-size: 14px; cursor: pointer; }
+        
+        /* 頂部黃底區域 */
+        .header-section { 
+            background-color: #fff9e6; 
+            padding: 20px 20px 15px 20px; 
+            text-align: center; 
+            width: 100%;
+            box-sizing: border-box;
         }
-        .nav-item {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .header-section {
-            background-color: #ff9e6; /* 溫暖的淺黃背景 */
-            padding: 30px 20px;
-            text-align: center;
-        }
-        .content-limit {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-        }
+        
+        .content-limit { max-width: 500px; margin: 0 auto; text-align: left; }
+        .title-main { font-size: 19px; font-weight: bold; margin-bottom: 15px; text-align: center; color: #2d241d; }
+        .slogan-bold { font-size: 14px; font-weight: bold; color: #2d241d; margin-bottom: 8px; }
+        .intro-p { font-size: 14px; line-height: 1.6; margin-bottom: 8px; color: #4a3c31; }
+        
+        /* 服務時間 - 再次縮小字體至 10px */
+        .service-hours { font-size: 10px; color: #b5a48d; margin-top: 15px; opacity: 0.8; }
+
+        /* 表單區域 */
+        .form-section { padding: 15px 20px; }
+        .field-label { font-size: 11px; font-weight: bold; display: block; margin-bottom: 4px; color: #4a3c31; }
+        .input-box { width: 100%; box-sizing: border-box; border: 1px solid #eeeeee; border-radius: 4px; padding: 8px 12px; font-size: 14px; margin-bottom: 12px; outline: none; display: block; background: #fff; }
+        
+        /* 驗證碼樣式 */
+        .captcha-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+        .captcha-code { background-color: #f2ede4; padding: 6px 12px; border-radius: 4px; font-weight: bold; letter-spacing: 2px; font-size: 14px; }
+        .refresh-icon { cursor: pointer; font-size: 18px; color: #b5a48d; }
+        
+        /* 送出按鈕 */
+        .submit-btn { width: 100%; background-color: #4a3c31; color: white; border: none; padding: 12px; font-size: 15px; font-weight: bold; border-radius: 4px; cursor: pointer; }
+        
+        ::placeholder { color: #cccccc; }
     </style>
 </head>
 <body>
 
-    <!-- 1. 導覽列位置 (由 nav_bar.js 注入內容) -->
+    <!-- 導覽列位置 -->
     <div id="navBar"></div>
 
     <div class="header-section">
-        <h1>聯絡我們</h1>
-        <p>希望這裡不只是網站，更是跑者們的補給站</p>
+        <div class="content-limit">
+            <div class="title-main">跑者服務中心</div>
+            <div class="slogan-bold">讓我們聽見您の腳步聲</div>
+            
+            <p class="intro-p">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
+            <p class="intro-p">您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
+            <p class="intro-p">讓我們一起朝更好的方向邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。</p>
+            <p class="intro-p">希望這裡不只是網站，更是跑者們的補給站。</p>
+            
+            <!-- 這裡字體變更小了 -->
+            <div class="service-hours">☀️服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
+        </div>
     </div>
 
-    <div class="content-limit">
-        <!-- 這裡放您原本的表單內容 -->
-        <p>諮詢預約表單正在準備中...</p>
+    <div class="form-section">
+        <div class="content-limit">
+            <label class="field-label">姓名 / Name</label>
+            <input type="text" class="input-box" placeholder="請輸入您的姓名">
+
+            <label class="field-label">電子信箱 / E-mail</label>
+            <input type="email" class="input-box" placeholder="runner@gmail.com">
+
+            <label class="field-label">跑者屬性 / Runner Type</label>
+            <select class="input-box">
+                <option value="">請選擇 / Please Select</option>
+                <option>新手跑者 / Beginner</option>
+                <option>半馬跑者 / Half Marathoner</option>
+                <option>全馬跑者 / Full Marathoner</option>
+                <option>超馬/越野跑者 / Ultra & Trail Runner</option>
+            </select>
+
+            <label class="field-label">最佳成績 / Personal Best</label>
+            <input type="text" class="input-box" placeholder="例如：全馬3:30:00">
+
+            <label class="field-label">目標成績 / Target Goal</label>
+            <input type="text" class="input-box" placeholder="例如：全馬2:59:59">
+
+            <label class="field-label">穿戴配備 / Wearable Device</label>
+            <input type="text" class="input-box" placeholder="例如：Garmin, Apple Watch, Coros">
+
+            <label class="field-label">您的問題 / Your Inquiry</label>
+            <textarea class="input-box" rows="4" style="height: auto; resize: vertical;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+
+            <label class="field-label">驗證碼 / Verification Code</label>
+            <div class="captcha-row">
+                <input type="text" class="input-box" style="width: 90px; margin-bottom: 0;" placeholder="輸入碼">
+                <div class="captcha-code" id="captchaCode">A 5 2 G</div>
+                <span class="refresh-icon" onclick="refreshCaptcha()">↻</span>
+            </div>
+
+            <button type="submit" class="submit-btn">送出表單 / Submit</button>
+        </div>
     </div>
 
-    <!-- 2. 載入導覽列指令 -->
+    <!-- 載入選單指令 -->
     <script src="nav_bar.js"></script>
 
+    <script>
+        function refreshCaptcha() {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+            let newCode = '';
+            for (let i = 0; i < 4; i++) {
+                newCode += chars.charAt(Math.floor(Math.random() * chars.length)) + (i < 3 ? ' ' : '');
+            }
+            document.getElementById('captchaCode').innerText = newCode;
+        }
+        window.onload = refreshCaptcha;
+    </script>
 </body>
 </html>
