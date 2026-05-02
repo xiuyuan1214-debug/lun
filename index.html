@@ -18,25 +18,24 @@
         .title-main { font-size: 19px; font-weight: bold; margin-bottom: 12px; text-align: center; color: #2d241d; }
         .intro-p { font-size: 14px; line-height: 1.6; margin-bottom: 8px; color: #4a3c31; }
         
-        /* --- 服務時間縮到最小 --- */
+        /* --- 終極縮小方案 --- */
         .service-hours { 
-            font-size: 9px !important;  /* 極小字體 */
+            font-size: 10px !important; 
             color: #b5a48d; 
-            margin-top: 15px; 
+            margin-top: 10px; 
             text-align: left; 
-            transform: scale(0.9);      /* 強制視覺再縮小 */
-            transform-origin: left;
+            /* 使用縮放功能強制突破瀏覽器最小字體限制 */
+            display: inline-block;
+            transform: scale(0.8); 
+            transform-origin: left top;
+            white-space: nowrap;
             opacity: 0.7;
         }
 
-        /* 表單區域 */
+        /* 表單樣式 */
         .form-section { padding: 15px 20px; }
         .field-label { font-size: 11px; font-weight: bold; display: block; margin-bottom: 4px; color: #4a3c31; }
         .input-box { width: 100%; box-sizing: border-box; border: 1px solid #eeeeee; border-radius: 4px; padding: 8px 12px; font-size: 14px; margin-bottom: 12px; outline: none; background: #fff; }
-        
-        .captcha-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
-        .captcha-code { background-color: #f2ede4; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 14px; }
-        
         .submit-btn { width: 100%; background-color: #4a3c31; color: white; border: none; padding: 12px; font-size: 15px; font-weight: bold; border-radius: 4px; cursor: pointer; }
     </style>
 </head>
@@ -47,11 +46,10 @@
     <div class="header-section">
         <div class="content-limit">
             <div class="title-main">跑者服務中心</div>
-            <p class="intro-p">無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷</p>
-            <p class="intro-p">您的回饋是我們進化的動力，您的提問是我們探索的方向，讓我們一起朝更好的方向邁進。</p>
-            <p class="intro-p">希望這裡不只是網站，更是跑者們的補給站 ◡̈
-            </p>
+            <p class="intro-p">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，歡迎聯繫我們唷 ◡̈</p>
+            <p class="intro-p">希望這裡不只是網站，更是跑者們的補給站。</p>
             
+            <!-- 這一行現在會縮到極小 -->
             <div class="service-hours">☀️服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
         </div>
     </div>
@@ -60,15 +58,9 @@
         <div class="content-limit">
             <label class="field-label">姓名 / Name</label>
             <input type="text" class="input-box">
-            <label class="field-label">電子信箱 / E-mail</label>
-            <input type="email" class="input-box">
+            
             <label class="field-label">您的問題 / Your Inquiry</label>
             <textarea class="input-box" rows="4"></textarea>
-            
-            <div class="captcha-row">
-                <input type="text" class="input-box" style="width: 80px; margin-bottom: 0;">
-                <div class="captcha-code">A 5 2 G</div>
-            </div>
 
             <button type="submit" class="submit-btn">送出表單 / Submit</button>
         </div>
