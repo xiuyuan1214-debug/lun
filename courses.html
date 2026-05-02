@@ -25,10 +25,10 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 區塊間的大間距 */
-        .wrapper { display: flex; flex-direction: column; gap: 60px; } 
+        /* 區塊間的巨大白色縫隙 */
+        .wrapper { display: flex; flex-direction: column; gap: 70px; } 
 
-        .section { width: 100%; padding: 80px 25px; }
+        .section { width: 100%; padding: 85px 25px; }
         .container { max-width: 500px; margin: 0 auto; }
 
         /* 顏色定義 */
@@ -40,11 +40,13 @@
         .text-green { color: #4e9a78; }
 
         .main-title { font-size: 26px; color: #333333; font-weight: 700; margin-bottom: 8px; text-align: center; }
+        
+        /* 英文副標題超粗體 */
         .sub-title { 
             font-size: 15px; 
             font-weight: 900; 
             letter-spacing: 1.5px; 
-            margin-bottom: 40px; 
+            margin-bottom: 45px; 
             text-align: center; 
             display: block; 
         }
@@ -52,7 +54,7 @@
         .card {
             background-color: #ffffff;
             border-radius: 12px;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
             display: flex;
             overflow: hidden;
             box-shadow: 0 2px 12px rgba(0,0,0,0.03);
@@ -63,39 +65,39 @@
         .bar-orange { background-color: #D97B30; }
         .bar-green { background-color: #4e9a78; }
 
-        .card-content { padding: 28px 22px; font-size: 16px; line-height: 1.8; color: #444444; }
-        /* 星星 𖤐 維持細體 */
+        .card-content { padding: 30px 22px; font-size: 16px; line-height: 1.8; color: #444444; }
         .star { color: #999999; font-size: 18px; margin-right: 5px; vertical-align: middle; font-weight: normal; }
 
         .list { list-style: none; }
         .list-item { 
             font-size: 14px; 
-            margin-bottom: 20px; 
+            margin-bottom: 22px; 
             color: #666666; 
             display: flex; 
             line-height: 1.6; 
         }
+        
+        /* 點靠近文字 */
         .dot { 
             font-size: 20px; 
-            margin-right: 4px; 
+            margin-right: 2px; 
             line-height: 0.8; 
             font-weight: 900; 
         }
 
-        /* 關鍵修正：列表冒號前的標題文字加粗 (如圖所示) */
+        /* 列表標題粗體修正 (對應 IMG_5347_2.jpg) */
         .list-title {
-            font-weight: 700;
-            color: #444444;
+            font-weight: 900; 
+            color: #1a1a1a; 
         }
 
-        .footer { padding: 120px 20px; text-align: center; }
+        .footer { padding: 130px 20px; text-align: center; }
         .btn { background-color: #333333; color: #ffffff; padding: 20px 80px; border-radius: 8px; display: inline-block; font-size: 16px; font-weight: 600; text-decoration: none; }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
-    <!-- 線上課表 -->
     <div class="section bg-blue">
         <div class="container">
             <h2 class="main-title">線上課表</h2>
@@ -113,7 +115,6 @@
         </div>
     </div>
 
-    <!-- 私人教學 -->
     <div class="section bg-red">
         <div class="container">
             <h2 class="main-title">私人教學</h2>
@@ -131,7 +132,6 @@
         </div>
     </div>
 
-    <!-- 企業包班 -->
     <div class="section bg-green">
         <div class="container">
             <h2 class="main-title">企業包班</h2>
@@ -153,6 +153,9 @@
     <p style="color:#999; font-size:14px; margin-bottom:35px;">讓我們一起跑出健康快樂的每一步 ᴗ̈</p>
     <a href="#" class="btn">預約一份溫暖的諮詢</a>
 </div>
+
+</body>
+</html>
 
 </body>
 </html>
