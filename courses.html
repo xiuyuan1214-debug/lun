@@ -13,133 +13,215 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="UTF-8">
-<style>
-    :root {
-        --warm-yellow: #FFF9E6;
-        --warm-beige: #FAF4E6;
-        --earth-brown: #7A6348;
-        --text-color: #5F554A;
-        --accent-gold: #E6D5A7;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --sun-yellow: #FFF9E6;
+            --warm-beige: #FAF4E6;
+            --earth-brown: #7A6348;
+            --text-dark: #5F554A;
+            --accent-gold: #E6D5A7;
+        }
 
-    body {
-        font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-        color: var(--text-color);
-        background-color: #FFFFFF;
-        line-height: 1.7;
-    }
+        body {
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            color: var(--text-dark);
+            background-color: #FFFFFF;
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+        }
 
-    .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 40px 20px;
-    }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-    /* --- 蜂巢核心區 (參考 IMG_5324_3.jpeg) --- */
-    .honeycomb-section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        margin-bottom: 60px;
-    }
+        /* --- 核心價值：蜂巢佈局 (參考 IMG_5324_3.jpeg) --- */
+        .honeycomb-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 80px;
+        }
 
-    .hex {
-        width: 280px;
-        height: 320px;
-        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 35px;
-        box-sizing: border-box;
-        text-align: center;
-    }
+        .hex-box {
+            width: 300px;
+            height: 340px;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+            box-sizing: border-box;
+        }
 
-    .hex-online { background: var(--warm-yellow); }
-    .hex-private { background: var(--warm-beige); }
-    .hex-corporate { background: #F5F2E9; }
+        .hex-online { background-color: var(--sun-yellow); }
+        .hex-private { background-color: var(--warm-beige); }
+        .hex-corporate { background-color: #F5F2E9; }
 
-    .hex-title {
-        font-weight: bold;
-        color: var(--earth-brown);
-        margin-bottom: 12px;
-        font-size: 1.1em;
-    }
+        .hex-title {
+            font-weight: 900;
+            color: var(--earth-brown);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
 
-    .hex-content {
-        font-size: 0.9em;
-        color: #72685E;
-    }
+        .hex-text {
+            font-size: 0.95em;
+            color: #72685E;
+        }
 
-    /* --- 圓形細項區 (參考 IMG_5323_3.jpg) --- */
-    .details-section {
-        background: #FFFEFB;
-        border-radius: 40px;
-        padding: 60px 40px;
-        border: 1px solid #F5F2E9;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 40px;
-    }
+        /* --- 詳細細項：圓形標籤 (參考 IMG_5323_3.jpg) --- */
+        .details-wrapper {
+            background: #FFFEFB;
+            border-radius: 50px;
+            padding: 60px 40px;
+            border: 1px solid #F2EEE5;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+        }
 
-    .service-group h3 {
-        text-align: center;
-        color: var(--earth-brown);
-        margin-bottom: 25px;
-        font-size: 1.3em;
-    }
+        .service-card h2 {
+            text-align: center;
+            font-size: 1.4em;
+            color: var(--earth-brown);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
 
-    .circle-wrap {
-        width: 260px;
-        height: 260px;
-        border: 2px solid var(--accent-gold);
-        border-radius: 50%;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 25px;
-        background: white;
-    }
+        .circle-content {
+            width: 280px;
+            height: 280px;
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background: white;
+            box-sizing: border-box;
+        }
 
-    .circle-wrap ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        font-size: 0.85em;
-    }
+        .circle-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.85em;
+            text-align: left;
+        }
 
-    .circle-wrap li {
-        margin-bottom: 8px;
-        position: relative;
-        padding-left: 15px;
-    }
+        .circle-content li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 15px;
+        }
 
-    .circle-wrap li::before {
-        content: "·";
-        position: absolute;
-        left: 0;
-        color: var(--earth-brown);
-        font-weight: bold;
-    }
+        .circle-content li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: var(--earth-brown);
+        }
 
-    .cta-button {
-        display: block;
-        width: fit-content;
-        margin: 50px auto 0;
-        background: var(--earth-brown);
-        color: white;
-        padding: 15px 50px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: bold;
-        box-shadow: 0 4px 15px rgba(122, 99, 72, 0.2);
-    }
-</style>
+        /* 底部裝飾與按鈕 */
+        .footer-cta {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-btn {
+            background: var(--earth-brown);
+            color: white;
+            padding: 18px 60px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            box-shadow: 0 5px 20px rgba(122, 99, 72, 0.2);
+        }
+    </style>
 </head>
+<body>
+
+<div class="container">
+    
+    <!-- 1. 核心重點：蜂巢結構 -->
+    <div class="honeycomb-grid">
+        <div class="hex-box hex-online">
+            <div class="hex-title">線上課表 核心重點</div>
+            <div class="hex-text">數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。</div>
+        </div>
+        <div class="hex-box hex-private">
+            <div class="hex-title">私人教學 核心價值</div>
+            <div class="hex-text">根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</div>
+        </div>
+        <div class="hex-box hex-corporate">
+            <div class="hex-title">企業包班 核心價值</div>
+            <div class="hex-text">職場健康與活力、團體共榮，將運動融入企業文化。</div>
+        </div>
+    </div>
+
+    <!-- 2. 詳細內容：圓形標籤 -->
+    <div class="details-wrapper">
+        
+        <!-- 線上課表細項 -->
+        <div class="service-card">
+            <h2>Online Programming</h2>
+            <div class="circle-content">
+                <ul>
+                    <li>週期化備賽規劃：針對馬拉松、半馬或10K 目標，科學化安排基礎期、強化期、巔峰期與減量期。</li>
+                    <li>數據即時反饋：串聯穿戴裝置數據，教練遠端即時監測訓練與恢復狀態。</li>
+                    <li>動態調整：根據每週訓練數據與跑者回報的狀態，隨時調整下週課表，避免運動傷害。</li>
+                    <li>線上諮詢機制：透過文字等方式，定期討論訓練成效，解答跑者在執行過程中的疑難雜症。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 私人教學細項 -->
+        <div class="service-card">
+            <h2>One-on-One Coaching</h2>
+            <div class="circle-content" style="background: var(--warm-beige);">
+                <ul>
+                    <li>跑姿校正：透過錄影回放與即時拆解分析，並根據跑者身體結構，使肌肉記憶正確動作，有效發揮跑步經濟性。</li>
+                    <li>體感配速建立：透過教練現場陪跑，協助跑者建立對各心率區間的配速感知。</li>
+                    <li>動態負荷調控：根據跑者當下的體力、疲勞程度等狀態，即時調整訓練強度。</li>
+                    <li>跑者專項強化引導：針對跑者較薄弱環節，設計輔助訓練，轉化為跑道上的推進力。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 企業包班細項 -->
+        <div class="service-card">
+            <h2>Corporate Group Training</h2>
+            <div class="circle-content">
+                <ul>
+                    <li>提升團隊凝聚力：在共同挑戰目標的過程中，建立跨部門的情感連結與默契。</li>
+                    <li>企業賽事推動：協助企業組隊參與路跑賽事，塑造健康正面的企業品牌形象。</li>
+                    <li>職場壓力紓解：透過團體運動釋放員工壓力，提升團隊韌性與工作效率。</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-cta">
+        <p style="color: #B5A48B; margin-bottom: 25px;">讓我們一起跑出健康快樂的每一步 ᴗ̈</p>
+        <a href="#" class="cta-btn">預約一份溫暖的諮詢</a>
+    </div>
+
+</div>
+
+</body>
+</html>
+
 <body>
 
 <div class="container">
