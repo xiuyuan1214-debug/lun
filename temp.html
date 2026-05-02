@@ -12,7 +12,7 @@
             color: #4a3c31;
         }
 
-        /* 頂部黃色區域：滿版無框 */
+        /* 頂部區域 */
         .header-section {
             background-color: #fff9e6;
             padding: 40px 20px;
@@ -33,16 +33,23 @@
         .title-main { font-size: 22px; margin: 0; font-weight: bold; }
         .title-en { font-size: 11px; color: #b5a48d; letter-spacing: 2px; margin-top: 5px; }
 
-        /* Slogan 顏色與樣式 */
+        /* Slogan 顏色變更：灰橄欖綠 */
         .slogan { 
             font-size: 15px; 
             font-weight: bold; 
-            color: #4a3c31; 
+            color: #6b705c; 
             margin-bottom: 15px; 
         }
 
         .intro-p { font-size: 14px; line-height: 1.8; margin-bottom: 15px; }
-        .service-hours { font-size: 11px; color: #b5a48d; margin-top: 25px; }
+
+        /* 太陽符號更靠近文字 (移除間隙) */
+        .service-hours { 
+            font-size: 11px; 
+            color: #b5a48d; 
+            margin-top: 25px; 
+            display: block; /* 改回 block 確保緊貼 */
+        }
 
         /* 表單區域 */
         .form-section {
@@ -51,7 +58,7 @@
             box-sizing: border-box;
         }
 
-        /* 關鍵修正：標題文字縮小至 11px，呈現極簡風格 */
+        /* 欄位標題 11px */
         .field-label {
             font-size: 11px; 
             font-weight: bold;
@@ -61,7 +68,6 @@
             letter-spacing: 0.8px;
         }
 
-        /* 輸入框樣式：圓角細框 */
         .input-box {
             width: 100%;
             box-sizing: border-box;
@@ -74,10 +80,8 @@
             display: block;
             background: #fff;
             color: #4a3c31;
-            font-family: inherit;
         }
 
-        /* 驗證碼區塊 */
         .captcha-row {
             display: flex;
             align-items: center;
@@ -101,10 +105,8 @@
             font-size: 18px;
             color: #b5a48d;
             cursor: pointer;
-            user-select: none;
         }
 
-        /* 送出按鈕 */
         .submit-btn {
             width: 100%;
             background-color: #4a3c31;
@@ -115,10 +117,6 @@
             font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
-            transition: opacity 0.2s;
-        }
-        .submit-btn:active {
-            opacity: 0.9;
         }
 
         ::placeholder { color: #d1d1d1; }
@@ -133,11 +131,11 @@
                 <div class="title-en">RUNNER SERVICE CENTER</div>
             </div>
             
-            <div class="slogan">讓我們聽見您的腳步聲</div>
+            <div class="slogan">讓我們聽見您の腳步聲</div>
             <p class="intro-p">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
             <p class="intro-p">您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
             <p class="intro-p">讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
-            <div class="service-hours">☀️ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
+            <div class="service-hours">☀️服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
         </div>
     </div>
 
@@ -173,7 +171,7 @@
             <div class="captcha-row">
                 <input type="text" class="input-box captcha-input" placeholder="輸入碼">
                 <div class="captcha-code-box">A 5 2 G</div>
-                <div class="refresh-icon" title="重新整理">↻</div>
+                <div class="refresh-icon">↻</div>
             </div>
 
             <button type="submit" class="submit-btn">送出表單</button>
