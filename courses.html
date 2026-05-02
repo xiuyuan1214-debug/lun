@@ -29,24 +29,21 @@
             margin: 0 auto;
         }
 
-        /* 服務區塊：徹底無邊框、無底線、無裝飾 */
+        /* 服務區塊：移除所有邊框與裝飾線 */
         .card {
             border-radius: 20px;
             padding: 40px 30px;
             margin-bottom: 40px;
             border: none !important;
-            box-shadow: none !important;
         }
 
-        /* 標題：徹底禁用所有橫線樣式 */
+        /* 標題：徹底禁用底線 */
         .title-main {
             font-size: 26px;
             font-weight: bold;
             margin: 0 0 10px 0;
             color: #2c3e50;
             border: none !important;
-            padding: 0 !important;
-            text-decoration: none !important;
         }
         .title-sub {
             font-size: 14px;
@@ -56,7 +53,6 @@
             font-weight: 600;
             display: block;
             border: none !important;
-            padding: 0 !important;
         }
 
         /* 核心方塊：僅保留左側色條 */
@@ -93,20 +89,20 @@
             font-size: 15px;
             margin-bottom: 15px;
             line-height: 1.7;
-            padding-left: 10px; /* 縮小間距 */
+            padding-left: 12px; 
             position: relative;
             color: #4a4a4a;
         }
         .detail-item::before {
             content: "·";
             position: absolute;
-            left: -5px; /* 讓點點更靠近文字 */
+            left: 0;
             font-weight: bold;
             font-size: 24px;
             line-height: 0.8;
         }
 
-        /* 顏色設定 */
+        /* 主題顏色 */
         .online { background-color: #f1f7fd; }
         .online .title-sub { color: #3498db; }
         .online .highlight-box { border-left-color: #3498db !important; }
@@ -191,6 +187,9 @@
     </div>
 
 </div>
+
+</body>
+</html>
 
 </body>
 </html>
