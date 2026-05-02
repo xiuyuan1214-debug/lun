@@ -12,7 +12,26 @@
             color: #4a3c31;
         }
 
-        /* 頂部區域 */
+        /* 新增：頂部導覽列 (黑色背景區塊) */
+        .nav-bar {
+            background-color: #333333;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .nav-item {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        .nav-item:hover {
+            opacity: 0.8;
+        }
+
+        /* 頂部黃色區域 */
         .header-section {
             background-color: #fff9e6;
             padding: 40px 20px;
@@ -33,7 +52,7 @@
         .title-main { font-size: 22px; margin: 0; font-weight: bold; }
         .title-en { font-size: 11px; color: #b5a48d; letter-spacing: 2px; margin-top: 5px; }
 
-        /* Slogan 顏色配合整體配色：深咖啡色 */
+        /* Slogan：配合整體深咖啡色 */
         .slogan { 
             font-size: 15px; 
             font-weight: bold; 
@@ -123,6 +142,15 @@
     </style>
 </head>
 <body>
+
+    <!-- 重新放回導覽列 -->
+    <div class="nav-bar">
+        <a class="nav-item">教練資歷</a>
+        <a class="nav-item">課程簡介</a>
+        <a class="nav-item">配速工具</a>
+        <a class="nav-item">訓練日誌</a>
+        <a class="nav-item">賽事日誌</a>
+    </div>
 
     <div class="header-section">
         <div class="content-limit">
