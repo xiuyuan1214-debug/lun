@@ -7,23 +7,25 @@
     <style>
         body { margin: 0; padding: 0; font-family: -apple-system, "Noto Sans TC", sans-serif; background-color: #ffffff; color: #4a3c31; }
         
-        /* 標題區域 */
+        /* 標題區域：加回完整英文並恢復原狀 */
         .header-section { background-color: #fff9e6; padding: 12px 10px 8px 10px; text-align: center; width: 100%; box-sizing: border-box; }
         
-        /* 極限縮小容器寬度 */
+        /* 極限縮小容器寬度（恢復您要求的窄版） */
         .content-limit { max-width: 280px; margin: 0 auto; text-align: left; } 
         
-        .title-main { font-size: 17px; font-weight: bold; margin-bottom: 2px; text-align: center; color: #2d241d; }
-        .title-sub { font-size: 10px; text-align: center; color: #b5a48d; margin-bottom: 8px; font-weight: normal; }
+        /* 恢復標題原狀 */
+        .title-main { font-size: 18px; font-weight: bold; margin-bottom: 2px; text-align: center; color: #2d241d; }
+        .title-sub { font-size: 11px; text-align: center; color: #b5a48d; margin-bottom: 12px; font-weight: normal; }
+        
         .intro-p { font-size: 11px; line-height: 1.4; margin-bottom: 4px; color: #4a3c31; }
         
-        /* --- 服務時間：極致微縮方案 (0.45倍) --- */
+        /* --- 服務時間：極致微縮方案 (0.4倍) --- */
         .service-hours { 
             font-size: 10px !important; 
             color: #b5a48d; 
             margin-top: 5px; 
             display: inline-block;
-            transform: scale(0.45); 
+            transform: scale(0.4); 
             transform-origin: left top;
             opacity: 0.4;
             white-space: nowrap;
@@ -43,7 +45,7 @@
             margin-bottom: 6px; 
             outline: none; 
             background: #fff;
-            height: 24px; /* 極限高度 */
+            height: 24px; 
         }
         
         textarea.input-box { height: auto; min-height: 40px; }
@@ -66,6 +68,9 @@
 </head>
 <body>
 
+    <!-- 由外部載入的導覽列 -->
+    <div id="navBar"></div>
+
     <div class="header-section">
         <div class="content-limit">
             <div class="title-main">跑者服務中心</div>
@@ -74,6 +79,7 @@
             <p class="intro-p">無論突破成績或處於低潮，歡迎聯繫我們唷 ◡̈</p>
             <p class="intro-p">您的回饋是我們進化的動力，這裡是跑者的補給站。</p>
             
+            <!-- 服務時間極微縮小 -->
             <div class="service-hours">☀️服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
         </div>
     </div>
@@ -98,5 +104,7 @@
         </div>
     </div>
 
+    <!-- 啟動 JS 選單連結 -->
+    <script src="nav_bar.js"></script>
 </body>
 </html>
