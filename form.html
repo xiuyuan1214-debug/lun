@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跑者服務中心 | 聯絡我們</title>
     <style>
+        /* 基礎設定 */
         body { margin: 0; padding: 0; font-family: -apple-system, "Noto Sans TC", sans-serif; background-color: #ffffff; color: #4a3c31; }
         
-        /* 導覽列預設樣式 */
+        /* 導覽列樣式修正 - 確保顏色不會變紫色 */
         .nav-bar { background-color: #333333; padding: 12px 20px; display: flex; justify-content: center; gap: 20px; }
-        .nav-item { color: #ffffff; text-decoration: none; font-size: 14px; cursor: pointer; }
-        
-        /* 頂部黃底區域 */
+        .nav-item { 
+            color: #ffffff !important; /* 強制白色 */
+            text-decoration: none !important; /* 去除底線 */
+            font-size: 14px; 
+            cursor: pointer; 
+        }
+        .nav-item:visited { color: #ffffff !important; } /* 防止變紫色 */
+        .nav-item:hover { opacity: 0.8; }
+
+        /* 頂部區域 */
         .header-section { 
             background-color: #fff9e6; 
             padding: 20px 20px 15px 20px; 
@@ -25,7 +33,7 @@
         .slogan-bold { font-size: 14px; font-weight: bold; color: #2d241d; margin-bottom: 8px; }
         .intro-p { font-size: 14px; line-height: 1.6; margin-bottom: 8px; color: #4a3c31; }
         
-        /* 服務時間 - 再次縮小字體至 10px */
+        /* 服務時間 - 縮小字體 */
         .service-hours { font-size: 10px; color: #b5a48d; margin-top: 15px; opacity: 0.8; }
 
         /* 表單區域 */
@@ -46,7 +54,7 @@
 </head>
 <body>
 
-    <!-- 導覽列位置 -->
+    <!-- 導覽列容器 -->
     <div id="navBar"></div>
 
     <div class="header-section">
@@ -59,7 +67,6 @@
             <p class="intro-p">讓我們一起朝更好的方向邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。</p>
             <p class="intro-p">希望這裡不只是網站，更是跑者們的補給站。</p>
             
-            <!-- 這裡字體變更小了 -->
             <div class="service-hours">☀️服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
         </div>
     </div>
@@ -104,7 +111,7 @@
         </div>
     </div>
 
-    <!-- 載入選單指令 -->
+    <!-- 載入外部選單 -->
     <script src="nav_bar.js"></script>
 
     <script>
