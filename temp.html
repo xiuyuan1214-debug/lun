@@ -12,33 +12,33 @@
             color: #4a3c31;
         }
 
-        /* 導覽列：修正為可點擊樣式 */
+        /* 導覽列：修正跳轉連結與點擊效果 */
         .nav-bar {
             background-color: #333333;
-            padding: 12px 20px;
+            padding: 10px 20px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 18px;
         }
         .nav-item {
             color: #ffffff;
-            text-decoration: none; /* 移除底線 */
+            text-decoration: none;
             font-size: 13px;
             letter-spacing: 1px;
-            cursor: pointer;
-            transition: opacity 0.2s; /* 讓點擊反應更順滑 */
+            padding: 5px;
+            transition: color 0.2s;
+        }
+        /* 懸停與點擊的視覺反應 */
+        .nav-item:hover {
+            color: #b5a48d;
         }
         .nav-item:active {
-            opacity: 0.5; /* 按下去時變淡，讓使用者知道有點到 */
-        }
-        .nav-item:hover {
-            opacity: 0.8;
+            opacity: 0.6;
         }
 
-        /* 頂部黃色區域 */
         .header-section {
             background-color: #fff9e6;
-            padding: 35px 20px;
+            padding: 30px 20px;
             width: 100%;
             box-sizing: border-box;
         }
@@ -50,7 +50,7 @@
 
         .title-group {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         .title-main { font-size: 20px; margin: 0; font-weight: bold; }
         .title-en { font-size: 10px; color: #b5a48d; letter-spacing: 2px; margin-top: 5px; }
@@ -59,21 +59,21 @@
             font-size: 14px; 
             font-weight: bold; 
             color: #4a3c31; 
-            margin-bottom: 12px; 
+            margin-bottom: 10px; 
         }
 
-        .intro-p { font-size: 13px; line-height: 1.7; margin-bottom: 12px; }
+        .intro-p { font-size: 13px; line-height: 1.6; margin-bottom: 10px; }
 
         .service-hours { 
             font-size: 10px; 
             color: #b5a48d; 
-            margin-top: 20px;
+            margin-top: 15px;
             display: block;
         }
 
-        /* 表單區域 */
+        /* 表單區域：大幅縮小框框 */
         .form-section {
-            padding: 25px 20px;
+            padding: 20px 20px;
             width: 100%;
             box-sizing: border-box;
         }
@@ -82,19 +82,19 @@
             font-size: 11px; 
             font-weight: bold;
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             color: #4a3c31;
-            letter-spacing: 0.5px;
         }
 
+        /* 關鍵修正：極致縮減高度與間距 */
         .input-box {
             width: 100%;
             box-sizing: border-box;
             border: 1px solid #eeeeee;
-            border-radius: 6px;
-            padding: 7px 12px;
+            border-radius: 4px;
+            padding: 5px 10px; /* 極小內距 */
             font-size: 13px;
-            margin-bottom: 14px;
+            margin-bottom: 10px; /* 極小欄位間距 */
             outline: none;
             display: block;
             background: #fff;
@@ -105,25 +105,20 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         .captcha-input {
-            width: 80px;
+            width: 70px;
             margin-bottom: 0;
         }
         .captcha-code-box {
             background-color: #f2ede4;
-            padding: 6px 12px;
-            border-radius: 6px;
+            padding: 5px 10px;
+            border-radius: 4px;
             font-style: italic;
             font-weight: bold;
             letter-spacing: 3px;
             font-size: 12px;
-        }
-        .refresh-icon {
-            font-size: 16px;
-            color: #b5a48d;
-            cursor: pointer;
         }
 
         .submit-btn {
@@ -131,14 +126,11 @@
             background-color: #4a3c31;
             color: white;
             border: none;
-            padding: 12px;
-            font-size: 15px;
+            padding: 10px;
+            font-size: 14px;
             font-weight: bold;
-            border-radius: 6px;
+            border-radius: 4px;
             cursor: pointer;
-        }
-        .submit-btn:active {
-            background-color: #332a22; /* 送出按鈕點擊後的顏色變化 */
         }
 
         ::placeholder { color: #d1d1d1; }
@@ -146,13 +138,13 @@
 </head>
 <body>
 
-    <!-- 修正後的導覽列連結 -->
+    <!-- 導覽列：已加入可點擊跳轉的 HTML 連結結構 -->
     <div class="nav-bar">
-        <a href="#" class="nav-item">教練資歷</a>
-        <a href="#" class="nav-item">課程簡介</a>
-        <a href="#" class="nav-item">配速工具</a>
-        <a href="#" class="nav-item">訓練日誌</a>
-        <a href="#" class="nav-item">賽事日誌</a>
+        <a href="resume.html" class="nav-item">教練資歷</a>
+        <a href="course.html" class="nav-item">課程簡介</a>
+        <a href="tools.html" class="nav-item">配速工具</a>
+        <a href="training.html" class="nav-item">訓練日誌</a>
+        <a href="races.html" class="nav-item">賽事日誌</a>
     </div>
 
     <div class="header-section">
@@ -161,10 +153,8 @@
                 <div class="title-main">跑者服務中心</div>
                 <div class="title-en">RUNNER SERVICE CENTER</div>
             </div>
-            
             <div class="slogan">讓我們聽見您の腳步聲</div>
             <p class="intro-p">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
-            <p class="intro-p">您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，請告訴我們。</p>
             <div class="service-hours">☀️服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
         </div>
     </div>
@@ -195,13 +185,13 @@
             <input type="text" class="input-box" placeholder="例如：Garmin, Apple Watch, Coros">
 
             <label class="field-label">您的問題</label>
-            <textarea class="input-box" rows="4" style="height: auto;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+            <textarea class="input-box" rows="3" style="height: auto;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
 
             <label class="field-label">驗證碼</label>
             <div class="captcha-row">
                 <input type="text" class="input-box captcha-input" placeholder="輸入碼">
                 <div class="captcha-code-box">A 5 2 G</div>
-                <div class="refresh-icon">↻</div>
+                <span>↻</span>
             </div>
 
             <button type="submit" class="submit-btn">送出表單</button>
