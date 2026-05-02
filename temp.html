@@ -1,46 +1,87 @@
-<div class="form-section">
-    <div class="content-limit">
-        <!-- 姓名 -->
-        <label class="field-label">姓名 / Name</label>
-        <input type="text" class="input-box" placeholder="請輸入您的姓名">
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跑者服務中心 | 聯絡我們</title>
+    <!-- 確保這裡有連結到您的 CSS 檔案，或直接使用下方的內嵌樣式 -->
+    <style>
+        body { margin: 0; padding: 0; font-family: -apple-system, "Noto Sans TC", sans-serif; background-color: #ffffff; color: #4a3c31; }
+        .nav-bar { background-color: #333333; padding: 12px 20px; display: flex; justify-content: center; gap: 20px; }
+        .nav-item { color: #ffffff; text-decoration: none; font-size: 14px; cursor: pointer; }
+        .header-section { background-color: #fff9e6; padding: 30px 20px; text-align: center; }
+        .content-limit { max-width: 500px; margin: 0 auto; text-align: left; }
+        .title-main { font-size: 20px; font-weight: bold; margin-bottom: 20px; text-align: center; }
+        .slogan-bold { font-size: 14px; font-weight: bold; color: #2d241d; margin-bottom: 12px; }
+        .intro-p { font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
+        .form-section { padding: 25px 20px; }
+        .field-label { font-size: 10px; font-weight: bold; display: block; margin-bottom: 3px; color: #4a3c31; }
+        .input-box { width: 100%; box-sizing: border-box; border: 1px solid #eeeeee; border-radius: 4px; padding: 6px 10px; font-size: 13px; margin-bottom: 15px; outline: none; display: block; background: #fff; }
+        .captcha-row { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+        .captcha-code { background-color: #f2ede4; padding: 5px 10px; border-radius: 4px; font-weight: bold; letter-spacing: 2px; }
+        .submit-btn { width: 100%; background-color: #4a3c31; color: white; border: none; padding: 12px; font-size: 14px; font-weight: bold; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
 
-        <!-- 電子信箱 -->
-        <label class="field-label">電子信箱 / E-mail</label>
-        <input type="email" class="input-box" placeholder="runner@example.com">
-
-        <!-- 跑者屬性 -->
-        <label class="field-label">跑者屬性 / Runner Type</label>
-        <select class="input-box">
-            <option>新手跑者 / Beginner</option>
-            <option>半馬跑者 / Half Marathoner</option>
-            <option>全馬跑者 / Full Marathoner</option>
-            <option>超馬/越野跑者 / Ultra & Trail Runner</option>
-        </select>
-
-        <!-- 最佳成績 -->
-        <label class="field-label">最佳成績 / Personal Best</label>
-        <input type="text" class="input-box" placeholder="例如：全馬3:30:00">
-
-        <!-- 目標成績 -->
-        <label class="field-label">目標成績 / Target Goal</label>
-        <input type="text" class="input-box" placeholder="例如：全馬2:59:59">
-
-        <!-- 穿戴配備 -->
-        <label class="field-label">穿戴配備 / Wearable Device</label>
-        <input type="text" class="input-box" placeholder="例如：Garmin, Apple Watch, Coros">
-
-        <!-- 您的問題 -->
-        <label class="field-label">您的問題 / Your Inquiry</label>
-        <textarea class="input-box" rows="4" style="height: auto;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
-
-        <!-- 驗證碼與送出按鈕維持原樣 -->
-        <label class="field-label">驗證碼 / Verification Code</label>
-        <div class="captcha-row">
-            <input type="text" class="input-box captcha-input" placeholder="輸入碼">
-            <div class="captcha-code-box">A 5 2 G</div>
-            <span style="cursor:pointer">↻</span>
-        </div>
-
-        <button type="submit" class="submit-btn">送出表單 / Submit</button>
+    <!-- 導覽列按鈕 -->
+    <div class="nav-bar">
+        <a href="resume.html" class="nav-item">教練資歷</a>
+        <a href="course.html" class="nav-item">課程簡介</a>
+        <a href="tools.html" class="nav-item">配速工具</a>
+        <a href="training.html" class="nav-item">訓練日誌</a>
+        <a href="races.html" class="nav-item">賽事日誌</a>
     </div>
-</div>
+
+    <div class="header-section">
+        <div class="content-limit">
+            <div class="title-main">跑者服務中心</div>
+            <div class="slogan-bold">讓我們聽見您の腳步聲</div>
+            <p class="intro-p">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
+            <p class="intro-p">您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
+            <p class="intro-p">讓我們一起朝更好的方向邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。</p>
+            <p class="intro-p">希望這裡不只是網站，更是跑者們的補給站。</p>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="content-limit">
+            <label class="field-label">姓名 / Name</label>
+            <input type="text" class="input-box" placeholder="請輸入您的姓名">
+
+            <label class="field-label">電子信箱 / E-mail</label>
+            <input type="email" class="input-box" placeholder="runner@example.com">
+
+            <label class="field-label">跑者屬性 / Runner Type</label>
+            <select class="input-box">
+                <option>新手跑者 / Beginner</option>
+                <option>半馬跑者 / Half Marathoner</option>
+                <option>全馬跑者 / Full Marathoner</option>
+                <option>超馬/越野跑者 / Ultra & Trail Runner</option>
+            </select>
+
+            <label class="field-label">最佳成績 / Personal Best</label>
+            <input type="text" class="input-box" placeholder="例如：全馬3:30:00">
+
+            <label class="field-label">目標成績 / Target Goal</label>
+            <input type="text" class="input-box" placeholder="例如：全馬2:59:59">
+
+            <label class="field-label">穿戴配備 / Wearable Device</label>
+            <input type="text" class="input-box" placeholder="例如：Garmin, Apple Watch, Coros">
+
+            <label class="field-label">您的問題 / Your Inquiry</label>
+            <textarea class="input-box" rows="4" style="height: auto;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+
+            <label class="field-label">驗證碼 / Verification Code</label>
+            <div class="captcha-row">
+                <input type="text" class="input-box" style="width: 80px; margin-bottom: 0;">
+                <div class="captcha-code">A 5 2 G</div>
+                <span style="cursor:pointer">↻</span>
+            </div>
+
+            <button type="submit" class="submit-btn">送出表單 / Submit</button>
+        </div>
+    </div>
+
+</body>
+</html>
