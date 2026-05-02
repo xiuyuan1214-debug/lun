@@ -9,111 +9,106 @@
 <body>
   <script src="nav_bar.js"></script>
   <div id="navBar"></div>
-<section class="container" style="max-width: 850px; margin: 40px auto; font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; line-height: 1.8; color: #444;">
 
-    <!-- 1. 線上課表 -->
-    <div style="background: #FFFFFF; padding: 45px; border-radius: 60px 10px 60px 10px; margin-bottom: 40px; border: 1px solid #E1EFFF; position: relative; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.03);">
-        <div style="position: absolute; right: -10px; top: -20px; font-size: 8em; color: #F0F7FF; font-weight: 900; z-index: 1; opacity: 0.8;">01</div>
+<section style="max-width: 850px; margin: 40px auto; font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; color: #333;">
+
+    <!-- 1. 線上課表：漸層深藍風格 -->
+    <div style="margin-bottom: 50px; position: relative;">
+        <div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); width: fit-content; padding: 10px 30px; border-radius: 50px 50px 50px 0; color: #fff; font-weight: 900; font-size: 1.6em; position: relative; z-index: 2; box-shadow: 5px 5px 15px rgba(30,60,114,0.3); border: none;">
+            線上課表 <span style="font-size: 0.5em; opacity: 0.7; margin-left: 10px; letter-spacing: 2px;">ONLINE</span>
+        </div>
         
-        <div style="position: relative; z-index: 2;">
-            <div style="font-size: 1.8em; font-weight: 900; color: #2c3e50; margin-bottom: 25px; border: none !important; text-decoration: none !important; display: flex; align-items: center;">
-                線上 <span style="font-weight: 900; margin: 0 10px; color: #3498db; font-size: 1.2em;">·</span> 課表 <span style="font-size: 0.6em; color: #999; margin-left: 15px; font-weight: 400; letter-spacing: 2px;">ONLINE PROGRAMMING</span>
-            </div>
-            
-            <div style="border-left: 4px solid #3498db; background: #f9f9f9; padding: 15px 25px; color: #555; font-weight: bold; margin-bottom: 30px; border-radius: 0 15px 15px 0;">
+        <div style="background: #fff; border: 1px solid #eef2f7; padding: 40px 35px 35px 35px; border-radius: 0 40px 40px 40px; margin-top: -15px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); position: relative; z-index: 1;">
+            <div style="border-left: 5px solid #3498db; background: #f0f7ff; padding: 15px 20px; color: #2c3e50; font-weight: bold; margin-bottom: 30px; border-radius: 5px; font-size: 1.05em;">
                 𖤐 核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。
             </div>
 
-            <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
-                    <span style="color: #3498db; margin-right: 8px; font-weight: 900; font-size: 1.5em; line-height: 1.2;">·</span>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
+                <div style="display: flex; align-items: center;">
+                    <span style="font-weight: 900; color: #3498db; margin-right: 10px; font-size: 1.8em; line-height: 1;">·</span>
                     <span><strong>週期化備賽規劃：</strong>針對馬拉松、半馬或10K 目標，科學化安排基礎期、強化期、巔峰期與減量期。</span>
-                </li>
-                <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
-                    <span style="color: #3498db; margin-right: 8px; font-weight: 900; font-size: 1.5em; line-height: 1.2;">·</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span style="font-weight: 900; color: #3498db; margin-right: 10px; font-size: 1.8em; line-height: 1;">·</span>
                     <span><strong>數據即時反饋：</strong>串聯穿戴裝置數據，教練遠端即時監測訓練與恢復狀態。</span>
-                </li>
-                <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
-                    <span style="color: #3498db; margin-right: 8px; font-weight: 900; font-size: 1.5em; line-height: 1.2;">·</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span style="font-weight: 900; color: #3498db; margin-right: 10px; font-size: 1.8em; line-height: 1;">·</span>
                     <span><strong>動態調整：</strong>根據每週訓練數據與跑者回報的狀態，隨時調整下週課表，避免運動傷害。</span>
-                </li>
-                <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
-                    <span style="color: #3498db; margin-right: 8px; font-weight: 900; font-size: 1.5em; line-height: 1.2;">·</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span style="font-weight: 900; color: #3498db; margin-right: 10px; font-size: 1.8em; line-height: 1;">·</span>
                     <span><strong>線上諮詢機制：</strong>透過文字等方式，定期討論訓練成效，解答跑者在執行過程中的疑難雜症。</span>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- 2. 私人教學 -->
-    <div style="background: #FFFFFF; padding: 45px; border-radius: 10px 60px 10px 60px; margin-bottom: 40px; border: 1px solid #FFE8E8; position: relative; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.03);">
-        <div style="position: absolute; right: -10px; top: -20px; font-size: 8em; color: #FFF5F5; font-weight: 900; z-index: 1; opacity: 0.8;">02</div>
-
-        <div style="position: relative; z-index: 2;">
-            <div style="font-size: 1.8em; font-weight: 900; color: #2c3e50; margin-bottom: 25px; border: none !important; text-decoration: none !important; display: flex; align-items: center;">
-                私人 <span style="font-weight: 900; margin: 0 10px; color: #e74c3c; font-size: 1.2em;">·</span> 教學 <span style="font-size: 0.6em; color: #999; margin-left: 15px; font-weight: 400; letter-spacing: 2px;">ONE-ON-ONE COACHING</span>
-            </div>
-
-            <div style="border-left: 4px solid #e74c3c; background: #f9f9f9; padding: 15px 25px; color: #555; font-weight: bold; margin-bottom: 30px; border-radius: 0 15px 15px 0;">
+    <!-- 2. 私人教學：夕陽紅橘風格 -->
+    <div style="margin-bottom: 50px; position: relative;">
+        <div style="background: linear-gradient(135deg, #FF512F 0%, #DD2476 100%); width: fit-content; padding: 10px 30px; border-radius: 50px 50px 50px 0; color: #fff; font-weight: 900; font-size: 1.6em; position: relative; z-index: 2; box-shadow: 5px 5px 15px rgba(255,81,47,0.3); border: none;">
+            私人教學 <span style="font-size: 0.5em; opacity: 0.7; margin-left: 10px; letter-spacing: 2px;">COACHING</span>
+        </div>
+        
+        <div style="background: #fff; border: 1px solid #fff0f0; padding: 40px 35px 35px 35px; border-radius: 0 40px 40px 40px; margin-top: -15px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); position: relative; z-index: 1;">
+            <div style="border-left: 5px solid #FF512F; background: #fff5f2; padding: 15px 20px; color: #2c3e50; font-weight: bold; margin-bottom: 30px; border-radius: 5px; font-size: 1.05em;">
                 𖤐 核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。
             </div>
 
-            <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                    <span style="color: #e74c3c; margin-right: 8px; font-weight: 900; font-size: 1.5em; line-height: 1.2;">·</span>
-                    <span><strong>跑姿校正：</strong>透過錄影回放與即時拆解分析，並根據跑者身體結構，使肌肉記憶正確動作，有效發揮跑步經濟性。</span>
-                </li>
-                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                    <span style="color: #e74c3c; margin-right: 8px; font-weight: 900; font-size: 1.5em; line-height: 1.2;">·</span>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
+                <div style="display: flex; align-items: center;">
+                    <span style="font-weight: 900; color: #FF512F; margin-right: 10px; font-size: 1.8em; line-height: 1;">·</span>
+                    <span><strong>跑姿校正：</strong>透過錄影回放與即時拆解分析，並根據跑者身體結構，使肌肉記憶正確動作。</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span style="font-weight: 900; color: #FF512F; margin-right: 10px; font-size: 1.8em; line-height: 1;">·</span>
                     <span><strong>體感配速建立：</strong>透過教練現場陪跑，協助跑者建立對各心率區間的配速感知。</span>
-                </li>
-                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                    <span style="color: #e74c3c; margin-right: 8px; font-weight: 900; font-size: 1.5em; line-height: 1.2;">·</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span style="font-weight: 900; color: #FF512F; margin-right: 10px; font-size: 1.8em; line-height: 1;">·</span>
                     <span><strong>動態負荷調控：</strong>根據跑者當下的體力、疲勞程度等狀態，即時調整訓練強度。</span>
-                </li>
-                <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-                    <span style="color: #e74c3c; margin-right: 8px; font-weight: 900; font-size: 1.5em; line-height: 1.2;">·</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span style="font-weight: 900; color: #FF512F; margin-right: 10px; font-size: 1.8em; line-height: 1;">·</span>
                     <span><strong>跑者專項強化引導：</strong>針對跑者較薄弱環節，設計輔助訓練，轉化為跑道上的推進力。</span>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- 3. 企業包班 -->
-    <div style="background: #FFFFFF; padding: 45px; border-radius: 60px 10px 60px 10px; margin-bottom: 60px; border: 1px solid #E6F4EC; position: relative; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.03);">
-        <div style="position: absolute; right: -10px; top: -20px; font-size: 8em; color: #F2FAF5; font-weight: 900; z-index: 1; opacity: 0.8;">03</div>
-
-        <div style="position: relative; z-index: 2;">
-            <div style="font-size: 1.8em; font-weight: 900; color: #2c3e50; margin-bottom: 25px; border: none !important; text-decoration: none !important; display: flex; align-items: center;">
-                企業 <span style="font-weight: 900; margin: 0 10px; color: #27ae60; font-size: 1.2em;">·</span> 包班 <span style="font-size: 0.6em; color: #999; margin-left: 15px; font-weight: 400; letter-spacing: 2px;">CORPORATE GROUP</span>
-            </div>
-
-            <div style="border-left: 4px solid #27ae60; background: #f9f9f9; padding: 15px 25px; color: #555; font-weight: bold; margin-bottom: 30px; border-radius: 0 15px 15px 0;">
+    <!-- 3. 企業包班：鮮翠綠風格 -->
+    <div style="margin-bottom: 60px; position: relative;">
+        <div style="background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%); width: fit-content; padding: 10px 30px; border-radius: 50px 50px 50px 0; color: #fff; font-weight: 900; font-size: 1.6em; position: relative; z-index: 2; box-shadow: 5px 5px 15px rgba(0,176,155,0.2); border: none;">
+            企業包班 <span style="font-size: 0.5em; opacity: 0.7; margin-left: 10px; letter-spacing: 2px;">CORPORATE</span>
+        </div>
+        
+        <div style="background: #fff; border: 1px solid #f0f7f4; padding: 40px 35px 35px 35px; border-radius: 0 40px 40px 40px; margin-top: -15px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); position: relative; z-index: 1;">
+            <div style="border-left: 5px solid #00b09b; background: #f2faf5; padding: 15px 20px; color: #2c3e50; font-weight: bold; margin-bottom: 30px; border-radius: 5px; font-size: 1.05em;">
                 𖤐 核心價值：職場健康與活力、團體共榮，將運動融入企業文化。
             </div>
 
-            <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
-                    <span style="color: #27ae60; margin-right: 8px; font-weight: 900; font-size: 1.5em; line-height: 1.2;">·</span>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
+                <div style="display: flex; align-items: center;">
+                    <span style="font-weight: 900; color: #00b09b; margin-right: 10px; font-size: 1.8em; line-height: 1;">·</span>
                     <span><strong>提升團隊凝聚力：</strong>在共同挑戰目標的過程中，建立跨部門的情感連結與默契。</span>
-                </li>
-                <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
-                    <span style="color: #27ae60; margin-right: 8px; font-weight: 900; font-size: 1.5em; line-height: 1.2;">·</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span style="font-weight: 900; color: #00b09b; margin-right: 10px; font-size: 1.8em; line-height: 1;">·</span>
                     <span><strong>企業賽事推動：</strong>協助企業組隊參與路跑賽事，塑造健康正面的企業品牌形象。</span>
-                </li>
-                <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
-                    <span style="color: #27ae60; margin-right: 8px; font-weight: 900; font-size: 1.5em; line-height: 1.2;">·</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span style="font-weight: 900; color: #00b09b; margin-right: 10px; font-size: 1.8em; line-height: 1;">·</span>
                     <span><strong>職場壓力紓解：</strong>透過團體運動釋放員工壓力，提升團隊韌性與工作效率。</span>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- CTA -->
-    <div style="text-align: center;">
-        <p style="color: #444; margin-bottom: 25px; font-size: 1.2em; letter-spacing: 1px;">讓我們一起跑出健康快樂の每一步 ᴗ̈</p>
-        <a href="form.html" style="display: inline-block; background: #2c3e50; color: #fff; text-decoration: none; padding: 18px 80px; border-radius: 5px; font-weight: bold; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-            點我了解更多課程
+    <!-- CTA Area -->
+    <div style="text-align: center; background: #f8f9fa; padding: 40px; border-radius: 40px;">
+        <p style="color: #444; margin-bottom: 25px; font-size: 1.3em; font-weight: 600; letter-spacing: 1px;">讓我們一起跑出健康快樂の每一步 ᴗ̈</p>
+        <a href="form.html" style="display: inline-block; background: #222; color: #fff; text-decoration: none; padding: 20px 80px; border-radius: 100px; font-weight: 900; font-size: 1.2em; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border: none;">
+            了解更多課程
         </a>
     </div>
 
