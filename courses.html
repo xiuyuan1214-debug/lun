@@ -25,9 +25,9 @@
             color: #333333;
         }
 
-        /* 滿版區塊 */
+        /* 滿版區塊背景 */
         .section {
-            padding: 60px 25px;
+            padding: 55px 25px;
             width: 100%;
             display: flex;
             justify-content: center;
@@ -38,24 +38,25 @@
             max-width: 520px;
         }
 
-        /* 標題設定 */
-        .header-group { margin-bottom: 25px; }
+        /* 標題區域：100% 移除底線與邊框 */
+        .header-group { margin-bottom: 22px; }
         .main-title {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 700;
+            color: #333333;
             margin: 0;
-            border: none;
+            border: none !important;
         }
         .sub-title {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
-            margin-top: 8px;
+            margin-top: 6px;
             display: block;
-            letter-spacing: 1px;
-            border: none;
+            letter-spacing: 0.8px;
+            border: none !important;
         }
 
-        /* 核心價值方塊 */
+        /* 核心價值白色方塊 (對照 IMG_5344_2) */
         .info-card {
             background-color: #ffffff;
             border-radius: 12px;
@@ -64,23 +65,23 @@
             position: relative;
             display: flex;
             align-items: flex-start;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
         }
         .side-bar {
-            width: 6px;
-            height: 100%;
+            width: 5px;
+            height: 48px; /* 圖片中非滿長度 */
             position: absolute;
             left: 0;
-            top: 0;
+            top: 22px;
+            border-radius: 0 4px 4px 0;
         }
         .info-content {
             font-size: 16px;
             line-height: 1.6;
             color: #444444;
             padding-left: 10px;
+            font-weight: 500;
         }
-        .bold-text { font-weight: 700; }
 
         /* 列表樣式 */
         .detail-list { list-style: none; padding: 0; margin: 0; }
@@ -92,46 +93,47 @@
             align-items: flex-start;
             line-height: 1.5;
         }
-        .detail-item::before {
-            content: "•";
-            font-size: 20px;
-            margin-right: 8px;
-            line-height: 1;
+        .item-dot {
+            font-weight: 900;
+            font-size: 22px;
+            margin-right: 6px;
+            line-height: 0.8;
         }
+        .item-label { font-weight: 700; color: #333333; }
 
         /* 顏色主題設定 */
-        .bg-online { background-color: #f0f7ff; }
-        .color-online { color: #5a96c7; }
-        .bar-online { background-color: #5a96c7; }
+        .bg-online { background-color: #f1f7fe; }
+        .color-online { color: #64a7d4; }
+        .bar-online { background-color: #64a7d4; }
 
-        .bg-private { background-color: #fff5f5; }
-        .color-private { color: #cc7a7a; }
-        .bar-private { background-color: #cc7a7a; }
+        .bg-private { background-color: #fff4f4; }
+        .color-private { color: #d98c8c; }
+        .bar-private { background-color: #d98c8c; }
 
-        .bg-corporate { background-color: #f5faf6; }
-        .color-corporate { color: #64b389; }
-        .bar-corporate { background-color: #64b389; }
+        .bg-corporate { background-color: #f2f9f5; }
+        .color-corporate { color: #6ebc92; }
+        .bar-corporate { background-color: #6ebc92; }
 
-        /* 頁尾樣式 (對齊截圖紅色打勾區域) */
+        /* 頁尾：對照 IMG_5344_2 紅勾處 */
         .footer {
-            padding: 80px 20px;
+            padding: 70px 20px;
             text-align: center;
             background-color: #ffffff;
         }
         .footer-slogan {
             color: #999999;
-            font-size: 15px;
-            margin-bottom: 30px;
+            font-size: 14px;
+            margin-bottom: 28px; /* 增加間隔 */
             display: block;
         }
-        .btn-booking {
-            background-color: #333333;
+        .footer-btn {
+            background-color: #333333; /* 深灰黑色 */
             color: #ffffff !important;
-            padding: 16px 70px;
-            border-radius: 8px; /* 截圖中的微圓角矩形 */
+            padding: 15px 70px;
+            border-radius: 8px; /* 圖片中非全圓角 */
             text-decoration: none;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 500;
             display: inline-block;
             border: none;
         }
@@ -150,14 +152,14 @@
             <div class="info-card">
                 <div class="side-bar bar-online"></div>
                 <div class="info-content">
-                    <span class="bold-text">✻ 核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。</span>
+                    <strong>✻ 核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。</strong>
                 </div>
             </div>
             <ul class="detail-list">
-                <li class="detail-item color-online"><span class="bold-text" style="color:#333">週期化備賽規劃：</span>針對目標科學化安排訓練週期。</li>
-                <li class="detail-item color-online"><span class="bold-text" style="color:#333">數據即時反饋：</span>遠端即時監測訓練與恢復狀態。</li>
-                <li class="detail-item color-online"><span class="bold-text" style="color:#333">動態調整：</span>根據回報狀態，隨時調整下週課表。</li>
-                <li class="detail-item color-online"><span class="bold-text" style="color:#333">線上諮詢機制：</span>定期討論訓練成效，解答疑難雜症。</li>
+                <li class="detail-item"><span class="item-dot color-online">·</span><div><span class="item-label">週期化備賽規劃：</span>針對目標科學化安排訓練週期。</div></li>
+                <li class="detail-item"><span class="item-dot color-online">·</span><div><span class="item-label">數據即時反饋：</span>遠端即時監測訓練與恢復狀態。</div></li>
+                <li class="detail-item"><span class="item-dot color-online">·</span><div><span class="item-label">動態調整：</span>根據回報狀態，隨時調整下週課表。</div></li>
+                <li class="detail-item"><span class="item-dot color-online">·</span><div><span class="item-label">線上諮詢機制：</span>定期討論訓練成效，解答疑難雜症。</div></li>
             </ul>
         </div>
     </div>
@@ -172,14 +174,14 @@
             <div class="info-card">
                 <div class="side-bar bar-private"></div>
                 <div class="info-content">
-                    <span class="bold-text">✻ 核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</span>
+                    <strong>✻ 核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</strong>
                 </div>
             </div>
             <ul class="detail-list">
-                <li class="detail-item color-private"><span class="bold-text" style="color:#333">跑姿校正：</span>透過錄影分析與拆解，使肌肉記憶正確動作。</li>
-                <li class="detail-item color-private"><span class="bold-text" style="color:#333">體感配速建立：</span>協助跑者建立對各心率區間的感知。</li>
-                <li class="detail-item color-private"><span class="bold-text" style="color:#333">動態負荷調控：</span>根據疲勞程度，即時調整訓練強度。</li>
-                <li class="detail-item color-private"><span class="bold-text" style="color:#333">跑者專項強化引導：</span>針對薄弱環節設計輔助訓練。</li>
+                <li class="detail-item"><span class="item-dot color-private">·</span><div><span class="item-label">跑姿校正：</span>透過錄影分析與拆解，使肌肉記憶正確動作。</div></li>
+                <li class="detail-item"><span class="item-dot color-private">·</span><div><span class="item-label">體感配速建立：</span>協助跑者建立對各心率區間的感知。</div></li>
+                <li class="detail-item"><span class="item-dot color-private">·</span><div><span class="item-label">動態負荷調控：</span>根據疲勞程度，即時調整訓練強度。</div></li>
+                <li class="detail-item"><span class="item-dot color-private">·</span><div><span class="item-label">跑者專項強化引導：</span>針對薄弱環節設計輔助訓練。</div></li>
             </ul>
         </div>
     </div>
@@ -189,18 +191,18 @@
         <div class="container">
             <div class="header-group">
                 <h2 class="main-title">企業包班</h2>
-                <span class="sub-title color-green">CORPORATE GROUP</span>
+                <span class="sub-title color-corporate">CORPORATE GROUP</span>
             </div>
             <div class="info-card">
                 <div class="side-bar bar-corporate"></div>
                 <div class="info-content">
-                    <span class="bold-text">✻ 核心價值：職場健康與活力、團體共榮，將運動融入企業文化。</span>
+                    <strong>✻ 核心價值：職場健康與活力、團體共榮，將運動融入企業文化。</strong>
                 </div>
             </div>
             <ul class="detail-list">
-                <li class="detail-item color-corporate"><span class="bold-text" style="color:#333">提升團隊凝聚力：</span>挑戰目標過程中，建立跨部門情感連結。</li>
-                <li class="detail-item color-corporate"><span class="bold-text" style="color:#333">企業賽事推動：</span>協助組隊參與路跑賽事，塑造品牌形象。</li>
-                <li class="detail-item color-corporate"><span class="bold-text" style="color:#333">職場壓力紓解：</span>透過運動釋放壓力，提升團隊工作效率。</li>
+                <li class="detail-item"><span class="item-dot color-corporate">·</span><div><span class="item-label">提升團隊凝聚力：</span>挑戰目標過程中，建立跨部門情感連結。</div></li>
+                <li class="detail-item"><span class="item-dot color-corporate">·</span><div><span class="item-label">企業賽事推動：</span>協助組隊參與路跑賽事，塑造品牌形象。</div></li>
+                <li class="detail-item"><span class="item-dot color-corporate">·</span><div><span class="item-label">職場壓力紓解：</span>透過運動釋放壓力，提升團隊工作效率。</div></li>
             </ul>
         </div>
     </div>
@@ -208,24 +210,8 @@
     <!-- 頁尾 -->
     <div class="footer">
         <span class="footer-slogan">讓我們一起跑出健康快樂的每一步 ᴗ̈</span>
-        <a href="#" class="btn-booking">預約一份溫暖的諮詢</a>
+        <a href="#" class="footer-btn">預約一份溫暖的諮詢</a>
     </div>
-
-</body>
-</html>
-
-</body>
-</html>
-
-</body>
-</html>
-
-</body>
-</html>
-
-
-</body>
-</html>
 
 </body>
 </html>
