@@ -12,7 +12,7 @@
             color: #4a3c31;
         }
 
-        /* 導覽列：具備點擊跳轉功能 */
+        /* 導覽列 */
         .nav-bar {
             background-color: #333333;
             padding: 10px 20px;
@@ -50,12 +50,19 @@
         .title-main { font-size: 20px; margin: 0; font-weight: bold; }
         .title-en { font-size: 10px; color: #b5a48d; letter-spacing: 2px; margin-top: 5px; }
 
-        /* 文字大小統一為 14px */
-        .unified-text { 
+        /* 關鍵修正：粗體且顏色改變 (深褐色 #2d241d) */
+        .slogan-bold { 
             font-size: 14px; 
-            line-height: 1.8; 
+            font-weight: bold; 
+            color: #2d241d; 
             margin-bottom: 12px;
-            font-weight: normal; 
+        }
+
+        .intro-p { 
+            font-size: 14px; 
+            line-height: 1.7; 
+            margin-bottom: 12px;
+            font-weight: normal;
         }
 
         .service-hours { 
@@ -65,21 +72,13 @@
             display: block;
         }
 
-        /* 表單區域 */
-        .form-section {
-            padding: 20px 20px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        /* 關鍵修正：將標籤文字縮小至 10px */
+        /* 表單標籤：縮小至 10px */
         .field-label {
             font-size: 10px; 
             font-weight: bold;
             display: block;
             margin-bottom: 3px;
             color: #4a3c31;
-            letter-spacing: 0.5px;
         }
 
         .input-box {
@@ -87,13 +86,12 @@
             box-sizing: border-box;
             border: 1px solid #eeeeee;
             border-radius: 4px;
-            padding: 3px 10px; /* 極窄高度 */
+            padding: 3px 10px; 
             font-size: 13px;
             margin-bottom: 10px; 
             outline: none;
             display: block;
             background: #fff;
-            color: #4a3c31;
         }
 
         .captcha-row {
@@ -145,11 +143,11 @@
                 <div class="title-en">RUNNER SERVICE CENTER</div>
             </div>
             
-            <div class="unified-text">讓我們聽見您の腳步聲</div>
+            <div class="slogan-bold">讓我們聽見您の腳步聲</div>
             
-            <p class="unified-text">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
-            <p class="unified-text">您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
-            <p class="unified-text">讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
+            <p class="intro-p">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
+            <p class="intro-p">您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
+            <p class="intro-p">讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
             
             <div class="service-hours">☀️服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
         </div>
