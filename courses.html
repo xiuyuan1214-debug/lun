@@ -29,22 +29,24 @@
             margin: 0 auto;
         }
 
-        /* 服務區塊：純淨、無邊框、無任何底線 */
+        /* 服務區塊：徹底無邊框、無底線、無裝飾 */
         .card {
             border-radius: 20px;
             padding: 40px 30px;
             margin-bottom: 40px;
             border: none !important;
+            box-shadow: none !important;
         }
 
-        /* 標題：徹底禁用所有橫線裝飾 */
+        /* 標題：徹底禁用所有橫線樣式 */
         .title-main {
             font-size: 26px;
             font-weight: bold;
             margin: 0 0 10px 0;
             color: #2c3e50;
-            border-bottom: none !important;
-            padding-bottom: 0 !important;
+            border: none !important;
+            padding: 0 !important;
+            text-decoration: none !important;
         }
         .title-sub {
             font-size: 14px;
@@ -53,11 +55,11 @@
             margin-bottom: 30px;
             font-weight: 600;
             display: block;
-            border-bottom: none !important;
-            padding-bottom: 0 !important;
+            border: none !important;
+            padding: 0 !important;
         }
 
-        /* 核心方塊：僅保留左側色條，其餘三面完全無邊 */
+        /* 核心方塊：僅保留左側色條 */
         .highlight-box {
             background: #ffffff;
             border-radius: 12px;
@@ -91,14 +93,14 @@
             font-size: 15px;
             margin-bottom: 15px;
             line-height: 1.7;
-            padding-left: 12px; 
+            padding-left: 10px; /* 縮小間距 */
             position: relative;
             color: #4a4a4a;
         }
         .detail-item::before {
             content: "·";
             position: absolute;
-            left: 0;
+            left: -5px; /* 讓點點更靠近文字 */
             font-weight: bold;
             font-size: 24px;
             line-height: 0.8;
@@ -189,6 +191,9 @@
     </div>
 
 </div>
+
+</body>
+</html>
 
 </body>
 </html>
