@@ -7,57 +7,64 @@
     <style>
         body { margin: 0; padding: 0; font-family: -apple-system, "Noto Sans TC", sans-serif; background-color: #ffffff; color: #4a3c31; }
         
-        /* 標題區域：維持您的原狀文案 */
-        .header-section { background-color: #fff9e6; padding: 20px 15px 10px 15px; text-align: left; }
-        .content-limit { max-width: 480px; margin: 0 auto; }
+        /* 標題區塊：對齊 IMG_5426.jpg */
+        .header-section { background-color: #fff9e6; padding: 30px 20px 20px 25px; text-align: left; }
+        .content-limit { max-width: 500px; margin: 0 auto; }
         
-        .title-main { font-size: 19px; font-weight: bold; color: #2d241d; margin-bottom: 2px; }
-        .title-sub { font-size: 11px; color: #b5a48d; letter-spacing: 1px; margin-bottom: 12px; }
-        .slogan { font-size: 14px; font-weight: bold; margin-bottom: 8px; }
-        .intro-p { font-size: 13px; line-height: 1.5; margin-bottom: 8px; }
-
-        /* --- 服務時間：極限縮小 (第三次縮小嘗試) --- */
+        .title-main { font-size: 22px; font-weight: bold; margin-bottom: 5px; color: #4a3c31; }
+        .title-sub { font-size: 10px; color: #b5a48d; margin-bottom: 25px; font-weight: normal; letter-spacing: 1px; }
+        
+        .slogan { font-size: 14px; font-weight: bold; margin-bottom: 15px; color: #4a3c31; }
+        .intro-p { font-size: 13.5px; line-height: 1.8; margin-bottom: 18px; color: #4a3c31; }
+        
+        /* 服務時間：極微型化縮小 */
         .service-hours { 
             font-size: 10px !important; 
             color: #b5a48d; 
+            margin-top: 20px; 
             display: inline-block;
-            transform: scale(0.35); /* 強制降至 0.35 倍 */
-            transform-origin: left center;
-            opacity: 0.5;
+            transform: scale(0.3); /* 極限縮小 */
+            transform-origin: left top;
+            opacity: 0.6;
             white-space: nowrap;
-            margin-top: 5px;
+            border-top: 0.5px solid #e0e0e0;
+            padding-top: 10px;
         }
 
-        /* --- 框框極致縮窄方案 --- */
-        .form-section { padding: 15px; }
-        .field-label { font-size: 13px; font-weight: bold; display: block; margin-bottom: 5px; }
+        /* 表單區塊：縮窄與圓角對齊 */
+        .form-section { padding: 25px; background-color: #ffffff; }
+        .field-label { font-size: 14px; font-weight: bold; display: block; margin-bottom: 8px; color: #4a3c31; }
         
         .input-box { 
-            width: 70%;        /* 強制將寬度降至 70% (原本是 100%) */
-            max-width: 240px;  /* 絕對限制最大寬度 */
+            width: 80%; /* 依要求縮窄寬度 */
+            max-width: 320px;
             box-sizing: border-box; 
             border: 1px solid #e0e0e0; 
             border-radius: 8px; 
-            padding: 8px 10px; 
-            font-size: 14px;   
-            margin-bottom: 15px; 
-            background: #fafafa;
-            height: 34px;      /* 稍微壓低高度讓比例協調 */
+            padding: 10px 15px; 
+            font-size: 13px;   
+            margin-bottom: 20px; 
+            outline: none; 
+            background: #fdfdfd;
+            color: #4a3c31;
         }
         
-        textarea.input-box { height: 80px; width: 85%; max-width: 300px; } /* 問題框稍微寬一點點但仍比原本窄 */
+        .row { display: flex; gap: 15px; width: 80%; max-width: 320px; }
+        .col { flex: 1; }
+        .col .input-box { width: 100%; }
 
         .submit-btn { 
-            width: 70%; 
-            max-width: 240px;
+            width: 80%; 
+            max-width: 320px;
             background-color: #4a3c31; 
             color: white; 
             border: none; 
-            padding: 10px; 
+            padding: 12px; 
             font-size: 14px; 
             font-weight: bold; 
-            border-radius: 6px; 
+            border-radius: 5px; 
             cursor: pointer; 
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -67,12 +74,14 @@
         <div class="content-limit">
             <div class="title-main">跑者服務中心</div>
             <div class="title-sub">RUNNER SERVICE CENTER</div>
-            <div class="slogan">讓我們聽見您的腳步聲</div>
-            <p class="intro-p">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
-            <p class="intro-p">您的回饋是我們進化的動力，您的提問是我們探索的方向...</p>
-            <p class="intro-p">希望這裡不只是網站，更是跑者們的補給站。</p>
             
-            <div class="service-hours">☀️ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
+            <div class="slogan">讓我們聽見您的腳步聲</div>
+            
+            <p class="intro-p">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
+            <p class="intro-p">您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
+            <p class="intro-p">讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
+            
+            <div class="service-hours">✻ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
         </div>
     </div>
 
@@ -86,15 +95,26 @@
 
             <label class="field-label">跑者屬性</label>
             <select class="input-box">
-                <option>初階跑者</option>
+                <option>新手跑者</option>
                 <option>馬拉松選手</option>
             </select>
 
+            <div class="row">
+                <div class="col">
+                    <label class="field-label">跑步最佳成績 (PB)</label>
+                    <input type="text" class="input-box" placeholder="例如：全馬3:30:00">
+                </div>
+                <div class="col">
+                    <label class="field-label">目標成績</label>
+                    <input type="text" class="input-box" placeholder="例如：全馬2:59:59">
+                </div>
+            </div>
+
             <label class="field-label">慣用穿戴配備</label>
-            <input type="text" class="input-box" placeholder="例如：Garmin, Apple Watch">
+            <input type="text" class="input-box" placeholder="例如：Garmin, Apple Watch, Coros">
 
             <label class="field-label">您的問題</label>
-            <textarea class="input-box" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+            <textarea class="input-box" style="height: 100px;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
             
             <button type="submit" class="submit-btn">送出表單</button>
         </div>
