@@ -1,245 +1,104 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>跑者服務中心</title>
+    <title>Runner Form</title>
     <style>
-        /* 基礎樣式 */
         body {
-            margin: 0;
-            padding: 0;
-            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
-            background-color: #f9f9f9;
-            color: #5d4a26;
-            line-height: 1.8;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #4a3c31;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
         }
-
-        /* 上方黃色區塊：凸顯標題 */
-        .service-header {
-            background-color: #fdf6d8;
-            padding: 60px 30px;
-            border-radius: 0 0 25px 25px;
-        }
-
-        .main-title {
-            font-size: 36px;
-            margin: 0;
-            font-weight: 900;
-            color: #4a3b1e;
-            display: block;
-        }
-
-        .en-title {
-            font-size: 14px;
-            letter-spacing: 4px;
-            color: #a89a78;
-            margin: 5px 0 35px 0;
-            text-transform: uppercase;
-        }
-
-        .highlight-title {
-            font-size: 24px;
-            font-weight: 800;
-            color: #5d4a26;
-            margin-bottom: 25px;
-            display: block;
-            border-left: 6px solid #5d4a26;
-            padding-left: 15px;
-        }
-
-        .content-text p {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        hr {
-            border: 0;
-            border-top: 1px solid #e2d8b5;
-            margin: 40px 0 20px 0;
-        }
-
-        .service-time {
-            font-size: 12px;
-            color: #a89a78;
-        }
-
-        /* 下方表單區塊 */
-        .form-container {
-            background-color: #ffffff;
-            margin-top: -20px;
-            padding: 40px 30px;
-            border-radius: 25px 25px 0 0;
-        }
-
         .form-group {
             margin-bottom: 25px;
         }
-
-        /* 核心要求：統一所有表單文字大小為 16px */
-        .form-group label {
+        /* 統一標題大小 */
+        label {
             display: block;
+            font-size: 1.2rem;
             font-weight: bold;
-            margin-bottom: 12px;
-            font-size: 16px; /* 標籤文字 */
-            color: #5d4a26;
+            margin-bottom: 8px;
         }
-
-        input[type="text"],
-        input[type="email"],
-        select,
-        textarea,
-        ::placeholder {
+        /* 移除框線，僅保留文字樣式 */
+        .input-text {
             width: 100%;
-            padding: 15px;
-            border: 1px solid #eee7d5;
-            border-radius: 12px;
-            background-color: #fffef9;
-            box-sizing: border-box;
-            font-size: 16px !important; /* 輸入框文字與提示文字完全統一 */
-            color: #5d4a26;
+            border: none;
+            background: none;
+            font-size: 1rem;
+            color: #8e8e8e;
+            padding: 5px 0;
             outline: none;
-            font-family: inherit;
         }
-
-        .form-row {
+        .row {
             display: flex;
             gap: 20px;
         }
-
-        .form-row .form-group {
+        .row .form-group {
             flex: 1;
         }
-
-        textarea {
-            height: 120px;
-            resize: none;
-        }
-
-        /* 驗證碼區塊：維持縮小比例 */
-        .captcha-container {
-            max-width: 350px;
-        }
-
-        .captcha-row {
+        .captcha-area {
             display: flex;
-            gap: 12px;
             align-items: center;
+            gap: 15px;
         }
-
-        .captcha-input {
-            width: 130px !important;
-        }
-
         .captcha-code {
-            background-color: #eee7d5;
-            color: #5d4a26;
+            background-color: #f2ede4;
             padding: 10px 20px;
-            font-weight: bold;
-            font-style: italic;
+            border-radius: 8px;
             letter-spacing: 5px;
-            border-radius: 10px;
-            border: 1px dashed #a89a78;
-            font-size: 18px; /* 這是圖片數字，略大以利辨識 */
-            white-space: nowrap;
-        }
-
-        /* 送出按鈕 */
-        .submit-container {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .submit-btn {
-            background-color: #5d4a26;
-            color: white;
-            padding: 15px 80px;
-            border: none;
-            border-radius: 35px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .submit-btn:hover {
-            background-color: #4a3b1e;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
-    <header class="service-header">
-        <span class="main-title">跑者服務中心</span>
-        <p class="en-title">RUNNER SERVICE CENTER</p>
-        
-        <div class="content-text">
-            <span class="highlight-title">讓我們聽見您の腳步聲</span>
-            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
-            <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
-            <p>讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
+    <!-- 參考文件：IMG_5389.jpeg -->
+
+    <div class="form-group">
+        <label>姓名 / Name</label>
+        <div class="input-text">請輸入您的姓名</div>
+    </div>
+
+    <div class="form-group">
+        <label>電子信箱 / E-mail</label>
+        <div class="input-text">runner@example.com</div>
+    </div>
+
+    <div class="form-group">
+        <label>跑者屬性</label>
+        <div class="input-text">新手跑者</div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <label>跑步最佳成績 (PB)</label>
+            <div class="input-text">例如：全馬3:30:00</div>
         </div>
+        <div class="form-group">
+            <label>目標成績</label>
+            <div class="input-text">例如：全馬2:59:59</div>
+        </div>
+    </div>
 
-        <hr>
-        <p class="service-time">☀ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</p>
-    </header>
+    <div class="form-group">
+        <label>慣用穿戴配備</label>
+        <div class="input-text">例如：Garmin, Apple Watch, Coros</div>
+    </div>
 
-    <main class="form-container">
-        <form>
-            <div class="form-group">
-                <label>姓名 / Name</label>
-                <input type="text" placeholder="請輸入您的姓名">
-            </div>
+    <div class="form-group">
+        <label>您的問題</label>
+        <div class="input-text">每一滴汗水，都值得被聽見...</div>
+    </div>
 
-            <div class="form-group">
-                <label>電子信箱 / E-mail</label>
-                <input type="email" placeholder="runner@example.com">
-            </div>
-
-            <div class="form-group">
-                <label>跑者屬性</label>
-                <select>
-                    <option>新手跑者</option>
-                    <option>進階跑者</option>
-                    <option>馬拉松選手</option>
-                </select>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label>跑步最佳成績 (PB)</label>
-                    <input type="text" placeholder="例如：全馬3:30:00">
-                </div>
-                <div class="form-group">
-                    <label>目標成績</label>
-                    <input type="text" placeholder="例如：全馬2:59:59">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>慣用穿戴配備</label>
-                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
-            </div>
-
-            <div class="form-group">
-                <label>您的問題</label>
-                <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
-            </div>
-
-            <!-- 驗證碼：標籤文字大小已與上方統一 -->
-            <div class="form-group captcha-container">
-                <label>驗證碼：</label>
-                <div class="captcha-row">
-                    <input type="text" class="captcha-input" placeholder="輸入碼">
-                    <div class="captcha-code">A 5 2 G</div>
-                </div>
-            </div>
-
-            <div class="submit-container">
-                <button type="submit" class="submit-btn">送出表單</button>
-            </div>
-        </form>
-    </main>
+    <div class="form-group">
+        <label>驗證碼：</label>
+        <div class="captcha-area">
+            <div class="input-text" style="width: auto;">輸入碼</div>
+            <div class="captcha-code">A 5 2 G</div>
+        </div>
+    </div>
 
 </body>
 </html>
