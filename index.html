@@ -7,54 +7,49 @@
     <style>
         body { margin: 0; padding: 0; font-family: -apple-system, "Noto Sans TC", sans-serif; background-color: #ffffff; color: #4a3c31; }
         
-        /* 導覽列：高度縮減 */
-        .nav-bar { background-color: #333333; padding: 8px 15px; display: flex; justify-content: center; gap: 12px; }
-        .nav-item { color: #ffffff !important; text-decoration: none !important; font-size: 12px; cursor: pointer; }
-        .nav-item:visited { color: #ffffff !important; }
-
-        /* 標題區域：緊湊排列 */
-        .header-section { background-color: #fff9e6; padding: 12px 20px 8px 20px; text-align: center; width: 100%; box-sizing: border-box; }
-        .content-limit { max-width: 480px; margin: 0 auto; text-align: left; }
+        /* 標題區域 */
+        .header-section { background-color: #fff9e6; padding: 15px 20px 10px 20px; text-align: center; width: 100%; box-sizing: border-box; }
+        .content-limit { max-width: 340px; margin: 0 auto; text-align: left; } /* 縮小容器寬度讓整體更精緻 */
         
         .title-main { font-size: 17px; font-weight: bold; margin-bottom: 2px; text-align: center; color: #2d241d; }
-        .title-sub { font-size: 11px; text-align: center; color: #b5a48d; margin-bottom: 8px; font-weight: normal; }
-        
+        .title-sub { font-size: 11px; text-align: center; color: #b5a48d; margin-bottom: 10px; font-weight: normal; }
         .intro-p { font-size: 12px; line-height: 1.4; margin-bottom: 4px; color: #4a3c31; }
         
-        /* --- 服務時間：縮放至極限小 --- */
+        /* --- 服務時間：微型備註化 --- */
         .service-hours { 
             font-size: 10px !important; 
             color: #b5a48d; 
             margin-top: 5px; 
             display: inline-block;
-            transform: scale(0.65); /* 再次縮小到 65% */
+            transform: scale(0.55); /* 再次強制縮小至 55% */
             transform-origin: left top;
-            opacity: 0.6;
+            opacity: 0.5;
             white-space: nowrap;
         }
 
-        /* --- 框框與表單：極致緊湊 --- */
-        .form-section { padding: 5px 20px; }
+        /* --- 表單與框框：縮減寬度與高度 --- */
+        .form-section { padding: 10px 20px; }
         .field-label { font-size: 10px; font-weight: bold; display: block; margin-bottom: 2px; color: #4a3c31; }
         
         .input-box { 
-            width: 100%; 
+            width: 100%;       /* 在 340px 的容器內 100% 寬度 */
+            max-width: 300px;  /* 限制框框最大寬度，不讓它太長 */
             box-sizing: border-box; 
             border: 1px solid #eeeeee; 
             border-radius: 3px; 
-            padding: 4px 8px;   /* 內距極小化 */
-            font-size: 12px;    /* 輸入字體縮小 */
-            margin-bottom: 6px; /* 框與框之間距離縮減 */
+            padding: 4px 8px;   
+            font-size: 12px;    
+            margin-bottom: 8px; 
             outline: none; 
             background: #fff;
-            height: 28px;       /* 固定框框高度為窄版 */
+            height: 26px;       /* 再次降低框框高度 */
         }
         
-        textarea.input-box { height: auto; min-height: 50px; }
+        textarea.input-box { height: auto; min-height: 45px; }
         
-        /* 按鈕同步縮小 */
         .submit-btn { 
             width: 100%; 
+            max-width: 300px;
             background-color: #4a3c31; 
             color: white; 
             border: none; 
@@ -63,16 +58,14 @@
             font-weight: bold; 
             border-radius: 4px; 
             cursor: pointer; 
-            margin-top: 2px;
+            margin-top: 5px;
         }
 
-        .captcha-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+        .captcha-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
         .captcha-code { background-color: #f2ede4; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; }
     </style>
 </head>
 <body>
-
-    <div id="navBar"></div>
 
     <div class="header-section">
         <div class="content-limit">
@@ -89,7 +82,7 @@
     <div class="form-section">
         <div class="content-limit">
             <label class="field-label">姓名 / Name</label>
-            <input type="text" class="input-box" placeholder="輸入姓名">
+            <input type="text" class="input-box" placeholder="請輸入姓名">
             
             <label class="field-label">電子信箱 / E-mail</label>
             <input type="email" class="input-box" placeholder="runner@gmail.com">
@@ -97,7 +90,8 @@
             <label class="field-label">跑者屬性 / Runner Type</label>
             <select class="input-box">
                 <option value="">請選擇 / Please Select</option>
-                <option>新手跑者 / Beginner</option>
+                <option>初階跑者 / Beginner</option>
+                <option>進階跑者 / Advanced</option>
                 <option>馬拉松選手 / Marathoner</option>
             </select>
 
@@ -114,6 +108,5 @@
         </div>
     </div>
 
-    <script src="nav_bar.js"></script>
 </body>
 </html>
