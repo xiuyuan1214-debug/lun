@@ -12,7 +12,7 @@
             color: #4a3c31;
         }
 
-        /* 頂部黃色區域 */
+        /* 頂部黃色區域：滿版無框線 */
         .header-section {
             background-color: #fff9e6;
             padding: 40px 20px;
@@ -35,6 +35,8 @@
 
         .slogan { font-size: 15px; font-weight: bold; color: #b5a48d; margin-bottom: 15px; }
         .intro-p { font-size: 14px; line-height: 1.8; margin-bottom: 15px; }
+        
+        /* 服務時間修正 */
         .service-hours { font-size: 11px; color: #b5a48d; margin-top: 25px; }
 
         /* 表單區域 */
@@ -44,24 +46,25 @@
             box-sizing: border-box;
         }
 
-        /* 文字大小統一 */
+        /* 文字大小統一縮小 (12px) */
         .field-label {
-            font-size: 17px; 
+            font-size: 12px; 
             font-weight: bold;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             color: #4a3c31;
+            letter-spacing: 0.5px;
         }
 
-        /* 輸入框線樣式 */
+        /* 輸入框樣式：帶圓角細框 */
         .input-box {
             width: 100%;
             box-sizing: border-box;
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-            padding: 12px 15px;
-            font-size: 15px;
-            margin-bottom: 25px;
+            border: 1px solid #eeeeee;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 14px;
+            margin-bottom: 18px;
             outline: none;
             display: block;
             background: #fff;
@@ -73,23 +76,24 @@
         .captcha-row {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             margin-bottom: 30px;
         }
         .captcha-input {
-            width: 100px;
+            width: 80px;
             margin-bottom: 0;
         }
         .captcha-code-box {
             background-color: #f2ede4;
-            padding: 10px 18px;
+            padding: 8px 15px;
             border-radius: 6px;
             font-style: italic;
             font-weight: bold;
             letter-spacing: 4px;
+            font-size: 13px;
         }
         .refresh-icon {
-            font-size: 20px;
+            font-size: 18px;
             color: #b5a48d;
             cursor: pointer;
         }
@@ -101,24 +105,19 @@
             color: white;
             border: none;
             padding: 15px;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .submit-btn:hover {
-            background-color: #635245;
         }
 
-        ::placeholder { color: #cccccc; }
+        ::placeholder { color: #d1d1d1; }
     </style>
 </head>
 <body>
 
     <div class="header-section">
         <div class="content-limit">
-            <!-- 標題置中區 -->
             <div class="title-group">
                 <div class="title-main">跑者服務中心</div>
                 <div class="title-en">RUNNER SERVICE CENTER</div>
@@ -128,7 +127,7 @@
             <p class="intro-p">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
             <p class="intro-p">您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
             <p class="intro-p">讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
-            <div class="service-hours">☀️ 服務時間：週一至週五 09:00 - 18:00</div>
+            <div class="service-hours">☀️ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
         </div>
     </div>
 
@@ -160,7 +159,7 @@
             <label class="field-label">您的問題</label>
             <textarea class="input-box" rows="5" style="height: auto;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
 
-            <label class="field-label">驗證碼：</label>
+            <label class="field-label">驗證碼</label>
             <div class="captcha-row">
                 <input type="text" class="input-box captcha-input" placeholder="輸入碼">
                 <div class="captcha-code-box">A 5 2 G</div>
