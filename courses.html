@@ -8,6 +8,7 @@
 </head>
 <body>
   
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -15,188 +16,212 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background-color: #f8f9f8; 
+            font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
+            background-color: #ffffff;
             margin: 0;
-            padding: 40px 20px;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .section {
+            padding: 60px 20px;
+            text-align: left;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .container {
-            max-width: 650px;
             width: 100%;
+            max-width: 600px;
         }
 
-        /* 標題：徹底禁用底線 */
-        .section-header {
-            text-align: center;
-            margin-bottom: 20px;
+        /* 背景色設定 */
+        .bg-blue { background-color: #f4f9ff; }
+        .bg-pink { background-color: #fff5f5; }
+        .bg-green { background-color: #f5faf7; }
+
+        /* 標題樣式：嚴禁底線 */
+        .title-group {
+            margin-bottom: 30px;
         }
-        .title-main {
-            font-size: 24px;
+        .main-title {
+            font-size: 28px;
             font-weight: bold;
             color: #2c3e50;
             margin: 0;
             border: none !important;
         }
-        .title-sub {
-            font-size: 13px;
-            color: #7f8c8d;
+        .sub-title {
+            font-size: 14px;
             letter-spacing: 1px;
-            display: block;
-            margin-top: 5px;
+            margin-top: 8px;
+            font-weight: bold;
             border: none !important;
+            display: block;
         }
 
-        /* 核心價值卡片：對齊 IMG_5340.jpeg 格式 */
-        .info-card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 25px;
+        /* 核心價值白色方塊 */
+        .highlight-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 25px 30px;
             margin-bottom: 30px;
-            display: flex;
-            align-items: flex-start;
             position: relative;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-            text-align: left;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
         }
-
-        /* 左側圓角垂直色條 */
-        .color-bar {
-            width: 5px;
+        .color-edge {
+            width: 6px;
             height: 60%;
-            border-radius: 10px;
             position: absolute;
-            left: 15px;
-            top: 20%;
+            left: 0;
+            border-radius: 0 10px 10px 0;
+        }
+        .highlight-content {
+            font-size: 17px;
+            font-weight: 500;
+            color: #444;
+            padding-left: 10px;
         }
 
-        .content-text {
-            padding-left: 15px;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #444444;
-        }
-
-        /* 列表：符號貼近文字 */
+        /* 列表樣式 */
         .detail-list {
             list-style: none;
             padding: 0;
-            margin: 10px 0 40px 30px;
-            text-align: left;
+            margin: 0;
         }
         .detail-item {
             font-size: 15px;
+            margin-bottom: 12px;
             color: #555;
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 15px;
+            display: flex;
+            align-items: flex-start;
         }
         .detail-item::before {
             content: "·";
-            position: absolute;
-            left: 0;
             font-weight: bold;
-            font-size: 20px;
+            font-size: 24px;
+            margin-right: 8px;
+            line-height: 1;
         }
 
-        /* 顏色定義 */
-        .online-color { background-color: #3498db; }
-        .private-color { background-color: #e67e22; }
-        .corporate-color { background-color: #2ecc71; }
+        /* 顏色細節 */
+        .text-blue { color: #5dade2; }
+        .bar-blue { background-color: #5dade2; }
+        .dot-blue::before { color: #5dade2; }
 
-        /* --- 頁尾樣式重構 (對齊最新圖片) --- */
+        .text-orange { color: #eb984e; }
+        .bar-orange { background-color: #eb984e; }
+        .dot-orange::before { color: #eb984e; }
+
+        .text-green { color: #58d68d; }
+        .bar-green { background-color: #58d68d; }
+        .dot-green::before { color: #58d68d; }
+
+        /* 頁尾重構：對齊 IMG_5341.jpeg */
         .footer {
-            margin-top: 80px;
+            background-color: #ffffff;
+            padding: 80px 20px;
             text-align: center;
         }
-
-        .footer-text {
+        .footer-slogan {
             color: #95a5a6;
-            font-size: 15px;
-            margin-bottom: 25px; /* 增加與按鈕之間的間隔 */
+            font-size: 16px;
+            margin-bottom: 30px;
             display: block;
         }
-
         .btn-consult {
-            background-color: #2c3e50; /* 深藍灰色背景 */
-            color: #ffffff !important; /* 純白文字 */
-            padding: 18px 70px;
-            border-radius: 100px; /* 大圓角膠囊形狀 */
+            background-color: #2c3e50;
+            color: #ffffff !important;
+            padding: 18px 80px;
+            border-radius: 100px;
             text-decoration: none;
             font-size: 18px;
-            font-weight: 500;
+            font-weight: bold;
             display: inline-block;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            transition: opacity 0.2s;
         }
-
     </style>
 </head>
 <body>
 
-<div class="container">
-
     <!-- 線上課表 -->
-    <div class="section-header">
-        <h2 class="title-main">線上課表</h2>
-        <span class="title-sub">ONLINE PROGRAMMING</span>
-    </div>
-    <div class="info-card">
-        <div class="color-bar online-color"></div>
-        <div class="content-text">
-            *核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。
+    <div class="section bg-blue">
+        <div class="container">
+            <div class="title-group">
+                <h2 class="main-title">線上課表</h2>
+                <span class="sub-title text-blue">ONLINE PROGRAMMING</span>
+            </div>
+            <div class="highlight-card">
+                <div class="color-edge bar-blue"></div>
+                <div class="highlight-content">
+                    ★ 核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。
+                </div>
+            </div>
+            <ul class="detail-list">
+                <li class="detail-item dot-blue">週期化備賽規劃：針對目標科學化安排訓練週期。</li>
+                <li class="detail-item dot-blue">數據即時反饋：遠端即時監測訓練與恢復狀態。</li>
+                <li class="detail-item dot-blue">動態調整：根據回報狀態，隨時調整下週課表。</li>
+                <li class="detail-item dot-blue">線上諮詢機制：定期討論訓練成效，解答疑難雜症。</li>
+            </ul>
         </div>
     </div>
-    <ul class="detail-list">
-        <li class="detail-item">科學化安排基礎期、強化期、巔峰期與減量期。</li>
-        <li class="detail-item">串聯穿戴裝置數據，教練遠端即時監測訓練狀態。</li>
-        <li class="detail-item">動態調整：隨時根據回報調整課表，避免運動傷害。</li>
-    </ul>
 
     <!-- 私人教學 -->
-    <div class="section-header">
-        <h2 class="title-main">私人教學</h2>
-        <span class="title-sub">ONE-ON-ONE COACHING</span>
-    </div>
-    <div class="info-card">
-        <div class="color-bar private-color"></div>
-        <div class="content-text">
-            *核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。
+    <div class="section bg-pink">
+        <div class="container">
+            <div class="title-group">
+                <h2 class="main-title">私人教學</h2>
+                <span class="sub-title text-orange">ONE-ON-ONE COACHING</span>
+            </div>
+            <div class="highlight-card">
+                <div class="color-edge bar-orange"></div>
+                <div class="highlight-content">
+                    ★ 核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。
+                </div>
+            </div>
+            <ul class="detail-list">
+                <li class="detail-item dot-orange">跑姿校正：透過錄影分析與拆解，使肌肉記憶正確動作。</li>
+                <li class="detail-item dot-orange">體感配速建立：協助跑者建立對各心率區間的感知。</li>
+                <li class="detail-item dot-orange">動態負荷調控：根據疲勞程度，即時調整訓練強度。</li>
+                <li class="detail-item dot-orange">跑者專項強化引導：針對薄弱環節設計輔助訓練。</li>
+            </ul>
         </div>
     </div>
-    <ul class="detail-list">
-        <li class="detail-item">跑姿校正：透過錄影分析，使肌肉記憶正確動作。</li>
-        <li class="detail-item">體感配速建立：透過教練現場陪跑建立配速感知。</li>
-        <li class="detail-item">動態負荷調控：即時調整訓練強度，發揮最大經濟性。</li>
-    </ul>
 
     <!-- 企業包班 -->
-    <div class="section-header">
-        <h2 class="title-main">企業包班</h2>
-        <span class="title-sub">CORPORATE GROUP TRAINING</span>
-    </div>
-    <div class="info-card">
-        <div class="color-bar corporate-color"></div>
-        <div class="content-text">
-            *核心價值：職場健康與活力、團體共榮，將運動融入企業文化。
+    <div class="section bg-green">
+        <div class="container">
+            <div class="title-group">
+                <h2 class="main-title">企業包班</h2>
+                <span class="sub-title text-green">CORPORATE GROUP</span>
+            </div>
+            <div class="highlight-card">
+                <div class="color-edge bar-green"></div>
+                <div class="highlight-content">
+                    ★ 核心價值：職場健康與活力、團體共榮，將運動融入企業文化。
+                </div>
+            </div>
+            <ul class="detail-list">
+                <li class="detail-item dot-green">提升團隊凝聚力：挑戰目標過程中，建立跨部門情感連結。</li>
+                <li class="detail-item dot-green">企業賽事推動：協助組隊參與路跑賽事，塑造品牌形象。</li>
+                <li class="detail-item dot-green">職場壓力紓解：透過運動釋放壓力，提升團隊工作效率。</li>
+            </ul>
         </div>
     </div>
-    <ul class="detail-list">
-        <li class="detail-item">提升團隊凝聚力：在挑戰中建立跨部門的情感連結。</li>
-        <li class="detail-item">企業賽事推動：協助組隊路跑，塑造正面品牌形象。</li>
-        <li class="detail-item">職場壓力紓解：透過團體運動釋放壓力，提升效率。</li>
-    </ul>
 
-    <!-- 頁尾重構 -->
+    <!-- 頁尾 -->
     <div class="footer">
-        <span class="footer-text">讓我們一起跑出健康快樂的每一步 ᴗ̈</span>
+        <span class="footer-slogan">讓我們一起跑出健康快樂的每一步 ᴗ̈</span>
         <a href="#" class="btn-consult">預約一份溫暖的諮詢</a>
     </div>
 
-</div>
+</body>
+</html>
+
 
 </body>
 </html>
