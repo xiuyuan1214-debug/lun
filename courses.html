@@ -22,25 +22,29 @@
             margin: 0;
             padding: 40px 20px;
             color: #333;
-            text-align: center; /* 內容置中 */
+            text-align: center; /* 整體置中 */
         }
         .container {
             max-width: 700px;
             margin: 0 auto;
         }
-        /* 區塊容器：確保無底線、無邊框 */
+
+        /* 區塊容器：完全移除所有底線與邊框 */
         .card {
             border-radius: 20px;
             padding: 40px 30px;
             margin-bottom: 40px;
-            border: none !important; /* 強制移除邊框 */
-            background-clip: padding-box;
+            border: none !important; /* 確保沒有邊界線 */
+            box-shadow: none; /* 移除陰影以保持乾淨 */
         }
+
+        /* 標題設定：移除所有 border-bottom 或橫線裝飾 */
         .title-main {
             font-size: 26px;
             font-weight: bold;
             margin: 0 0 10px 0;
             color: #2c3e50;
+            border-bottom: none !important; /* 強制刪除黃色底線 */
         }
         .title-sub {
             font-size: 14px;
@@ -49,17 +53,17 @@
             margin-bottom: 30px;
             font-weight: 600;
             display: block;
+            border-bottom: none !important; /* 強制刪除黃色底線 */
         }
-        /* 核心方塊：僅保留左側色條，其餘部分完全無底線 */
+
+        /* 核心重點方塊：僅保留左側垂直色條 */
         .highlight-box {
             background: #ffffff;
             border-radius: 12px;
             padding: 20px;
             margin: 0 auto 30px auto;
-            border-top: none !important;
-            border-right: none !important;
-            border-bottom: none !important;
-            border-left: 5px solid; 
+            border: none !important;
+            border-left: 5px solid !important; /* 只准許左側有線 */
             display: inline-flex;
             align-items: flex-start;
             text-align: left;
@@ -71,7 +75,8 @@
             margin-right: 10px;
             margin-top: 2px;
         }
-        /* 清單樣式：符號靠近文字 */
+
+        /* 清單樣式：符號緊貼文字 */
         .detail-list {
             list-style: none;
             padding: 0;
@@ -83,7 +88,7 @@
             font-size: 15px;
             margin-bottom: 15px;
             line-height: 1.7;
-            padding-left: 15px; /* 緊貼符號 */
+            padding-left: 12px; /* 縮小與符號距離 */
             position: relative;
             color: #4a4a4a;
         }
@@ -96,25 +101,23 @@
             line-height: 0.8;
         }
 
-        /* 顏色樣式 - 嚴格禁止黃色 */
+        /* 顏色主題設定 - 嚴格禁止黃色 */
         .online { background-color: #f1f7fd; }
         .online .title-sub { color: #3498db; }
-        .online .highlight-box { border-left-color: #3498db; }
+        .online .highlight-box { border-left-color: #3498db !important; }
         .online .detail-item::before { color: #3498db; }
 
         .private { background-color: #fff6f6; }
         .private .title-sub { color: #e67e22; }
-        .private .highlight-box { border-left-color: #e67e22; }
+        .private .highlight-box { border-left-color: #e67e22 !important; }
         .private .detail-item::before { color: #e67e22; }
 
         .corporate { background-color: #f3faf6; }
         .corporate .title-sub { color: #2ecc71; }
-        .corporate .highlight-box { border-left-color: #2ecc71; }
+        .corporate .highlight-box { border-left-color: #2ecc71 !important; }
         .corporate .detail-item::before { color: #2ecc71; }
 
-        .footer {
-            margin-top: 60px;
-        }
+        .footer { margin-top: 60px; }
         .btn-consult {
             background: #2c3e50;
             color: #ffffff;
@@ -189,6 +192,9 @@
     </div>
 
 </div>
+
+</body>
+</html>
 
 </body>
 </html>
