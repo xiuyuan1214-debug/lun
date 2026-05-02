@@ -2,178 +2,185 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
+    <title>Runner Service Center</title>
     <style>
         body {
-            font-family: "Microsoft JhengHei", sans-serif;
-            background-color: #fdfaf5;
-            color: #4a3c31;
             margin: 0;
             padding: 0;
+            font-family: -apple-system, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+            background-color: #fdfaf5;
+            color: #4a3c31;
             display: flex;
             justify-content: center;
         }
 
-        .container {
+        .phone-mockup {
             width: 100%;
-            max-width: 600px;
-            background-color: white;
+            max-width: 414px; /* 模擬手機寬度 */
+            background: white;
+            min-height: 100vh;
         }
 
-        /* 頂部黃色區域：參考 IMG_5382_2.jpg */
-        .header {
+        /* 頂部黃色資訊區：參考 IMG_5382_3.jpg */
+        .header-section {
             background-color: #fff9e6;
-            padding: 30px;
-            line-height: 1.8;
+            padding: 35px 25px 20px 25px;
         }
 
-        .header h1 { font-size: 22px; margin: 0; }
-        .header .en-sub { font-size: 12px; color: #b5a48d; letter-spacing: 2px; margin-bottom: 20px; }
-        .header .slogan { font-weight: bold; color: #b5a48d; margin: 15px 0; }
-        .header p { font-size: 15px; margin: 10px 0; }
-        .header .hours { font-size: 11px; color: #b5a48d; margin-top: 20px; }
+        .title-group h1 {
+            font-size: 20px;
+            margin: 0;
+            color: #4a3c31;
+        }
+
+        .title-group .en-sub {
+            font-size: 10px;
+            color: #b5a48d;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .slogan {
+            font-size: 14px;
+            font-weight: bold;
+            color: #b5a48d;
+            margin-bottom: 12px;
+        }
+
+        .intro-text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .service-hours {
+            font-size: 10px;
+            color: #b5a48d;
+            margin-top: 25px;
+        }
 
         /* 表單區域 */
-        .form-body {
-            padding: 30px;
+        .form-content {
+            padding: 25px;
+            background: white;
+            border-radius: 20px 20px 0 0;
+            margin-top: -15px;
         }
 
-        /* 關鍵設定 1：所有表格上方標題大小統一 */
-        .field-label {
-            font-size: 18px !important; 
+        /* 關鍵：統一標題大小 */
+        .label-text {
+            font-size: 16px;
             font-weight: bold;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            color: #4a3c31;
         }
 
-        /* 關鍵設定 2：表格內文字完全不要有框框 */
-        table {
+        /* 關鍵：表格內文字完全不要有框框 */
+        input, select, textarea {
             width: 100%;
-            border-collapse: collapse;
-            border: none !important; /* 確保表格本身無框 */
-            margin-bottom: 25px;
-        }
-
-        td {
-            border: none !important; /* 確保單元格無框 */
-            padding: 5px 0;
-        }
-
-        /* 模擬輸入內容文字樣式 */
-        .input-text-only {
-            font-size: 15px;
-            color: #ccc;
-            outline: none;
-            border: none !important;
+            border: none !important; /* 徹底移除框線 */
             background: none !important;
+            font-size: 14px;
+            color: #ccc;
+            padding: 5px 0 15px 0; /* 底部留一點間距代替框線感 */
+            outline: none;
+            -webkit-appearance: none;
+            font-family: inherit;
         }
 
         .flex-row {
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
 
-        .captcha-code {
+        .flex-item {
+            flex: 1;
+        }
+
+        .captcha-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .captcha-box {
             background-color: #f2ede4;
-            padding: 5px 15px;
+            padding: 8px 15px;
             font-style: italic;
-            letter-spacing: 5px;
-            display: inline-block;
-            margin-left: 10px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            border-radius: 4px;
+        }
+
+        /* 針對文字區域的 placeholder 顏色 */
+        ::placeholder {
+            color: #ccc;
+            opacity: 1;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- 頂部資訊區 -->
-        <div class="header">
-            <h1>跑者服務中心</h1>
-            <div class="en-sub">RUNNER SERVICE CENTER</div>
+    <div class="phone-mockup">
+        <!-- 參考 IMG_5382_3.jpg 頂部文字 -->
+        <div class="header-section">
+            <div class="title-group">
+                <h1>跑者服務中心</h1>
+                <div class="en-sub">RUNNER SERVICE CENTER</div>
+            </div>
+            
             <div class="slogan">讓我們聽見您的腳步聲</div>
-            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
-            <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
-            <p>讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
-            <div class="hours">☀️ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些進動時間)</div>
+            
+            <div class="intro-text">
+                無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈
+            </div>
+            <div class="intro-text">
+                您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。
+            </div>
+            <div class="intro-text">
+                讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。
+            </div>
+            
+            <div class="service-hours">☀️ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些進動時間)</div>
         </div>
 
-        <!-- 表單區：採用 table 結構但移除所有框線 -->
-        <div class="form-body">
-            
-            <table>
-                <tr>
-                    <td>
-                        <span class="field-label">姓名 / Name</span>
-                        <div class="input-text-only">請輸入您的姓名</div>
-                    </td>
-                </tr>
-            </table>
+        <div class="form-content">
+            <!-- 標題統一 16px，輸入文字無框線 -->
+            <label class="label-text">姓名 / Name</label>
+            <input type="text" placeholder="請輸入您的姓名">
 
-            <table>
-                <tr>
-                    <td>
-                        <span class="field-label">電子信箱 / E-mail</span>
-                        <div class="input-text-only">runner@example.com</div>
-                    </td>
-                </tr>
-            </table>
+            <label class="label-text">電子信箱 / E-mail</label>
+            <input type="email" placeholder="runner@example.com">
 
-            <table>
-                <tr>
-                    <td>
-                        <span class="field-label">跑者屬性</span>
-                        <div class="input-text-only">新手跑者</div>
-                    </td>
-                </tr>
-            </table>
+            <label class="label-text">跑者屬性</label>
+            <select>
+                <option>新手跑者</option>
+            </select>
 
             <div class="flex-row">
-                <table>
-                    <tr>
-                        <td>
-                            <span class="field-label">跑步最佳成績 (PB)</span>
-                            <div class="input-text-only">例如：全馬3:30:00</div>
-                        </td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <td>
-                            <span class="field-label">目標成績</span>
-                            <div class="input-text-only">例如：全馬2:59:59</div>
-                        </td>
-                    </tr>
-                </table>
+                <div class="flex-item">
+                    <label class="label-text">跑步最佳成績 (PB)</label>
+                    <input type="text" placeholder="例如：全馬3:30:00">
+                </div>
+                <div class="flex-item">
+                    <label class="label-text">目標成績</label>
+                    <input type="text" placeholder="例如：全馬2:59:59">
+                </div>
             </div>
 
-            <table>
-                <tr>
-                    <td>
-                        <span class="field-label">慣用穿戴配備</span>
-                        <div class="input-text-only">例如：Garmin, Apple Watch, Coros</div>
-                    </td>
-                </tr>
-            </table>
+            <label class="label-text">慣用穿戴配備</label>
+            <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
 
-            <table>
-                <tr>
-                    <td>
-                        <span class="field-label">您的問題</span>
-                        <div class="input-text-only">每一滴汗水，都值得被聽見...</div>
-                    </td>
-                </tr>
-            </table>
+            <label class="label-text">您的問題</label>
+            <textarea placeholder="每一滴汗水，都值得被聽見..." rows="3"></textarea>
 
-            <table>
-                <tr>
-                    <td>
-                        <span class="field-label">驗證碼：</span>
-                        <div class="input-text-only">
-                            輸入碼 <span class="captcha-code">A 5 2 G</span>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-
+            <label class="label-text">驗證碼：</label>
+            <div class="captcha-row">
+                <input type="text" placeholder="輸入碼" style="width: 80px; padding-bottom: 5px;">
+                <div class="captcha-box">A 5 2 G</div>
+            </div>
         </div>
     </div>
 
