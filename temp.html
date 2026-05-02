@@ -30,7 +30,7 @@
         }
         .nav-item:hover { color: #b5a48d; }
 
-        /* 頂部區域 */
+        /* 頂部黃底區域 */
         .header-section {
             background-color: #fff9e6;
             padding: 30px 20px;
@@ -50,7 +50,7 @@
         .title-main { font-size: 20px; margin: 0; font-weight: bold; }
         .title-en { font-size: 10px; color: #b5a48d; letter-spacing: 2px; margin-top: 5px; }
 
-        /* 關鍵修正：粗體且顏色改變 (深褐色 #2d241d) */
+        /* Slogan：粗體、深褐色、14px */
         .slogan-bold { 
             font-size: 14px; 
             font-weight: bold; 
@@ -58,6 +58,7 @@
             margin-bottom: 12px;
         }
 
+        /* 內文：統一 14px */
         .intro-p { 
             font-size: 14px; 
             line-height: 1.7; 
@@ -72,7 +73,14 @@
             display: block;
         }
 
-        /* 表單標籤：縮小至 10px */
+        /* 表單區域：關鍵修正 - 增加 padding-top 讓「姓名」與黃底保持間隔 */
+        .form-section {
+            padding: 35px 20px 20px 20px; /* 增加頂部間距至 35px */
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* 欄位標籤：細小 10px */
         .field-label {
             font-size: 10px; 
             font-weight: bold;
@@ -81,6 +89,7 @@
             color: #4a3c31;
         }
 
+        /* 輸入框：極窄高度 */
         .input-box {
             width: 100%;
             box-sizing: border-box;
@@ -153,6 +162,7 @@
         </div>
     </div>
 
+    <!-- 表單區與上方已有適當間隔 -->
     <div class="form-section">
         <div class="content-limit">
             <label class="field-label">姓名 / Name</label>
