@@ -1,208 +1,46 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-            background-color: #ffffff;
-            color: #4a3c31;
-        }
+<div class="form-section">
+    <div class="content-limit">
+        <!-- 姓名 -->
+        <label class="field-label">姓名 / Name</label>
+        <input type="text" class="input-box" placeholder="請輸入您的姓名">
 
-        /* 導覽列 */
-        .nav-bar {
-            background-color: #333333;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        .nav-item {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 13px;
-            letter-spacing: 1px;
-            padding: 5px;
-            cursor: pointer;
-        }
-        .nav-item:hover { color: #b5a48d; }
+        <!-- 電子信箱 -->
+        <label class="field-label">電子信箱 / E-mail</label>
+        <input type="email" class="input-box" placeholder="runner@example.com">
 
-        /* 頂部黃底區域 */
-        .header-section {
-            background-color: #fff9e6;
-            padding: 30px 20px;
-            width: 100%;
-            box-sizing: border-box;
-        }
+        <!-- 跑者屬性 -->
+        <label class="field-label">跑者屬性 / Runner Type</label>
+        <select class="input-box">
+            <option>新手跑者 / Beginner</option>
+            <option>半馬跑者 / Half Marathoner</option>
+            <option>全馬跑者 / Full Marathoner</option>
+            <option>超馬/越野跑者 / Ultra & Trail Runner</option>
+        </select>
 
-        .content-limit {
-            max-width: 500px;
-            margin: 0 auto;
-        }
+        <!-- 最佳成績 -->
+        <label class="field-label">最佳成績 / Personal Best</label>
+        <input type="text" class="input-box" placeholder="例如：全馬3:30:00">
 
-        .title-group {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .title-main { font-size: 20px; margin: 0; font-weight: bold; }
-        .title-en { font-size: 10px; color: #b5a48d; letter-spacing: 2px; margin-top: 5px; }
+        <!-- 目標成績 -->
+        <label class="field-label">目標成績 / Target Goal</label>
+        <input type="text" class="input-box" placeholder="例如：全馬2:59:59">
 
-        /* Slogan：粗體、深褐色 */
-        .slogan-bold { 
-            font-size: 14px; 
-            font-weight: bold; 
-            color: #2d241d; 
-            margin-bottom: 12px;
-        }
+        <!-- 穿戴配備 -->
+        <label class="field-label">穿戴配備 / Wearable Device</label>
+        <input type="text" class="input-box" placeholder="例如：Garmin, Apple Watch, Coros">
 
-        /* 內文：統一 14px */
-        .intro-p { 
-            font-size: 14px; 
-            line-height: 1.7; 
-            margin-bottom: 12px;
-            font-weight: normal;
-        }
+        <!-- 您的問題 -->
+        <label class="field-label">您的問題 / Your Inquiry</label>
+        <textarea class="input-box" rows="4" style="height: auto;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
 
-        .service-hours { 
-            font-size: 11px; 
-            color: #b5a48d; 
-            margin-top: 20px;
-            display: block;
-        }
-
-        /* 表單區域 */
-        .form-section {
-            padding: 20px 20px 20px 20px; 
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        /* 欄位標籤：細小 10px */
-        .field-label {
-            font-size: 10px; 
-            font-weight: bold;
-            display: block;
-            margin-bottom: 3px;
-            color: #4a3c31;
-        }
-
-        /* 輸入框：極窄高度 */
-        .input-box {
-            width: 100%;
-            box-sizing: border-box;
-            border: 1px solid #eeeeee;
-            border-radius: 4px;
-            padding: 3px 10px; 
-            font-size: 13px;
-            margin-bottom: 10px; 
-            outline: none;
-            display: block;
-            background: #fff;
-            color: #4a3c31;
-        }
-
-        .captcha-row {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .captcha-input { width: 70px; margin-bottom: 0; }
-        .captcha-code-box {
-            background-color: #f2ede4;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-style: italic;
-            font-weight: bold;
-            letter-spacing: 3px;
-            font-size: 12px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background-color: #4a3c31;
-            color: white;
-            border: none;
-            padding: 10px;
-            font-size: 14px;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        ::placeholder { color: #d1d1d1; }
-    </style>
-</head>
-<body>
-
-    <div class="nav-bar">
-        <a href="resume.html" class="nav-item">教練資歷</a>
-        <a href="course.html" class="nav-item">課程簡介</a>
-        <a href="tools.html" class="nav-item">配速工具</a>
-        <a href="training.html" class="nav-item">訓練日誌</a>
-        <a href="races.html" class="nav-item">賽事日誌</a>
-    </div>
-
-    <div class="header-section">
-        <div class="content-limit">
-            <div class="title-group">
-                <div class="title-main">跑者服務中心</div>
-                <div class="title-en">RUNNER SERVICE CENTER</div>
-            </div>
-            
-            <div class="slogan-bold">讓我們聽見您の腳步聲</div>
-            
-            <p class="intro-p">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
-            <p class="intro-p">您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
-            <p class="intro-p">讓我們一起朝更好的方向邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。</p>
-            <p class="intro-p">希望這裡不只是網站，更是跑者們的補給站。</p>
-            
-            <div class="service-hours">☀️服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
+        <!-- 驗證碼與送出按鈕維持原樣 -->
+        <label class="field-label">驗證碼 / Verification Code</label>
+        <div class="captcha-row">
+            <input type="text" class="input-box captcha-input" placeholder="輸入碼">
+            <div class="captcha-code-box">A 5 2 G</div>
+            <span style="cursor:pointer">↻</span>
         </div>
+
+        <button type="submit" class="submit-btn">送出表單 / Submit</button>
     </div>
-
-    <div class="form-section">
-        <div class="content-limit">
-            <label class="field-label">姓名 / Name</label>
-            <input type="text" class="input-box" placeholder="請輸入您的姓名">
-
-            <label class="field-label">電子信箱 / E-mail</label>
-            <input type="email" class="input-box" placeholder="runner@example.com">
-
-            <label class="field-label">跑者屬性</label>
-            <select class="input-box">
-                <option>新手跑者</option>
-                <option>半馬跑者</option>
-                <option>全馬跑者</option>
-                <option>超馬/越野跑者</option>
-            </select>
-
-            <label class="field-label">最佳成績</label>
-            <input type="text" class="input-box" placeholder="例如：全馬3:30:00">
-
-            <!-- 已復原的目標成績欄位 -->
-            <label class="field-label">目標成績</label>
-            <input type="text" class="input-box" placeholder="例如：全馬2:59:59">
-
-            <label class="field-label">穿戴配備</label>
-            <input type="text" class="input-box" placeholder="例如：Garmin, Apple Watch, Coros">
-
-            <label class="field-label">您的問題</label>
-            <textarea class="input-box" rows="4" style="height: auto;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
-
-            <label class="field-label">驗證碼</label>
-            <div class="captcha-row">
-                <input type="text" class="input-box captcha-input" placeholder="輸入碼">
-                <div class="captcha-code-box">A 5 2 G</div>
-                <span style="cursor:pointer">↻</span>
-            </div>
-
-            <button type="submit" class="submit-btn">送出表單</button>
-        </div>
-    </div>
-
-</body>
-</html>
+</div>
