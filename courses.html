@@ -25,19 +25,10 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .user-name {
-            font-size: 18px;
-            color: #333333;
-            font-weight: 500;
-            text-align: center;
-            padding-top: 40px;
-            margin-bottom: -10px;
-        }
+        /* 區塊間的巨大白色縫隙 - 對應您圖中的紅色大圓圈 */
+        .wrapper { display: flex; flex-direction: column; gap: 60px; } 
 
-        /* 區塊間的巨大白色縫隙 (對應紅圈) */
-        .wrapper { display: flex; flex-direction: column; gap: 40px; } 
-
-        .section { width: 100%; padding: 75px 25px; }
+        .section { width: 100%; padding: 80px 25px; }
         .container { max-width: 500px; margin: 0 auto; }
 
         /* 顏色定義 */
@@ -49,24 +40,24 @@
         .text-green { color: #4e9a78; }
 
         /* 標題設定 */
-        .main-title { font-size: 24px; color: #333333; font-weight: 700; margin-bottom: 6px; text-align: center; }
+        .main-title { font-size: 26px; color: #333333; font-weight: 700; margin-bottom: 8px; text-align: center; }
         .sub-title { 
             font-size: 15px; 
-            font-weight: 800; /* 強制加粗 */
-            letter-spacing: 1.2px; 
-            margin-bottom: 35px; 
+            font-weight: 900; /* 強力加粗 */
+            letter-spacing: 1.5px; 
+            margin-bottom: 40px; 
             text-align: center; 
             display: block; 
         }
 
-        /* 白色方塊 */
+        /* 白色方塊內容 */
         .card {
             background-color: #ffffff;
             border-radius: 12px;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             display: flex;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.03);
         }
 
         .card-bar { width: 6px; flex-shrink: 0; border-radius: 12px 0 0 12px; }
@@ -74,27 +65,25 @@
         .bar-orange { background-color: #D97B30; }
         .bar-green { background-color: #4e9a78; }
 
-        .card-content { padding: 26px 22px; font-size: 16px; line-height: 1.7; color: #444444; }
-        .star { color: #999999; font-size: 18px; margin-right: 4px; vertical-align: middle; font-weight: normal; }
+        .card-content { padding: 28px 22px; font-size: 16px; line-height: 1.8; color: #444444; }
+        .star { color: #999999; font-size: 18px; margin-right: 5px; vertical-align: middle; font-weight: normal; }
 
-        /* 列表樣式 (對應打勾處間隔) */
+        /* 列表項目間距 - 對應打勾處 */
         .list { list-style: none; }
         .list-item { 
             font-size: 14px; 
-            margin-bottom: 18px; /* 加大列表項目的間距 */
+            margin-bottom: 20px; /* 大幅拉開行距 */
             color: #666666; 
             display: flex; 
             line-height: 1.6; 
         }
-        .dot { font-size: 20px; margin-right: 8px; line-height: 0.8; font-weight: 900; }
+        .dot { font-size: 20px; margin-right: 10px; line-height: 0.8; font-weight: 900; }
 
-        .footer { padding: 100px 20px; text-align: center; }
-        .btn { background-color: #333333; color: #ffffff; padding: 18px 75px; border-radius: 8px; display: inline-block; font-size: 16px; }
+        .footer { padding: 120px 20px; text-align: center; }
+        .btn { background-color: #333333; color: #ffffff; padding: 20px 80px; border-radius: 8px; display: inline-block; font-size: 16px; font-weight: 600; }
     </style>
 </head>
 <body>
-
-<div class="user-name">黃毓軒</div>
 
 <div class="wrapper">
     <!-- 線上課表 -->
@@ -152,9 +141,12 @@
 </div>
 
 <div class="footer">
-    <p style="color:#999; font-size:14px; margin-bottom:30px;">讓我們一起跑出健康快樂的每一步 ᴗ̈</p>
+    <p style="color:#999; font-size:14px; margin-bottom:35px;">讓我們一起跑出健康快樂的每一步 ᴗ̈</p>
     <a href="#" class="btn">預約一份溫暖的諮詢</a>
 </div>
+
+</body>
+</html>
 
 </body>
 </html>
