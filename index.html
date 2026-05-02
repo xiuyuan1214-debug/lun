@@ -5,27 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跑者服務中心</title>
     <style>
-        body { margin: 0; padding: 0; font-family: sans-serif; background: #ffffff; }
-        
-        /* 上半部：米黃色區塊 */
-        .top-section {
-            background-color: #fcf6d6 !important;
-            padding: 40px 30px;
-            color: #614e1a;
-        }
+        body { margin: 0; padding: 0; font-family: -apple-system, sans-serif; background: #ffffff; }
+        .top-section { background-color: #fcf6d6 !important; padding: 45px 25px; color: #614e1a; }
         .title { font-size: 24px; font-weight: bold; margin: 0; }
         .subtitle { font-size: 11px; color: #b5a48d; margin-top: 5px; }
-        .intro { font-size: 14px; line-height: 1.8; margin-top: 20px; color: #7a6a53; }
-
-        /* 下半部：白色表單區塊 */
-        .bottom-section { padding: 40px 30px; background: #ffffff; }
+        .intro { font-size: 14.5px; line-height: 1.8; margin-top: 20px; color: #7a6a53; }
+        .bottom-section { padding: 40px 25px; background: #ffffff; }
         label { display: block; color: #614e1a; font-size: 18px; font-weight: bold; margin-top: 25px; }
-        
         input, select, textarea {
             width: 100%; padding: 14px; margin-top: 10px;
-            background: #fffef9 !important;
-            border: 1px solid #f0eada !important;
-            border-radius: 12px; box-sizing: border-box;
+            background: #fffef9 !important; border: 1px solid #f0eada !important;
+            border-radius: 12px; box-sizing: border-box; font-size: 14px; outline: none;
         }
         .row { display: flex; gap: 15px; }
         .col { flex: 1; }
@@ -36,7 +26,7 @@
         <h1 class="title">跑者服務中心</h1>
         <div class="subtitle">RUNNER SERVICE CENTER</div>
         <p style="font-weight: bold; margin-top: 30px;">讓我們聽見您的腳步聲</p>
-        <div class="intro">無論您是因為突破個人最佳成績而興奮，亦或是正處於低潮，歡迎聯繫我們。</div>
+        <div class="intro">無論您是因為突破個人最佳成績而興奮，亦或是正處於低潮，歡迎聯繫我們。希望能成為跑者們的補給站。</div>
         <div style="font-size: 10px; color: #b5a48d; border-top: 1px solid #efe8c5; padding-top: 15px; margin-top: 30px;">
             ☀ 服務時間：週一至週五 09:00 - 18:00
         </div>
@@ -44,16 +34,13 @@
     <div class="bottom-section">
         <form>
             <label>姓名 / Name</label>
-            <input type="text" placeholder="請輸入您的姓名">
-            
+            <input type="text" placeholder="請輸入姓名">
             <label>電子信箱 / E-mail</label>
             <input type="email" placeholder="runner@example.com">
-
             <div class="row">
-                <div class="col"><label>跑步最佳成績 (PB)</label><input type="text" placeholder="例如：全馬3:30:00"></div>
-                <div class="col"><label>目標成績</label><input type="text" placeholder="例如：全馬2:59:59"></div>
+                <div class="col"><label>跑步最佳成績 (PB)</label><input type="text" placeholder="3:30:00"></div>
+                <div class="col"><label>目標成績</label><input type="text" placeholder="2:59:59"></div>
             </div>
-
             <label>您的問題</label>
             <textarea rows="5" placeholder="每一滴汗水，都值得被聽見..."></textarea>
         </form>
