@@ -8,61 +8,60 @@
         body { margin: 0; padding: 0; font-family: -apple-system, "Noto Sans TC", sans-serif; background-color: #ffffff; color: #4a3c31; }
         
         /* 標題區域 */
-        .header-section { background-color: #fff9e6; padding: 15px 20px 10px 20px; text-align: center; width: 100%; box-sizing: border-box; }
-        .content-limit { max-width: 340px; margin: 0 auto; text-align: left; } /* 縮小容器寬度讓整體更精緻 */
+        .header-section { background-color: #fff9e6; padding: 12px 10px 8px 10px; text-align: center; width: 100%; box-sizing: border-box; }
+        
+        /* 極限縮小容器寬度 */
+        .content-limit { max-width: 280px; margin: 0 auto; text-align: left; } 
         
         .title-main { font-size: 17px; font-weight: bold; margin-bottom: 2px; text-align: center; color: #2d241d; }
-        .title-sub { font-size: 11px; text-align: center; color: #b5a48d; margin-bottom: 10px; font-weight: normal; }
-        .intro-p { font-size: 12px; line-height: 1.4; margin-bottom: 4px; color: #4a3c31; }
+        .title-sub { font-size: 10px; text-align: center; color: #b5a48d; margin-bottom: 8px; font-weight: normal; }
+        .intro-p { font-size: 11px; line-height: 1.4; margin-bottom: 4px; color: #4a3c31; }
         
-        /* --- 服務時間：微型備註化 --- */
+        /* --- 服務時間：極致微縮方案 (0.45倍) --- */
         .service-hours { 
             font-size: 10px !important; 
             color: #b5a48d; 
             margin-top: 5px; 
             display: inline-block;
-            transform: scale(0.55); /* 再次強制縮小至 55% */
+            transform: scale(0.45); 
             transform-origin: left top;
-            opacity: 0.5;
+            opacity: 0.4;
             white-space: nowrap;
         }
 
-        /* --- 表單與框框：縮減寬度與高度 --- */
-        .form-section { padding: 10px 20px; }
-        .field-label { font-size: 10px; font-weight: bold; display: block; margin-bottom: 2px; color: #4a3c31; }
+        /* --- 框框與表單：極度窄版化 --- */
+        .form-section { padding: 5px 10px; }
+        .field-label { font-size: 9px; font-weight: bold; display: block; margin-bottom: 2px; color: #4a3c31; }
         
         .input-box { 
-            width: 100%;       /* 在 340px 的容器內 100% 寬度 */
-            max-width: 300px;  /* 限制框框最大寬度，不讓它太長 */
+            width: 100%;       
             box-sizing: border-box; 
             border: 1px solid #eeeeee; 
-            border-radius: 3px; 
-            padding: 4px 8px;   
-            font-size: 12px;    
-            margin-bottom: 8px; 
+            border-radius: 2px; 
+            padding: 3px 6px;   
+            font-size: 11px;    
+            margin-bottom: 6px; 
             outline: none; 
             background: #fff;
-            height: 26px;       /* 再次降低框框高度 */
+            height: 24px; /* 極限高度 */
         }
         
-        textarea.input-box { height: auto; min-height: 45px; }
+        textarea.input-box { height: auto; min-height: 40px; }
         
         .submit-btn { 
             width: 100%; 
-            max-width: 300px;
             background-color: #4a3c31; 
             color: white; 
             border: none; 
-            padding: 8px; 
-            font-size: 13px; 
+            padding: 6px; 
+            font-size: 12px; 
             font-weight: bold; 
-            border-radius: 4px; 
+            border-radius: 3px; 
             cursor: pointer; 
-            margin-top: 5px;
         }
 
-        .captcha-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-        .captcha-code { background-color: #f2ede4; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+        .captcha-row { display: flex; align-items: center; gap: 5px; margin-bottom: 6px; }
+        .captcha-code { background-color: #f2ede4; padding: 2px 6px; border-radius: 3px; font-weight: bold; font-size: 11px; }
     </style>
 </head>
 <body>
@@ -82,25 +81,16 @@
     <div class="form-section">
         <div class="content-limit">
             <label class="field-label">姓名 / Name</label>
-            <input type="text" class="input-box" placeholder="請輸入姓名">
+            <input type="text" class="input-box">
             
             <label class="field-label">電子信箱 / E-mail</label>
-            <input type="email" class="input-box" placeholder="runner@gmail.com">
-
-            <label class="field-label">跑者屬性 / Runner Type</label>
-            <select class="input-box">
-                <option value="">請選擇 / Please Select</option>
-                <option>初階跑者 / Beginner</option>
-                <option>進階跑者 / Advanced</option>
-                <option>馬拉松選手 / Marathoner</option>
-            </select>
+            <input type="email" class="input-box">
 
             <label class="field-label">您的問題 / Your Inquiry</label>
-            <textarea class="input-box" rows="2" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+            <textarea class="input-box" rows="2"></textarea>
             
-            <label class="field-label">驗證碼 / Code</label>
             <div class="captcha-row">
-                <input type="text" class="input-box" style="width: 60px; margin-bottom: 0;">
+                <input type="text" class="input-box" style="width: 50px; margin-bottom: 0;">
                 <div class="captcha-code">A 5 2 G</div>
             </div>
 
