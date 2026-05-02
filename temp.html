@@ -2,103 +2,125 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>Runner Form</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: "Microsoft JhengHei", sans-serif;
             color: #4a3c31;
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 800px;
+            margin: 40px auto;
         }
-        .form-group {
+
+        /* 表格上方標題文字：統一大小與樣式 */
+        .table-label {
+            font-size: 1.25rem;
+            font-weight: bold;
+            padding-bottom: 8px;
+            display: block;
+        }
+
+        /* 表格設定：完全移除框線 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: none; /* 移除表格外框 */
             margin-bottom: 25px;
         }
-        /* 統一標題大小 */
-        label {
-            display: block;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 8px;
+
+        td {
+            border: none; /* 移除儲存格框線 */
+            padding: 5px 0;
+            vertical-align: top;
         }
-        /* 移除框線，僅保留文字樣式 */
-        .input-text {
-            width: 100%;
-            border: none;
-            background: none;
+
+        /* 表格內文字內容樣式 */
+        .cell-text {
             font-size: 1rem;
             color: #8e8e8e;
-            padding: 5px 0;
-            outline: none;
         }
-        .row {
-            display: flex;
-            gap: 20px;
-        }
-        .row .form-group {
-            flex: 1;
-        }
-        .captcha-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+
+        /* 驗證碼樣式 */
         .captcha-code {
             background-color: #f2ede4;
-            padding: 10px 20px;
-            border-radius: 8px;
-            letter-spacing: 5px;
+            padding: 5px 15px;
+            letter-spacing: 4px;
             font-style: italic;
+            display: inline-block;
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
 
-    <!-- 參考文件：IMG_5389.jpeg -->
+    <!-- 參考文件：IMG_5389_2.jpeg -->
 
-    <div class="form-group">
-        <label>姓名 / Name</label>
-        <div class="input-text">請輸入您的姓名</div>
-    </div>
+    <table>
+        <tr>
+            <td>
+                <span class="table-label">姓名 / Name</span>
+                <div class="cell-text">請輸入您的姓名</div>
+            </td>
+        </tr>
+    </table>
 
-    <div class="form-group">
-        <label>電子信箱 / E-mail</label>
-        <div class="input-text">runner@example.com</div>
-    </div>
+    <table>
+        <tr>
+            <td>
+                <span class="table-label">電子信箱 / E-mail</span>
+                <div class="cell-text">runner@example.com</div>
+            </td>
+        </tr>
+    </table>
 
-    <div class="form-group">
-        <label>跑者屬性</label>
-        <div class="input-text">新手跑者</div>
-    </div>
+    <table>
+        <tr>
+            <td>
+                <span class="table-label">跑者屬性</span>
+                <div class="cell-text">新手跑者</div>
+            </td>
+        </tr>
+    </table>
 
-    <div class="row">
-        <div class="form-group">
-            <label>跑步最佳成績 (PB)</label>
-            <div class="input-text">例如：全馬3:30:00</div>
-        </div>
-        <div class="form-group">
-            <label>目標成績</label>
-            <div class="input-text">例如：全馬2:59:59</div>
-        </div>
-    </div>
+    <table>
+        <tr>
+            <td style="width: 50%;">
+                <span class="table-label">跑步最佳成績 (PB)</span>
+                <div class="cell-text">例如：全馬3:30:00</div>
+            </td>
+            <td style="width: 50%;">
+                <span class="table-label">目標成績</span>
+                <div class="cell-text">例如：全馬2:59:59</div>
+            </td>
+        </tr>
+    </table>
 
-    <div class="form-group">
-        <label>慣用穿戴配備</label>
-        <div class="input-text">例如：Garmin, Apple Watch, Coros</div>
-    </div>
+    <table>
+        <tr>
+            <td>
+                <span class="table-label">慣用穿戴配備</span>
+                <div class="cell-text">例如：Garmin, Apple Watch, Coros</div>
+            </td>
+        </tr>
+    </table>
 
-    <div class="form-group">
-        <label>您的問題</label>
-        <div class="input-text">每一滴汗水，都值得被聽見...</div>
-    </div>
+    <table>
+        <tr>
+            <td>
+                <span class="table-label">您的問題</span>
+                <div class="cell-text">每一滴汗水，都值得被聽見...</div>
+            </td>
+        </tr>
+    </table>
 
-    <div class="form-group">
-        <label>驗證碼：</label>
-        <div class="captcha-area">
-            <div class="input-text" style="width: auto;">輸入碼</div>
-            <div class="captcha-code">A 5 2 G</div>
-        </div>
-    </div>
+    <table>
+        <tr>
+            <td>
+                <span class="table-label">驗證碼：</span>
+                <div class="cell-text">
+                    輸入碼 <span class="captcha-code">A 5 2 G</span>
+                </div>
+            </td>
+        </tr>
+    </table>
 
 </body>
 </html>
