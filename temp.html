@@ -9,40 +9,48 @@
         
         /* 導覽列 */
         .nav-bar { background-color: #333333; padding: 12px 20px; display: flex; justify-content: center; gap: 20px; }
-        .nav-item { color: #ffffff; text-decoration: none; font-size: 14px; cursor: pointer; transition: color 0.3s; }
-        .nav-item:hover { color: #b5a48d; }
+        .nav-item { color: #ffffff; text-decoration: none; font-size: 14px; cursor: pointer; }
         
-        /* 頂部黃底區域 */
+        /* 頂部黃底區域 - 已往上縮減 padding */
         .header-section { 
             background-color: #fff9e6; 
-            padding: 40px 20px; 
+            padding: 20px 20px 15px 20px; /* 上 20px, 下 15px */
             text-align: center; 
             width: 100%;
             box-sizing: border-box;
         }
         
         .content-limit { max-width: 500px; margin: 0 auto; text-align: left; }
-        .title-main { font-size: 20px; font-weight: bold; margin-bottom: 25px; text-align: center; color: #2d241d; }
-        .slogan-bold { font-size: 14px; font-weight: bold; color: #2d241d; margin-bottom: 12px; }
-        .intro-p { font-size: 14px; line-height: 1.8; margin-bottom: 12px; color: #4a3c31; }
+        .title-main { font-size: 19px; font-weight: bold; margin-bottom: 15px; text-align: center; color: #2d241d; }
+        .slogan-bold { font-size: 14px; font-weight: bold; color: #2d241d; margin-bottom: 8px; }
+        .intro-p { font-size: 14px; line-height: 1.6; margin-bottom: 8px; color: #4a3c31; }
         
-        /* 服務時間樣式：已移除 gray border-top */
-        .service-hours { font-size: 11px; color: #b5a48d; margin-top: 25px; padding-top: 0; }
+        /* 服務時間 - 縮小上方間距 */
+        .service-hours { font-size: 11px; color: #b5a48d; margin-top: 15px; }
 
-        /* 表單區域 */
-        .form-section { padding: 30px 20px; }
-        .field-label { font-size: 11px; font-weight: bold; display: block; margin-bottom: 5px; color: #4a3c31; text-transform: uppercase; }
-        .input-box { width: 100%; box-sizing: border-box; border: 1px solid #eeeeee; border-radius: 4px; padding: 10px 12px; font-size: 14px; margin-bottom: 20px; outline: none; display: block; background: #fff; transition: border 0.3s; }
-        .input-box:focus { border-color: #b5a48d; }
+        /* 表單區域 - 已縮小整體間距 */
+        .form-section { padding: 15px 20px; }
+        .field-label { font-size: 11px; font-weight: bold; display: block; margin-bottom: 4px; color: #4a3c31; }
+        .input-box { 
+            width: 100%; 
+            box-sizing: border-box; 
+            border: 1px solid #eeeeee; 
+            border-radius: 4px; 
+            padding: 8px 12px; 
+            font-size: 14px; 
+            margin-bottom: 12px; /* 縮小欄位間距 */
+            outline: none; 
+            display: block; 
+            background: #fff; 
+        }
         
-        /* 驗證碼樣式 */
-        .captcha-row { display: flex; align-items: center; gap: 12px; margin-bottom: 25px; }
-        .captcha-code { background-color: #f2ede4; padding: 8px 15px; border-radius: 4px; font-weight: bold; letter-spacing: 3px; font-size: 15px; color: #2d241d; }
-        .refresh-icon { cursor: pointer; font-size: 20px; color: #b5a48d; user-select: none; }
+        /* 驗證碼樣式 - 縮小間距 */
+        .captcha-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+        .captcha-code { background-color: #f2ede4; padding: 6px 12px; border-radius: 4px; font-weight: bold; letter-spacing: 2px; font-size: 14px; }
+        .refresh-icon { cursor: pointer; font-size: 18px; color: #b5a48d; }
         
         /* 送出按鈕 */
-        .submit-btn { width: 100%; background-color: #4a3c31; color: white; border: none; padding: 14px; font-size: 15px; font-weight: bold; border-radius: 4px; cursor: pointer; transition: background 0.3s; }
-        .submit-btn:hover { background-color: #2d241d; }
+        .submit-btn { width: 100%; background-color: #4a3c31; color: white; border: none; padding: 12px; font-size: 15px; font-weight: bold; border-radius: 4px; cursor: pointer; }
         
         ::placeholder { color: #cccccc; }
     </style>
@@ -57,21 +65,22 @@
         <a href="races.html" class="nav-item">賽事日誌</a>
     </div>
 
+    <!-- 黃色背景區域 - 已縮小距離 -->
     <div class="header-section">
         <div class="content-limit">
             <div class="title-main">跑者服務中心</div>
             <div class="slogan-bold">讓我們聽見您の腳步聲</div>
             
-            <p class="intro-p">無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
+            <p class="intro-p">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
             <p class="intro-p">您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
             <p class="intro-p">讓我們一起朝更好的方向邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。</p>
             <p class="intro-p">希望這裡不只是網站，更是跑者們的補給站。</p>
             
-            <!-- 已移除灰底線 -->
             <div class="service-hours">☀️服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
         </div>
     </div>
 
+    <!-- 下方表單區域 - 已縮小距離 -->
     <div class="form-section">
         <div class="content-limit">
             <label class="field-label">姓名 / Name</label>
@@ -99,11 +108,11 @@
             <input type="text" class="input-box" placeholder="例如：Garmin, Apple Watch, Coros">
 
             <label class="field-label">您的問題 / Your Inquiry</label>
-            <textarea class="input-box" rows="5" style="height: auto; resize: vertical;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+            <textarea class="input-box" rows="4" style="height: auto; resize: vertical;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
 
             <label class="field-label">驗證碼 / Verification Code</label>
             <div class="captcha-row">
-                <input type="text" class="input-box" style="width: 100px; margin-bottom: 0;" placeholder="輸入碼">
+                <input type="text" class="input-box" style="width: 90px; margin-bottom: 0;" placeholder="輸入碼">
                 <div class="captcha-code" id="captchaCode">A 5 2 G</div>
                 <span class="refresh-icon" onclick="refreshCaptcha()">↻</span>
             </div>
