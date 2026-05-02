@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-</div>
+<html lang="zh-Hant">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跑者服務中心</title>
@@ -11,90 +12,93 @@
             font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
             background-color: #f9f9f9;
             color: #5d4a26;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         /* 上方黃色區塊 */
         .service-header {
             background-color: #fdf6d8;
-            padding: 40px 25px;
-            border-radius: 0 0 20px 20px;
+            padding: 50px 30px;
+            border-radius: 0 0 25px 25px;
         }
 
         .service-header h1 {
-            font-size: 24px;
+            font-size: 28px;
             margin: 0 0 5px 0;
+            font-weight: bold;
         }
 
         .en-title {
-            font-size: 12px;
-            letter-spacing: 2px;
+            font-size: 13px;
+            letter-spacing: 3px;
             color: #a89a78;
-            margin: 0 0 30px 0;
+            margin: 0 0 40px 0;
             text-transform: uppercase;
         }
 
-        .content-text h3 {
-            margin: 0 0 15px 0;
+        .highlight-title {
+            font-size: 20px;
+            font-weight: bold;
             color: #8c764b;
-            font-size: 18px;
+            margin-bottom: 20px;
+            display: block;
         }
 
         .content-text p {
-            font-size: 15px;
-            margin-bottom: 15px;
+            font-size: 16px;
+            margin-bottom: 20px;
             text-align: justify;
         }
 
         hr {
             border: 0;
             border-top: 1px solid #e2d8b5;
-            margin: 30px 0 15px 0;
+            margin: 40px 0 20px 0;
         }
 
         .service-time {
             font-size: 12px;
             color: #a89a78;
-            margin: 0;
         }
 
         /* 下方表單區塊 */
         .form-container {
             background-color: #ffffff;
-            margin-top: -15px;
-            padding: 30px 25px;
-            border-radius: 20px 20px 0 0;
+            margin-top: -20px;
+            padding: 40px 30px;
+            border-radius: 25px 25px 0 0;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
             font-weight: bold;
-            margin-bottom: 8px;
-            font-size: 16px;
+            margin-bottom: 10px;
+            font-size: 17px;
         }
 
+        /* 統一所有表單欄位大小 */
         input[type="text"],
         input[type="email"],
         select,
         textarea {
             width: 100%;
-            padding: 12px;
+            padding: 12px 15px;
             border: 1px solid #eee7d5;
             border-radius: 10px;
             background-color: #fffef9;
             box-sizing: border-box;
-            font-size: 14px;
+            font-size: 15px;
             color: #5d4a26;
             outline: none;
         }
 
         .form-row {
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
 
         .form-row .form-group {
@@ -104,6 +108,56 @@
         textarea {
             height: 120px;
             resize: none;
+        }
+
+        /* 縮小後的驗證碼區塊 */
+        .captcha-container {
+            max-width: 300px; /* 限制驗證碼區域寬度 */
+        }
+
+        .captcha-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .captcha-input {
+            width: 140px !important; /* 固定較窄的寬度 */
+        }
+
+        .captcha-code {
+            background-color: #eee7d5;
+            color: #5d4a26;
+            padding: 8px 15px;
+            font-weight: bold;
+            font-style: italic;
+            letter-spacing: 4px;
+            border-radius: 8px;
+            border: 1px dashed #a89a78;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+
+        /* 送出按鈕 */
+        .submit-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .submit-btn {
+            background-color: #5d4a26;
+            color: white;
+            padding: 12px 60px;
+            border: none;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #4a3b1e;
         }
 
         ::placeholder {
@@ -118,7 +172,7 @@
         <p class="en-title">RUNNER SERVICE CENTER</p>
         
         <div class="content-text">
-            <h3>讓我們聽見您的腳步聲</h3>
+            <span class="highlight-title">讓我們聽見您の腳步聲</span>
             <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ◡̈</p>
             <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
             <p>讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
@@ -169,19 +223,21 @@
                 <label>您的問題</label>
                 <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
+
+            <!-- 驗證碼欄位：縮小格式並刪除多餘文字 -->
+            <div class="form-group captcha-container">
+                <label>驗證碼：</label>
+                <div class="captcha-row">
+                    <input type="text" class="captcha-input" placeholder="輸入驗證碼">
+                    <div class="captcha-code">A 5 2 G</div>
+                </div>
+            </div>
+
+            <div class="submit-container">
+                <button type="submit" class="submit-btn">送出預約表單</button>
+            </div>
         </form>
     </main>
-<div class="form-group">
-    <label>驗證碼：（防止機器人垃圾郵件）</label>
-    <div class="captcha-row">
-        <input type="text" placeholder="請輸入右側驗證碼" style="flex: 1;">
-        <div class="captcha-code" id="captcha">A 5 2 G</div>
-    </div>
-</div>
 
-<!-- 新增：送出按鈕 -->
-<div class="submit-container">
-    <button type="submit" class="submit-btn">送出表單</button>
-</div>
 </body>
 </html>
