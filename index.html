@@ -5,45 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跑者服務中心</title>
     <style>
-        /* 頁面底色改為米黃色，對照截圖背景 */
+        /* 整體背景：對照截圖最外層的米黃色 */
         body {
             margin: 0;
-            padding: 0;
-            background-color: #f7f1d5; 
+            padding: 20px 0;
+            background-color: #f7f1d5;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             display: flex;
             justify-content: center;
-            padding-top: 20px;
         }
 
-        /* 這是關鍵：中間那張白色圓角卡片 */
-        .main-card {
+        /* 中間白色圓角卡片：對照 IMG_5426.jpg 的主體結構 */
+        .main-container {
             width: 92%;
             max-width: 500px;
             background-color: #ffffff;
-            border-radius: 30px; /* 大圓角設計 */
+            border-radius: 30px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
-        /* 上方標題區塊 */
-        .header-content {
-            padding: 35px 25px 20px 25px;
+        /* 上方標題與介紹區塊 */
+        .header-section {
+            padding: 40px 25px 25px 25px;
         }
 
         .title-main {
             color: #614e1a;
             font-size: 24px;
             font-weight: bold;
-            margin-bottom: 4px;
+            margin: 0;
         }
 
         .title-sub {
             color: #b5a48d;
             font-size: 11px;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
+            letter-spacing: 1.5px;
+            margin: 5px 0 25px 0;
+            text-transform: uppercase;
         }
 
         .slogan {
@@ -55,21 +54,23 @@
 
         .intro-text {
             color: #8c7e6a;
-            font-size: 15px;
+            font-size: 14px;
             line-height: 1.8;
             margin-bottom: 15px;
         }
 
+        /* 服務時間：對照圖中帶有分隔線的樣式 */
         .service-hours {
-            font-size: 11px;
+            font-size: 10px;
             color: #b5a48d;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #f0eada;
             padding-top: 15px;
             margin-top: 20px;
+            line-height: 1.5;
         }
 
         /* 下方表單區塊 */
-        .form-container {
+        .form-section {
             padding: 0 25px 40px 25px;
         }
 
@@ -82,8 +83,11 @@
             margin-bottom: 10px;
         }
 
-        /* 輸入框樣式：對照 IMG_5316.jpg 的淡色邊框與圓角 */
-        input, select, textarea {
+        /* 輸入框樣式：對照截圖中的淺米色背景與圓角 */
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
             width: 100%;
             background-color: #fffef9;
             border: 1px solid #f0eada;
@@ -95,28 +99,34 @@
             outline: none;
         }
 
-        /* 雙欄位排版 */
+        /* 雙欄位排版：對照最佳成績與目標成績 */
         .row {
             display: flex;
             gap: 15px;
         }
-        .col { flex: 1; }
+        .col {
+            flex: 1;
+        }
 
-        textarea { height: 100px; resize: none; }
-        
-        ::placeholder { color: #d3d3d3; }
+        textarea {
+            height: 100px;
+            resize: none;
+        }
 
+        ::placeholder {
+            color: #d3d3d3;
+        }
     </style>
 </head>
 <body>
 
-    <div class="main-card">
-        <!-- 上方文字區 -->
-        <div class="header-content">
-            <div class="title-main">跑者服務中心</div>
+    <div class="main-container">
+        <!-- 上方文字區域 -->
+        <div class="header-section">
+            <h1 class="title-main">跑者服務中心</h1>
             <div class="title-sub">RUNNER SERVICE CENTER</div>
             
-            <div class="slogan">讓我們聽見您的腳步聲</div>
+            <p class="slogan">讓我們聽見您的腳步聲</p>
             
             <div class="intro-text">
                 無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺
@@ -135,36 +145,39 @@
             </div>
         </div>
 
-        <!-- 下方表單區 -->
-        <div class="form-container">
-            <label>姓名 / Name</label>
-            <input type="text" placeholder="請輸入您的姓名">
+        <!-- 下方表單區域 -->
+        <div class="form-section">
+            <form>
+                <label>姓名 / Name</label>
+                <input type="text" placeholder="請輸入您的姓名">
 
-            <label>電子信箱 / E-mail</label>
-            <input type="email" placeholder="runner@example.com">
+                <label>電子信箱 / E-mail</label>
+                <input type="email" placeholder="runner@example.com">
 
-            <label>跑者屬性</label>
-            <select>
-                <option>新手跑者</option>
-                <option>馬拉松選手</option>
-            </select>
+                <label>跑者屬性</label>
+                <select>
+                    <option value="" disabled selected>請選擇</option>
+                    <option>新手跑者</option>
+                    <option>馬拉松選手</option>
+                </select>
 
-            <div class="row">
-                <div class="col">
-                    <label>跑步最佳成績 (PB)</label>
-                    <input type="text" placeholder="例如：全馬3:30:00">
+                <div class="row">
+                    <div class="col">
+                        <label>跑步最佳成績 (PB)</label>
+                        <input type="text" placeholder="例如：全馬3:30:00">
+                    </div>
+                    <div class="col">
+                        <label>目標成績</label>
+                        <input type="text" placeholder="例如：全馬2:59:59">
+                    </div>
                 </div>
-                <div class="col">
-                    <label>目標成績</label>
-                    <input type="text" placeholder="例如：全馬2:59:59">
-                </div>
-            </div>
 
-            <label>慣用穿戴配備</label>
-            <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
+                <label>慣用穿戴配備</label>
+                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
 
-            <label>您的問題</label>
-            <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
+                <label>您的問題</label>
+                <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
+            </form>
         </div>
     </div>
 
