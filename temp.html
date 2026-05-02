@@ -12,7 +12,7 @@
             color: #4a3c31;
         }
 
-        /* 頂部黃色區域：滿版無框線 */
+        /* 頂部黃色區域：滿版無框 */
         .header-section {
             background-color: #fff9e6;
             padding: 40px 20px;
@@ -25,7 +25,7 @@
             margin: 0 auto;
         }
 
-        /* 標題置中設定 */
+        /* 標題置中 */
         .title-group {
             text-align: center;
             margin-bottom: 30px;
@@ -33,10 +33,15 @@
         .title-main { font-size: 22px; margin: 0; font-weight: bold; }
         .title-en { font-size: 11px; color: #b5a48d; letter-spacing: 2px; margin-top: 5px; }
 
-        .slogan { font-size: 15px; font-weight: bold; color: #b5a48d; margin-bottom: 15px; }
+        /* Slogan 顏色與樣式 */
+        .slogan { 
+            font-size: 15px; 
+            font-weight: bold; 
+            color: #4a3c31; 
+            margin-bottom: 15px; 
+        }
+
         .intro-p { font-size: 14px; line-height: 1.8; margin-bottom: 15px; }
-        
-        /* 服務時間修正 */
         .service-hours { font-size: 11px; color: #b5a48d; margin-top: 25px; }
 
         /* 表單區域 */
@@ -46,24 +51,24 @@
             box-sizing: border-box;
         }
 
-        /* 文字大小統一縮小 (12px) */
+        /* 關鍵修正：標題文字縮小至 11px，呈現極簡風格 */
         .field-label {
-            font-size: 12px; 
+            font-size: 11px; 
             font-weight: bold;
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             color: #4a3c31;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
         }
 
-        /* 輸入框樣式：帶圓角細框 */
+        /* 輸入框樣式：圓角細框 */
         .input-box {
             width: 100%;
             box-sizing: border-box;
             border: 1px solid #eeeeee;
             border-radius: 8px;
             padding: 10px 12px;
-            font-size: 14px;
+            font-size: 13px;
             margin-bottom: 18px;
             outline: none;
             display: block;
@@ -96,6 +101,7 @@
             font-size: 18px;
             color: #b5a48d;
             cursor: pointer;
+            user-select: none;
         }
 
         /* 送出按鈕 */
@@ -109,6 +115,10 @@
             font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .submit-btn:active {
+            opacity: 0.9;
         }
 
         ::placeholder { color: #d1d1d1; }
@@ -147,7 +157,7 @@
                 <option>超馬/越野跑者</option>
             </select>
 
-            <label class="field-label">跑步最佳成績 (PB)</label>
+            <label class="field-label">跑步最佳成績</label>
             <input type="text" class="input-box" placeholder="例如：全馬3:30:00">
 
             <label class="field-label">目標成績</label>
@@ -163,7 +173,7 @@
             <div class="captcha-row">
                 <input type="text" class="input-box captcha-input" placeholder="輸入碼">
                 <div class="captcha-code-box">A 5 2 G</div>
-                <div class="refresh-icon">↻</div>
+                <div class="refresh-icon" title="重新整理">↻</div>
             </div>
 
             <button type="submit" class="submit-btn">送出表單</button>
