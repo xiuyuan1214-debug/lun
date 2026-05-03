@@ -27,12 +27,11 @@
 
         .content-wrapper {
             width: 100%;
-            max-width: 320px; /* 回歸原始窄版設計 */
-            padding: 0;
+            max-width: 375px; 
             box-sizing: border-box;
         }
 
-        /* 嚴格復原 IMG_5518_7.jpg 奶黃底蛋形 */
+        /* 嚴格復原 IMG_5518_7.jpg 原始形狀 */
         .runner-header {
             background-color: var(--cream-bg);
             border-radius: 50% 50% 50% 50% / 40% 40% 12% 12%;
@@ -40,12 +39,15 @@
             position: relative;
             text-align: center;
             box-shadow: 0 12px 0 var(--cream-shadow);
-            margin: 20px 0 0 0;
+            margin: 20px 10px 0 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .title-zh {
             color: var(--color-zh);
-            font-size: 24px;
+            font-size: 26px;
             margin: 0;
             font-weight: 900;
             letter-spacing: 2px;
@@ -56,7 +58,8 @@
             font-size: 10px;
             font-weight: 700;
             letter-spacing: 3px;
-            margin: 10px 0 25px 0;
+            margin-top: 10px;
+            margin-bottom: 25px;
         }
 
         .title-slogan {
@@ -77,6 +80,7 @@
             margin: 8px 0;
             font-weight: 500;
             text-align: left;
+            width: 100%;
         }
 
         .footer-info {
@@ -84,14 +88,16 @@
             color: #968370;
             margin-top: 20px;
             text-align: center;
+            width: 90%;
             line-height: 1.5;
-            opacity: 0.8;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 15px;
         }
 
         .form-container {
             background-color: #ffffff;
-            margin-top: -45px;
-            padding: 65px 15px 40px 15px;
+            margin-top: -35px;
+            padding: 60px 20px 40px 20px;
             position: relative;
             z-index: 10;
         }
@@ -118,36 +124,37 @@
             outline: none;
         }
 
-        textarea { height: 110px; resize: none; }
-
-        /* 僅針對驗證碼框長度做調整 */
+        /* 驗證碼區塊調整：兩個框同步加長 */
         .captcha-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .captcha-input { 
-            width: 90px !important; /* 依要求加長 */
-            padding: 10px 12px !important;
+            width: 100px !important; 
             text-align: center;
         }
 
         .captcha-box {
             background-color: #F8F5F0;
-            padding: 10px 15px;
+            width: 100px;
+            padding: 10px 0;
             border-radius: 12px;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 18px;
+            letter-spacing: 2px;
             color: var(--form-main);
             border: 1px solid #EFEAE4;
-            min-width: 60px;
             text-align: center;
+            flex-shrink: 0;
         }
 
         .refresh-btn {
             background: none; border: none; cursor: pointer;
-            padding: 5px; display: flex; align-items: center;
+            padding: 5px;
+            display: flex;
+            align-items: center;
         }
 
         .submit-btn {
@@ -194,31 +201,15 @@
                     <select>
                         <option value="" disabled selected>請選擇 / Please Select</option>
                         <option value="beginner">新手跑者 / Beginner Runner</option>
-                        <option value="pro">馬拉松選手 / Marathon Athlete</option>
+                        <option value="marathon">馬拉松選手 / Marathon Athlete</option>
                     </select>
-                </div>
-                <div class="form-group">
-                    <label>最佳成績 / Personal Best</label>
-                    <input type="text" placeholder="例如：全馬3:30:00">
-                </div>
-                <div class="form-group">
-                    <label>目標成績 / Target Goal</label>
-                    <input type="text" placeholder="例如：全馬2:59:59">
-                </div>
-                <div class="form-group">
-                    <label>穿戴配備 / Wearable Device</label>
-                    <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
-                </div>
-                <div class="form-group">
-                    <label>您的問題 / Your Inquiry</label>
-                    <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
                 </div>
                 
                 <div class="form-group">
                     <label>驗證碼 / Verification Code</label>
                     <div class="captcha-container">
                         <input type="text" class="captcha-input" placeholder="輸入碼">
-                        <div id="captchaCode" class="captcha-box">7 W 8 Q</div>
+                        <div id="captchaCode" class="captcha-box">7W8Q</div>
                         <button type="button" class="refresh-btn" onclick="refreshCaptcha()">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8B0A8" stroke-width="2">
                                 <path d="M23 4v6h-6"></path>
@@ -237,9 +228,9 @@
             const chars = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
             let newCode = '';
             for (let i = 0; i < 4; i++) {
-                newCode += chars.charAt(Math.floor(Math.random() * chars.length)) + ' ';
+                newCode += chars.charAt(Math.floor(Math.random() * chars.length));
             }
-            document.getElementById('captchaCode').innerText = newCode.trim();
+            document.getElementById('captchaCode').innerText = newCode;
         }
     </script>
 </body>
