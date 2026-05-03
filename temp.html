@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            /* 奶油黃配色 */
-            --cream-bg: #FFF9D7;      
+            /* 奶油黃加深配色 - 維持前次設定 */
+            --cream-bg: #FDECA6;      
+            --cream-shadow: #F9D876;  
             
-            /* 三行文字指定配色 */
+            /* 三行文字配色 - 維持不變 */
             --color-zh: #5D4037;       
             --color-en: #8D6E63;       
             --color-slogan: #E67E22;   
@@ -25,20 +26,19 @@
             background-color: #ffffff;
         }
 
-        /* 奶油黃底：縮小上下空格間距 */
+        /* 奶油黃區塊：四角大圓角 */
         .runner-header {
             background-color: var(--cream-bg);
-            border-radius: 0 0 150px 150px; 
-            /* 調整 padding：將原本 80px 120px 縮小至 50px 80px */
-            padding: 50px 40px 80px 40px;
+            border-radius: 150px; 
+            /* 再次微調底部 padding 從 80px 縮小至 60px */
+            padding: 50px 40px 60px 40px;
             position: relative;
             text-align: center;
             border: none;
-            box-shadow: 0 15px 0 #FFF1B8, 0 30px 40px rgba(0,0,0,0.05);
-            margin: 0;
+            box-shadow: 0 15px 0 var(--cream-shadow), 0 30px 40px rgba(0,0,0,0.08);
+            margin: 20px 15px 0 15px;
         }
 
-        /* 三行文字顏色效果 - 維持不變 */
         .title-zh {
             color: var(--color-zh);
             font-size: 28px;
@@ -53,7 +53,6 @@
             font-weight: 700;
             letter-spacing: 4px;
             margin-top: 10px;
-            /* 縮小標題間距 */
             margin-bottom: 25px;
         }
 
@@ -72,26 +71,29 @@
             font-size: 14px;
             line-height: 1.8;
             color: var(--color-zh);
-            margin: 10px 0; /* 縮小段落間距 */
+            /* 縮小段落間距 */
+            margin: 8px 0;
             font-weight: 500;
             text-align: left;
         }
 
+        /* 紅色勾勾位置：大幅縮小與上方文字的距離 */
         .footer-info {
             font-size: 10px;
             color: #968370;
-            margin-top: 30px; /* 縮小底部資訊間距 */
+            /* 將 margin-top 從 30px 縮小至 15px */
+            margin-top: 15px;
             border-top: 1px solid rgba(0,0,0,0.05);
-            padding-top: 15px;
+            padding-top: 12px;
             text-align: center;
         }
 
-        /* 表單區域 - 絕對不動 */
+        /* 表單區域 - 維持不變 */
         .form-container {
             background-color: #ffffff;
-            /* 同步微調銜接位置 */
-            margin-top: -50px;
-            padding: 50px 30px 40px 30px;
+            /* 因上方區塊縮短，銜接位置同步上移 */
+            margin-top: -40px;
+            padding: 60px 30px 40px 30px;
             border-top-left-radius: 50px;
             border-top-right-radius: 50px;
             position: relative;
@@ -168,6 +170,7 @@
         <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺</p>
         <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
         <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
+        <!-- 下方間距已依據標記位置進行縮減 -->
         <div class="footer-info">✻ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
     </div>
 
