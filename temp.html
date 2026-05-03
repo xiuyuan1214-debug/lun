@@ -5,179 +5,179 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跑者服務中心</title>
     <style>
+        :root {
+            --primary-brown: #8B7355;
+            --light-bg: #FDF9E7;
+            --text-gray: #4A4A4A;
+            --btn-bg: #4f433a;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
-            background-color: #f9f9f9;
+            background-color: #fff;
             margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
-            padding: 20px;
         }
 
         .main-container {
             width: 100%;
-            max-width: 600px;
+            max-width: 100%; /* 滿版設定 */
             background-color: #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            min-height: 100vh;
         }
 
-        /* 上半部：米黃色介紹區 */
+        /* 上半部：米黃色介紹區（滿版樣式） */
         .runner-header {
-            background-color: #fdf9e7;
-            padding: 40px 30px;
-            border-left: 12px solid #e6d8ad;
+            background-color: var(--light-bg);
+            padding: 50px 10%; /* 使用百分比間距，確保在大螢幕也好看 */
+            border-left: 15px solid #e6d8ad;
             color: #5d5348;
         }
 
-        .runner-header h1 {
-            color: #8b7355;
-            margin: 0;
-            font-size: 24px;
+        .runner-header h1 { 
+            color: var(--primary-brown); 
+            margin: 0; 
+            font-size: 28px; 
+            text-align: center; 
+        }
+        
+        .runner-header .en-title { 
+            color: #c0b283; 
+            font-size: 13px; 
+            letter-spacing: 2px; 
+            margin-bottom: 30px; 
+            text-align: center; 
         }
 
-        .runner-header .en-title {
-            color: #c0b283;
-            font-size: 12px;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
+        .runner-header .highlight { 
+            color: var(--primary-brown); 
+            font-weight: bold; 
+            font-size: 18px; 
+            margin-bottom: 20px; 
         }
 
-        .runner-header .highlight-text {
-            color: #8b7355;
-            font-weight: bold;
-            font-size: 15px;
-            margin-bottom: 20px;
+        .runner-header p { 
+            font-size: 16px; 
+            line-height: 1.8; 
+            margin: 15px 0; 
+            max-width: 800px; /* 文字內容限制寬度以利閱讀 */
+        }
+        
+        .runner-header .footer-info { 
+            font-size: 12px; 
+            color: #a0937d; 
+            margin-top: 30px; 
         }
 
-        .runner-header p {
-            font-size: 15px;
-            line-height: 1.8;
-            margin: 15px 0;
-        }
-
-        .runner-header .footer-info {
-            font-size: 11px;
-            color: #a0937d;
-            border-top: 1px solid #e6d8ad;
-            padding-top: 15px;
-            margin-top: 25px;
-        }
-
-        /* 下半部：白色表單區 */
+        /* 下半部：表單區（滿版樣式） */
         .form-container {
-            padding: 30px;
+            padding: 50px 10%;
             background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+        }
+
+        form {
+            width: 100%;
+            max-width: 800px; /* 表單寬度適中，避免在大螢幕太寬 */
         }
 
         .form-group {
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         label {
             display: block;
             font-weight: bold;
-            font-size: 18px;
-            color: #4A4A4A;
-            margin-bottom: 10px;
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 8px;
         }
 
         input, select, textarea {
             width: 100%;
             padding: 12px;
             border: 1px solid #e0e0e0;
-            border-radius: 6px;
+            border-radius: 4px;
             background-color: #fff;
             font-size: 15px;
             box-sizing: border-box;
         }
 
-        input::placeholder, textarea::placeholder {
-            color: #bcbcbc;
-        }
+        input::placeholder, textarea::placeholder { color: #ccc; }
+        textarea { height: 120px; resize: none; }
 
-        .row {
-            display: flex;
-            gap: 15px;
-        }
-
-        .row .form-group {
-            flex: 1;
-        }
-
-        textarea {
-            height: 100px;
-            resize: none;
-        }
-
-        /* 驗證碼專用樣式 */
+        /* 驗證碼區塊 */
         .captcha-area {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-top: 5px;
+            gap: 15px;
         }
 
-        .captcha-input {
-            width: 110px !important;
-        }
+        .captcha-input { width: 120px !important; }
 
         .captcha-code-box {
             background-color: #f3efe9;
-            padding: 8px 18px;
-            border-radius: 6px;
+            padding: 8px 20px;
+            border-radius: 4px;
             font-weight: bold;
             font-size: 18px;
             letter-spacing: 4px;
             color: #4A4A4A;
+            cursor: pointer;
             user-select: none;
         }
 
-        .refresh-icon {
+        .refresh-btn {
             color: #999;
-            font-size: 20px;
+            font-size: 22px;
             cursor: pointer;
-            text-decoration: none;
+            border: none;
+            background: none;
         }
 
-        /* 送出按鈕：依照最新圖片還原 */
         .submit-btn {
             width: 100%;
-            padding: 16px;
-            background-color: #4f433a; /* 深褐色 */
+            padding: 18px;
+            background-color: var(--btn-bg);
             color: #ffffff;
             border: none;
-            border-radius: 6px;
+            border-radius: 4px;
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 20px;
+            transition: opacity 0.2s;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* 手機版微調 */
+        @media (max-width: 600px) {
+            .runner-header, .form-container {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="main-container">
-    <!-- 文字介紹區 -->
     <div class="runner-header">
         <h1>跑者服務中心</h1>
         <div class="en-title">RUNNER SERVICE CENTER</div>
         
-        <div class="highlight-text">讓我們聽見您的腳步聲</div>
-
+        <div class="highlight">讓我們聽見您的腳步聲</div>
         <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺</p>
-        
         <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
-        
         <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
-
-        <div class="footer-info">
-            ☀ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
-        </div>
+        <div class="footer-info">☀ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
     </div>
 
-    <!-- 表單區 -->
     <div class="form-container">
         <form>
             <div class="form-group">
@@ -187,12 +187,13 @@
 
             <div class="form-group">
                 <label>電子信箱 / E-mail</label>
-                <input type="email" placeholder="runner@example.com">
+                <input type="email" placeholder="runner@gmail.com">
             </div>
 
             <div class="form-group">
-                <label>跑者屬性</label>
+                <label>跑者屬性 / Runner Type</label>
                 <select>
+                    <option disabled selected>請選擇 / Please Select</option>
                     <option>新手跑者</option>
                     <option>半馬跑者</option>
                     <option>全馬跑者</option>
@@ -200,42 +201,50 @@
                 </select>
             </div>
 
-            <div class="row">
-                <div class="form-group">
-                    <label>跑步最佳成績 (PB)</label>
-                    <input type="text" placeholder="例如：全馬3:30:00">
-                </div>
-                <div class="form-group">
-                    <label>目標成績</label>
-                    <input type="text" placeholder="例如：全馬2:59:59">
-                </div>
+            <div class="form-group">
+                <label>最佳成績 / Personal Best</label>
+                <input type="text" placeholder="例如：全馬3:30:00">
             </div>
 
             <div class="form-group">
-                <label>慣用穿戴配備</label>
+                <label>目標成績 / Target Goal</label>
+                <input type="text" placeholder="例如：全馬2:59:59">
+            </div>
+
+            <div class="form-group">
+                <label>穿戴配備 / Wearable Device</label>
                 <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
             </div>
 
             <div class="form-group">
-                <label>您的問題</label>
+                <label>您的問題 / Your Inquiry</label>
                 <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
 
-            <!-- 驗證碼區塊 -->
             <div class="form-group">
                 <label>驗證碼 / Verification Code</label>
                 <div class="captcha-area">
                     <input type="text" class="captcha-input" placeholder="輸入碼">
-                    <div class="captcha-code-box">7 W 8 Q</div>
-                    <span class="refresh-icon">↻</span>
+                    <div id="captchaCode" class="captcha-code-box" onclick="generateCaptcha()">7W8Q</div>
+                    <button type="button" class="refresh-btn" onclick="generateCaptcha()">↻</button>
                 </div>
             </div>
 
-            <!-- 送出按鈕 -->
             <button type="submit" class="submit-btn">送出表單 / Submit</button>
         </form>
     </div>
 </div>
+
+<script>
+    function generateCaptcha() {
+        const chars = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
+        let result = '';
+        for (let i = 0; i < 4; i++) {
+            result += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        document.getElementById('captchaCode').innerText = result;
+    }
+</script>
 
 </body>
 </html>
