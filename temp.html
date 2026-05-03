@@ -25,18 +25,20 @@
             align-items: center;
         }
 
+        /* 全域框度設定：保持窄版且不擠壓形狀 */
         .content-wrapper {
-            width: 90%;
-            max-width: 290px; 
+            width: 100%;
+            max-width: 320px; 
+            padding: 0;
             box-sizing: border-box;
         }
 
-        /* 嚴格復原 IMG_5518_3.jpg 的蛋形大半圓奶黃底 */
+        /* 奶黃底蛋形狀：根據 IMG_5518_4.jpg 嚴格復原 */
         .runner-header {
             background-color: var(--cream-bg);
-            /* 關鍵：復原飽滿的大弧度半圓形狀 */
-            border-radius: 50% 50% 50% 50% / 45% 45% 15% 15%;
-            padding: 60px 20px 55px 20px;
+            /* 關鍵：巨大的圓潤半圓弧度 */
+            border-radius: 50% 50% 50% 50% / 35% 35% 15% 15%;
+            padding: 60px 25px 65px 25px;
             position: relative;
             text-align: center;
             box-shadow: 0 12px 0 var(--cream-shadow);
@@ -45,7 +47,7 @@
 
         .title-zh {
             color: var(--color-zh);
-            font-size: 22px;
+            font-size: 24px;
             margin: 0;
             font-weight: 900;
             letter-spacing: 2px;
@@ -53,49 +55,41 @@
 
         .title-en {
             color: var(--color-en);
-            font-size: 9px;
+            font-size: 10px;
             font-weight: 700;
-            letter-spacing: 2px;
-            margin: 8px 0 20px 0;
+            letter-spacing: 3px;
+            margin: 10px 0 20px 0;
         }
 
         .title-slogan {
             color: var(--color-slogan);
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 800;
             margin-bottom: 25px;
             background: #ffffff;
             display: inline-block;
-            padding: 5px 18px;
-            border-radius: 25px;
+            padding: 6px 20px;
+            border-radius: 30px;
         }
 
         .runner-header p {
-            font-size: 11px;
-            line-height: 1.7;
+            font-size: 12px;
+            line-height: 1.8;
             color: var(--color-zh);
             margin: 8px 0;
             font-weight: 500;
             text-align: left;
         }
 
-        .footer-info {
-            font-size: 8px;
-            color: #968370;
-            margin-top: 15px;
-            border-top: 1px solid rgba(0,0,0,0.08);
-            padding-top: 10px;
-        }
-
         .form-container {
             background-color: #ffffff;
-            margin-top: -35px;
-            padding: 50px 10px 40px 10px;
+            margin-top: -40px; /* 覆蓋在奶黃底上的深度 */
+            padding: 60px 15px 40px 15px;
             position: relative;
             z-index: 10;
         }
 
-        .form-group { margin-bottom: 18px; }
+        .form-group { margin-bottom: 22px; }
 
         label {
             display: block;
@@ -105,18 +99,9 @@
             margin-bottom: 10px;
         }
 
-        /* 驗證碼下方的專屬提示文字 */
-        .captcha-note {
-            display: block;
-            font-size: 12px;
-            color: #968370;
-            margin-bottom: 8px;
-            font-weight: normal;
-        }
-
         input, select, textarea {
             width: 100%;
-            padding: 10px 12px;
+            padding: 10px 14px;
             border: 1px solid var(--input-border);
             border-radius: 12px;
             font-size: 14px;
@@ -126,31 +111,33 @@
             outline: none;
         }
 
-        textarea { height: 90px; resize: none; }
+        textarea { height: 100px; resize: none; }
 
+        /* 驗證碼框度極致縮小 */
         .captcha-container {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .captcha-input { 
-            width: 55px !important; 
+            width: 50px !important; /* 精確指定為 50px */
             padding: 10px 0 !important;
             text-align: center;
+            border-radius: 12px;
         }
 
         .captcha-box {
             background-color: #F8F5F0;
-            padding: 8px 0;
+            padding: 10px 15px;
             border-radius: 12px;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 16px;
+            letter-spacing: 2px;
             color: var(--form-main);
             border: 1px solid #EFEAE4;
-            width: 60px;
+            min-width: 60px;
             text-align: center;
-            letter-spacing: 1px;
         }
 
         .refresh-btn {
@@ -160,7 +147,7 @@
 
         .submit-btn {
             width: 100%;
-            padding: 14px;
+            padding: 15px;
             background-color: #4f433a;
             color: #ffffff;
             border: none;
@@ -179,9 +166,9 @@
             <h1 class="title-zh">跑者服務中心</h1>
             <div class="title-en">RUNNER SERVICE CENTER</div>
             <div class="title-slogan">讓我們聽見您の腳步聲</div>
-            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，歡迎隨時聯繫我們唷 😉</p>
+            
+            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，歡迎聯繫我們唷 😉</p>
             <p>您的回饋是我們進化的動力。希望這裡不只是網站，更是跑者們的補給站。</p>
-            <div class="footer-info">✻ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息)</div>
         </div>
 
         <div class="form-container">
@@ -201,12 +188,12 @@
                 
                 <div class="form-group">
                     <label>驗證碼 / Verification Code</label>
-                    <span class="captcha-note">驗證碼：(防止機器人垃圾郵件)</span>
                     <div class="captcha-container">
-                        <input type="text" class="captcha-input" placeholder="代碼">
+                        <!-- placeholder 嚴格使用「輸入碼」 -->
+                        <input type="text" class="captcha-input" placeholder="輸入碼">
                         <div id="captchaCode" class="captcha-box">7W8Q</div>
                         <button type="button" class="refresh-btn" onclick="refreshCaptcha()">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8B0A8" stroke-width="2">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8B0A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M23 4v6h-6"></path>
                                 <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
                             </svg>
