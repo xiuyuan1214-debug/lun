@@ -7,10 +7,11 @@
         :root {
             --primary-brown: #8B7355; 
             --light-bg: #FDF9E7;    
-            --accent-gold: #D4AF37; /* 左側線條顏色 */
+            --accent-gold: #D4AF37; 
             --label-brown: #7A6652;  
             --input-border: #F2F2F2; 
             --input-bg: #FDFDF8;     
+            --placeholder: #BFBFBF;  
         }
 
         body {
@@ -19,14 +20,16 @@
             background-color: #ffffff;
         }
 
-        /* 頂部區域：加入左手邊的一條線 */
+        /* 特別設計的黃底框框 */
         .runner-header {
             background-color: var(--light-bg);
             padding: 45px 30px 60px 35px;
             position: relative;
-            border-bottom-left-radius: 40px;
-            /* 左手邊的一條線 */
-            border-left: 8px solid var(--accent-gold); 
+            /* 特色 1：左手邊的一條線 */
+            border-left: 10px solid var(--accent-gold); 
+            /* 特色 2：不對稱大圓角，增加設計感 */
+            border-bottom-left-radius: 60px;
+            margin-bottom: 0;
         }
 
         .runner-header h1 {
@@ -66,6 +69,7 @@
             padding-top: 15px;
         }
 
+        /* 表單區域 - 絕對不動 */
         .form-container {
             background-color: #ffffff;
             margin-top: -35px;
@@ -98,6 +102,7 @@
             color: #4A4A4A;
             box-sizing: border-box;
             outline: none;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
         }
 
         textarea { height: 130px; resize: none; }
@@ -116,6 +121,7 @@
             font-size: 22px;
             letter-spacing: 5px;
             color: #444;
+            flex-shrink: 0;
         }
 
         .submit-btn {
@@ -153,15 +159,17 @@
 
             <div class="form-group">
                 <label>電子信箱 / E-mail</label>
-                <input type="email" placeholder="runner@example.com">
+                <input type="email" placeholder="runner@gmail.com">
             </div>
 
             <div class="form-group">
                 <label>跑者屬性 / Runner Type</label>
                 <select>
                     <option value="" disabled selected>請選擇 / Please Select</option>
-                    <option>新手跑者</option>
-                    <option>馬拉松跑者</option>
+                    <option value="beginner">新手跑者</option>
+                    <option value="half-marathon">半馬跑者</option>
+                    <option value="marathon">全馬跑者</option>
+                    <option value="ultra-trail">超馬/越野跑者</option>
                 </select>
             </div>
 
@@ -177,7 +185,7 @@
 
             <div class="form-group">
                 <label>穿戴配備 / Wearable Device</label>
-                <input type="text" placeholder="例如：Garmin, Apple Watch">
+                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
             </div>
 
             <div class="form-group">
