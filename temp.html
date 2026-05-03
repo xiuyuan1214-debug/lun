@@ -32,18 +32,20 @@
         /* 上半部：米黃色介紹區 */
         .runner-header {
             background-color: var(--light-bg);
-            padding: 40px 10%;
+            padding: 40px 10% 60px 10%; /* 增加底部內距以應對重疊 */
             position: relative;
             color: #5d5348;
+            /* 修正 1：左下角大圓角設計 */
+            border-bottom-left-radius: 40px; 
         }
 
-        /* 特色左側跑道線 */
+        /* 特色側邊線（縮小並配合圓角） */
         .runner-header::before {
             content: "";
             position: absolute;
             left: 0;
             top: 0;
-            bottom: 0;
+            bottom: 40px; /* 避開圓角部分 */
             width: 10px;
             background: linear-gradient(
                 to bottom,
@@ -81,8 +83,7 @@
         .runner-header p { 
             font-size: 14px; 
             line-height: 1.6; 
-            margin: 10px 0; 
-            max-width: 800px;
+            margin: 10px 0;
         }
         
         .runner-header .footer-info { 
@@ -91,12 +92,17 @@
             margin-top: 25px;
         }
 
-        /* 下半部：表單區（極簡縮小版） */
+        /* 下半部：白色表單區（修正 1：向上重疊與大圓角） */
         .form-container {
-            padding: 30px 10%;
+            padding: 40px 10%;
             background-color: #ffffff;
             display: flex;
             justify-content: center;
+            position: relative;
+            margin-top: -30px; /* 向上重疊 */
+            border-top-left-radius: 40px; /* 與上方區塊銜接的圓角 */
+            border-top-right-radius: 40px;
+            box-shadow: 0 -10px 20px rgba(0,0,0,0.02); /* 輕微陰影增加層次感 */
         }
 
         form {
@@ -105,29 +111,31 @@
         }
 
         .form-group {
-            margin-bottom: 12px; /* 再次縮小間距 */
+            margin-bottom: 15px;
         }
 
         label {
             display: block;
             font-weight: bold;
-            font-size: 15px; /* 標籤微縮 */
+            font-size: 16px;
             color: var(--text-gray);
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
 
+        /* 修正 2：大圓角輸入框樣式 */
         input, select, textarea {
             width: 100%;
-            padding: 8px; /* 縮小內距，讓框框變窄 */
-            border: 1px solid #e5e5e5;
-            border-radius: 4px;
+            padding: 10px 15px;
+            border: 1.5px solid #ececec; /* 淺灰色窄框 */
+            border-radius: 12px; /* 大弧度圓角 */
             background-color: #fff;
-            font-size: 13px; /* 輸入字體微縮 */
+            font-size: 14px;
             box-sizing: border-box;
+            outline: none;
         }
 
         input::placeholder, textarea::placeholder { color: #d0d0d0; }
-        textarea { height: 70px; resize: none; } /* 縮小留言框高度 */
+        textarea { height: 80px; resize: none; border-radius: 15px; }
 
         /* 驗證碼區塊 */
         .captcha-area {
@@ -136,23 +144,22 @@
             gap: 12px;
         }
 
-        .captcha-input { width: 100px !important; }
+        .captcha-input { width: 100px !important; border-radius: 12px; }
 
         .captcha-code-box {
             background-color: #f3efe9;
-            padding: 6px 15px;
-            border-radius: 4px;
+            padding: 6px 18px;
+            border-radius: 10px;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 16px;
             letter-spacing: 3px;
             color: #4A4A4A;
             cursor: pointer;
-            user-select: none;
         }
 
         .refresh-btn {
             color: #bbb;
-            font-size: 18px;
+            font-size: 20px;
             cursor: pointer;
             border: none;
             background: none;
@@ -160,21 +167,21 @@
 
         .submit-btn {
             width: 100%;
-            padding: 12px; /* 縮小按鈕高度 */
+            padding: 14px;
             background-color: var(--btn-bg);
             color: #ffffff;
             border: none;
-            border-radius: 4px;
-            font-size: 16px;
+            border-radius: 10px; /* 按鈕也配合圓角 */
+            font-size: 17px;
             font-weight: bold;
             cursor: pointer;
             margin-top: 10px;
         }
 
-        /* 手機版微調 */
         @media (max-width: 600px) {
             .runner-header, .form-container {
-                padding: 25px 20px;
+                padding-left: 20px;
+                padding-right: 20px;
             }
         }
     </style>
@@ -187,11 +194,10 @@
         <div class="en-title">RUNNER SERVICE CENTER</div>
         
         <div class="highlight">讓我們聽見您的腳步聲</div>
-        <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。</p>
+        <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺</p>
         <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
-        <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。
-            希望這裡不只是網站，更是跑者們的補給站 ᴗ̈ </p>
-        <div class="footer-info">☀️服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
+        <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
+        <div class="footer-info">☀ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
     </div>
 
     <div class="form-container">
@@ -203,7 +209,7 @@
 
             <div class="form-group">
                 <label>電子信箱 / E-mail</label>
-                <input type="email" placeholder="runner@gmail.com">
+                <input type="email" placeholder="runner@example.com">
             </div>
 
             <div class="form-group">
@@ -213,7 +219,6 @@
                     <option>新手跑者</option>
                     <option>半馬跑者</option>
                     <option>全馬跑者</option>
-                    <option>超馬/越野跑者</option>
                 </select>
             </div>
 
