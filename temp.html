@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            /* 奶油黃與溫馨操場配色 */
+            /* 奶油黃與操場配色 */
             --cream-bg: #FFF9D7;      
-            --track-dot: #D2B48C;      /* 調整為更精緻的拿鐵色圓點 */
             
             /* 三行文字指定配色 */
             --color-zh: #5D4037;       
@@ -26,7 +25,7 @@
             background-color: #ffffff;
         }
 
-        /* 奶油黃底：可愛溫馨操場呈現 */
+        /* 奶油黃底：可愛溫馨操場呈現（已移除虛線） */
         .runner-header {
             background-color: var(--cream-bg);
             border-radius: 0 0 150px 150px; 
@@ -36,17 +35,6 @@
             border: none;
             box-shadow: 0 20px 0 #FFF1B8, 0 35px 50px rgba(0,0,0,0.05);
             margin: 0;
-        }
-
-        /* 操場內圈裝飾線：換成更好看的圓點風格 */
-        .runner-header::after {
-            content: "";
-            position: absolute;
-            top: 30px; left: 30px; right: 30px; bottom: 30px;
-            border: 4px dotted var(--track-dot); /* 調整為粗圓點 */
-            border-radius: 0 0 120px 120px;
-            pointer-events: none;
-            opacity: 0.4; /* 保持溫和感 */
         }
 
         /* 三行文字顏色效果 - 維持不變 */
@@ -181,7 +169,6 @@
     </div>
 
     <div class="form-container">
-        <!-- 以下內容絕對不變動 -->
         <form>
             <div class="form-group">
                 <label>姓名 / Name</label>
