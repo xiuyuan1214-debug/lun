@@ -6,13 +6,13 @@
     <style>
         :root {
             /* 字體配色調整 */
-            --main-text: #3D352F;      /* 深炭啡，主標題與內容 */
-            --label-text: #7A6652;     /* 標籤字體顏色 */
-            --sub-text: #968370;       /* 輔助性小字 */
+            --track-main-text: #4E3B31; /* 深焦糖啡，適合奶油黃底的文字 */
+            --form-label-text: #7A6652; 
+            --form-main-text: #3D352F;
             
-            /* 奶油黃色系 */
-            --cream-yellow: #FFF5BA; 
-            --cream-bright: #FFFBE6;
+            /* 奶油黃操場配色 */
+            --cream-track: #FFF5BA; 
+            --track-line: rgba(230, 210, 150, 0.4);
             
             /* 表單細節 */
             --input-border: #F2F2F2; 
@@ -23,33 +23,47 @@
             font-family: -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
             margin: 0;
             background-color: #ffffff;
-            color: var(--main-text);
         }
 
-        /* 奶油黃區塊：特殊的幾何波浪切角與柔和陰影 */
+        /* 奶油黃區塊：操場跑道模式 */
         .runner-header {
-            background: linear-gradient(135deg, var(--cream-bright) 0%, var(--cream-yellow) 100%);
-            padding: 65px 30px 90px 30px;
+            background-color: var(--cream-track);
+            /* 操場造型：兩側超大圓角，模擬田徑場弧度 */
+            border-radius: 0 0 100px 100px; 
+            padding: 70px 40px 100px 40px;
             position: relative;
             text-align: center;
             border: none;
-            /* 特別的呈現：使用雙重軟陰影營造漂浮感 */
-            box-shadow: 0 15px 40px rgba(230, 210, 150, 0.3), 0 5px 15px rgba(0, 0, 0, 0.05);
-            /* 非對稱且更具動感的弧形切邊 */
-            border-bottom-left-radius: 180px 60px;
-            border-bottom-right-radius: 20px;
-            margin-bottom: 0;
+            /* 操場層次感：多重陰影模擬跑道線條與立體感 */
+            box-shadow: 
+                0 15px 0 -5px var(--track-line),
+                0 30px 0 -10px rgba(230, 210, 150, 0.2),
+                0 40px 50px rgba(0, 0, 0, 0.05);
+            margin: 0 10px; /* 稍微縮排營造跑道漂浮感 */
+        }
+
+        /* 模擬操場跑道線條裝飾 */
+        .runner-header::before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border: 1px dashed rgba(139, 115, 85, 0.15);
+            border-radius: 0 0 85px 85px;
+            pointer-events: none;
         }
 
         .runner-header h1 {
-            color: var(--main-text);
+            color: var(--track-main-text);
             font-size: 26px;
             margin: 0;
             font-weight: 900;
         }
 
         .en-title {
-            color: var(--label-text);
+            color: #8B7355;
             font-size: 11px;
             font-weight: bold;
             letter-spacing: 2px;
@@ -58,7 +72,7 @@
         }
 
         .highlight {
-            color: var(--main-text);
+            color: var(--track-main-text);
             font-size: 16px;
             font-weight: 800;
             margin-bottom: 20px;
@@ -67,7 +81,7 @@
         .runner-header p {
             font-size: 14px;
             line-height: 1.8;
-            color: var(--main-text);
+            color: var(--track-main-text);
             margin: 15px 0;
             font-weight: 500;
             text-align: left;
@@ -75,7 +89,7 @@
 
         .footer-info {
             font-size: 10px;
-            color: var(--sub-text);
+            color: #968370;
             margin-top: 35px;
             border-top: 1px solid rgba(0,0,0,0.06);
             padding-top: 15px;
@@ -85,7 +99,7 @@
         /* 表單區域 - 絕對不動 */
         .form-container {
             background-color: #ffffff;
-            margin-top: -55px;
+            margin-top: -60px;
             padding: 50px 30px;
             border-top-left-radius: 40px;
             border-top-right-radius: 40px;
@@ -101,7 +115,7 @@
             display: block;
             font-size: 18px;
             font-weight: bold;
-            color: var(--label-text);
+            color: var(--form-label-text);
             margin-bottom: 12px;
         }
 
@@ -112,7 +126,7 @@
             border-radius: 14px;
             font-size: 14px;
             background-color: var(--input-bg);
-            color: var(--main-text);
+            color: var(--form-main-text);
             box-sizing: border-box;
             outline: none;
             box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
@@ -133,7 +147,7 @@
             font-weight: bold;
             font-size: 22px;
             letter-spacing: 5px;
-            color: var(--main-text);
+            color: var(--form-main-text);
             flex-shrink: 0;
             border: 1px solid #EFEAE4;
         }
