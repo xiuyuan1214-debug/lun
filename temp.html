@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            /* 字體配色調整 */
-            --track-main-text: #4E3B31; /* 深焦糖啡，適合奶油黃底的文字 */
+            /* 字體配色 */
+            --track-main-text: #4E3B31; 
             --form-label-text: #7A6652; 
             --form-main-text: #3D352F;
             
-            /* 奶油黃操場配色 */
-            --cream-track: #FFF5BA; 
-            --track-line: rgba(230, 210, 150, 0.4);
+            /* 奶油黃配色 */
+            --cream-yellow: #FFF5BA; 
+            --cream-soft: #FFFBE6;
             
             /* 表單細節 */
             --input-border: #F2F2F2; 
@@ -25,33 +25,32 @@
             background-color: #ffffff;
         }
 
-        /* 奶油黃區塊：操場跑道模式 */
+        /* 奶油黃區塊：改用非對稱流體幾何設計 */
         .runner-header {
-            background-color: var(--cream-track);
-            /* 操場造型：兩側超大圓角，模擬田徑場弧度 */
-            border-radius: 0 0 100px 100px; 
-            padding: 70px 40px 100px 40px;
+            background: linear-gradient(160deg, var(--cream-soft) 0%, var(--cream-yellow) 100%);
+            padding: 70px 40px 110px 40px;
             position: relative;
             text-align: center;
             border: none;
-            /* 操場層次感：多重陰影模擬跑道線條與立體感 */
-            box-shadow: 
-                0 15px 0 -5px var(--track-line),
-                0 30px 0 -10px rgba(230, 210, 150, 0.2),
-                0 40px 50px rgba(0, 0, 0, 0.05);
-            margin: 0 10px; /* 稍微縮排營造跑道漂浮感 */
+            /* 特別的呈現：極具現代感的「流體切割」大圓角 */
+            border-bottom-left-radius: 200px 80px;
+            border-bottom-right-radius: 40px;
+            /* 輕盈的擴散陰影 */
+            box-shadow: 0 20px 40px rgba(255, 245, 186, 0.5);
+            margin: 0;
+            overflow: hidden;
         }
 
-        /* 模擬操場跑道線條裝飾 */
-        .runner-header::before {
+        /* 增加一個柔和的幾何背景裝飾，呈現速度與空間感 */
+        .runner-header::after {
             content: "";
             position: absolute;
-            top: 15px;
-            left: 15px;
-            right: 15px;
-            bottom: 15px;
-            border: 1px dashed rgba(139, 115, 85, 0.15);
-            border-radius: 0 0 85px 85px;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
             pointer-events: none;
         }
 
@@ -99,10 +98,10 @@
         /* 表單區域 - 絕對不動 */
         .form-container {
             background-color: #ffffff;
-            margin-top: -60px;
+            margin-top: -65px;
             padding: 50px 30px;
-            border-top-left-radius: 40px;
-            border-top-right-radius: 40px;
+            border-top-left-radius: 45px;
+            border-top-right-radius: 45px;
             position: relative;
             z-index: 10;
         }
