@@ -3,143 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>跑者服務中心</title>
+    <title>跑者服務中心 - Runner Service Center</title>
     <style>
-        /* 基礎設定 */
+        :root {
+            --primary-brown: #8B7355;
+            --light-bg: #FDF9E7;
+            --card-bg: #FFFFFF;
+            --text-color: #5D5348;
+            --border-color: #E0E0E0;
+        }
+
         body {
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: #F5F5F5;
             margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #ffffff;
-            color: #614e1a; /* 深咖啡色文字 */
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            color: var(--text-color);
         }
 
-        /* 上半部：米黃色介紹區 */
-        .intro-section {
-            background-color: #fcf6d6;
-            padding: 40px 25px 30px 25px;
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: var(--light-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .title-main {
-            font-size: 26px;
-            font-weight: bold;
+        /* 上半部文字區 */
+        .header-section {
+            padding: 30px;
+            border-left: 8px solid #E6D8AD;
+        }
+
+        h1 {
+            color: var(--primary-brown);
             margin: 0;
+            font-size: 24px;
         }
 
-        .title-sub {
-            font-size: 11px;
-            color: #b5a48d;
-            margin: 5px 0 30px 0;
-            letter-spacing: 1px;
+        .subtitle {
+            color: #C0B283;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
-        .slogan {
+        .description {
             font-size: 15px;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
-
-        .content-text {
-            font-size: 14.5px;
             line-height: 1.8;
-            color: #7a6a53;
             margin-bottom: 20px;
         }
 
-        .service-info {
-            font-size: 10px;
-            color: #b5a48d;
-            border-top: 1px solid #efe8c5;
+        .footer-note {
+            font-size: 12px;
+            color: #A0937D;
+            border-top: 1px solid #E6D8AD;
             padding-top: 15px;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
-        /* 下半部：白色表單區 */
+        /* 下半部表單區 */
         .form-section {
-            background-color: #ffffff;
-            padding: 40px 25px;
-            border-radius: 20px 20px 0 0;
-            margin-top: -15px; /* 與上方區塊銜接 */
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 25px 25px 0 0;
+            margin-top: -10px;
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         label {
             display: block;
-            font-size: 18px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            color: var(--primary-brown);
+            font-size: 16px;
         }
 
-        /* 輸入框通用樣式 */
         input, select, textarea {
             width: 100%;
-            padding: 14px 16px;
-            background-color: #fffef9; /* 極淡米色 */
-            border: 1px solid #f0eada;
-            border-radius: 12px;
-            font-size: 14px;
-            color: #614e1a;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
             box-sizing: border-box;
-            outline: none;
+            background-color: #FAFAFA;
+            font-size: 14px;
+            color: #333;
         }
 
-        /* 橫向並排欄位 (PB 與 目標) */
+        input::placeholder, textarea::placeholder {
+            color: #BCBCBC;
+        }
+
         .row {
             display: flex;
             gap: 15px;
         }
-        .col {
+
+        .row .form-group {
             flex: 1;
         }
 
         textarea {
             height: 120px;
-            resize: none;
+            resize: vertical;
         }
 
-        ::placeholder {
-            color: #d3d3d3;
-        }
-
-        /* 手機版適應 */
-        @media (max-width: 480px) {
-            .row {
-                flex-direction: column;
-                gap: 0;
-            }
+        /* 簡單的按鈕樣式 (原圖未顯示，預留) */
+        .submit-btn {
+            background-color: var(--primary-brown);
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
-    <!-- 米黃色頂部區塊 -->
-    <div class="intro-section">
-        <h1 class="title-main">跑者服務中心</h1>
-        <div class="title-sub">RUNNER SERVICE CENTER</div>
+<div class="container">
+    <!-- 文字介紹區域 -->
+    <div class="header-section">
+        <h1>跑者服務中心</h1>
+        <div class="subtitle">RUNNER SERVICE CENTER</div>
         
-        <p class="slogan">讓我們聽見您的腳步聲</p>
-        
-        <div class="content-text">
-            無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺
-        </div>
-        
-        <div class="content-text">
-            您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。
-        </div>
-
-        <div class="content-text">
+        <div class="description">
+            <strong>讓我們聽見您的腳步聲</strong><br><br>
+            無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺<br><br>
+            您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。<br><br>
             讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。
         </div>
 
-        <div class="service-info">
+        <div class="footer-note">
             ☀ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
         </div>
     </div>
 
-    <!-- 白色表單區塊 -->
+    <!-- 表單區域 -->
     <div class="form-section">
         <form>
             <div class="form-group">
@@ -155,19 +165,18 @@
             <div class="form-group">
                 <label>跑者屬性</label>
                 <select>
-                    <option value="" disabled selected>請選擇您的跑者身份</option>
-                    <option>新手跑者</option>
-                    <option>馬拉松選手</option>
-                    <option>越野跑者</option>
+                    <option value="">新手跑者</option>
+                    <option value="">進階跑者</option>
+                    <option value="">馬拉松選手</option>
                 </select>
             </div>
 
             <div class="row">
-                <div class="col form-group">
+                <div class="form-group">
                     <label>跑步最佳成績 (PB)</label>
                     <input type="text" placeholder="例如：全馬3:30:00">
                 </div>
-                <div class="col form-group">
+                <div class="form-group">
                     <label>目標成績</label>
                     <input type="text" placeholder="例如：全馬2:59:59">
                 </div>
@@ -182,8 +191,11 @@
                 <label>您的問題</label>
                 <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
+
+            <button type="submit" class="submit-btn">送出訊息</button>
         </form>
     </div>
+</div>
 
 </body>
 </html>
