@@ -6,8 +6,8 @@
     <style>
         :root {
             --primary-brown: #8B7355; 
-            --muted-yellow: #F4D03F; /* 降低鮮豔度，改為溫潤的琥珀黃 */
-            --accent-border: #D4AC0D;   /* 強化邊框特色顏色 */
+            --refined-yellow: #FFD23F; /* 質感金黃，不過於鮮豔 */
+            --accent-border: #C89B00;   /* 深金黃色邊框 */
             --label-brown: #7A6652;  
             --input-border: #F2F2F2; 
             --input-bg: #FDFDF8;     
@@ -19,19 +19,30 @@
             background-color: #ffffff;
         }
 
-        /* 調整色彩與邊框特色的黃底框框 */
+        /* 調整配色並強化特色的黃底框框 */
         .runner-header {
-            background-color: var(--muted-yellow);
+            background-color: var(--refined-yellow);
             padding: 45px 30px 60px 45px;
             position: relative;
-            /* 特色 1：左手邊極粗雙層邊界 */
+            /* 特色 1：左手邊加入「雙層階梯式」粗線條，呈現速度感 */
             border-left: 18px solid var(--accent-border);
-            /* 特色 2：底部加入細微的深色收邊 */
-            border-bottom: 4px solid rgba(0,0,0,0.08);
-            /* 特色 3：動態大斜邊圓角 */
-            border-bottom-left-radius: 110px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            /* 特色 2：底部斜面設計 */
+            border-bottom: 6px solid rgba(0,0,0,0.1);
+            /* 特色 3：不對稱的大圓角切割，營造補給站看板視覺 */
+            border-bottom-left-radius: 120px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
             margin-bottom: 0;
+        }
+
+        /* 裝飾性的小細節，增加框線變化 */
+        .runner-header::after {
+            content: "";
+            position: absolute;
+            left: -18px;
+            top: 20%;
+            height: 30px;
+            width: 8px;
+            background-color: rgba(255, 255, 255, 0.4);
         }
 
         .runner-header h1 {
@@ -128,6 +139,24 @@
             flex-shrink: 0;
         }
 
+        .refresh-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.1s;
+        }
+        .refresh-btn:active { transform: scale(0.85); }
+        .refresh-btn svg {
+            width: 24px;
+            height: 24px;
+            stroke: #A8A8A8;
+            stroke-width: 2;
+            fill: none;
+        }
+
         .submit-btn {
             width: 100%;
             padding: 16px;
@@ -201,7 +230,13 @@
                 <label>驗證碼 / Verification Code</label>
                 <div class="captcha-container">
                     <input type="text" class="captcha-input" placeholder="輸入碼">
-                    <div class="captcha-box">C M 5 F</div>
+                    <div class="captcha-box">7 W 8 Q</div>
+                    <button type="button" class="refresh-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 4v6h-6"></path>
+                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
 
