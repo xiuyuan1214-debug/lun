@@ -1,199 +1,254 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>跑者服務中心 - Runner Service Center</title>
-    <style>
-        :root {
-            --primary-brown: #8B7355;
-            --light-bg: #FDF9E7;
-            --card-bg: #FFFFFF;
-            --text-color: #5D5348;
-            --border-color: #E0E0E0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Runner Service Center</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+    }
+    .main-container {
+        width: 320px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    
+    /* 紅線以上的部分 - 奶黃底改為操場風格 */
+    .header-section {
+        background-color: #fceea6; /* 奶黃色底 */
+        border-top-left-radius: 120px;
+        border-top-right-radius: 120px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        padding: 50px 30px 40px 30px;
+        text-align: center;
+        
+        /* 操場跑道線條設計 */
+        background-image: 
+            /* 主要跑道線條 (白線) */
+            radial-gradient(circle at 50% 50%, transparent 60%, rgba(255,255,255,0.7) 60.5%, rgba(255,255,255,0.7) 61.5%, transparent 62%),
+            radial-gradient(circle at 50% 50%, transparent 66%, rgba(255,255,255,0.7) 66.5%, rgba(255,255,255,0.7) 67.5%, transparent 68%),
+            radial-gradient(circle at 50% 50%, transparent 72%, rgba(255,255,255,0.7) 72.5%, rgba(255,255,255,0.7) 73.5%, transparent 74%),
+            /* 起始/結束線 (紅棕色) */
+            linear-gradient(90deg, transparent 48%, #c68a6d 48.2%, #c68a6d 51.8%, transparent 52%),
+            /* 跑道顆粒質感 */
+            radial-gradient(rgba(100,60,30,0.03) 1px, transparent 1px);
+        background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 10px 10px;
+        background-position: center;
+        position: relative;
+    }
+    
+    /* 操場跑道數字 */
+    .header-section::after {
+        content: "3 \A 4 \A 5";
+        white-space: pre;
+        position: absolute;
+        top: 25px;
+        left: 20px;
+        font-family: 'Courier New', monospace;
+        font-size: 10px;
+        color: rgba(100,60,30,0.5);
+        line-height: 1.2;
+        text-align: left;
+    }
 
-        body {
-            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
-            background-color: #F5F5F5;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-            color: var(--text-color);
-        }
+    /* 原始文字內容與排版 (不准動) */
+    .title-cn {
+        color: #6a4c3a;
+        font-size: 20px;
+        margin-bottom: 2px;
+        font-weight: bold;
+    }
+    .title-en {
+        color: #7f6e5e;
+        font-size: 8px;
+        letter-spacing: 2px;
+        margin-top: 0;
+        margin-bottom: 25px;
+    }
+    .button-box {
+        background-color: #fff;
+        display: inline-block;
+        padding: 5px 15px;
+        border-radius: 20px;
+        margin-bottom: 25px;
+    }
+    .button-text {
+        color: #e5935f;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .content-p {
+        color: #6a4c3a;
+        font-size: 10px;
+        line-height: 1.6;
+        text-align: left;
+        margin: 0 0 15px 0;
+    }
+    .footer-note {
+        color: #a38c76;
+        font-size: 7px;
+        text-align: left;
+        margin-top: 25px;
+        font-weight: bold;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 600px;
-            background-color: var(--light-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
+    /* 紅色分割線 (不准動) */
+    .red-divider {
+        height: 3px;
+        background-color: #f75c4c;
+        width: 100%;
+        margin: 15px 0;
+    }
 
-        /* 上半部文字區 */
-        .header-section {
-            padding: 30px;
-            border-left: 8px solid #E6D8AD;
-        }
-
-        h1 {
-            color: var(--primary-brown);
-            margin: 0;
-            font-size: 24px;
-        }
-
-        .subtitle {
-            color: #C0B283;
-            font-size: 12px;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .description {
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .footer-note {
-            font-size: 12px;
-            color: #A0937D;
-            border-top: 1px solid #E6D8AD;
-            padding-top: 15px;
-            margin-top: 20px;
-        }
-
-        /* 下半部表單區 */
-        .form-section {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 25px 25px 0 0;
-            margin-top: -10px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: var(--primary-brown);
-            font-size: 16px;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            box-sizing: border-box;
-            background-color: #FAFAFA;
-            font-size: 14px;
-            color: #333;
-        }
-
-        input::placeholder, textarea::placeholder {
-            color: #BCBCBC;
-        }
-
-        .row {
-            display: flex;
-            gap: 15px;
-        }
-
-        .row .form-group {
-            flex: 1;
-        }
-
-        textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        /* 簡單的按鈕樣式 (原圖未顯示，預留) */
-        .submit-btn {
-            background-color: var(--primary-brown);
-            color: white;
-            border: none;
-            padding: 15px;
-            width: 100%;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-    </style>
+    /* 紅線以下的表單部分 (不准動) */
+    .form-section {
+        padding: 0 20px 20px 20px;
+        color: #333;
+    }
+    .form-group {
+        margin-bottom: 12px;
+    }
+    label {
+        display: block;
+        font-size: 11px;
+        margin-bottom: 5px;
+        color: #666;
+    }
+    input[type="text"], 
+    input[type="email"] {
+        width: 100%;
+        padding: 6px 10px;
+        font-size: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #fcfcfc;
+    }
+    input::placeholder {
+        color: #bbb;
+    }
+    select {
+        width: 100%;
+        padding: 6px 10px;
+        font-size: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #fcfcfc;
+        color: #888;
+    }
+    textarea {
+        width: 100%;
+        height: 60px;
+        padding: 6px 10px;
+        font-size: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #fcfcfc;
+        resize: none;
+    }
+    textarea::placeholder {
+        color: #bbb;
+    }
+    .verification-group {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .verification-input {
+        flex: 1;
+    }
+    .verification-code {
+        width: 80px;
+        height: 28px;
+        background-color: #eee;
+        border-radius: 4px;
+        /* 模擬圖中模糊的驗證碼文字 */
+        background-image: linear-gradient(90deg, transparent 10%, #aaa 10%, #aaa 20%, transparent 20%, transparent 30%, #aaa 30%, #aaa 40%, transparent 40%, transparent 60%, #aaa 60%, #aaa 70%, transparent 70%);
+        background-size: 100% 100%;
+    }
+</style>
 </head>
 <body>
 
-<div class="container">
-    <!-- 文字介紹區域 -->
-    <div class="header-section">
-        <h1>跑者服務中心</h1>
-        <div class="subtitle">RUNNER SERVICE CENTER</div>
+<div class="wrapper">
+    <div class="main-container">
         
-        <div class="description">
-            <strong>讓我們聽見您的腳步聲</strong><br><br>
-            無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺<br><br>
-            您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。<br><br>
-            讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。
+        <!-- 紅線以上 (不准動：所有文字內容、emoji、顏色、按鈕) -->
+        <!-- 奶黃底已改為操場跑道風格 -->
+        <div class="header-section">
+            <p class="title-cn">跑者服務中心</p>
+            <p class="title-en">RUNNER SERVICE CENTER</p>
+            
+            <div class="button-box">
+                <span class="button-text">讓我們聽見您的腳步聲</span>
+            </div>
+
+            <p class="content-p">無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺️</p>
+            <p class="content-p">您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
+            <p class="content-p">讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
+            
+            <p class="footer-note">＊ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</p>
         </div>
 
-        <div class="footer-note">
-            ☀ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
-        </div>
-    </div>
+        <!-- 紅色分割線 (不准動) -->
+        <div class="red-divider"></div>
 
-    <!-- 表單區域 -->
-    <div class="form-section">
-        <form>
+        <!-- 紅線以下 (不准動：所有欄位、文字、placeholder、選項) -->
+        <div class="form-section">
             <div class="form-group">
                 <label>姓名 / Name</label>
                 <input type="text" placeholder="請輸入您的姓名">
             </div>
-
+            
             <div class="form-group">
                 <label>電子信箱 / E-mail</label>
-                <input type="email" placeholder="runner@example.com">
+                <input type="email" placeholder="runner@gmail.com">
             </div>
-
+            
             <div class="form-group">
-                <label>跑者屬性</label>
+                <label>跑者屬性 / Runner Type</label>
                 <select>
-                    <option value="">新手跑者</option>
-                    <option value="">進階跑者</option>
-                    <option value="">馬拉松選手</option>
+                    <option value="">請選擇 / Please Select</option>
                 </select>
             </div>
-
-            <div class="row">
-                <div class="form-group">
-                    <label>跑步最佳成績 (PB)</label>
-                    <input type="text" placeholder="例如：全馬3:30:00">
-                </div>
-                <div class="form-group">
-                    <label>目標成績</label>
-                    <input type="text" placeholder="例如：全馬2:59:59">
-                </div>
-            </div>
-
+            
             <div class="form-group">
-                <label>慣用穿戴配備</label>
-                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
+                <label>最佳成績 / Personal Best</label>
+                <input type="text" placeholder="例如：全馬3:30:00">
             </div>
-
+            
             <div class="form-group">
-                <label>您的問題</label>
+                <label>目標成績 / Target Goal</label>
+                <input type="text" placeholder="例如：全馬2:59:59">
+            </div>
+            
+            <div class="form-group">
+                <label>您的問題 / Your Inquiry</label>
                 <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
+            
+            <div class="form-group verification-group">
+                <div class="verification-input">
+                    <label>驗證碼 / Verification Code</label>
+                    <input type="text" placeholder="請輸入驗證碼">
+                </div>
+                <div class="verification-code"></div>
+            </div>
+        </div>
 
-            <button type="submit" class="submit-btn">送出訊息</button>
-        </form>
     </div>
 </div>
 
