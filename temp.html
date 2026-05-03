@@ -10,11 +10,12 @@
             --light-bg: #FDF9E7;
             --card-bg: #FFFFFF;
             --text-color: #5D5348;
-            --border-color: #E0E0E0;
+            --border-color: #E8E8E8;
+            --button-bg: #4F433A;
         }
 
         body {
-            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
             background-color: #F5F5F5;
             margin: 0;
             display: flex;
@@ -32,145 +33,149 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
+        /* 文字介紹區塊 */
         .header-section {
             padding: 30px;
             border-left: 8px solid #E6D8AD;
         }
 
         h1 { color: var(--primary-brown); margin: 0; font-size: 24px; }
-        .subtitle { color: #C0B283; font-size: 12px; letter-spacing: 2px; margin-bottom: 20px; }
+        .subtitle { color: #C0B283; font-size: 12px; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; }
+        .description { font-size: 15px; line-height: 1.8; margin-bottom: 20px; }
+        .footer-note { font-size: 12px; color: #A0937D; border-top: 1px solid #E6D8AD; padding-top: 15px; margin-top: 20px; }
 
+        /* 表單區塊 - 參考 IMG_5446.jpeg 樣式 */
         .form-section {
             background-color: var(--card-bg);
             padding: 30px;
             border-radius: 25px 25px 0 0;
         }
 
-        .form-group { margin-bottom: 20px; }
+        .form-group { margin-bottom: 22px; }
 
         label {
             display: block;
-            font-weight: bold;
+            font-size: 17px;
+            font-weight: 700;
+            color: #4A4A4A;
             margin-bottom: 8px;
-            color: var(--primary-brown);
-            font-size: 15px;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 12px;
+            padding: 12px 15px;
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 4px;
             box-sizing: border-box;
-            background-color: #FAFAFA;
-            font-size: 14px;
+            font-size: 15px;
+            background-color: #FFFFFF;
         }
 
-        .row { display: flex; gap: 15px; }
-        .row .form-group { flex: 1; }
+        input::placeholder, textarea::placeholder { color: #D3D3D3; }
 
-        /* 驗證碼樣式 */
-        .captcha-container {
+        /* 驗證碼佈局 */
+        .captcha-group {
             display: flex;
             align-items: center;
             gap: 10px;
+            margin-top: 8px;
         }
+        .captcha-input { width: 100px !important; }
         .captcha-code {
-            background: #EEE;
-            padding: 10px 15px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            user-select: none;
-            background-image: linear-gradient(45deg, #ddd 25%, transparent 25%), linear-gradient(-45deg, #ddd 25%, transparent 25%);
-            background-size: 10px 10px;
+            background-color: #F3EFE9;
+            padding: 10px 18px;
             border-radius: 4px;
-            color: #555;
+            font-weight: 700;
+            letter-spacing: 3px;
         }
+        .captcha-refresh { color: #999; cursor: pointer; font-size: 20px; }
 
         .submit-btn {
-            background-color: var(--primary-brown);
+            width: 100%;
+            padding: 15px;
+            background-color: var(--button-bg);
             color: white;
             border: none;
-            padding: 15px;
-            width: 100%;
-            border-radius: 8px;
-            font-size: 16px;
+            border-radius: 4px;
+            font-size: 17px;
+            font-weight: 600;
             cursor: pointer;
-            transition: 0.3s;
+            margin-top: 10px;
         }
-        .submit-btn:hover { background-color: #6F5B42; }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <!-- 保留原本的文字介紹 -->
     <div class="header-section">
         <h1>跑者服務中心</h1>
         <div class="subtitle">RUNNER SERVICE CENTER</div>
-        <p>讓我們聽見您的腳步聲，連結起每一個熱血的靈魂。</p>
+        <div class="description">
+            <strong>讓我們聽見您的腳步聲</strong><br><br>
+            無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺<br><br>
+            您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。<br><br>
+            讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。
+        </div>
+        <div class="footer-note">
+            ☀ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
+        </div>
     </div>
 
+    <!-- 更新後的表單 -->
     <div class="form-section">
         <form>
-            <!-- 姓名 -->
             <div class="form-group">
                 <label>姓名 / Name</label>
-                <input type="text" placeholder="Enter your full name">
+                <input type="text" placeholder="請輸入您的姓名">
             </div>
 
-            <!-- 電子信箱 -->
             <div class="form-group">
                 <label>電子信箱 / E-mail</label>
-                <input type="email" placeholder="example@runner.com">
+                <input type="email" placeholder="runner@gmail.com">
             </div>
 
-            <!-- 跑者屬性 -->
             <div class="form-group">
                 <label>跑者屬性 / Runner Type</label>
-                <select>
-                    <option value="" disabled selected>Select your runner level</option>
-                    <option value="beginner">新手跑者 / Beginner</option>
-                    <option value="half-marathon">半馬跑者 / Half Marathoner</option>
-                    <option value="full-marathon">全馬跑者 / Full Marathoner</option>
-                    <option value="ultra-trail">超馬、越野跑者 / Ultra & Trail Runner</option>
+                <select style="color: #1A73E8;">
+                    <option value="" disabled selected>請選擇 / Please Select</option>
+                    <option value="beginner">新手跑者</option>
+                    <option value="half">半馬跑者</option>
+                    <option value="full">全馬跑者</option>
+                    <option value="ultra">超馬/越野跑者</option>
                 </select>
             </div>
 
-            <!-- 成績行 -->
-            <div class="row">
-                <div class="form-group">
-                    <label>最佳成績 / Personal Best</label>
-                    <input type="text" placeholder="e.g. Marathon 3:30:00">
-                </div>
-                <div class="form-group">
-                    <label>目標成績 / Goal Time</label>
-                    <input type="text" placeholder="e.g. Marathon 2:59:59">
-                </div>
-            </div>
-
-            <!-- 穿戴配備 -->
             <div class="form-group">
-                <label>穿戴配備 / Gear & Wearables</label>
-                <input type="text" placeholder="e.g. Garmin Forerunner 955, Coros Pace 3">
+                <label>最佳成績 / Personal Best</label>
+                <input type="text" placeholder="例如：全馬3:30:00">
             </div>
 
-            <!-- 您的問題 -->
             <div class="form-group">
-                <label>您的問題 / Inquiry or Feedback</label>
-                <textarea placeholder="How can we help you on your running journey?"></textarea>
+                <label>目標成績 / Target Goal</label>
+                <input type="text" placeholder="例如：全馬2:59:59">
             </div>
 
-            <!-- 驗證碼 -->
+            <div class="form-group">
+                <label>穿戴配備 / Wearable Device</label>
+                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
+            </div>
+
+            <div class="form-group">
+                <label>您的問題 / Your Inquiry</label>
+                <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
+            </div>
+
             <div class="form-group">
                 <label>驗證碼 / Verification Code</label>
-                <div class="captcha-container">
-                    <div class="captcha-code">R 8 N 2</div>
-                    <input type="text" style="flex: 1;" placeholder="Enter code">
+                <div class="captcha-group">
+                    <input type="text" class="captcha-input" placeholder="輸入碼">
+                    <div class="captcha-code">7 W 8 Q</div>
+                    <div class="captcha-refresh">↻</div>
                 </div>
-                <small style="color: #999; font-size: 11px;">Anti-bot verification</small>
             </div>
 
-            <button type="submit" class="submit-btn">送出訊息 / Submit</button>
+            <button type="submit" class="submit-btn">送出表單 / Submit</button>
         </form>
     </div>
 </div>
