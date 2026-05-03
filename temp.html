@@ -6,12 +6,11 @@
     <style>
         :root {
             --primary-brown: #8B7355; 
-            --light-bg: #FDF9E7;    
-            --accent-gold: #D4AF37; 
+            --vibrant-yellow: #FFEB3B; /* 鮮豔黃色強化 */
+            --accent-gold: #FFC107;   /* 金色邊框線條 */
             --label-brown: #7A6652;  
             --input-border: #F2F2F2; 
             --input-bg: #FDFDF8;     
-            --placeholder: #BFBFBF;  
         }
 
         body {
@@ -20,52 +19,56 @@
             background-color: #ffffff;
         }
 
-        /* 特別設計的黃底框框 */
+        /* 鮮豔且有特色的黃底框框 */
         .runner-header {
-            background-color: var(--light-bg);
+            background-color: var(--vibrant-yellow);
             padding: 45px 30px 60px 35px;
             position: relative;
-            /* 特色 1：左手邊的一條線 */
-            border-left: 10px solid var(--accent-gold); 
-            /* 特色 2：不對稱大圓角，增加設計感 */
-            border-bottom-left-radius: 60px;
+            /* 特色 1：左手邊極粗金色實線 */
+            border-left: 12px solid var(--accent-gold); 
+            /* 特色 2：動態切割斜角設計 */
+            border-bottom-left-radius: 80px;
+            /* 特色 3：立體投影感 */
+            box-shadow: 0 10px 30px rgba(255, 235, 59, 0.3);
             margin-bottom: 0;
         }
 
         .runner-header h1 {
-            color: var(--primary-brown);
-            font-size: 24px;
+            color: #4f433a; /* 增加對比度 */
+            font-size: 26px;
             margin: 0;
-            font-weight: bold;
+            font-weight: 900;
         }
 
         .en-title {
-            color: #c0b283;
+            color: #8B7355;
             font-size: 11px;
-            letter-spacing: 1px;
+            font-weight: bold;
+            letter-spacing: 2px;
             margin-top: 5px;
             margin-bottom: 30px;
         }
 
         .highlight {
-            color: var(--primary-brown);
-            font-size: 15px;
-            font-weight: bold;
+            color: #4f433a;
+            font-size: 16px;
+            font-weight: 800;
             margin-bottom: 20px;
         }
 
         .runner-header p {
             font-size: 14px;
             line-height: 1.8;
-            color: #665c49;
+            color: #4f433a;
             margin: 15px 0;
+            font-weight: 500;
         }
 
         .footer-info {
             font-size: 10px;
-            color: #a0937d;
+            color: #7A6652;
             margin-top: 35px;
-            border-top: 0.5px solid #e0dcc8;
+            border-top: 1px solid rgba(0,0,0,0.1);
             padding-top: 15px;
         }
 
@@ -74,8 +77,8 @@
             background-color: #ffffff;
             margin-top: -35px;
             padding: 45px 30px;
-            border-top-left-radius: 35px;
-            border-top-right-radius: 35px;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
             position: relative;
             z-index: 10;
         }
@@ -163,7 +166,7 @@
             </div>
 
             <div class="form-group">
-                <label>跑者屬性 / Runner Type</label>
+                <label>跑者屬性 / 英文</label>
                 <select>
                     <option value="" disabled selected>請選擇 / Please Select</option>
                     <option value="beginner">新手跑者</option>
@@ -174,22 +177,22 @@
             </div>
 
             <div class="form-group">
-                <label>最佳成績 / Personal Best</label>
+                <label>最佳成績 / 英文</label>
                 <input type="text" placeholder="例如：全馬3:30:00">
             </div>
 
             <div class="form-group">
-                <label>目標成績 / Target Goal</label>
+                <label>目標成績 / 英文</label>
                 <input type="text" placeholder="例如：全馬2:59:59">
             </div>
 
             <div class="form-group">
-                <label>穿戴配備 / Wearable Device</label>
+                <label>穿戴配備 / 英文</label>
                 <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
             </div>
 
             <div class="form-group">
-                <label>您的問題 / Your Inquiry</label>
+                <label>您的問題 / 英文</label>
                 <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
 
