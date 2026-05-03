@@ -23,20 +23,18 @@
             box-shadow: 0 5px 25px rgba(0,0,0,0.05);
         }
 
-        /* 奶黃底操場形狀設計 - 具象化跑道圓環 */
+        /* 奶黃底操場形狀設計 - 保持不動 */
         .runner-header {
             position: relative;
             background-color: #ffe89b;
             padding: 60px 30px 60px 30px;
             text-align: center;
             color: #796151;
-            /* 模擬操場 U 型跑道的彎道形狀 */
             border-bottom-left-radius: 50% 20%;
             border-bottom-right-radius: 50% 20%;
             box-shadow: inset 0 -10px 20px rgba(255, 255, 255, 0.4);
         }
 
-        /* 操場分道線 */
         .runner-header::before {
             content: "";
             position: absolute;
@@ -66,14 +64,18 @@
             z-index: 1;
         }
 
+        /* 調整重點：縮為合適的段落距離 */
         .intro-desc {
             text-align: left;
-            line-height: 1.8;
+            line-height: 1.6; /* 稍微縮小行高提升緊湊感 */
             font-size: 15px;
             position: relative;
             z-index: 1;
         }
-        .intro-desc p { margin: 0 0 12px 0; }
+        .intro-desc p { 
+            margin: 0 0 8px 0; /* 縮小段落間距 */
+        }
+        .intro-desc p:last-child { margin-bottom: 0; }
 
         .service-time {
             font-size: 11px;
@@ -86,12 +88,11 @@
             z-index: 1;
         }
 
-        /* 表單內容：嚴格遵守不動文字、顏色參考圖片 */
+        /* 表單內容完全保留不變 */
         .form-content { padding: 30px 25px; }
         .field { margin-bottom: 22px; }
         .field label { display: block; font-weight: bold; margin-bottom: 10px; color: #796151; font-size: 16px; }
         
-        /* 表格框樣式 (參考 IMG_5520.png) */
         .field input, .field select, .field textarea {
             width: 100%; 
             padding: 14px; 
@@ -130,7 +131,6 @@
         }
         .refresh-btn:active { transform: rotate(90deg); }
 
-        /* 送出按鈕 (參考 IMG_5520.png) */
         .submit-btn {
             width: 100%; 
             padding: 16px; 
