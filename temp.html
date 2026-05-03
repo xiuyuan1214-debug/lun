@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            /* 顏色變數定義 */
             --cream-bg: #FFF9D7;      
             --cream-shadow: #F8E9A1;  
             --color-zh: #5D4037;       
@@ -26,18 +25,19 @@
             align-items: center;
         }
 
-        /* 輸入框寬度進一步縮小 */
+        /* 再次大幅度縮小輸入框整體寬度至 380px */
         .content-wrapper {
             width: 100%;
-            max-width: 450px; 
+            max-width: 380px; 
             padding: 0 10px;
             box-sizing: border-box;
         }
 
+        /* 奶黃底框樣式完全不動 */
         .runner-header {
             background-color: var(--cream-bg);
             border-radius: 150px; 
-            padding: 45px 25px 50px 25px;
+            padding: 50px 30px 55px 30px;
             position: relative;
             text-align: center;
             box-shadow: 0 15px 0 var(--cream-shadow), 0 30px 40px rgba(0,0,0,0.08);
@@ -46,7 +46,7 @@
 
         .title-zh {
             color: var(--color-zh);
-            font-size: 24px;
+            font-size: 24px; /* 因寬度縮小微調字級以求平衡 */
             margin: 0;
             font-weight: 900;
             letter-spacing: 2px;
@@ -54,29 +54,29 @@
 
         .title-en {
             color: var(--color-en);
-            font-size: 9px;
+            font-size: 10px;
             font-weight: 700;
-            letter-spacing: 3px;
-            margin-top: 8px;
-            margin-bottom: 20px;
+            letter-spacing: 4px;
+            margin-top: 10px;
+            margin-bottom: 25px;
         }
 
         .title-slogan {
             color: var(--color-slogan);
             font-size: 17px;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             background: rgba(255,255,255,0.6);
             display: inline-block;
-            padding: 5px 18px;
+            padding: 5px 20px;
             border-radius: 20px;
         }
 
         .runner-header p {
             font-size: 13px;
-            line-height: 1.7;
+            line-height: 1.8;
             color: var(--color-zh);
-            margin: 6px 0;
+            margin: 8px 0;
             font-weight: 500;
             text-align: left;
         }
@@ -84,35 +84,35 @@
         .footer-info {
             font-size: 10px;
             color: #968370;
-            margin-top: 10px;
+            margin-top: 12px;
             border-top: 1px solid rgba(0,0,0,0.05);
-            padding-top: 8px;
+            padding-top: 10px;
             text-align: center;
         }
 
         .form-container {
             background-color: #ffffff;
             margin-top: -45px;
-            padding: 55px 20px 40px 20px;
-            border-top-left-radius: 40px;
-            border-top-right-radius: 40px;
+            padding: 60px 25px 40px 25px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
             position: relative;
             z-index: 10;
         }
 
-        .form-group { margin-bottom: 22px; }
+        .form-group { margin-bottom: 25px; }
 
         label {
             display: block;
             font-size: 16px;
             font-weight: bold;
             color: var(--form-label);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 12px 16px;
+            padding: 12px 18px;
             border: 1px solid var(--input-border);
             border-radius: 12px;
             font-size: 14px;
@@ -122,17 +122,17 @@
             outline: none;
         }
 
-        textarea { height: 110px; resize: none; }
+        textarea { height: 120px; resize: none; }
 
         .captcha-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
-        .captcha-input { width: 90px !important; }
+        .captcha-input { width: 80px !important; }
         .captcha-box {
             background-color: #F8F5F0;
-            padding: 8px 18px;
+            padding: 8px 15px;
             border-radius: 10px;
             font-weight: bold;
             font-size: 18px;
@@ -149,7 +149,7 @@
 
         .submit-btn {
             width: 100%;
-            padding: 15px;
+            padding: 16px;
             background-color: #4f433a;
             color: #ffffff;
             border: none;
@@ -157,7 +157,7 @@
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 15px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -170,8 +170,7 @@
             <div class="title-slogan">讓我們聽見您の腳步聲</div>
             <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺</p>
             <p>您的回饋是我們進化的動力，您的提問是我們探索的方向。</p>
-            <p>希望這裡不只是網站，更是跑者們的補給站。</p>
-            <div class="footer-info">✻ 服務時間：週一至週五 09:00 - 18:00 (小編也需要運動)</div>
+            <div class="footer-info">✻ 服務時間：週一至週五 09:00 - 18:00 (小編需要運動時間)</div>
         </div>
 
         <div class="form-container">
@@ -188,10 +187,10 @@
                     <label>跑者屬性 / Runner Type</label>
                     <select>
                         <option value="" disabled selected>請選擇 / Please Select</option>
-                        <option value="beginner">新手跑者</option>
-                        <option value="half-marathon">半馬跑者</option>
-                        <option value="marathon">全馬跑者</option>
-                        <option value="ultra-trail">超馬/越野跑者</option>
+                        <option value="beginner">新手跑者 / Beginner Runner</option>
+                        <option value="half-marathon">半馬跑者 / Half Marathoner</option>
+                        <option value="marathon">全馬跑者 / Marathoner</option>
+                        <option value="ultra-trail">超馬/越野跑者 / Ultra & Trail Runner</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -204,7 +203,7 @@
                 </div>
                 <div class="form-group">
                     <label>穿戴配備 / Wearable Device</label>
-                    <input type="text" placeholder="例如：Garmin, Apple Watch">
+                    <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
                 </div>
                 <div class="form-group">
                     <label>您的問題 / Your Inquiry</label>
