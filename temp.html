@@ -6,8 +6,8 @@
     <style>
         :root {
             --primary-brown: #8B7355; 
-            --saturated-yellow: #FFD700; /* 高飽和黃色 */
-            --accent-border: #DAA520;   /* 特色邊框深金色 */
+            --refined-yellow: #F9D11F; /* 降低螢光感，改為較厚實的質感黃 */
+            --accent-border: #C69C00;   /* 邊框深金色 */
             --label-brown: #7A6652;  
             --input-border: #F2F2F2; 
             --input-bg: #FDFDF8;     
@@ -19,15 +19,18 @@
             background-color: #ffffff;
         }
 
-        /* 飽和黃色且有特色的框框 - 絕對不動 */
+        /* 調整後的黃底框框：強化邊框特色 */
         .runner-header {
-            background-color: var(--saturated-yellow);
+            background-color: var(--refined-yellow);
             padding: 45px 30px 60px 45px;
             position: relative;
-            border-left: 15px solid var(--accent-border);
-            border-bottom: 3px solid rgba(0,0,0,0.05);
-            border-bottom-left-radius: 100px;
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+            /* 特色 1：雙重左側邊界，內含深色點綴線 */
+            border-left: 16px solid var(--accent-border);
+            /* 特色 2：底部加入細緻的深色陰影線增加立體感 */
+            border-bottom: 5px solid rgba(0,0,0,0.1);
+            /* 特色 3：大跨度的動態圓角設計 */
+            border-bottom-left-radius: 90px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
             margin-bottom: 0;
         }
 
