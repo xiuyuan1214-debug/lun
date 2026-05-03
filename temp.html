@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            /* 字體配色調整 */
-            --track-cocoa: #5D4037;   /* 活潑的可可啡色，適合奶油黃底 */
+            /* 奶油黃與溫馨操場配色 */
+            --cream-bg: #FFF9D7;      
+            --track-soft-line: #FCE4EC; /* 溫馨粉色線條 */
+            --track-dot: #D7CCC8;      /* 溫和點狀線 */
+            
+            /* 三行文字指定配色 */
+            --color-zh: #5D4037;       /* 深焦糖啡 */
+            --color-en: #8D6E63;       /* 柔和拿鐵 */
+            --color-slogan: #E67E22;   /* 活潑橙 */
+            
             --form-label: #7A6652;    
             --form-main: #3D352F;
-            
-            /* 奶油黃可愛操場配色 */
-            --cream-bg: #FFF9D7;      /* 更嫩的奶油黃 */
-            --cream-track: #FFF5BA;   
-            
-            /* 表單細節 */
             --input-border: #F2F2F2; 
             --input-bg: #FDFDF8;     
         }
@@ -25,63 +27,63 @@
             background-color: #ffffff;
         }
 
-        /* 奶油黃區塊：活潑可愛操場模式 */
+        /* 奶油黃底：可愛溫馨操場呈現 */
         .runner-header {
             background-color: var(--cream-bg);
-            /* 胖胖膠囊型大圓角 */
-            border-radius: 0 0 120px 120px; 
-            padding: 75px 40px 110px 40px;
+            /* 圓潤飽滿的操場曲線 */
+            border-radius: 0 0 150px 150px; 
+            padding: 80px 40px 120px 40px;
             position: relative;
             text-align: center;
             border: none;
-            /* 趣味感的多重浮雕陰影 */
-            box-shadow: 
-                0 12px 0 var(--cream-track),
-                0 25px 40px rgba(230, 210, 150, 0.4);
-            margin: 0 12px;
-            overflow: hidden;
+            /* 溫馨色調陰影 */
+            box-shadow: 0 20px 0 #FFF1B8, 0 35px 50px rgba(0,0,0,0.05);
+            margin: 0;
         }
 
-        /* 可愛跑道虛線裝飾 */
-        .runner-header::before {
+        /* 操場內圈可愛裝飾線 */
+        .runner-header::after {
             content: "";
             position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            bottom: 20px;
-            border: 3px dashed rgba(93, 64, 55, 0.1);
-            border-radius: 0 0 100px 100px;
+            top: 30px; left: 30px; right: 30px; bottom: 30px;
+            border: 2px dashed var(--track-dot);
+            border-radius: 0 0 120px 120px;
             pointer-events: none;
         }
 
-        .runner-header h1 {
-            color: var(--track-cocoa);
-            font-size: 26px;
+        /* 三行文字顏色不同效果 */
+        .title-zh {
+            color: var(--color-zh);
+            font-size: 28px;
             margin: 0;
             font-weight: 900;
-        }
-
-        .en-title {
-            color: #8B7355;
-            font-size: 11px;
-            font-weight: bold;
             letter-spacing: 2px;
-            margin-top: 5px;
-            margin-bottom: 30px;
         }
 
-        .highlight {
-            color: var(--track-cocoa);
-            font-size: 16px;
+        .title-en {
+            color: var(--color-en);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-top: 10px;
+            margin-bottom: 35px;
+        }
+
+        .title-slogan {
+            color: var(--color-slogan);
+            font-size: 19px;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            background: rgba(255,255,255,0.4);
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 20px;
         }
 
         .runner-header p {
             font-size: 14px;
             line-height: 1.8;
-            color: var(--track-cocoa);
+            color: var(--color-zh);
             margin: 15px 0;
             font-weight: 500;
             text-align: left;
@@ -90,8 +92,8 @@
         .footer-info {
             font-size: 10px;
             color: #968370;
-            margin-top: 35px;
-            border-top: 1px solid rgba(0,0,0,0.06);
+            margin-top: 40px;
+            border-top: 1px solid rgba(0,0,0,0.05);
             padding-top: 15px;
             text-align: center;
         }
@@ -99,17 +101,15 @@
         /* 表單區域 - 絕對不動 */
         .form-container {
             background-color: #ffffff;
-            margin-top: -65px;
-            padding: 50px 30px;
-            border-top-left-radius: 45px;
-            border-top-right-radius: 45px;
+            margin-top: -70px;
+            padding: 60px 30px 40px 30px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
             position: relative;
             z-index: 10;
         }
 
-        .form-group {
-            margin-bottom: 25px;
-        }
+        .form-group { margin-bottom: 25px; }
 
         label {
             display: block;
@@ -129,7 +129,6 @@
             color: var(--form-main);
             box-sizing: border-box;
             outline: none;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
         }
 
         textarea { height: 130px; resize: none; }
@@ -153,21 +152,8 @@
         }
 
         .refresh-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 5px;
-            display: flex;
-            align-items: center;
-            transition: transform 0.1s;
-        }
-        .refresh-btn:active { transform: scale(0.85); }
-        .refresh-btn svg {
-            width: 24px;
-            height: 24px;
-            stroke: #B8B0A8;
-            stroke-width: 2;
-            fill: none;
+            background: none; border: none; cursor: pointer;
+            padding: 5px; display: flex; align-items: center;
         }
 
         .submit-btn {
@@ -181,16 +167,15 @@
             font-weight: bold;
             cursor: pointer;
             margin-top: 20px;
-            box-shadow: 0 4px 12px rgba(79, 67, 58, 0.2);
         }
     </style>
 </head>
 <body>
 
     <div class="runner-header">
-        <h1>跑者服務中心</h1>
-        <div class="en-title">RUNNER SERVICE CENTER</div>
-        <div class="highlight">讓我們聽見您的腳步聲</div>
+        <h1 class="title-zh">跑者服務中心</h1>
+        <div class="title-en">RUNNER SERVICE CENTER</div>
+        <div class="title-slogan">讓我們聽見您の腳步聲</div>
         <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺</p>
         <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
         <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
@@ -246,7 +231,7 @@
                     <input type="text" class="captcha-input" placeholder="輸入碼">
                     <div id="captchaCode" class="captcha-box">7 W 8 Q</div>
                     <button type="button" class="refresh-btn" onclick="refreshCaptcha()">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B8B0A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M23 4v6h-6"></path>
                             <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
                         </svg>
