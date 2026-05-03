@@ -23,11 +23,10 @@
             box-shadow: 0 5px 25px rgba(0,0,0,0.05);
         }
 
-        /* 奶黃底操場形狀設計 - 保持不動 */
         .runner-header {
             position: relative;
             background-color: #ffe89b;
-            padding: 60px 30px 60px 30px;
+            padding: 40px 30px 40px 30px;
             text-align: center;
             color: #796151;
             border-bottom-left-radius: 50% 20%;
@@ -47,8 +46,9 @@
             pointer-events: none;
         }
 
+        /* 縮短最上層標題與副標題間隔 */
         h1 { font-size: 28px; margin: 0; letter-spacing: 2px; position: relative; z-index: 1; }
-        .subtitle { font-size: 11px; letter-spacing: 3px; margin: 8px 0 25px 0; opacity: 0.7; position: relative; z-index: 1; }
+        .subtitle { font-size: 11px; letter-spacing: 3px; margin: 2px 0 20px 0; opacity: 0.7; position: relative; z-index: 1; }
 
         .highlight-box {
             background-color: #ffffff;
@@ -58,37 +58,34 @@
             font-size: 17px;
             font-weight: bold;
             color: #a88d70;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             position: relative;
             z-index: 1;
         }
 
-        /* 調整重點：縮為合適的段落距離 */
         .intro-desc {
             text-align: left;
-            line-height: 1.6; /* 稍微縮小行高提升緊湊感 */
+            line-height: 1.6;
             font-size: 15px;
             position: relative;
             z-index: 1;
         }
-        .intro-desc p { 
-            margin: 0 0 8px 0; /* 縮小段落間距 */
-        }
+        .intro-desc p { margin: 0 0 8px 0; }
         .intro-desc p:last-child { margin-bottom: 0; }
 
+        /* 服務時間：刪除上層線條、上下排列 */
         .service-time {
             font-size: 11px;
             color: rgba(121, 97, 81, 0.6);
-            border-top: 1px solid rgba(121, 97, 81, 0.1);
-            padding-top: 15px;
-            margin-top: 20px;
+            padding-top: 10px;
+            margin-top: 15px;
             text-align: left;
             position: relative;
             z-index: 1;
+            line-height: 1.5;
         }
 
-        /* 表單內容完全保留不變 */
         .form-content { padding: 30px 25px; }
         .field { margin-bottom: 22px; }
         .field label { display: block; font-weight: bold; margin-bottom: 10px; color: #796151; font-size: 16px; }
@@ -127,9 +124,7 @@
             color: #a88d70; 
             cursor: pointer; 
             padding: 0 5px;
-            transition: transform 0.2s;
         }
-        .refresh-btn:active { transform: rotate(90deg); }
 
         .submit-btn {
             width: 100%; 
@@ -158,7 +153,8 @@
             <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
         </div>
         <div class="service-time">
-            ＊ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
+            ☀️服務時間：週一至週五 09:00 - 18:00<br>
+            (跑者不休息，但小編需要一些運動時間)
         </div>
     </div>
 
