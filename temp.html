@@ -7,10 +7,10 @@
         :root {
             --primary-brown: #8B7355; 
             --light-bg: #FDF9E7;    
+            --accent-gold: #D4AF37; /* 左側線條顏色 */
             --label-brown: #7A6652;  
             --input-border: #F2F2F2; 
             --input-bg: #FDFDF8;     
-            --placeholder: #BFBFBF;  
         }
 
         body {
@@ -19,11 +19,14 @@
             background-color: #ffffff;
         }
 
+        /* 頂部區域：加入左手邊的一條線 */
         .runner-header {
             background-color: var(--light-bg);
             padding: 45px 30px 60px 35px;
             position: relative;
             border-bottom-left-radius: 40px;
+            /* 左手邊的一條線 */
+            border-left: 8px solid var(--accent-gold); 
         }
 
         .runner-header h1 {
@@ -67,14 +70,14 @@
             background-color: #ffffff;
             margin-top: -35px;
             padding: 45px 30px;
-            border-top-left-radius: 35px; /* 對齊 IMG_5470_3.jpeg 紅勾處圓角 */
+            border-top-left-radius: 35px;
             border-top-right-radius: 35px;
             position: relative;
             z-index: 10;
         }
 
         .form-group {
-            margin-bottom: 25px; /* 維持垂直間距 */
+            margin-bottom: 25px;
         }
 
         label {
@@ -86,7 +89,7 @@
         }
 
         input, select, textarea {
-            width: 100%; /* 強制填滿寬度實現上下排列 */
+            width: 100%;
             padding: 14px 20px;
             border: 1px solid var(--input-border);
             border-radius: 14px;
@@ -95,18 +98,6 @@
             color: #4A4A4A;
             box-sizing: border-box;
             outline: none;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
-        }
-
-        input::placeholder, textarea::placeholder {
-            color: var(--placeholder);
-        }
-
-        select {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23BFBFBF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 18px center;
         }
 
         textarea { height: 130px; resize: none; }
@@ -125,16 +116,6 @@
             font-size: 22px;
             letter-spacing: 5px;
             color: #444;
-            flex-shrink: 0;
-        }
-
-        .refresh-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 5px;
-            display: flex;
-            align-items: center;
         }
 
         .submit-btn {
@@ -172,17 +153,15 @@
 
             <div class="form-group">
                 <label>電子信箱 / E-mail</label>
-                <input type="email" placeholder="runner@gmail.com">
+                <input type="email" placeholder="runner@example.com">
             </div>
 
             <div class="form-group">
                 <label>跑者屬性 / Runner Type</label>
                 <select>
                     <option value="" disabled selected>請選擇 / Please Select</option>
-                    <option value="beginner">新手跑者</option>
-                    <option value="half-marathon">半馬跑者</option>
-                    <option value="marathon">全馬跑者</option>
-                    <option value="ultra-trail">超馬/越野跑者</option>
+                    <option>新手跑者</option>
+                    <option>馬拉松跑者</option>
                 </select>
             </div>
 
@@ -198,7 +177,7 @@
 
             <div class="form-group">
                 <label>穿戴配備 / Wearable Device</label>
-                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
+                <input type="text" placeholder="例如：Garmin, Apple Watch">
             </div>
 
             <div class="form-group">
@@ -211,12 +190,6 @@
                 <div class="captcha-container">
                     <input type="text" class="captcha-input" placeholder="輸入碼">
                     <div class="captcha-box">C M 5 F</div>
-                    <button type="button" class="refresh-btn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A8A8A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M23 4v6h-6"></path>
-                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
-                        </svg>
-                    </button>
                 </div>
             </div>
 
