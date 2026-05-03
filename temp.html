@@ -26,7 +26,7 @@
         .runner-header {
             position: relative;
             background-color: #fcefb3; 
-            padding: 50px 35px 80px 35px;
+            padding: 40px 35px 55px 35px; /* 縮減底部內距，讓間隔更合適 */
             text-align: center;
             color: #796151;
             border-bottom-left-radius: 50% 30%;
@@ -34,21 +34,19 @@
             margin-bottom: -40px; 
         }
 
-        /* 調整重點：縮減操場線條粗細 */
         .runner-header::after {
             content: "";
             position: absolute;
-            top: 15px; bottom: 45px; left: 18px; right: 18px;
-            /* 將 20px 縮減為 5px，使其看起來更精緻 */
-            border-left: 5px solid rgba(255, 255, 255, 0.4);
-            border-right: 5px solid rgba(255, 255, 255, 0.4);
+            top: 15px; bottom: 35px; left: 18px; right: 18px; /* 同步微調線條底部位置 */
+            border-left: 2.5px solid rgba(255, 255, 255, 0.4);
+            border-right: 2.5px solid rgba(255, 255, 255, 0.4);
             border-bottom-left-radius: 180px 80px;
             border-bottom-right-radius: 180px 80px;
             pointer-events: none;
         }
 
         h1 { font-size: 28px; margin: 0; letter-spacing: 2px; position: relative; z-index: 1; }
-        .subtitle { font-size: 11px; letter-spacing: 3px; margin: 2px 0 20px 0; opacity: 0.7; position: relative; z-index: 1; }
+        .subtitle { font-size: 11px; letter-spacing: 3px; margin: 2px 0 15px 0; opacity: 0.7; position: relative; z-index: 1; }
 
         .highlight-box {
             background-color: #ffffff;
@@ -58,7 +56,7 @@
             font-size: 17px;
             font-weight: bold;
             color: #d3864a; 
-            margin-bottom: 25px;
+            margin-bottom: 20px; 
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
             position: relative;
             z-index: 1;
@@ -75,11 +73,12 @@
         .intro-desc p { margin: 0 0 8px 0; }
         .intro-desc p:last-child { margin-bottom: 0; }
 
+        /* 調整重點：最底層間隔 */
         .service-time {
             font-size: 11px;
             color: rgba(121, 97, 81, 0.5);
-            padding-top: 15px;
-            margin-top: 15px;
+            padding-top: 10px;
+            margin-top: 10px; /* 緊縮與描述文字的間隔 */
             text-align: center;
             position: relative;
             z-index: 1;
