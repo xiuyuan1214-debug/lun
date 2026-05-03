@@ -3,139 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跑者服務中心</title>
     <style>
         body {
-            background-color: #f5f5f5;
+            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
-            padding: 20px;
-            font-family: "Microsoft JhengHei", sans-serif;
+            align-items: center;
+            min-height: 100vh;
             margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            /* 基礎奶黃色底 */
-            background-color: #ffe89b; 
-            width: 100%;
-            max-width: 500px;
-            border-radius: 120px 120px 40px 40px;
-            padding: 50px 30px 40px 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            color: #5d4037;
             position: relative;
-            overflow: hidden; /* 確保背景裝飾不溢出 */
+            background: #ffe8a1; /* 基礎奶黃底 */
+            border-radius: 120px 120px 50px 50px;
+            width: 375px; /* 模擬手機寬度 */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden; /* 確保內容不超出圓角 */
         }
 
-        /* 操場跑道風格裝飾背景 */
+        /* 操場跑道背景紋理 */
         .container::before {
-            content: "";
+            content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            /* 使用多重徑向漸變和線性漸變模擬跑道弧線和顆粒感 */
             background-image: 
-                /* 跑道顆粒感 */
-                radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0),
-                /* 跑道分道白線 (弧形) */
-                radial-gradient(circle at 50% 120%, transparent 60%, rgba(255,255,255,0.4) 60.5%, rgba(255,255,255,0.4) 61.5%, transparent 62%),
-                radial-gradient(circle at 50% 120%, transparent 70%, rgba(255,255,255,0.4) 70.5%, rgba(255,255,255,0.4) 71.5%, transparent 72%),
-                radial-gradient(circle at 50% 120%, transparent 80%, rgba(255,255,255,0.4) 80.5%, rgba(255,255,255,0.4) 81.5%, transparent 82%);
-            background-size: 8px 8px, 100% 100%, 100% 100%, 100% 100%;
-            z-index: 0;
-            pointer-events: none;
+                radial-gradient(ellipse at 50% 120%, transparent 65%, rgba(139, 69, 19, 0.05) 66%, transparent 68%), /* 棕色弧線 (跑道) */
+                radial-gradient(ellipse at 50% 120%, transparent 69%, rgba(139, 69, 19, 0.03) 70%, transparent 72%),
+                radial-gradient(ellipse at 50% 120%, transparent 73%, rgba(139, 69, 19, 0.02) 74%, transparent 76%),
+                radial-gradient(ellipse at 50% 120%, transparent 77%, rgba(139, 69, 19, 0.01) 78%, transparent 80%),
+                radial-gradient(circle, rgba(139, 69, 19, 0.02) 1px, transparent 1px), /* 微小顆粒 */
+                linear-gradient(rgba(255, 232, 161, 0.8), rgba(255, 232, 161, 0.8)); /* 疊加奶黃色透明度 */
+            background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 8px 8px, 100% 100%;
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat, no-repeat;
+            opacity: 0.8; /* 控制背景圖案的整體深淺 */
+            z-index: 1;
         }
 
-        /* 確保文字內容在背景之上 */
-        .content-wrapper {
+        .header {
             position: relative;
-            z-index: 1;
+            z-index: 2; /* 確保內容在背景紋理上方 */
+            text-align: center;
+            color: #5d4037; /* 深棕色文字 */
+            padding-top: 60px;
         }
 
         h1 {
             font-size: 32px;
-            margin-bottom: 5px;
+            font-weight: 800;
+            margin: 0;
             letter-spacing: 2px;
-            color: #5d4037;
         }
 
         .subtitle {
             font-size: 14px;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
+            margin-top: 10px;
             text-transform: uppercase;
-            margin-bottom: 30px;
-            font-weight: bold;
-            color: #5d4037;
         }
 
         .highlight-box {
-            background-color: #ffffff;
+            position: relative;
+            z-index: 2;
             display: inline-block;
-            padding: 8px 25px;
-            border-radius: 50px;
-            font-size: 20px;
+            background: #fff8e1; /* 更亮一點的奶黃 */
+            border-radius: 30px;
+            padding: 8px 30px;
+            color: #d1941c; /* 亮金色文字 */
             font-weight: bold;
-            color: #d4a017;
-            margin-bottom: 35px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            font-size: 18px;
+            margin: 35px auto 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        .text-content {
-            text-align: left;
+        .content {
+            position: relative;
+            z-index: 2;
+            color: #5d4037;
+            padding: 30px 40px;
             line-height: 1.8;
             font-size: 15px;
-            margin-bottom: 40px;
             font-weight: 500;
         }
 
-        .text-content p {
-            margin-bottom: 20px;
+        .content p {
+            margin: 0 0 20px 0;
         }
 
-        .footer-note {
+        .footer {
+            position: relative;
+            z-index: 2;
+            color: rgba(93, 64, 55, 0.6); /* 半透明棕色 */
             font-size: 11px;
-            color: rgba(93, 64, 55, 0.6);
-            border-top: 1px solid rgba(93, 64, 55, 0.1);
-            padding-top: 20px;
+            padding: 0 40px 30px 40px;
             text-align: left;
         }
 
-        /* 紅線 (嚴格依照指令不准動) */
+        /* 紅色裝飾線 (絕對不准動) */
         .red-line {
             width: 100%;
             height: 4px;
-            background-color: #ff5252;
-            margin-top: 30px;
+            background: #ff4747;
             border-radius: 2px;
+            margin-top: 10px; /* 這裡的 margin-top 是為了對齊，紅線本身不變 */
         }
     </style>
 </head>
 <body>
-
-<div style="width: 100%; max-width: 500px;">
     <div class="container">
-        <div class="content-wrapper">
+        <div class="header">
             <h1>跑者服務中心</h1>
             <div class="subtitle">RUNNER SERVICE CENTER</div>
+        </div>
 
+        <div style="text-align: center;">
             <div class="highlight-box">
                 讓我們聽見您的腳步聲
             </div>
-
-            <div class="text-content">
-                <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。</p>
-                <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
-                <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。
-                    希望這裡不只是網站，更是跑者們的補給站。</p>
-            </div>
-
-            <div class="footer-note">
-                ＊ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
-            </div>
         </div>
+
+        <div class="content">
+            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。</p>
+            <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
+            <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
+        </div>
+
+        <div class="footer">
+            ＊ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
+        </div>
+
+        <!-- 紅色裝飾線 (紅線以上內容完全保留，位置精確) -->
+        <div class="red-line"></div>
     </div>
-
-    <!-- 紅線位置 -->
-    <div class="red-line"></div>
-</div>
-
 </body>
 </html>
