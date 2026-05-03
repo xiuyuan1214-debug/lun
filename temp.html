@@ -1,153 +1,109 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>跑者服務中心</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 20px 0;
-            background-color: #f7f7f7;
-            display: flex;
-            justify-content: center;
-            font-family: "Microsoft JhengHei", sans-serif;
-        }
+<style>
+    body {
+        margin: 0;
+        padding: 20px 0;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        font-family: "Microsoft JhengHei", sans-serif;
+    }
 
-        .main-wrapper {
-            width: 95%;
-            max-width: 450px;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
+    .main-wrapper {
+        width: 95%;
+        max-width: 450px;
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
 
-        /* 紅線以上：奶黃底操場風格 */
-        .runner-header {
-            background-color: #ffe89b; 
-            /* 操場跑道紋理設計 */
-            background-image: 
-                radial-gradient(circle at 50% 150%, transparent 60%, rgba(255,255,255,0.4) 61%, transparent 62%),
-                radial-gradient(circle at 50% 150%, transparent 70%, rgba(255,255,255,0.4) 71%, transparent 72%),
-                radial-gradient(rgba(0,0,0,0.02) 1px, transparent 0);
-            background-size: 100% 100%, 100% 100%, 10px 10px;
-            
-            padding: 60px 30px 40px 30px;
-            text-align: center;
-            border-radius: 0 0 50px 50px;
-            color: #5d4037;
-        }
+    /* 調整後的操場風格奶黃底 */
+    .runner-header {
+        /* 使用漸層呈現跑道質感 */
+        background: #ffe89b;
+        background-image: 
+            /* 模擬跑道分道線 (白線) */
+            linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px),
+            linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+            /* 操場彎道弧線感 */
+            radial-gradient(circle at 50% 160%, transparent 50%, rgba(255,255,255,0.2) 51%, transparent 52%),
+            radial-gradient(circle at 50% 160%, transparent 65%, rgba(255,255,255,0.2) 66%, transparent 67%);
+        background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+        
+        padding: 50px 30px 40px 30px;
+        text-align: center;
+        border-radius: 0 0 40px 40px;
+        color: #5d4037;
+        position: relative;
+    }
 
-        h1 { font-size: 32px; margin: 0; letter-spacing: 2px; }
-        .subtitle { font-size: 12px; letter-spacing: 4px; margin: 10px 0 30px 0; opacity: 0.8; }
+    /* 裝飾性：跑道顆粒質感 */
+    .runner-header::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0);
+        background-size: 6px 6px;
+        pointer-events: none;
+    }
 
-        /* 標題區塊：恢復為圓角矩形，不使用對話框尾巴 */
-        .highlight-box {
-            background-color: #ffffff;
-            display: inline-block;
-            padding: 10px 30px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #d4a017;
-            margin-bottom: 40px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
+    h1 { font-size: 30px; margin: 0; letter-spacing: 2px; position: relative; }
+    .subtitle { font-size: 11px; letter-spacing: 3px; margin: 8px 0 25px 0; opacity: 0.8; position: relative; }
 
-        .intro-desc {
-            text-align: left;
-            line-height: 1.8;
-            font-size: 15px;
-            margin-bottom: 30px;
-        }
-        .intro-desc p { margin: 0 0 15px 0; }
+    /* 讓我們聽見您的腳步聲 - 方塊樣式 */
+    .highlight-box {
+        background-color: #ffffff;
+        display: inline-block;
+        padding: 10px 25px;
+        border-radius: 8px; /* 恢復為簡約方塊 */
+        font-size: 17px;
+        font-weight: bold;
+        color: #b8860b;
+        margin-bottom: 35px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        position: relative;
+    }
 
-        .service-time {
-            font-size: 11px;
-            color: rgba(93, 64, 55, 0.6);
-            border-top: 1px solid rgba(93, 64, 55, 0.1);
-            padding-top: 20px;
-            text-align: left;
-        }
+    .intro-desc {
+        text-align: left;
+        line-height: 1.8;
+        font-size: 15px;
+        position: relative;
+    }
+    .intro-desc p { margin: 0 0 12px 0; }
 
-        /* 紅線 */
-        .red-divider {
-            width: 100%;
-            height: 4px;
-            background-color: #ff5252;
-            margin: 20px 0;
-        }
+    .service-time {
+        font-size: 11px;
+        color: rgba(93, 64, 55, 0.6);
+        border-top: 1px solid rgba(93, 64, 55, 0.1);
+        padding-top: 15px;
+        margin-top: 20px;
+        text-align: left;
+        position: relative;
+    }
 
-        /* 下半部表單內容完全不動 */
-        .form-content { padding: 0 25px 40px 25px; }
-        .field { margin-bottom: 20px; }
-        .field label { display: block; font-weight: bold; margin-bottom: 8px; color: #5d4037; }
-        .field input, .field select, .field textarea {
-            width: 100%; padding: 12px; border: 1px solid #eee; border-radius: 8px; box-sizing: border-box;
-        }
-        .captcha-row { display: flex; gap: 10px; align-items: center; }
-    </style>
-</head>
-<body>
+    /* 表單區塊 */
+    .form-content { padding: 30px 25px; }
+    .field { margin-bottom: 20px; }
+    .field label { display: block; font-weight: bold; margin-bottom: 8px; color: #5d4037; font-size: 15px; }
+    .field input, .field select, .field textarea {
+        width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 14px;
+    }
+    
+    /* 驗證碼區 */
+    .captcha-group { display: flex; gap: 10px; align-items: center; }
+    .captcha-display {
+        flex: 1; background: #f0f0f0; height: 42px; border-radius: 6px;
+        display: flex; align-items: center; justify-content: center;
+        letter-spacing: 4px; font-weight: bold; color: #444; font-style: italic;
+    }
+    .refresh-btn { font-size: 12px; color: #b8860b; text-decoration: underline; cursor: pointer; }
 
-<div class="main-wrapper">
-    <!-- 紅線以上 -->
-    <div class="runner-header">
-        <h1>跑者服務中心</h1>
-        <div class="subtitle">RUNNER SERVICE CENTER</div>
-
-        <div class="highlight-box">讓我們聽見您的腳步聲</div>
-
-        <div class="intro-desc">
-            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺️</p>
-            <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
-            <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
-        </div>
-
-        <div class="service-time">
-            ＊ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
-        </div>
-    </div>
-
-    <!-- 紅線 -->
-    <div class="red-divider"></div>
-
-    <!-- 紅線以下 -->
-    <div class="form-content">
-        <div class="field">
-            <label>姓名 / Name</label>
-            <input type="text" placeholder="請輸入您的姓名">
-        </div>
-        <div class="field">
-            <label>電子信箱 / E-mail</label>
-            <input type="email" placeholder="runner@gmail.com">
-        </div>
-        <div class="field">
-            <label>跑者屬性 / Runner Type</label>
-            <select><option>請選擇 / Please Select</option></select>
-        </div>
-        <div class="field">
-            <label>最佳成績 / Personal Best</label>
-            <input type="text" placeholder="例如：全馬3:30:00">
-        </div>
-        <div class="field">
-            <label>目標成績 / Target Goal</label>
-            <input type="text" placeholder="例如：全馬2:59:59">
-        </div>
-        <div class="field">
-            <label>您的問題 / Your Inquiry</label>
-            <textarea rows="4" placeholder="每一滴汗水，都值得被聽見..."></textarea>
-        </div>
-        <div class="field">
-            <label>驗證碼 / Verification Code</label>
-            <div class="captcha-row">
-                <input type="text" style="flex:2" placeholder="請輸入驗證碼">
-                <div style="flex:1; background:#eee; height:40px; border-radius:5px; display:flex; align-items:center; justify-content:center; color:#999; font-style:italic;">B 2 W G</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-</body>
-</html>
+    /* 送出按鈕 */
+    .submit-btn {
+        width: 100%; padding: 15px; background-color: #b8860b; color: white;
+        border: none; border-radius: 6px; font-size: 17px; font-weight: bold;
+        cursor: pointer; margin-top: 10px; transition: 0.3s;
+    }
+    .submit-btn:hover { background-color: #936c09; }
+</style>
