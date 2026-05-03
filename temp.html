@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 20px 0;
-            background-color: #f2f2f2;
+            background-color: #fdfcfb;
             display: flex;
             justify-content: center;
             font-family: "Microsoft JhengHei", sans-serif;
@@ -18,100 +18,116 @@
             width: 95%;
             max-width: 450px;
             background: white;
-            border-radius: 20px;
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
         }
 
-        /* 奶黃底操場風格區塊 */
+        /* 奶黃底操場風格背景 */
         .runner-header {
-            background-color: #ffe89b;
+            background-color: #fdf3d0; 
             background-image: 
-                linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px),
-                linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
-                radial-gradient(circle at 50% 160%, transparent 50%, rgba(255,255,255,0.2) 51%, transparent 52%),
-                radial-gradient(circle at 50% 160%, transparent 65%, rgba(255,255,255,0.2) 66%, transparent 67%);
-            background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+                /* 模擬跑道分道線 */
+                radial-gradient(circle at 50% 180%, transparent 60%, rgba(255,255,255,0.4) 61%, transparent 62%),
+                radial-gradient(circle at 50% 180%, transparent 75%, rgba(255,255,255,0.4) 76%, transparent 77%),
+                /* 微細顆粒感 */
+                radial-gradient(rgba(0,0,0,0.02) 1px, transparent 0);
+            background-size: 100% 100%, 100% 100%, 10px 10px;
             padding: 50px 30px 40px 30px;
             text-align: center;
-            border-radius: 0 0 40px 40px;
-            color: #5d4037;
-            position: relative;
+            color: #796151;
         }
 
-        .runner-header::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0);
-            background-size: 6px 6px;
-            pointer-events: none;
-        }
+        h1 { font-size: 28px; margin: 0; letter-spacing: 2px; }
+        .subtitle { font-size: 11px; letter-spacing: 3px; margin: 8px 0 25px 0; opacity: 0.7; }
 
-        h1 { font-size: 30px; margin: 0; letter-spacing: 2px; position: relative; }
-        .subtitle { font-size: 11px; letter-spacing: 3px; margin: 8px 0 25px 0; opacity: 0.8; position: relative; }
-
-        /* 標題下方文字塊 (非對話框) */
         .highlight-box {
             background-color: #ffffff;
             display: inline-block;
             padding: 10px 25px;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 17px;
             font-weight: bold;
-            color: #b8860b;
-            margin-bottom: 35px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: relative;
+            color: #a88d70;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
 
         .intro-desc {
             text-align: left;
             line-height: 1.8;
             font-size: 15px;
-            position: relative;
         }
         .intro-desc p { margin: 0 0 12px 0; }
 
         .service-time {
             font-size: 11px;
-            color: rgba(93, 64, 55, 0.6);
-            border-top: 1px solid rgba(93, 64, 55, 0.1);
+            color: rgba(121, 97, 81, 0.6);
+            border-top: 1px solid rgba(121, 97, 81, 0.1);
             padding-top: 15px;
             margin-top: 20px;
             text-align: left;
-            position: relative;
         }
 
-        /* 下半部表單區 */
+        /* 下半部表單：依照圖片調整框線顏色 */
         .form-content { padding: 30px 25px; }
-        .field { margin-bottom: 20px; }
-        .field label { display: block; font-weight: bold; margin-bottom: 8px; color: #5d4037; font-size: 15px; }
+        .field { margin-bottom: 22px; }
+        .field label { display: block; font-weight: bold; margin-bottom: 10px; color: #796151; font-size: 16px; }
+        
+        /* 圖片中的輸入框樣式 */
         .field input, .field select, .field textarea {
-            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 14px;
+            width: 100%; 
+            padding: 14px; 
+            border: 1.5px solid #eee9e4; /* 淺灰色邊框 */
+            border-radius: 15px;         /* 較大的圓角 */
+            background-color: #faf9f6;   /* 圖片中的米白底色 */
+            box-sizing: border-box; 
+            font-size: 15px;
+            color: #555;
+            outline: none;
+        }
+
+        .captcha-group { display: flex; gap: 12px; align-items: center; }
+        
+        .captcha-display {
+            flex: 1.2; 
+            background: #f4f1ed; 
+            height: 48px; 
+            border-radius: 12px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            letter-spacing: 5px; 
+            font-weight: bold; 
+            font-size: 20px;
+            color: #4e443f;
         }
         
-        /* 驗證碼排版 */
-        .captcha-group { display: flex; gap: 10px; align-items: center; }
-        .captcha-display {
-            flex: 1; background: #f0f0f0; height: 42px; border-radius: 6px;
-            display: flex; align-items: center; justify-content: center;
-            letter-spacing: 4px; font-weight: bold; color: #444; font-style: italic;
+        .refresh-btn { 
+            font-size: 24px; 
+            color: #a88d70; 
+            cursor: pointer; 
+            padding: 0 5px;
         }
-        .refresh-btn { font-size: 12px; color: #b8860b; text-decoration: underline; cursor: pointer; white-space: nowrap; }
 
-        /* 送出按鈕 */
+        /* 圖片中的深咖啡色送出按鈕 */
         .submit-btn {
-            width: 100%; padding: 15px; background-color: #b8860b; color: white;
-            border: none; border-radius: 6px; font-size: 17px; font-weight: bold;
-            cursor: pointer; margin-top: 10px;
+            width: 100%; 
+            padding: 16px; 
+            background-color: #4e443f; /* 深咖啡色底 */
+            color: white;
+            border: none; 
+            border-radius: 15px; 
+            font-size: 18px; 
+            font-weight: bold;
+            cursor: pointer; 
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
 <div class="main-wrapper">
-    <!-- 紅線以上：奶黃底操場風格 -->
     <div class="runner-header">
         <h1>跑者服務中心</h1>
         <div class="subtitle">RUNNER SERVICE CENTER</div>
@@ -126,7 +142,6 @@
         </div>
     </div>
 
-    <!-- 表單內容：內容完全保留，嚴格恢復選項與按鈕 -->
     <div class="form-content">
         <form>
             <div class="field">
@@ -155,6 +170,11 @@
                 <label>目標成績 / Target Goal</label>
                 <input type="text" placeholder="例如：全馬2:59:59">
             </div>
+            <!-- 保持圖片中的欄位 -->
+            <div class="field">
+                <label>穿戴配備 / Wearable Device</label>
+                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
+            </div>
             <div class="field">
                 <label>您的問題 / Your Inquiry</label>
                 <textarea rows="4" placeholder="每一滴汗水，都值得被聽見..."></textarea>
@@ -163,9 +183,9 @@
             <div class="field">
                 <label>驗證碼 / Verification Code</label>
                 <div class="captcha-group">
-                    <input type="text" style="flex: 1.5;" placeholder="請輸入驗證碼">
-                    <div class="captcha-display">B 2 W G</div>
-                    <span class="refresh-btn">換一張 / Refresh</span>
+                    <input type="text" style="flex: 1;" placeholder="輸入碼">
+                    <div class="captcha-display">7 W 8 Q</div>
+                    <span class="refresh-btn">↻</span>
                 </div>
             </div>
             
