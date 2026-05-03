@@ -10,6 +10,7 @@
             --light-bg: #FDF9E7;
             --text-gray: #4A4A4A;
             --btn-bg: #4f433a;
+            --track-yellow: #e6d8ad;
         }
 
         body {
@@ -23,57 +24,76 @@
 
         .main-container {
             width: 100%;
-            max-width: 100%; /* 滿版設定 */
+            max-width: 100%;
             background-color: #fff;
             min-height: 100vh;
         }
 
-        /* 上半部：米黃色介紹區（滿版樣式） */
+        /* 上半部：米黃色介紹區 */
         .runner-header {
             background-color: var(--light-bg);
-            padding: 50px 10%; /* 使用百分比間距，確保在大螢幕也好看 */
-            border-left: 15px solid #e6d8ad;
+            padding: 40px 10%;
+            position: relative;
             color: #5d5348;
+        }
+
+        /* 特色左側跑道線 */
+        .runner-header::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 10px;
+            background: linear-gradient(
+                to bottom,
+                var(--track-yellow) 0%,
+                var(--track-yellow) 50%,
+                var(--primary-brown) 50%,
+                var(--primary-brown) 100%
+            );
+            background-size: 100% 30px;
+            border-right: 3px solid var(--track-yellow);
         }
 
         .runner-header h1 { 
             color: var(--primary-brown); 
             margin: 0; 
-            font-size: 28px; 
+            font-size: 24px; 
             text-align: center; 
         }
         
         .runner-header .en-title { 
             color: #c0b283; 
-            font-size: 13px; 
-            letter-spacing: 2px; 
-            margin-bottom: 30px; 
+            font-size: 12px; 
+            letter-spacing: 1px; 
+            margin-bottom: 25px; 
             text-align: center; 
         }
 
         .runner-header .highlight { 
             color: var(--primary-brown); 
             font-weight: bold; 
-            font-size: 18px; 
-            margin-bottom: 20px; 
+            font-size: 16px; 
+            margin-bottom: 15px; 
         }
 
         .runner-header p { 
-            font-size: 16px; 
-            line-height: 1.8; 
-            margin: 15px 0; 
-            max-width: 800px; /* 文字內容限制寬度以利閱讀 */
+            font-size: 14px; 
+            line-height: 1.6; 
+            margin: 10px 0; 
+            max-width: 800px;
         }
         
         .runner-header .footer-info { 
-            font-size: 12px; 
+            font-size: 11px; 
             color: #a0937d; 
-            margin-top: 30px; 
+            margin-top: 25px;
         }
 
-        /* 下半部：表單區（滿版樣式） */
+        /* 下半部：表單區（極簡縮小版） */
         .form-container {
-            padding: 50px 10%;
+            padding: 30px 10%;
             background-color: #ffffff;
             display: flex;
             justify-content: center;
@@ -81,58 +101,58 @@
 
         form {
             width: 100%;
-            max-width: 800px; /* 表單寬度適中，避免在大螢幕太寬 */
+            max-width: 800px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 12px; /* 再次縮小間距 */
         }
 
         label {
             display: block;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 15px; /* 標籤微縮 */
             color: var(--text-gray);
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #e0e0e0;
+            padding: 8px; /* 縮小內距，讓框框變窄 */
+            border: 1px solid #e5e5e5;
             border-radius: 4px;
             background-color: #fff;
-            font-size: 15px;
+            font-size: 13px; /* 輸入字體微縮 */
             box-sizing: border-box;
         }
 
-        input::placeholder, textarea::placeholder { color: #ccc; }
-        textarea { height: 120px; resize: none; }
+        input::placeholder, textarea::placeholder { color: #d0d0d0; }
+        textarea { height: 70px; resize: none; } /* 縮小留言框高度 */
 
         /* 驗證碼區塊 */
         .captcha-area {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
-        .captcha-input { width: 120px !important; }
+        .captcha-input { width: 100px !important; }
 
         .captcha-code-box {
             background-color: #f3efe9;
-            padding: 8px 20px;
+            padding: 6px 15px;
             border-radius: 4px;
             font-weight: bold;
-            font-size: 18px;
-            letter-spacing: 4px;
+            font-size: 15px;
+            letter-spacing: 3px;
             color: #4A4A4A;
             cursor: pointer;
             user-select: none;
         }
 
         .refresh-btn {
-            color: #999;
-            font-size: 22px;
+            color: #bbb;
+            font-size: 18px;
             cursor: pointer;
             border: none;
             background: none;
@@ -140,26 +160,21 @@
 
         .submit-btn {
             width: 100%;
-            padding: 18px;
+            padding: 12px; /* 縮小按鈕高度 */
             background-color: var(--btn-bg);
             color: #ffffff;
             border: none;
             border-radius: 4px;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 20px;
-            transition: opacity 0.2s;
-        }
-
-        .submit-btn:hover {
-            opacity: 0.9;
+            margin-top: 10px;
         }
 
         /* 手機版微調 */
         @media (max-width: 600px) {
             .runner-header, .form-container {
-                padding: 30px 20px;
+                padding: 25px 20px;
             }
         }
     </style>
@@ -172,10 +187,11 @@
         <div class="en-title">RUNNER SERVICE CENTER</div>
         
         <div class="highlight">讓我們聽見您的腳步聲</div>
-        <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺</p>
+        <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。</p>
         <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
-        <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
-        <div class="footer-info">☀ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
+        <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。
+            希望這裡不只是網站，更是跑者們的補給站 ᴗ̈ </p>
+        <div class="footer-info">☀️服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
     </div>
 
     <div class="form-container">
