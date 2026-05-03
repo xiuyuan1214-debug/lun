@@ -11,7 +11,7 @@
             --text-gray: #4A4A4A;
             --btn-bg: #4f433a;
             --track-yellow: #e6d8ad;
-            /* 嚴格匹配圖片中的欄位顏色格式 */
+            /* 根據圖片精確校對的邊框與文字顏色 */
             --input-border: #E5E1D1; 
             --placeholder-color: #BFBFBF;
             --input-text-color: #666666;
@@ -39,6 +39,7 @@
             padding: 40px 10% 60px 10%;
             position: relative;
             color: #5d5348;
+            /* 修正：依照打勾位置，維持左下角大圓角設計 */
             border-bottom-left-radius: 40px; 
         }
 
@@ -75,6 +76,7 @@
             justify-content: center;
             position: relative;
             margin-top: -30px;
+            /* 修正：依照打勾位置，維持銜接處大圓角設計 */
             border-top-left-radius: 40px;
             border-top-right-radius: 40px;
             box-shadow: 0 -10px 20px rgba(0,0,0,0.02);
@@ -84,7 +86,7 @@
         .form-group { margin-bottom: 15px; }
         label { display: block; font-weight: bold; font-size: 16px; color: var(--primary-brown); margin-bottom: 8px; }
 
-        /* 輸入框格式：淡金色邊框與大圓角 */
+        /* 輸入框格式：淡金色細邊框與圓角 */
         input, select, textarea {
             width: 100%;
             padding: 10px 15px;
