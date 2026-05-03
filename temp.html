@@ -11,9 +11,10 @@
             --text-gray: #4A4A4A;
             --btn-bg: #4f433a;
             --track-yellow: #e6d8ad;
-            /* 根據圖片提取的顏色 */
-            --input-border: #E8E5D8; 
-            --placeholder-color: #C2C2C2;
+            /* 精確匹配圖片中的欄位顏色 */
+            --input-border: #E5E1D1; 
+            --placeholder-color: #BFBFBF;
+            --input-text-color: #666666;
         }
 
         body {
@@ -80,22 +81,22 @@
         .form-group { margin-bottom: 15px; }
         label { display: block; font-weight: bold; font-size: 16px; color: var(--primary-brown); margin-bottom: 8px; }
 
-        /* 修改重點：輸入框顏色與圖片完全一致 */
+        /* 核心修改：邊框與文字顏色 */
         input, select, textarea {
             width: 100%;
             padding: 10px 15px;
-            border: 1px solid var(--input-border); /* 配合圖片的邊框色 */
+            border: 1px solid var(--input-border); /* 配合圖片的淡金色邊框 */
             border-radius: 12px;
             background-color: #fff;
             font-size: 14px;
             box-sizing: border-box;
             outline: none;
-            color: var(--text-gray); /* 輸入後的文字顏色 */
+            color: var(--input-text-color); /* 輸入後的文字顏色 */
         }
 
-        /* 修正：Placeholder 顏色 */
         input::placeholder, textarea::placeholder { 
-            color: var(--placeholder-color); 
+            color: var(--placeholder-color); /* 配合圖片的淡灰色提示字 */
+            font-weight: normal;
         }
 
         textarea { height: 80px; resize: none; border-radius: 15px; }
@@ -170,6 +171,11 @@
             <div class="form-group">
                 <label>跑步最佳成績 (PB)</label>
                 <input type="text" placeholder="例如：全馬3:30:00">
+            </div>
+
+            <div class="form-group">
+                <label>目標成績</label>
+                <input type="text" placeholder="例如：全馬2:59:59">
             </div>
 
             <div class="form-group">
