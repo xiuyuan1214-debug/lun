@@ -6,8 +6,8 @@
     <style>
         :root {
             --primary-brown: #8B7355; 
-            --vibrant-yellow: #FFEB3B; /* 鮮豔黃色強化 */
-            --accent-gold: #FFC107;   /* 金色邊框線條 */
+            --saturated-yellow: #FFD700; /* 高飽和黃色 */
+            --accent-border: #DAA520;   /* 特色邊框深金色 */
             --label-brown: #7A6652;  
             --input-border: #F2F2F2; 
             --input-bg: #FDFDF8;     
@@ -19,22 +19,20 @@
             background-color: #ffffff;
         }
 
-        /* 鮮豔且有特色的黃底框框 */
+        /* 飽和黃色且有特色的框框 - 絕對不動 */
         .runner-header {
-            background-color: var(--vibrant-yellow);
-            padding: 45px 30px 60px 35px;
+            background-color: var(--saturated-yellow);
+            padding: 45px 30px 60px 45px;
             position: relative;
-            /* 特色 1：左手邊極粗金色實線 */
-            border-left: 12px solid var(--accent-gold); 
-            /* 特色 2：動態切割斜角設計 */
-            border-bottom-left-radius: 80px;
-            /* 特色 3：立體投影感 */
-            box-shadow: 0 10px 30px rgba(255, 235, 59, 0.3);
+            border-left: 15px solid var(--accent-border);
+            border-bottom: 3px solid rgba(0,0,0,0.05);
+            border-bottom-left-radius: 100px;
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
             margin-bottom: 0;
         }
 
         .runner-header h1 {
-            color: #4f433a; /* 增加對比度 */
+            color: #43382c;
             font-size: 26px;
             margin: 0;
             font-weight: 900;
@@ -50,7 +48,7 @@
         }
 
         .highlight {
-            color: #4f433a;
+            color: #43382c;
             font-size: 16px;
             font-weight: 800;
             margin-bottom: 20px;
@@ -59,7 +57,7 @@
         .runner-header p {
             font-size: 14px;
             line-height: 1.8;
-            color: #4f433a;
+            color: #43382c;
             margin: 15px 0;
             font-weight: 500;
         }
@@ -75,8 +73,8 @@
         /* 表單區域 - 絕對不動 */
         .form-container {
             background-color: #ffffff;
-            margin-top: -35px;
-            padding: 45px 30px;
+            margin-top: -40px;
+            padding: 50px 30px;
             border-top-left-radius: 40px;
             border-top-right-radius: 40px;
             position: relative;
@@ -166,33 +164,33 @@
             </div>
 
             <div class="form-group">
-                <label>跑者屬性 / 英文</label>
+                <label>跑者屬性 / Runner Type</label>
                 <select>
                     <option value="" disabled selected>請選擇 / Please Select</option>
-                    <option value="beginner">新手跑者</option>
-                    <option value="half-marathon">半馬跑者</option>
-                    <option value="marathon">全馬跑者</option>
-                    <option value="ultra-trail">超馬/越野跑者</option>
+                    <option value="beginner">新手跑者 / Beginner Runner</option>
+                    <option value="half-marathon">半馬跑者 / Half Marathoner</option>
+                    <option value="marathon">全馬跑者 / Marathoner</option>
+                    <option value="ultra-trail">超馬/越野跑者 / Ultra & Trail Runner</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label>最佳成績 / 英文</label>
+                <label>最佳成績 / Personal Best</label>
                 <input type="text" placeholder="例如：全馬3:30:00">
             </div>
 
             <div class="form-group">
-                <label>目標成績 / 英文</label>
+                <label>目標成績 / Target Goal</label>
                 <input type="text" placeholder="例如：全馬2:59:59">
             </div>
 
             <div class="form-group">
-                <label>穿戴配備 / 英文</label>
+                <label>穿戴配備 / Wearable Device</label>
                 <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
             </div>
 
             <div class="form-group">
-                <label>您的問題 / 英文</label>
+                <label>您的問題 / Your Inquiry</label>
                 <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
 
