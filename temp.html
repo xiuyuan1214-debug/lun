@@ -6,8 +6,7 @@
     <style>
         :root {
             --primary-brown: #8B7355; 
-            --cream-yellow: #FFF5BA; /* 精確調配奶油黃 */
-            --accent-border: #E3C16F; /* 配合奶油黃的深色收邊 */
+            --cream-yellow: #FFF5BA; 
             --label-brown: #7A6652;  
             --input-border: #F2F2F2; 
             --input-bg: #FDFDF8;     
@@ -19,16 +18,18 @@
             background-color: #ffffff;
         }
 
-        /* 奶油黃特色框框 */
+        /* 奶油黃區塊：刪除所有線條，改用柔和的放射狀漸層與懸浮陰影呈現 */
         .runner-header {
-            background-color: var(--cream-yellow);
-            padding: 45px 30px 60px 45px;
+            background: radial-gradient(circle at center, #FFF9D7 0%, var(--cream-yellow) 100%);
+            padding: 60px 30px 80px 30px;
             position: relative;
-            /* 延續特色的左側粗線條 */
-            border-left: 18px solid var(--accent-border);
-            border-bottom: 6px solid rgba(0,0,0,0.05);
-            border-bottom-left-radius: 120px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            /* 刪除所有 border 線條 */
+            border: none;
+            /* 特別的呈現方式：使用大範圍的柔和擴散陰影營造輕盈感 */
+            box-shadow: 0 20px 50px rgba(255, 245, 186, 0.6);
+            /* 維持非對稱圓角，但使其更平滑 */
+            border-bottom-left-radius: 150px;
             margin-bottom: 0;
         }
 
@@ -61,6 +62,7 @@
             color: #43382c;
             margin: 15px 0;
             font-weight: 500;
+            text-align: left;
         }
 
         .footer-info {
@@ -69,11 +71,13 @@
             margin-top: 35px;
             border-top: 1px solid rgba(0,0,0,0.1);
             padding-top: 15px;
+            text-align: center;
         }
 
+        /* 表單區域 - 絕對不動 */
         .form-container {
             background-color: #ffffff;
-            margin-top: -40px;
+            margin-top: -50px;
             padding: 50px 30px;
             border-top-left-radius: 40px;
             border-top-right-radius: 40px;
