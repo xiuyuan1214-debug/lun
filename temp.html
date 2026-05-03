@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            --cream-bg: #FFF3B0;      /* 依據 IMG_5518_13.jpg 調校的奶黃色 */
+            --cream-bg: #FFF3B0;      
             --color-zh: #5D4037;       
             --color-en: #8D6E63;       
             --color-slogan: #E67E22;   
@@ -30,11 +30,11 @@
             box-sizing: border-box;
         }
 
-        /* 奶黃底操場格式：高圓弧、無線條設計 */
+        /* 根據圖 2 修正的操場形狀：更寬、更圓潤 */
         .runner-header {
             background-color: var(--cream-bg);
-            border-radius: 180px 180px 45px 45px; 
-            padding: 95px 30px 65px 30px;
+            border-radius: 130px 130px 50px 50px; /* 模擬圖 2 的對稱寬闊弧度 */
+            padding: 85px 30px 60px 30px;
             position: relative;
             text-align: center;
             margin: 15px 15px 0 15px;
@@ -61,7 +61,7 @@
             color: var(--color-slogan);
             font-size: 18px;
             font-weight: 800;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.8);
             display: inline-block;
             padding: 8px 30px;
             border-radius: 50px;
@@ -87,6 +87,7 @@
             line-height: 1.6;
         }
 
+        /* 以下為完全凍結不准動的部分 */
         .form-container {
             background-color: #ffffff;
             margin-top: -20px;
@@ -117,7 +118,6 @@
             outline: none;
         }
 
-        /* 嚴格凍結驗證碼寬度：80px 與 110px */
         .captcha-container {
             display: flex;
             align-items: center;
