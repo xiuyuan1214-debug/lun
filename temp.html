@@ -8,7 +8,8 @@
             --primary-brown: #8B7355; 
             --light-bg: #FDF9E7;    
             --label-brown: #7A6652;  
-            --input-border: #E5E1D1; 
+            --input-border: #E8E8E8; 
+            --input-bg: #FDFDF8;
             --placeholder: #BFBFBF;  
         }
 
@@ -18,7 +19,7 @@
             background-color: #ffffff;
         }
 
-        /* 頂部黃色說明區塊 - 嚴格還原 */
+        /* 頂部黃色說明區塊 - 嚴格復原所有文字 */
         .runner-header {
             background-color: var(--light-bg);
             padding: 45px 30px 60px 35px;
@@ -63,7 +64,7 @@
             padding-top: 15px;
         }
 
-        /* 下半部表單區塊 */
+        /* 表單區塊 */
         .form-container {
             background-color: #ffffff;
             margin-top: -35px;
@@ -84,13 +85,14 @@
             margin-bottom: 12px;
         }
 
+        /* 輸入框 - 顏色與框線完全對齊照片 */
         input, select, textarea {
             width: 100%;
             padding: 12px 18px;
             border: 1px solid var(--input-border);
             border-radius: 12px;
             font-size: 14px;
-            background-color: #ffffff;
+            background-color: var(--input-bg);
             color: #4A4A4A;
             box-sizing: border-box;
             outline: none;
@@ -100,19 +102,15 @@
             color: var(--placeholder);
         }
 
-        /* 下拉選單樣式與顏色 */
         select {
-            color: #007AFF; /* 藍色提示文字 */
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23007AFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23BFBFBF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 15px center;
-            background-size: 16px;
         }
 
         textarea { height: 120px; resize: none; }
 
-        /* 驗證碼區塊樣式 */
         .captcha-container {
             display: flex;
             align-items: center;
@@ -164,13 +162,13 @@
 
             <div class="form-group">
                 <label>電子信箱 / E-mail</label>
-                <input type="email" placeholder="runner@gmail.com">
+                <input type="email" placeholder="runner@example.com">
             </div>
 
             <div class="form-group">
                 <label>跑者屬性 / Runner Type</label>
                 <select>
-                    <option value="" disabled selected>請選擇 / Please Select</option>
+                    <option value="" disabled selected>新手跑者 / Beginner Runner</option>
                     <option value="beginner">新手跑者 / Beginner Runner</option>
                     <option value="half-marathon">半馬跑者 / Half Marathoner</option>
                     <option value="marathon">全馬跑者 / Marathoner</option>
@@ -179,17 +177,17 @@
             </div>
 
             <div class="form-group">
-                <label>最佳成績 / Personal Best</label>
+                <label>跑步最佳成績 (PB)</label>
                 <input type="text" placeholder="例如：全馬3:30:00">
             </div>
 
             <div class="form-group">
-                <label>目標成績 / Target Goal</label>
+                <label>目標成績</label>
                 <input type="text" placeholder="例如：全馬2:59:59">
             </div>
 
             <div class="form-group">
-                <label>穿戴配備 / Wearable Device</label>
+                <label>慣用穿戴配備</label>
                 <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
             </div>
 
