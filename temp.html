@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            --cream-bg: #FFF9D7;      
-            --cream-shadow: #F8E9A1;  
+            --cream-bg: #FFF3B0;      /* 依據圖 IMG_5518_10.jpg 調校的奶黃色 */
+            --cream-shadow: #F6E69F;  
             --color-zh: #5D4037;       
             --color-en: #8D6E63;       
             --color-slogan: #E67E22;   
@@ -31,15 +31,15 @@
             box-sizing: border-box;
         }
 
-        /* 嚴格復原奶黃底操場格式 Header */
+        /* 奶黃底操場格式 Header：對照 IMG_5518_10.jpg 的高圓弧設計 */
         .runner-header {
             background-color: var(--cream-bg);
-            border-radius: 200px 200px 30px 30px; 
-            padding: 85px 30px 65px 30px;
+            border-radius: 180px 180px 40px 40px; 
+            padding: 90px 30px 60px 30px;
             position: relative;
             text-align: center;
-            box-shadow: 0 12px 0 var(--cream-shadow);
-            margin: 20px 15px 0 15px;
+            margin: 15px 15px 0 15px;
+            box-shadow: inset 0 -15px 30px rgba(0,0,0,0.02);
         }
 
         .title-zh {
@@ -62,11 +62,11 @@
             color: var(--color-slogan);
             font-size: 18px;
             font-weight: 800;
-            margin-bottom: 25px;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.7);
             display: inline-block;
-            padding: 8px 25px;
-            border-radius: 30px;
+            padding: 8px 30px;
+            border-radius: 50px;
+            margin-bottom: 30px;
         }
 
         .runner-header p {
@@ -81,17 +81,17 @@
         .footer-info {
             font-size: 9px;
             color: #968370;
-            margin-top: 30px;
-            border-top: 1px solid rgba(0,0,0,0.06);
-            padding-top: 20px;
+            margin-top: 25px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 15px;
             text-align: center;
             line-height: 1.6;
         }
 
         .form-container {
             background-color: #ffffff;
-            margin-top: -30px;
-            padding: 60px 25px 40px 25px;
+            margin-top: -20px;
+            padding: 50px 25px 40px 25px;
             position: relative;
             z-index: 10;
         }
@@ -118,13 +118,13 @@
             outline: none;
         }
 
-        /* 僅縮小驗證碼相關寬度 */
         .captcha-container {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
+        /* 嚴格維持 80px 與 110px */
         .captcha-input { 
             width: 80px !important; 
             text-align: center;
@@ -144,10 +144,7 @@
             flex-shrink: 0;
         }
 
-        .refresh-btn {
-            background: none; border: none; cursor: pointer;
-            padding: 5px; display: flex; align-items: center;
-        }
+        .refresh-btn { background: none; border: none; cursor: pointer; padding: 5px; }
 
         .submit-btn {
             width: 100%;
@@ -164,17 +161,14 @@
     </style>
 </head>
 <body>
-
     <div class="content-wrapper">
         <div class="runner-header">
             <h1 class="title-zh">跑者服務中心</h1>
             <div class="title-en">RUNNER SERVICE CENTER</div>
             <div class="title-slogan">讓我們聽見您の腳步聲</div>
-            
             <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 😉</p>
             <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
             <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
-            
             <div class="footer-info">✻ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
         </div>
 
@@ -193,9 +187,9 @@
                     <select>
                         <option value="" disabled selected>請選擇 / Please Select</option>
                         <option value="beginner">新手跑者 / Beginner Runner</option>
-                        <option value="half-marathon">半馬跑者 / Half Marathon Runner</option>
-                        <option value="marathon">全馬跑者 / Full Marathon Runner</option>
-                        <option value="ultra-trail">超馬/越野跑者 / Ultra/Trail Runner</option>
+                        <option value="half">半馬跑者 / Half Marathon Runner</option>
+                        <option value="full">全馬跑者 / Full Marathon Runner</option>
+                        <option value="ultra">超馬/越野跑者 / Ultra/Trail Runner</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -214,34 +208,16 @@
                     <label>您的問題 / Your Inquiry</label>
                     <textarea rows="4" placeholder="每一滴汗水，都值得被聽見..."></textarea>
                 </div>
-                
                 <div class="form-group">
                     <label>驗證碼 / Verification Code</label>
                     <div class="captcha-container">
                         <input type="text" class="captcha-input" placeholder="輸入碼">
                         <div id="captchaCode" class="captcha-box">7 W 8 Q</div>
-                        <button type="button" class="refresh-btn" onclick="refreshCaptcha()">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8B0A8" stroke-width="2">
-                                <path d="M23 4v6h-6"></path>
-                                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
-                            </svg>
-                        </button>
                     </div>
                 </div>
                 <button type="submit" class="submit-btn">送出表單 / Submit</button>
             </form>
         </div>
     </div>
-
-    <script>
-        function refreshCaptcha() {
-            const chars = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
-            let newCode = '';
-            for (let i = 0; i < 4; i++) {
-                newCode += chars.charAt(Math.floor(Math.random() * chars.length)) + ' ';
-            }
-            document.getElementById('captchaCode').innerText = newCode.trim();
-        }
-    </script>
 </body>
 </html>
