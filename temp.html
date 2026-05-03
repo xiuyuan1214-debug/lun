@@ -31,18 +31,14 @@
             box-sizing: border-box;
         }
 
-        /* 嚴格復原 IMG_5518_7.jpg 原始形狀 */
         .runner-header {
             background-color: var(--cream-bg);
-            border-radius: 50% 50% 50% 50% / 40% 40% 12% 12%;
-            padding: 70px 25px 65px 25px;
+            border-radius: 200px 200px 30px 30px; 
+            padding: 85px 30px 65px 30px;
             position: relative;
             text-align: center;
             box-shadow: 0 12px 0 var(--cream-shadow);
-            margin: 20px 10px 0 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin: 20px 15px 0 15px;
         }
 
         .title-zh {
@@ -58,8 +54,7 @@
             font-size: 10px;
             font-weight: 700;
             letter-spacing: 3px;
-            margin-top: 10px;
-            margin-bottom: 25px;
+            margin: 12px 0 25px 0;
         }
 
         .title-slogan {
@@ -69,35 +64,33 @@
             margin-bottom: 25px;
             background: #ffffff;
             display: inline-block;
-            padding: 6px 20px;
+            padding: 8px 25px;
             border-radius: 30px;
         }
 
         .runner-header p {
-            font-size: 12px;
+            font-size: 13px;
             line-height: 1.8;
             color: var(--color-zh);
-            margin: 8px 0;
+            margin: 12px 0;
             font-weight: 500;
             text-align: left;
-            width: 100%;
         }
 
         .footer-info {
             font-size: 9px;
             color: #968370;
-            margin-top: 20px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            padding-top: 20px;
             text-align: center;
-            width: 90%;
-            line-height: 1.5;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            padding-top: 15px;
+            line-height: 1.6;
         }
 
         .form-container {
             background-color: #ffffff;
-            margin-top: -35px;
-            padding: 60px 20px 40px 20px;
+            margin-top: -30px;
+            padding: 60px 25px 40px 25px;
             position: relative;
             z-index: 10;
         }
@@ -114,7 +107,7 @@
 
         input, select, textarea {
             width: 100%;
-            padding: 10px 14px;
+            padding: 12px 14px;
             border: 1px solid var(--input-border);
             border-radius: 12px;
             font-size: 14px;
@@ -124,7 +117,7 @@
             outline: none;
         }
 
-        /* 驗證碼區塊調整：兩個框同步加長 */
+        /* 僅調整以下兩個框的寬度為小尺寸 */
         .captcha-container {
             display: flex;
             align-items: center;
@@ -132,13 +125,13 @@
         }
 
         .captcha-input { 
-            width: 100px !important; 
+            width: 75px !important; /* 寬度調小 */
             text-align: center;
         }
 
         .captcha-box {
             background-color: #F8F5F0;
-            width: 100px;
+            width: 75px; /* 寬度調小 */
             padding: 10px 0;
             border-radius: 12px;
             font-weight: bold;
@@ -152,14 +145,12 @@
 
         .refresh-btn {
             background: none; border: none; cursor: pointer;
-            padding: 5px;
-            display: flex;
-            align-items: center;
+            padding: 5px; display: flex; align-items: center;
         }
 
         .submit-btn {
             width: 100%;
-            padding: 15px;
+            padding: 16px;
             background-color: #4f433a;
             color: #ffffff;
             border: none;
@@ -183,7 +174,7 @@
             <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
             <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
             
-            <div class="footer-info">＊服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
+            <div class="footer-info">✻ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
         </div>
 
         <div class="form-container">
@@ -201,7 +192,7 @@
                     <select>
                         <option value="" disabled selected>請選擇 / Please Select</option>
                         <option value="beginner">新手跑者 / Beginner Runner</option>
-                        <option value="marathon">馬拉松選手 / Marathon Athlete</option>
+                        <option value="pro">馬拉松選手 / Marathon Athlete</option>
                     </select>
                 </div>
                 
