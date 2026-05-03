@@ -11,13 +11,16 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            padding: 0;
+            padding: 20px;
         }
 
         .main-container {
             width: 100%;
             max-width: 600px;
             background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         /* 上半部：米黃色介紹區 */
@@ -66,29 +69,27 @@
         .form-container {
             padding: 30px;
             background-color: #ffffff;
-            border-radius: 20px 20px 0 0;
-            margin-top: -15px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         label {
             display: block;
             font-weight: bold;
             font-size: 18px;
-            color: #5d5348;
-            margin-bottom: 8px;
+            color: #4A4A4A;
+            margin-bottom: 10px;
         }
 
         input, select, textarea {
             width: 100%;
             padding: 12px;
             border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            background-color: #fcfaf2;
-            font-size: 14px;
+            border-radius: 6px;
+            background-color: #fff;
+            font-size: 15px;
             box-sizing: border-box;
         }
 
@@ -110,13 +111,48 @@
             resize: none;
         }
 
-        /* 下拉選單樣式微調 */
-        select {
-            color: #bcbcbc;
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23bcbcbc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 12px center;
+        /* 驗證碼專用樣式 */
+        .captcha-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 5px;
+        }
+
+        .captcha-input {
+            width: 110px !important;
+        }
+
+        .captcha-code-box {
+            background-color: #f3efe9;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 4px;
+            color: #4A4A4A;
+            user-select: none;
+        }
+
+        .refresh-icon {
+            color: #999;
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* 送出按鈕：依照最新圖片還原 */
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: #4f433a; /* 深褐色 */
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -158,6 +194,9 @@
                 <label>跑者屬性</label>
                 <select>
                     <option>新手跑者</option>
+                    <option>半馬跑者</option>
+                    <option>全馬跑者</option>
+                    <option>超馬/越野跑者</option>
                 </select>
             </div>
 
@@ -181,6 +220,19 @@
                 <label>您的問題</label>
                 <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
+
+            <!-- 驗證碼區塊 -->
+            <div class="form-group">
+                <label>驗證碼 / Verification Code</label>
+                <div class="captcha-area">
+                    <input type="text" class="captcha-input" placeholder="輸入碼">
+                    <div class="captcha-code-box">7 W 8 Q</div>
+                    <span class="refresh-icon">↻</span>
+                </div>
+            </div>
+
+            <!-- 送出按鈕 -->
+            <button type="submit" class="submit-btn">送出表單 / Submit</button>
         </form>
     </div>
 </div>
