@@ -1,22 +1,178 @@
-<div class="field">
-    <label>跑者屬性 / Runner Type</label>
-    <select>
-        <option value="" disabled selected>請選擇 / Please Select</option>
-        <option value="beginner">新手跑者 / Beginner</option>
-        <option value="half-marathon">半馬跑者 / Half Marathon Runner</option>
-        <option value="marathon">全馬跑者 / Full Marathon Runner</option>
-        <option value="ultra-trail">超馬/越野跑者 / Ultra & Trail Runner</option>
-    </select>
-</div>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跑者服務中心</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px 0;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
 
-<!-- 驗證碼換一張按鈕與送出按鈕確保存在 -->
-<div class="field">
-    <label>驗證碼 / Verification Code</label>
-    <div class="captcha-group">
-        <input type="text" placeholder="請輸入驗證碼">
-        <div class="captcha-display">B 2 W G</div>
-        <span class="refresh-btn">換一張 / Refresh</span>
+        .main-wrapper {
+            width: 95%;
+            max-width: 450px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* 奶黃底操場風格區塊 */
+        .runner-header {
+            background-color: #ffe89b;
+            background-image: 
+                linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px),
+                linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+                radial-gradient(circle at 50% 160%, transparent 50%, rgba(255,255,255,0.2) 51%, transparent 52%),
+                radial-gradient(circle at 50% 160%, transparent 65%, rgba(255,255,255,0.2) 66%, transparent 67%);
+            background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+            padding: 50px 30px 40px 30px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            color: #5d4037;
+            position: relative;
+        }
+
+        .runner-header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0);
+            background-size: 6px 6px;
+            pointer-events: none;
+        }
+
+        h1 { font-size: 30px; margin: 0; letter-spacing: 2px; position: relative; }
+        .subtitle { font-size: 11px; letter-spacing: 3px; margin: 8px 0 25px 0; opacity: 0.8; position: relative; }
+
+        /* 標題下方文字塊 (非對話框) */
+        .highlight-box {
+            background-color: #ffffff;
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            color: #b8860b;
+            margin-bottom: 35px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .intro-desc {
+            text-align: left;
+            line-height: 1.8;
+            font-size: 15px;
+            position: relative;
+        }
+        .intro-desc p { margin: 0 0 12px 0; }
+
+        .service-time {
+            font-size: 11px;
+            color: rgba(93, 64, 55, 0.6);
+            border-top: 1px solid rgba(93, 64, 55, 0.1);
+            padding-top: 15px;
+            margin-top: 20px;
+            text-align: left;
+            position: relative;
+        }
+
+        /* 下半部表單區 */
+        .form-content { padding: 30px 25px; }
+        .field { margin-bottom: 20px; }
+        .field label { display: block; font-weight: bold; margin-bottom: 8px; color: #5d4037; font-size: 15px; }
+        .field input, .field select, .field textarea {
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 14px;
+        }
+        
+        /* 驗證碼排版 */
+        .captcha-group { display: flex; gap: 10px; align-items: center; }
+        .captcha-display {
+            flex: 1; background: #f0f0f0; height: 42px; border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+            letter-spacing: 4px; font-weight: bold; color: #444; font-style: italic;
+        }
+        .refresh-btn { font-size: 12px; color: #b8860b; text-decoration: underline; cursor: pointer; white-space: nowrap; }
+
+        /* 送出按鈕 */
+        .submit-btn {
+            width: 100%; padding: 15px; background-color: #b8860b; color: white;
+            border: none; border-radius: 6px; font-size: 17px; font-weight: bold;
+            cursor: pointer; margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    <!-- 紅線以上：奶黃底操場風格 -->
+    <div class="runner-header">
+        <h1>跑者服務中心</h1>
+        <div class="subtitle">RUNNER SERVICE CENTER</div>
+        <div class="highlight-box">讓我們聽見您的腳步聲</div>
+        <div class="intro-desc">
+            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺️</p>
+            <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
+            <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
+        </div>
+        <div class="service-time">
+            ＊ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
+        </div>
+    </div>
+
+    <!-- 表單內容：內容完全保留，嚴格恢復選項與按鈕 -->
+    <div class="form-content">
+        <form>
+            <div class="field">
+                <label>姓名 / Name</label>
+                <input type="text" placeholder="請輸入您的姓名">
+            </div>
+            <div class="field">
+                <label>電子信箱 / E-mail</label>
+                <input type="email" placeholder="runner@gmail.com">
+            </div>
+            <div class="field">
+                <label>跑者屬性 / Runner Type</label>
+                <select>
+                    <option value="" disabled selected>請選擇 / Please Select</option>
+                    <option value="beginner">新手跑者 / Beginner</option>
+                    <option value="half-marathon">半馬跑者 / Half Marathon Runner</option>
+                    <option value="marathon">全馬跑者 / Full Marathon Runner</option>
+                    <option value="ultra-trail">超馬/越野跑者 / Ultra & Trail Runner</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>最佳成績 / Personal Best</label>
+                <input type="text" placeholder="例如：全馬3:30:00">
+            </div>
+            <div class="field">
+                <label>目標成績 / Target Goal</label>
+                <input type="text" placeholder="例如：全馬2:59:59">
+            </div>
+            <div class="field">
+                <label>您的問題 / Your Inquiry</label>
+                <textarea rows="4" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+            </div>
+            
+            <div class="field">
+                <label>驗證碼 / Verification Code</label>
+                <div class="captcha-group">
+                    <input type="text" style="flex: 1.5;" placeholder="請輸入驗證碼">
+                    <div class="captcha-display">B 2 W G</div>
+                    <span class="refresh-btn">換一張 / Refresh</span>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">送出表單 / Submit Form</button>
+        </form>
     </div>
 </div>
 
-<button type="submit" class="submit-btn">送出表單 / Submit Form</button>
+</body>
+</html>
