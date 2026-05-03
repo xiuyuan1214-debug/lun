@@ -5,106 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跑者服務中心</title>
     <style>
-        :root {
-            --primary-brown: #8B7355;
-            --bg-yellow: #FDF9E7;
-            --text-gray: #5D5348;
-            --input-bg: #FCFAF2;
-            --border-color: #E0E0E0;
-        }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
-            background-color: #FFFFFF;
+            background-color: #f9f9f9;
             margin: 0;
             display: flex;
             justify-content: center;
-            color: var(--text-gray);
+            padding: 0;
         }
 
-        .wrapper {
+        .main-container {
             width: 100%;
             max-width: 600px;
-            background-color: #FFFFFF;
+            background-color: #fff;
         }
 
-        /* 上半部：米黃色區塊 */
-        .header-section {
-            background-color: var(--bg-yellow);
+        /* 上半部：米黃色介紹區 */
+        .runner-header {
+            background-color: #fdf9e7;
             padding: 40px 30px;
-            border-left: 10px solid #E6D8AD;
-            margin-bottom: 10px;
+            border-left: 12px solid #e6d8ad;
+            color: #5d5348;
         }
 
-        h1 {
-            color: var(--primary-brown);
+        .runner-header h1 {
+            color: #8b7355;
             margin: 0;
-            font-size: 26px;
-            font-weight: bold;
+            font-size: 24px;
         }
 
-        .subtitle {
-            color: #C0B283;
+        .runner-header .en-title {
+            color: #c0b283;
             font-size: 12px;
-            letter-spacing: 2px;
-            margin-top: 5px;
-            margin-bottom: 30px;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
         }
 
-        .section-title {
-            color: var(--primary-brown);
+        .runner-header .highlight-text {
+            color: #8b7355;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 15px;
             margin-bottom: 20px;
-            display: block;
         }
 
-        .content {
-            font-size: 16px;
+        .runner-header p {
+            font-size: 15px;
             line-height: 1.8;
-            margin-bottom: 30px;
+            margin: 15px 0;
         }
 
-        .footer-text {
-            font-size: 12px;
-            color: #A0937D;
-            border-top: 1px solid #E6D8AD;
+        .runner-header .footer-info {
+            font-size: 11px;
+            color: #a0937d;
+            border-top: 1px solid #e6d8ad;
             padding-top: 15px;
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
-        /* 下半部：白色表單區塊 */
-        .form-section {
+        /* 下半部：白色表單區 */
+        .form-container {
             padding: 30px;
-            border: 1px solid #F0F0F0;
+            background-color: #ffffff;
             border-radius: 20px 20px 0 0;
+            margin-top: -15px;
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         label {
             display: block;
             font-weight: bold;
             font-size: 18px;
-            color: var(--text-gray);
-            margin-bottom: 10px;
+            color: #5d5348;
+            margin-bottom: 8px;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            box-sizing: border-box;
-            background-color: var(--input-bg);
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fcfaf2;
             font-size: 14px;
-            color: #888;
+            box-sizing: border-box;
         }
 
         input::placeholder, textarea::placeholder {
-            color: #D0D0D0;
+            color: #bcbcbc;
         }
 
         .row {
@@ -117,34 +106,43 @@
         }
 
         textarea {
-            height: 120px;
+            height: 100px;
             resize: none;
+        }
+
+        /* 下拉選單樣式微調 */
+        select {
+            color: #bcbcbc;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23bcbcbc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
         }
     </style>
 </head>
 <body>
 
-<div class="wrapper">
-    <!-- 上半部 -->
-    <div class="header-section">
+<div class="main-container">
+    <!-- 文字介紹區 -->
+    <div class="runner-header">
         <h1>跑者服務中心</h1>
-        <div class="subtitle">RUNNER SERVICE CENTER</div>
+        <div class="en-title">RUNNER SERVICE CENTER</div>
         
-        <span class="section-title">讓我們聽見您的腳步聲</span>
+        <div class="highlight-text">讓我們聽見您的腳步聲</div>
 
-        <div class="content">
-            無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺<br><br>
-            您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。<br><br>
-            讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。
-        </div>
+        <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺</p>
+        
+        <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
+        
+        <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
 
-        <div class="footer-text">
+        <div class="footer-info">
             ☀ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
         </div>
     </div>
 
-    <!-- 下半部 -->
-    <div class="form-section">
+    <!-- 表單區 -->
+    <div class="form-container">
         <form>
             <div class="form-group">
                 <label>姓名 / Name</label>
