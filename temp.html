@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            --cream-bg: #FFF3B0;      /* 溫暖活潑的奶黃色 */
+            --cream-bg: #FFF3B0;      /* 依據 IMG_5518_13.jpg 調校的奶黃色 */
             --color-zh: #5D4037;       
             --color-en: #8D6E63;       
             --color-slogan: #E67E22;   
@@ -30,15 +30,15 @@
             box-sizing: border-box;
         }
 
-        /* 奶黃底操場格式：活潑、可愛、無邊框線條 */
+        /* 奶黃底操場格式：高圓弧、無線條設計 */
         .runner-header {
             background-color: var(--cream-bg);
-            border-radius: 180px 180px 50px 50px; /* 強化圓弧感，模擬操場跑道頂部 */
+            border-radius: 180px 180px 45px 45px; 
             padding: 95px 30px 65px 30px;
             position: relative;
             text-align: center;
             margin: 15px 15px 0 15px;
-            border: none; /* 確保沒有線條 */
+            border: none;
         }
 
         .title-zh {
@@ -87,7 +87,6 @@
             line-height: 1.6;
         }
 
-        /* 以下為您沒提到的部分，完全不動 */
         .form-container {
             background-color: #ffffff;
             margin-top: -20px;
@@ -118,6 +117,7 @@
             outline: none;
         }
 
+        /* 嚴格凍結驗證碼寬度：80px 與 110px */
         .captcha-container {
             display: flex;
             align-items: center;
@@ -184,9 +184,9 @@
                     <select>
                         <option value="" disabled selected>請選擇 / Please Select</option>
                         <option value="beginner">新手跑者 / Beginner Runner</option>
-                        <option value="half-marathon">半馬跑者 / Half Marathon Runner</option>
-                        <option value="marathon">全馬跑者 / Full Marathon Runner</option>
-                        <option value="ultra-trail">超馬/越野跑者 / Ultra/Trail Runner</option>
+                        <option value="half">半馬跑者 / Half Marathon Runner</option>
+                        <option value="full">全馬跑者 / Full Marathon Runner</option>
+                        <option value="ultra">超馬/越野跑者 / Ultra/Trail Runner</option>
                     </select>
                 </div>
                 <div class="form-group">
