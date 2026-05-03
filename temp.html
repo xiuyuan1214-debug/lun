@@ -29,61 +29,31 @@
             background-color: var(--light-bg);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* 上半部文字區 */
         .header-section {
             padding: 30px;
             border-left: 8px solid #E6D8AD;
         }
 
-        h1 {
-            color: var(--primary-brown);
-            margin: 0;
-            font-size: 24px;
-        }
+        h1 { color: var(--primary-brown); margin: 0; font-size: 24px; }
+        .subtitle { color: #C0B283; font-size: 12px; letter-spacing: 2px; margin-bottom: 20px; }
 
-        .subtitle {
-            color: #C0B283;
-            font-size: 12px;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .description {
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .footer-note {
-            font-size: 12px;
-            color: #A0937D;
-            border-top: 1px solid #E6D8AD;
-            padding-top: 15px;
-            margin-top: 20px;
-        }
-
-        /* 下半部表單區 */
         .form-section {
             background-color: var(--card-bg);
             padding: 30px;
             border-radius: 25px 25px 0 0;
-            margin-top: -10px;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+        .form-group { margin-bottom: 20px; }
 
         label {
             display: block;
             font-weight: bold;
             margin-bottom: 8px;
             color: var(--primary-brown);
-            font-size: 16px;
+            font-size: 15px;
         }
 
         input, select, textarea {
@@ -94,28 +64,29 @@
             box-sizing: border-box;
             background-color: #FAFAFA;
             font-size: 14px;
-            color: #333;
         }
 
-        input::placeholder, textarea::placeholder {
-            color: #BCBCBC;
-        }
+        .row { display: flex; gap: 15px; }
+        .row .form-group { flex: 1; }
 
-        .row {
+        /* 驗證碼樣式 */
+        .captcha-container {
             display: flex;
-            gap: 15px;
+            align-items: center;
+            gap: 10px;
+        }
+        .captcha-code {
+            background: #EEE;
+            padding: 10px 15px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            user-select: none;
+            background-image: linear-gradient(45deg, #ddd 25%, transparent 25%), linear-gradient(-45deg, #ddd 25%, transparent 25%);
+            background-size: 10px 10px;
+            border-radius: 4px;
+            color: #555;
         }
 
-        .row .form-group {
-            flex: 1;
-        }
-
-        textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        /* 簡單的按鈕樣式 (原圖未顯示，預留) */
         .submit-btn {
             background-color: var(--primary-brown);
             color: white;
@@ -125,74 +96,81 @@
             border-radius: 8px;
             font-size: 16px;
             cursor: pointer;
-            margin-top: 10px;
+            transition: 0.3s;
         }
+        .submit-btn:hover { background-color: #6F5B42; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- 文字介紹區域 -->
     <div class="header-section">
         <h1>跑者服務中心</h1>
         <div class="subtitle">RUNNER SERVICE CENTER</div>
-        
-        <div class="description">
-            <strong>讓我們聽見您的腳步聲</strong><br><br>
-            無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺<br><br>
-            您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。<br><br>
-            讓我們一起朝更好的自己邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。
-        </div>
-
-        <div class="footer-note">
-            ☀ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
-        </div>
+        <p>讓我們聽見您的腳步聲，連結起每一個熱血的靈魂。</p>
     </div>
 
-    <!-- 表單區域 -->
     <div class="form-section">
         <form>
+            <!-- 姓名 -->
             <div class="form-group">
                 <label>姓名 / Name</label>
-                <input type="text" placeholder="請輸入您的姓名">
+                <input type="text" placeholder="Enter your full name">
             </div>
 
+            <!-- 電子信箱 -->
             <div class="form-group">
                 <label>電子信箱 / E-mail</label>
-                <input type="email" placeholder="runner@example.com">
+                <input type="email" placeholder="example@runner.com">
             </div>
 
+            <!-- 跑者屬性 -->
             <div class="form-group">
-                <label>跑者屬性</label>
+                <label>跑者屬性 / Runner Type</label>
                 <select>
-                    <option value="">新手跑者</option>
-                    <option value="">進階跑者</option>
-                    <option value="">馬拉松選手</option>
+                    <option value="" disabled selected>Select your runner level</option>
+                    <option value="beginner">新手跑者 / Beginner</option>
+                    <option value="half-marathon">半馬跑者 / Half Marathoner</option>
+                    <option value="full-marathon">全馬跑者 / Full Marathoner</option>
+                    <option value="ultra-trail">超馬、越野跑者 / Ultra & Trail Runner</option>
                 </select>
             </div>
 
+            <!-- 成績行 -->
             <div class="row">
                 <div class="form-group">
-                    <label>跑步最佳成績 (PB)</label>
-                    <input type="text" placeholder="例如：全馬3:30:00">
+                    <label>最佳成績 / Personal Best</label>
+                    <input type="text" placeholder="e.g. Marathon 3:30:00">
                 </div>
                 <div class="form-group">
-                    <label>目標成績</label>
-                    <input type="text" placeholder="例如：全馬2:59:59">
+                    <label>目標成績 / Goal Time</label>
+                    <input type="text" placeholder="e.g. Marathon 2:59:59">
                 </div>
             </div>
 
+            <!-- 穿戴配備 -->
             <div class="form-group">
-                <label>慣用穿戴配備</label>
-                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
+                <label>穿戴配備 / Gear & Wearables</label>
+                <input type="text" placeholder="e.g. Garmin Forerunner 955, Coros Pace 3">
             </div>
 
+            <!-- 您的問題 -->
             <div class="form-group">
-                <label>您的問題</label>
-                <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
+                <label>您的問題 / Inquiry or Feedback</label>
+                <textarea placeholder="How can we help you on your running journey?"></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">送出訊息</button>
+            <!-- 驗證碼 -->
+            <div class="form-group">
+                <label>驗證碼 / Verification Code</label>
+                <div class="captcha-container">
+                    <div class="captcha-code">R 8 N 2</div>
+                    <input type="text" style="flex: 1;" placeholder="Enter code">
+                </div>
+                <small style="color: #999; font-size: 11px;">Anti-bot verification</small>
+            </div>
+
+            <button type="submit" class="submit-btn">送出訊息 / Submit</button>
         </form>
     </div>
 </div>
