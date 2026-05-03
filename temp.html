@@ -25,28 +25,28 @@
             align-items: center;
         }
 
-        /* 再次大幅度縮小輸入框整體寬度至 380px */
+        /* 嚴格縮小寬度至 360px */
         .content-wrapper {
             width: 100%;
-            max-width: 380px; 
+            max-width: 360px; 
             padding: 0 10px;
             box-sizing: border-box;
         }
 
-        /* 奶黃底框樣式完全不動 */
+        /* 根據 IMG_5516.jpeg 復原蛋形奶黃區塊 */
         .runner-header {
             background-color: var(--cream-bg);
-            border-radius: 150px; 
-            padding: 50px 30px 55px 30px;
+            border-radius: 180px 180px 50px 50px; /* 模擬圖片頂部的大圓弧 */
+            padding: 55px 25px 50px 25px;
             position: relative;
             text-align: center;
-            box-shadow: 0 15px 0 var(--cream-shadow), 0 30px 40px rgba(0,0,0,0.08);
-            margin: 20px 10px 0 10px;
+            box-shadow: 0 15px 0 var(--cream-shadow), 0 30px 40px rgba(0,0,0,0.06);
+            margin: 20px 5px 0 5px;
         }
 
         .title-zh {
             color: var(--color-zh);
-            font-size: 24px; /* 因寬度縮小微調字級以求平衡 */
+            font-size: 26px;
             margin: 0;
             font-weight: 900;
             letter-spacing: 2px;
@@ -63,7 +63,7 @@
 
         .title-slogan {
             color: var(--color-slogan);
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 800;
             margin-bottom: 20px;
             background: rgba(255,255,255,0.6);
@@ -82,9 +82,9 @@
         }
 
         .footer-info {
-            font-size: 10px;
+            font-size: 9px;
             color: #968370;
-            margin-top: 12px;
+            margin-top: 15px;
             border-top: 1px solid rgba(0,0,0,0.05);
             padding-top: 10px;
             text-align: center;
@@ -92,27 +92,27 @@
 
         .form-container {
             background-color: #ffffff;
-            margin-top: -45px;
-            padding: 60px 25px 40px 25px;
-            border-top-left-radius: 50px;
-            border-top-right-radius: 50px;
+            margin-top: -40px;
+            padding: 50px 20px 40px 20px;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
             position: relative;
             z-index: 10;
         }
 
-        .form-group { margin-bottom: 25px; }
+        .form-group { margin-bottom: 22px; }
 
         label {
             display: block;
             font-size: 16px;
             font-weight: bold;
             color: var(--form-label);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 12px 18px;
+            padding: 12px 15px;
             border: 1px solid var(--input-border);
             border-radius: 12px;
             font-size: 14px;
@@ -122,21 +122,22 @@
             outline: none;
         }
 
-        textarea { height: 120px; resize: none; }
+        textarea { height: 110px; resize: none; }
 
+        /* 縮小驗證碼區域寬度與間距 */
         .captcha-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
-        .captcha-input { width: 80px !important; }
+        .captcha-input { width: 75px !important; }
         .captcha-box {
             background-color: #F8F5F0;
-            padding: 8px 15px;
+            padding: 8px 12px;
             border-radius: 10px;
             font-weight: bold;
             font-size: 18px;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             color: var(--form-main);
             flex-shrink: 0;
             border: 1px solid #EFEAE4;
@@ -149,7 +150,7 @@
 
         .submit-btn {
             width: 100%;
-            padding: 16px;
+            padding: 15px;
             background-color: #4f433a;
             color: #ffffff;
             border: none;
@@ -157,7 +158,7 @@
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -168,9 +169,9 @@
             <h1 class="title-zh">跑者服務中心</h1>
             <div class="title-en">RUNNER SERVICE CENTER</div>
             <div class="title-slogan">讓我們聽見您の腳步聲</div>
-            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺</p>
+            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，歡迎隨時聯繫我們唷 ☺</p>
             <p>您的回饋是我們進化的動力，您的提問是我們探索的方向。</p>
-            <div class="footer-info">✻ 服務時間：週一至週五 09:00 - 18:00 (小編需要運動時間)</div>
+            <div class="footer-info">✻ 服務時間：週一至週五 09:00 - 18:00 (小編也需要運動)</div>
         </div>
 
         <div class="form-container">
