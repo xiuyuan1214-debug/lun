@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            --primary-brown: #8B7355; 
+            /* 字體配色調整 */
+            --main-text: #3D352F;      /* 深炭啡，主標題與內容 */
+            --label-text: #7A6652;     /* 標籤字體顏色 */
+            --sub-text: #968370;       /* 輔助性小字 */
+            
+            /* 奶油黃色系 */
             --cream-yellow: #FFF5BA; 
-            --label-brown: #7A6652;  
+            --cream-bright: #FFFBE6;
+            
+            /* 表單細節 */
             --input-border: #F2F2F2; 
             --input-bg: #FDFDF8;     
         }
@@ -16,32 +23,33 @@
             font-family: -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
             margin: 0;
             background-color: #ffffff;
+            color: var(--main-text);
         }
 
-        /* 奶油黃區塊：刪除所有線條，改用柔和的放射狀漸層與懸浮陰影呈現 */
+        /* 奶油黃區塊：特殊的幾何波浪切角與柔和陰影 */
         .runner-header {
-            background: radial-gradient(circle at center, #FFF9D7 0%, var(--cream-yellow) 100%);
-            padding: 60px 30px 80px 30px;
+            background: linear-gradient(135deg, var(--cream-bright) 0%, var(--cream-yellow) 100%);
+            padding: 65px 30px 90px 30px;
             position: relative;
             text-align: center;
-            /* 刪除所有 border 線條 */
             border: none;
-            /* 特別的呈現方式：使用大範圍的柔和擴散陰影營造輕盈感 */
-            box-shadow: 0 20px 50px rgba(255, 245, 186, 0.6);
-            /* 維持非對稱圓角，但使其更平滑 */
-            border-bottom-left-radius: 150px;
+            /* 特別的呈現：使用雙重軟陰影營造漂浮感 */
+            box-shadow: 0 15px 40px rgba(230, 210, 150, 0.3), 0 5px 15px rgba(0, 0, 0, 0.05);
+            /* 非對稱且更具動感的弧形切邊 */
+            border-bottom-left-radius: 180px 60px;
+            border-bottom-right-radius: 20px;
             margin-bottom: 0;
         }
 
         .runner-header h1 {
-            color: #43382c;
+            color: var(--main-text);
             font-size: 26px;
             margin: 0;
             font-weight: 900;
         }
 
         .en-title {
-            color: #8B7355;
+            color: var(--label-text);
             font-size: 11px;
             font-weight: bold;
             letter-spacing: 2px;
@@ -50,7 +58,7 @@
         }
 
         .highlight {
-            color: #43382c;
+            color: var(--main-text);
             font-size: 16px;
             font-weight: 800;
             margin-bottom: 20px;
@@ -59,7 +67,7 @@
         .runner-header p {
             font-size: 14px;
             line-height: 1.8;
-            color: #43382c;
+            color: var(--main-text);
             margin: 15px 0;
             font-weight: 500;
             text-align: left;
@@ -67,9 +75,9 @@
 
         .footer-info {
             font-size: 10px;
-            color: #7A6652;
+            color: var(--sub-text);
             margin-top: 35px;
-            border-top: 1px solid rgba(0,0,0,0.1);
+            border-top: 1px solid rgba(0,0,0,0.06);
             padding-top: 15px;
             text-align: center;
         }
@@ -77,7 +85,7 @@
         /* 表單區域 - 絕對不動 */
         .form-container {
             background-color: #ffffff;
-            margin-top: -50px;
+            margin-top: -55px;
             padding: 50px 30px;
             border-top-left-radius: 40px;
             border-top-right-radius: 40px;
@@ -93,7 +101,7 @@
             display: block;
             font-size: 18px;
             font-weight: bold;
-            color: var(--label-brown);
+            color: var(--label-text);
             margin-bottom: 12px;
         }
 
@@ -104,7 +112,7 @@
             border-radius: 14px;
             font-size: 14px;
             background-color: var(--input-bg);
-            color: #4A4A4A;
+            color: var(--main-text);
             box-sizing: border-box;
             outline: none;
             box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
@@ -119,14 +127,15 @@
         }
         .captcha-input { width: 110px !important; }
         .captcha-box {
-            background-color: #F5F1E9;
+            background-color: #F8F5F0;
             padding: 10px 25px;
             border-radius: 10px;
             font-weight: bold;
             font-size: 22px;
             letter-spacing: 5px;
-            color: #444;
+            color: var(--main-text);
             flex-shrink: 0;
+            border: 1px solid #EFEAE4;
         }
 
         .refresh-btn {
@@ -142,7 +151,7 @@
         .refresh-btn svg {
             width: 24px;
             height: 24px;
-            stroke: #A8A8A8;
+            stroke: #B8B0A8;
             stroke-width: 2;
             fill: none;
         }
@@ -158,6 +167,7 @@
             font-weight: bold;
             cursor: pointer;
             margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(79, 67, 58, 0.2);
         }
     </style>
 </head>
