@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            /* 奶油黃與操場配色 */
+            /* 奶油黃配色 */
             --cream-bg: #FFF9D7;      
             
             /* 三行文字指定配色 */
@@ -25,15 +25,16 @@
             background-color: #ffffff;
         }
 
-        /* 奶油黃底：可愛溫馨操場呈現（已移除虛線） */
+        /* 奶油黃底：縮小上下空格間距 */
         .runner-header {
             background-color: var(--cream-bg);
             border-radius: 0 0 150px 150px; 
-            padding: 80px 40px 120px 40px;
+            /* 調整 padding：將原本 80px 120px 縮小至 50px 80px */
+            padding: 50px 40px 80px 40px;
             position: relative;
             text-align: center;
             border: none;
-            box-shadow: 0 20px 0 #FFF1B8, 0 35px 50px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 0 #FFF1B8, 0 30px 40px rgba(0,0,0,0.05);
             margin: 0;
         }
 
@@ -52,14 +53,15 @@
             font-weight: 700;
             letter-spacing: 4px;
             margin-top: 10px;
-            margin-bottom: 35px;
+            /* 縮小標題間距 */
+            margin-bottom: 25px;
         }
 
         .title-slogan {
             color: var(--color-slogan);
             font-size: 19px;
             font-weight: 800;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             background: rgba(255,255,255,0.4);
             display: inline-block;
             padding: 5px 20px;
@@ -70,7 +72,7 @@
             font-size: 14px;
             line-height: 1.8;
             color: var(--color-zh);
-            margin: 15px 0;
+            margin: 10px 0; /* 縮小段落間距 */
             font-weight: 500;
             text-align: left;
         }
@@ -78,7 +80,7 @@
         .footer-info {
             font-size: 10px;
             color: #968370;
-            margin-top: 40px;
+            margin-top: 30px; /* 縮小底部資訊間距 */
             border-top: 1px solid rgba(0,0,0,0.05);
             padding-top: 15px;
             text-align: center;
@@ -87,8 +89,9 @@
         /* 表單區域 - 絕對不動 */
         .form-container {
             background-color: #ffffff;
-            margin-top: -70px;
-            padding: 60px 30px 40px 30px;
+            /* 同步微調銜接位置 */
+            margin-top: -50px;
+            padding: 50px 30px 40px 30px;
             border-top-left-radius: 50px;
             border-top-right-radius: 50px;
             position: relative;
