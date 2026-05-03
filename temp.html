@@ -86,16 +86,16 @@
             line-height: 1.5;
         }
 
-        /* 調整重點：輸入框與標籤寬度調整為 60% */
+        /* 調整重點：取消置中，改為靠左對齊 */
         .form-content { padding: 60px 25px 30px 25px; }
         .field { 
             margin-bottom: 22px; 
             display: flex;
             flex-direction: column;
-            align-items: center; 
+            align-items: flex-start; /* 調整為靠左 */
         }
         .field label { 
-            width: 60%; /* 調小至 60% */
+            width: 60%; /* 保持 60% */
             display: block; 
             font-weight: bold; 
             margin-bottom: 10px; 
@@ -105,7 +105,7 @@
         }
         
         .field input, .field select, .field textarea {
-            width: 60%; /* 寬度調小至 60% */
+            width: 60%; /* 保持 60% */
             padding: 14px; 
             border: 1.5px solid #eee9e4; 
             border-radius: 15px;         
@@ -117,7 +117,7 @@
         }
 
         .captcha-group { 
-            width: 60%; /* 同步調小至 60% */
+            width: 60%; /* 保持 60% */
             display: flex; 
             gap: 12px; 
             align-items: center; 
@@ -146,9 +146,9 @@
         }
 
         .submit-btn {
-            width: 60%; /* 按鈕同步調小至 60% */
+            width: 60%; /* 按鈕同步 60% */
             display: block;
-            margin: 10px auto 0 auto; 
+            margin: 10px 0 0 0; /* 調整為靠左 */
             padding: 16px; 
             background-color: #4e443f; 
             color: white;
@@ -165,16 +165,16 @@
 <div class="main-wrapper">
     <div class="runner-header">
         <h1>跑者能量補給站</h1>
-        <div class="subtitle">RUNNERS ENERGY STATION</div>
+        <div class="subtitle">RUNNERS' ENERGY STATION</div>
         <div class="highlight-box">讓我們聽見您の腳步聲</div>
         <div class="intro-desc">
             <p>無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。</p>
             <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
             <p>讓我們一起朝更好的方向邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。</p>
-            <p>希望這裡不只是網站，更是跑者們的補給站 ᴗ̈</p>
+            <p>希望這裡不只是網站，更是跑者們的補給站 ت</p>
         </div>
         <div class="service-time">
-            𖤐服務時間：週一至週五 09:00-18:00<br>
+            ☀️服務時間：週一至週五 09:00 - 18:00<br>
             (跑者不休息，但小編需要一些運動時間)
         </div>
     </div>
