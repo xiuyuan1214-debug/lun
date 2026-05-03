@@ -23,43 +23,45 @@
             box-shadow: 0 5px 25px rgba(0,0,0,0.05);
         }
 
+        /* 奶黃底操場格式：參考照片的大圓弧 U 型 */
         .runner-header {
             position: relative;
-            background-color: #ffe89b;
-            padding: 40px 30px 40px 30px;
+            background-color: #fcefb3; /* 較淺的奶黃色 */
+            padding: 50px 35px 80px 35px;
             text-align: center;
             color: #796151;
-            border-bottom-left-radius: 50% 20%;
-            border-bottom-right-radius: 50% 20%;
-            box-shadow: inset 0 -10px 20px rgba(255, 255, 255, 0.4);
+            /* 照片中的超大圓角形狀 */
+            border-bottom-left-radius: 50% 30%;
+            border-bottom-right-radius: 50% 30%;
+            margin-bottom: -40px; /* 讓圓弧稍微蓋過下方白色區域 */
         }
 
-        .runner-header::before {
+        /* 操場左右線條：像照片一樣安排在內部兩側 */
+        .runner-header::after {
             content: "";
             position: absolute;
-            top: 20px; left: 15px; right: 15px; bottom: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            border-bottom-left-radius: 180px;
-            border-bottom-right-radius: 180px;
-            border-top-left-radius: 40px;
-            border-top-right-radius: 40px;
+            top: 15px; bottom: 40px; left: 15px; right: 15px;
+            border-left: 20px solid rgba(255, 255, 255, 0.4);
+            border-right: 20px solid rgba(255, 255, 255, 0.4);
+            border-bottom-left-radius: 180px 80px;
+            border-bottom-right-radius: 180px 80px;
             pointer-events: none;
         }
 
-        /* 縮短最上層標題與副標題間隔 */
         h1 { font-size: 28px; margin: 0; letter-spacing: 2px; position: relative; z-index: 1; }
         .subtitle { font-size: 11px; letter-spacing: 3px; margin: 2px 0 20px 0; opacity: 0.7; position: relative; z-index: 1; }
 
+        /* 置換文字並調整為照片中的橘咖啡色 */
         .highlight-box {
             background-color: #ffffff;
             display: inline-block;
-            padding: 10px 25px;
-            border-radius: 12px;
+            padding: 8px 25px;
+            border-radius: 20px;
             font-size: 17px;
             font-weight: bold;
-            color: #a88d70;
+            color: #d3864a; /* 照片中的橘咖啡色 */
             margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
             position: relative;
             z-index: 1;
         }
@@ -67,26 +69,28 @@
         .intro-desc {
             text-align: left;
             line-height: 1.6;
-            font-size: 15px;
+            font-size: 14px;
             position: relative;
             z-index: 1;
+            padding: 0 5px;
         }
         .intro-desc p { margin: 0 0 8px 0; }
         .intro-desc p:last-child { margin-bottom: 0; }
 
-        /* 服務時間：刪除上層線條、上下排列 */
+        /* 服務時間：置中、上下排列、刪除線條 */
         .service-time {
             font-size: 11px;
-            color: rgba(121, 97, 81, 0.6);
-            padding-top: 10px;
+            color: rgba(121, 97, 81, 0.5);
+            padding-top: 15px;
             margin-top: 15px;
-            text-align: left;
+            text-align: center;
             position: relative;
             z-index: 1;
             line-height: 1.5;
         }
 
-        .form-content { padding: 30px 25px; }
+        /* 下方表單區域保持不動 */
+        .form-content { padding: 60px 25px 30px 25px; }
         .field { margin-bottom: 22px; }
         .field label { display: block; font-weight: bold; margin-bottom: 10px; color: #796151; font-size: 16px; }
         
@@ -146,7 +150,7 @@
     <div class="runner-header">
         <h1>跑者服務中心</h1>
         <div class="subtitle">RUNNER SERVICE CENTER</div>
-        <div class="highlight-box">讓我們聽見您的腳步聲</div>
+        <div class="highlight-box">讓我們聽見您の腳步聲</div>
         <div class="intro-desc">
             <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺️</p>
             <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
