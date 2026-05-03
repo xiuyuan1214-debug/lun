@@ -19,7 +19,7 @@
             background-color: #ffffff;
         }
 
-        /* 頂部黃色說明區塊 - 嚴格復原所有文字 */
+        /* 頂部黃色說明區塊 - 完全復原文字 */
         .runner-header {
             background-color: var(--light-bg);
             padding: 45px 30px 60px 35px;
@@ -64,7 +64,7 @@
             padding-top: 15px;
         }
 
-        /* 表單區塊 */
+        /* 表單區塊格式校準 */
         .form-container {
             background-color: #ffffff;
             margin-top: -35px;
@@ -85,7 +85,7 @@
             margin-bottom: 12px;
         }
 
-        /* 輸入框 - 顏色與框線完全對齊照片 */
+        /* 輸入框顏色完全對齊照片 */
         input, select, textarea {
             width: 100%;
             padding: 12px 18px;
@@ -111,20 +111,37 @@
 
         textarea { height: 120px; resize: none; }
 
+        /* 驗證碼區塊 */
         .captcha-container {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        .captcha-input { width: 100px !important; }
+        .captcha-input { width: 110px !important; }
         .captcha-box {
-            background-color: #F0EFEA;
+            background-color: #F5F1E9;
             padding: 10px 25px;
-            border-radius: 5px;
+            border-radius: 10px;
             font-weight: bold;
-            font-size: 20px;
+            font-size: 22px;
             letter-spacing: 5px;
             color: #444;
+            flex-shrink: 0;
+        }
+
+        .refresh-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .refresh-btn svg {
+            stroke: #A8A8A8;
+            width: 24px;
+            height: 24px;
         }
 
         .submit-btn {
@@ -150,7 +167,7 @@
         <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷 ☺</p>
         <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
         <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
-        <div class="footer-info">* 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
+        <div class="footer-info">✻ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)</div>
     </div>
 
     <div class="form-container">
@@ -166,9 +183,9 @@
             </div>
 
             <div class="form-group">
-                <label>跑者屬性 / Runner Type</label>
+                <label>跑者屬性</label>
                 <select>
-                    <option value="" disabled selected>新手跑者 / Beginner Runner</option>
+                    <option value="" disabled selected>新手跑者</option>
                     <option value="beginner">新手跑者 / Beginner Runner</option>
                     <option value="half-marathon">半馬跑者 / Half Marathoner</option>
                     <option value="marathon">全馬跑者 / Marathoner</option>
@@ -192,7 +209,7 @@
             </div>
 
             <div class="form-group">
-                <label>您的問題 / Your Inquiry</label>
+                <label>您的問題</label>
                 <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
 
@@ -200,7 +217,13 @@
                 <label>驗證碼 / Verification Code</label>
                 <div class="captcha-container">
                     <input type="text" class="captcha-input" placeholder="輸入碼">
-                    <div class="captcha-box">CM5F</div>
+                    <div class="captcha-box">7 W 8 Q</div>
+                    <button type="button" class="refresh-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 4v6h-6"></path>
+                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
 
