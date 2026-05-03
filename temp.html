@@ -21,20 +21,20 @@
             margin-bottom: 25px;
         }
 
-        /* 嚴格對齊 IMG_5426_8.jpg 的 Label 樣式 */
+        /* 標籤樣式：深灰色、粗體 */
         label {
             display: block;
             font-size: 18px;
             font-weight: bold;
-            color: #444444; /* 圖片中的深灰色 */
+            color: #444444; 
             margin-bottom: 10px;
         }
 
-        /* 輸入框樣式完全對齊照片 */
+        /* 輸入框與下拉選單：細灰色邊框、圓角 */
         input, select, textarea {
             width: 100%;
             padding: 12px 15px;
-            border: 1px solid #E0E0E0; /* 極細灰色邊框 */
+            border: 1px solid #E0E0E0; 
             border-radius: 8px;
             font-size: 16px;
             color: #333;
@@ -43,14 +43,23 @@
             outline: none;
         }
 
-        /* Placeholder 顏色對齊 */
-        input::placeholder, textarea::placeholder {
-            color: #CCCCCC;
+        /* 下拉選單預設文字顏色：藍色 (對齊 IMG_5469.png) */
+        select {
+            color: #007AFF;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23007AFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
         }
 
-        /* 下拉選單文字顏色 */
-        select {
-            color: #007AFF; /* 圖片中「請選擇」的藍色 */
+        /* 選項內的文字顏色回歸深色 */
+        select option {
+            color: #333;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #CCCCCC;
         }
 
         textarea {
@@ -58,7 +67,6 @@
             resize: none;
         }
 
-        /* 驗證碼區塊還原 */
         .captcha-container {
             display: flex;
             align-items: center;
@@ -108,10 +116,15 @@
             <input type="email" placeholder="runner@gmail.com">
         </div>
 
+        <!-- 跑者屬性下拉選單更新 -->
         <div class="form-group">
             <label>跑者屬性 / Runner Type</label>
             <select>
-                <option>請選擇 / Please Select</option>
+                <option value="" disabled selected>請選擇 / Please Select</option>
+                <option value="beginner">新手跑者 / Beginner Runner</option>
+                <option value="half-marathon">半馬跑者 / Half Marathoner</option>
+                <option value="marathon">全馬跑者 / Marathoner</option>
+                <option value="ultra-trail">超馬/越野跑者 / Ultra & Trail Runner</option>
             </select>
         </div>
 
@@ -144,7 +157,6 @@
             </div>
         </div>
 
-        <!-- 底部裝飾條 -->
         <div class="submit-bar"></div>
     </form>
 </div>
