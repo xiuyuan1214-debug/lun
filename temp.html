@@ -86,16 +86,16 @@
             line-height: 1.5;
         }
 
-        /* 調整重點：縮小輸入框寬度並置中 */
+        /* 調整重點：輸入框寬度調小至 85% */
         .form-content { padding: 60px 25px 30px 25px; }
         .field { 
             margin-bottom: 22px; 
             display: flex;
             flex-direction: column;
-            align-items: center; /* 標籤與框置中對齊 */
+            align-items: center; 
         }
         .field label { 
-            width: 90%; /* 與輸入框同寬 */
+            width: 85%; /* 同步調小至 85% */
             display: block; 
             font-weight: bold; 
             margin-bottom: 10px; 
@@ -105,7 +105,7 @@
         }
         
         .field input, .field select, .field textarea {
-            width: 90%; /* 寬度由 100% 調整為 90% */
+            width: 85%; /* 寬度調小至 85% */
             padding: 14px; 
             border: 1.5px solid #eee9e4; 
             border-radius: 15px;         
@@ -117,7 +117,7 @@
         }
 
         .captcha-group { 
-            width: 90%; /* 保持一致寬度 */
+            width: 85%; /* 同步調小至 85% */
             display: flex; 
             gap: 12px; 
             align-items: center; 
@@ -146,9 +146,9 @@
         }
 
         .submit-btn {
-            width: 90%; /* 按鈕同步寬度 */
+            width: 85%; /* 按鈕同步調小至 85% */
             display: block;
-            margin: 10px auto 0 auto; /* 置中 */
+            margin: 10px auto 0 auto; 
             padding: 16px; 
             background-color: #4e443f; 
             color: white;
