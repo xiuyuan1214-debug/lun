@@ -8,8 +8,8 @@
             --primary-brown: #8B7355; 
             --light-bg: #FDF9E7;    
             --label-brown: #7A6652;  
-            --input-border: #E8E8E8; 
-            --input-bg: #FDFDF8;
+            --input-border: #EFEFEF; /* 精準匹配照片的淡灰色 */
+            --input-bg: #FDFDF8;     /* 精準匹配照片的背景色 */
             --placeholder: #BFBFBF;  
         }
 
@@ -19,7 +19,7 @@
             background-color: #ffffff;
         }
 
-        /* 頂部黃色說明區塊 - 嚴格復原文字內容 */
+        /* 頂部黃色說明區塊 - 維持原樣 */
         .runner-header {
             background-color: var(--light-bg);
             padding: 45px 30px 60px 35px;
@@ -85,7 +85,7 @@
             margin-bottom: 12px;
         }
 
-        /* 輸入框顏色完全對齊照片 */
+        /* 框線與顏色完全對齊照片 */
         input, select, textarea {
             width: 100%;
             padding: 12px 18px;
@@ -156,6 +156,15 @@
             cursor: pointer;
             margin-top: 20px;
         }
+
+        /* 雙欄位排版 */
+        .flex-group {
+            display: flex;
+            gap: 15px;
+        }
+        .flex-group .form-group {
+            flex: 1;
+        }
     </style>
 </head>
 <body>
@@ -193,14 +202,15 @@
                 </select>
             </div>
 
-            <div class="form-group">
-                <label>跑步最佳成績 (PB)</label>
-                <input type="text" placeholder="例如：全馬3:30:00">
-            </div>
-
-            <div class="form-group">
-                <label>目標成績</label>
-                <input type="text" placeholder="例如：全馬2:59:59">
+            <div class="flex-group">
+                <div class="form-group">
+                    <label>跑步最佳成績 (PB)</label>
+                    <input type="text" placeholder="例如：全馬3:30:00">
+                </div>
+                <div class="form-group">
+                    <label>目標成績</label>
+                    <input type="text" placeholder="例如：全馬2:59:59">
+                </div>
             </div>
 
             <div class="form-group">
