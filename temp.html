@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            --cream-bg: #FFF3B0;      
-            --cream-shadow: #F6E69F;  
+            --cream-bg: #FFF3B0;      /* 溫暖活潑的奶黃色 */
             --color-zh: #5D4037;       
             --color-en: #8D6E63;       
             --color-slogan: #E67E22;   
@@ -31,15 +30,15 @@
             box-sizing: border-box;
         }
 
-        /* 奶黃底操場格式：參考 IMG_5518_12.jpg 高圓弧拋物線 */
+        /* 奶黃底操場格式：活潑、可愛、無邊框線條 */
         .runner-header {
             background-color: var(--cream-bg);
-            border-radius: 180px 180px 45px 45px; 
-            padding: 90px 30px 60px 30px;
+            border-radius: 180px 180px 50px 50px; /* 強化圓弧感，模擬操場跑道頂部 */
+            padding: 95px 30px 65px 30px;
             position: relative;
             text-align: center;
             margin: 15px 15px 0 15px;
-            box-shadow: inset 0 -15px 30px rgba(0,0,0,0.02);
+            border: none; /* 確保沒有線條 */
         }
 
         .title-zh {
@@ -88,6 +87,7 @@
             line-height: 1.6;
         }
 
+        /* 以下為您沒提到的部分，完全不動 */
         .form-container {
             background-color: #ffffff;
             margin-top: -20px;
@@ -124,7 +124,6 @@
             gap: 12px;
         }
 
-        /* 驗證碼寬度：80px 與 110px */
         .captcha-input { 
             width: 80px !important; 
             text-align: center;
