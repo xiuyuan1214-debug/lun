@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            --cream-bg: #FFF3B0;      /* 依據圖 IMG_5518_10.jpg 調校的奶黃色 */
+            --cream-bg: #FFF3B0;      
             --cream-shadow: #F6E69F;  
             --color-zh: #5D4037;       
             --color-en: #8D6E63;       
@@ -31,10 +31,10 @@
             box-sizing: border-box;
         }
 
-        /* 奶黃底操場格式 Header：對照 IMG_5518_10.jpg 的高圓弧設計 */
+        /* 嚴格復原 IMG_5518_11.jpg 的奶黃底操場格式 */
         .runner-header {
             background-color: var(--cream-bg);
-            border-radius: 180px 180px 40px 40px; 
+            border-radius: 180px 180px 45px 45px; 
             padding: 90px 30px 60px 30px;
             position: relative;
             text-align: center;
@@ -124,7 +124,6 @@
             gap: 12px;
         }
 
-        /* 嚴格維持 80px 與 110px */
         .captcha-input { 
             width: 80px !important; 
             text-align: center;
@@ -143,8 +142,6 @@
             text-align: center;
             flex-shrink: 0;
         }
-
-        .refresh-btn { background: none; border: none; cursor: pointer; padding: 5px; }
 
         .submit-btn {
             width: 100%;
@@ -199,10 +196,6 @@
                 <div class="form-group">
                     <label>目標成績 / Target Goal</label>
                     <input type="text" placeholder="例如：全馬2:59:59">
-                </div>
-                <div class="form-group">
-                    <label>穿戴配備 / Wearable Device</label>
-                    <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
                 </div>
                 <div class="form-group">
                     <label>您的問題 / Your Inquiry</label>
