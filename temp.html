@@ -1,109 +1,22 @@
-<style>
-    body {
-        margin: 0;
-        padding: 20px 0;
-        background-color: #f2f2f2;
-        display: flex;
-        justify-content: center;
-        font-family: "Microsoft JhengHei", sans-serif;
-    }
+<div class="field">
+    <label>跑者屬性 / Runner Type</label>
+    <select>
+        <option value="" disabled selected>請選擇 / Please Select</option>
+        <option value="beginner">新手跑者 / Beginner</option>
+        <option value="half-marathon">半馬跑者 / Half Marathon Runner</option>
+        <option value="marathon">全馬跑者 / Full Marathon Runner</option>
+        <option value="ultra-trail">超馬/越野跑者 / Ultra & Trail Runner</option>
+    </select>
+</div>
 
-    .main-wrapper {
-        width: 95%;
-        max-width: 450px;
-        background: white;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
+<!-- 驗證碼換一張按鈕與送出按鈕確保存在 -->
+<div class="field">
+    <label>驗證碼 / Verification Code</label>
+    <div class="captcha-group">
+        <input type="text" placeholder="請輸入驗證碼">
+        <div class="captcha-display">B 2 W G</div>
+        <span class="refresh-btn">換一張 / Refresh</span>
+    </div>
+</div>
 
-    /* 調整後的操場風格奶黃底 */
-    .runner-header {
-        /* 使用漸層呈現跑道質感 */
-        background: #ffe89b;
-        background-image: 
-            /* 模擬跑道分道線 (白線) */
-            linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px),
-            linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
-            /* 操場彎道弧線感 */
-            radial-gradient(circle at 50% 160%, transparent 50%, rgba(255,255,255,0.2) 51%, transparent 52%),
-            radial-gradient(circle at 50% 160%, transparent 65%, rgba(255,255,255,0.2) 66%, transparent 67%);
-        background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
-        
-        padding: 50px 30px 40px 30px;
-        text-align: center;
-        border-radius: 0 0 40px 40px;
-        color: #5d4037;
-        position: relative;
-    }
-
-    /* 裝飾性：跑道顆粒質感 */
-    .runner-header::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0);
-        background-size: 6px 6px;
-        pointer-events: none;
-    }
-
-    h1 { font-size: 30px; margin: 0; letter-spacing: 2px; position: relative; }
-    .subtitle { font-size: 11px; letter-spacing: 3px; margin: 8px 0 25px 0; opacity: 0.8; position: relative; }
-
-    /* 讓我們聽見您的腳步聲 - 方塊樣式 */
-    .highlight-box {
-        background-color: #ffffff;
-        display: inline-block;
-        padding: 10px 25px;
-        border-radius: 8px; /* 恢復為簡約方塊 */
-        font-size: 17px;
-        font-weight: bold;
-        color: #b8860b;
-        margin-bottom: 35px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        position: relative;
-    }
-
-    .intro-desc {
-        text-align: left;
-        line-height: 1.8;
-        font-size: 15px;
-        position: relative;
-    }
-    .intro-desc p { margin: 0 0 12px 0; }
-
-    .service-time {
-        font-size: 11px;
-        color: rgba(93, 64, 55, 0.6);
-        border-top: 1px solid rgba(93, 64, 55, 0.1);
-        padding-top: 15px;
-        margin-top: 20px;
-        text-align: left;
-        position: relative;
-    }
-
-    /* 表單區塊 */
-    .form-content { padding: 30px 25px; }
-    .field { margin-bottom: 20px; }
-    .field label { display: block; font-weight: bold; margin-bottom: 8px; color: #5d4037; font-size: 15px; }
-    .field input, .field select, .field textarea {
-        width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 14px;
-    }
-    
-    /* 驗證碼區 */
-    .captcha-group { display: flex; gap: 10px; align-items: center; }
-    .captcha-display {
-        flex: 1; background: #f0f0f0; height: 42px; border-radius: 6px;
-        display: flex; align-items: center; justify-content: center;
-        letter-spacing: 4px; font-weight: bold; color: #444; font-style: italic;
-    }
-    .refresh-btn { font-size: 12px; color: #b8860b; text-decoration: underline; cursor: pointer; }
-
-    /* 送出按鈕 */
-    .submit-btn {
-        width: 100%; padding: 15px; background-color: #b8860b; color: white;
-        border: none; border-radius: 6px; font-size: 17px; font-weight: bold;
-        cursor: pointer; margin-top: 10px; transition: 0.3s;
-    }
-    .submit-btn:hover { background-color: #936c09; }
-</style>
+<button type="submit" class="submit-btn">送出表單 / Submit Form</button>
