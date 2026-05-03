@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            /* 字體配色 */
-            --track-main-text: #4E3B31; 
-            --form-label-text: #7A6652; 
-            --form-main-text: #3D352F;
+            /* 字體配色調整 */
+            --track-cocoa: #5D4037;   /* 活潑的可可啡色，適合奶油黃底 */
+            --form-label: #7A6652;    
+            --form-main: #3D352F;
             
-            /* 奶油黃配色 */
-            --cream-yellow: #FFF5BA; 
-            --cream-soft: #FFFBE6;
+            /* 奶油黃可愛操場配色 */
+            --cream-bg: #FFF9D7;      /* 更嫩的奶油黃 */
+            --cream-track: #FFF5BA;   
             
             /* 表單細節 */
             --input-border: #F2F2F2; 
@@ -25,37 +25,38 @@
             background-color: #ffffff;
         }
 
-        /* 奶油黃區塊：改用非對稱流體幾何設計 */
+        /* 奶油黃區塊：活潑可愛操場模式 */
         .runner-header {
-            background: linear-gradient(160deg, var(--cream-soft) 0%, var(--cream-yellow) 100%);
-            padding: 70px 40px 110px 40px;
+            background-color: var(--cream-bg);
+            /* 胖胖膠囊型大圓角 */
+            border-radius: 0 0 120px 120px; 
+            padding: 75px 40px 110px 40px;
             position: relative;
             text-align: center;
             border: none;
-            /* 特別的呈現：極具現代感的「流體切割」大圓角 */
-            border-bottom-left-radius: 200px 80px;
-            border-bottom-right-radius: 40px;
-            /* 輕盈的擴散陰影 */
-            box-shadow: 0 20px 40px rgba(255, 245, 186, 0.5);
-            margin: 0;
+            /* 趣味感的多重浮雕陰影 */
+            box-shadow: 
+                0 12px 0 var(--cream-track),
+                0 25px 40px rgba(230, 210, 150, 0.4);
+            margin: 0 12px;
             overflow: hidden;
         }
 
-        /* 增加一個柔和的幾何背景裝飾，呈現速度與空間感 */
-        .runner-header::after {
+        /* 可愛跑道虛線裝飾 */
+        .runner-header::before {
             content: "";
             position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 3px dashed rgba(93, 64, 55, 0.1);
+            border-radius: 0 0 100px 100px;
             pointer-events: none;
         }
 
         .runner-header h1 {
-            color: var(--track-main-text);
+            color: var(--track-cocoa);
             font-size: 26px;
             margin: 0;
             font-weight: 900;
@@ -71,7 +72,7 @@
         }
 
         .highlight {
-            color: var(--track-main-text);
+            color: var(--track-cocoa);
             font-size: 16px;
             font-weight: 800;
             margin-bottom: 20px;
@@ -80,7 +81,7 @@
         .runner-header p {
             font-size: 14px;
             line-height: 1.8;
-            color: var(--track-main-text);
+            color: var(--track-cocoa);
             margin: 15px 0;
             font-weight: 500;
             text-align: left;
@@ -114,7 +115,7 @@
             display: block;
             font-size: 18px;
             font-weight: bold;
-            color: var(--form-label-text);
+            color: var(--form-label);
             margin-bottom: 12px;
         }
 
@@ -125,7 +126,7 @@
             border-radius: 14px;
             font-size: 14px;
             background-color: var(--input-bg);
-            color: var(--form-main-text);
+            color: var(--form-main);
             box-sizing: border-box;
             outline: none;
             box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
@@ -146,7 +147,7 @@
             font-weight: bold;
             font-size: 22px;
             letter-spacing: 5px;
-            color: var(--form-main-text);
+            color: var(--form-main);
             flex-shrink: 0;
             border: 1px solid #EFEAE4;
         }
