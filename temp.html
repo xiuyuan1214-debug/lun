@@ -116,7 +116,7 @@
             outline: none;
         }
 
-        /* 調整重點：縮小驗證碼區域兩個框框的高度 */
+        /* 調整重點：縮小驗證碼右邊顯示框的寬度與間距 */
         .captcha-group { 
             width: 90%; 
             display: flex; 
@@ -127,22 +127,22 @@
         
         .captcha-input-small {
             width: 80px !important; 
-            padding: 6px 10px !important; /* 調小高度 (padding) */
+            padding: 6px 10px !important; 
             flex: none !important;
             border-radius: 10px !important;
         }
 
         .captcha-display-small {
-            width: 100px; 
+            width: 80px; /* 從 100px 縮小至 80px */
             background: #f4f1ed; 
-            height: 32px; /* 調小框框高度 */
+            height: 32px; 
             border-radius: 10px;
             display: flex; 
             align-items: center; 
             justify-content: center;
-            letter-spacing: 3px; 
+            letter-spacing: 2px; /* 稍微縮減字距以適應小框 */
             font-weight: bold; 
-            font-size: 16px;
+            font-size: 15px;
             color: #4e443f;
             user-select: none;
         }
