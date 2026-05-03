@@ -67,14 +67,14 @@
             background-color: #ffffff;
             margin-top: -35px;
             padding: 45px 30px;
-            border-top-left-radius: 35px;
+            border-top-left-radius: 35px; /* 對齊 IMG_5470_3.jpeg 紅勾處圓角 */
             border-top-right-radius: 35px;
             position: relative;
             z-index: 10;
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 25px; /* 維持垂直間距 */
         }
 
         label {
@@ -86,7 +86,7 @@
         }
 
         input, select, textarea {
-            width: 100%;
+            width: 100%; /* 強制填滿寬度實現上下排列 */
             padding: 14px 20px;
             border: 1px solid var(--input-border);
             border-radius: 14px;
@@ -107,7 +107,6 @@
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23BFBFBF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 18px center;
-            color: #4A4A4A;
         }
 
         textarea { height: 130px; resize: none; }
@@ -136,11 +135,6 @@
             padding: 5px;
             display: flex;
             align-items: center;
-        }
-        .refresh-btn svg {
-            stroke: #A8A8A8;
-            width: 24px;
-            height: 24px;
         }
 
         .submit-btn {
@@ -218,7 +212,7 @@
                     <input type="text" class="captcha-input" placeholder="輸入碼">
                     <div class="captcha-box">C M 5 F</div>
                     <button type="button" class="refresh-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A8A8A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M23 4v6h-6"></path>
                             <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
                         </svg>
