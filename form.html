@@ -80,13 +80,13 @@
             font-size: 14px;
         }
         
-        /* 嚴格執行：縮小所有表單框的內距與高度 */
+        /* 表單框：維持既有配色與縮小後的內距 */
         input, select, textarea {
             width: 100%;
-            padding: 8px 12px; /* 進一步縮小 padding */
+            padding: 8px 12px;
             border: 1px solid #eeeeee;
             border-radius: 8px;
-            background-color: #fdfaf2; /* 依照照片配色 */
+            background-color: #fdfaf2;
             font-size: 13px;
             box-sizing: border-box;
             outline: none;
@@ -110,18 +110,28 @@
             cursor: pointer;
         }
 
-        /* 驗證碼區域：緊湊縮小 */
+        /* 驗證碼區域：針對下方兩個框進行精確縮小 */
         .captcha-area { display: flex; align-items: center; gap: 6px; }
-        .captcha-input { width: 65px !important; padding: 6px !important; }
+        
+        /* 1. 輸入碼框縮小 */
+        .captcha-input { 
+            width: 60px !important; 
+            padding: 5px 8px !important; 
+            font-size: 12px;
+        }
+        
+        /* 2. 驗證碼顯示框縮小 */
         .captcha-code { 
             background: #f4f4f4; 
-            padding: 6px 10px; 
+            padding: 5px 10px; 
             border-radius: 6px; 
             font-weight: bold; 
             letter-spacing: 2px;
-            font-size: 13px;
+            font-size: 12px;
+            color: #444;
         }
-        .refresh-btn { background: none; border: none; cursor: pointer; font-size: 13px; color: #888; padding: 0; }
+        
+        .refresh-btn { background: none; border: none; cursor: pointer; font-size: 12px; color: #888; padding: 0; }
     </style>
 </head>
 <body>
@@ -191,7 +201,6 @@
 
         <div class="field">
             <label>您的問題 / Your Inquiry</label>
-            <!-- 嚴格維持 6 行高度 -->
             <textarea rows="6" style="resize: none;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
         </div>
 
