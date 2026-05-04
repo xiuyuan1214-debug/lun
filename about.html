@@ -3,91 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>教練資歷 - 跑班訓練營</title>
-    <!-- 引入 Font Awesome 圖標 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>跑者能量補給站</title>
+    <style>
+        /* 頂部導覽列樣式 - 鎖定視覺 */
+        .top-nav {
+            background-color: #2c2c2c; 
+            width: 100%;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .top-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        body {
+            margin: 0;
+            padding: 80px 0 20px 0; 
+            background-color: #fdfcfb;
+            display: flex;
+            justify-content: center;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        .main-wrapper {
+            width: 95%;
+            max-width: 450px;
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+
+        /* 奶黃底區域：維持原始間距（上 40px, 下 55px） */
+        .runner-header {
+            position: relative;
+            background-color: #fcefb3; 
+            padding: 40px 35px 55px 35px; 
+            text-align: center;
+            color: #796151;
+            border-bottom-left-radius: 50% 30%;
+            border-bottom-right-radius: 50% 30%;
+            margin-bottom: -40px; 
+        }
+
+        .runner-header::after {
+            content: "";
+            position: absolute;
+            top: 15px; bottom: 35px; left: 18px; right: 18px;
+            border-left: 2.5px solid rgba(255, 255, 255, 0.4);
+            border-right: 2.5px solid rgba(255, 255, 255, 0.4);
+            border-bottom-left-radius: 180px 80px;
+            border-bottom-right-radius: 180px 80px;
+            pointer-events: none;
+        }
+
+        h1 { font-size: 28px; margin: 0; letter-spacing: 2px; position: relative; z-index: 1; }
+        .subtitle { font-size: 11px; letter-spacing: 3px; margin: 2px 0 15px 0; opacity: 0.7; position: relative; z-index: 1; }
+
+        .highlight-box {
+            background-color: #ffffff;
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 25px;
+            font-size: 17px;
+            font-weight: bold;
+            color: #d3864a; 
+            letter-spacing: 1.5px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro-desc {
+            text-align: left;
+            line-height: 1.6;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+            padding: 0 5px;
+        }
+        .intro-desc p { margin: 0 0 8px 0; }
+        .intro-desc p:last-child { margin-bottom: 0; }
+
+        .service-time {
+            font-size: 11px;
+            color: rgba(121, 97, 81, 0.5);
+            padding-top: 10px;
+            margin-top: 10px; 
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            line-height: 1.5;
+        }
+
+        /* 內容區域與輸入框：維持鎖定設定 */
+        .form-content { padding: 60px 25px 30px 25px; }
+        .field { 
+            margin-bottom: 22px; 
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+        }
+        .field label { 
+            width: 90%; 
+            display: block; 
+            font-weight: bold; 
+            margin-bottom: 10px; 
+            color: #796151; 
+            font-size: 16px; 
+            text-align: left;
+        }
+        
+        .field input, .field select, .field textarea {
+            width: 90%; 
+            padding: 10px; 
+            border: 1.5px solid #eee9e4; 
+            border-radius: 15px;         
+            background-color: #faf9f6;   
+            box-sizing: border-box; 
+            font-size: 15px;
+            color: #555;
+            outline: none;
+        }
+
+        /* 驗證碼維持鎖定尺寸 */
+        .captcha-group { 
+            width: 90%; 
+            display: flex; 
+            gap: 10px; 
+            align-items: center; 
+            justify-content: flex-start;
+        }
+        
+        .captcha-input-small {
+            width: 80px !important; 
+            padding: 6px 10px !important; 
+            flex: none !important;
+            border-radius: 10px !important;
+        }
+
+        .captcha-display-small {
+            width: 65px; 
+            background: #f4f1ed; 
+            height: 32px; 
+            border-radius: 10px;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            letter-spacing: 1px; 
+            font-weight: bold; 
+            font-size: 14px;
+            color: #4e443f;
+            user-select: none;
+        }
+        
+        .refresh-btn { 
+            font-size: 20px; 
+            color: #a88d70; 
+            cursor: pointer; 
+            padding: 0 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .submit-btn {
+            width: 90%; 
+            display: block;
+            margin: 10px 0 0 0; 
+            padding: 14px; 
+            background-color: #4e443f; 
+            color: white;
+            border: none; 
+            border-radius: 15px; 
+            font-size: 18px; 
+            font-weight: bold;
+            cursor: pointer; 
+        }
+    </style>
 </head>
 <body>
 
-    <script src="nav_bar.js"></script>
-    <div id="navBar"></div>
+<!-- 導覽列：僅修改指定連結路徑 -->
+<nav class="top-nav">
+    <a href="about.html">教練資歷</a>
+    <a href="courses.html">課程簡介</a>
+    <a href="tools.html">配速工具</a>
+    <a href="training.html">訓練日誌</a>
+    <a href="match.html">賽事日誌</a>
+</nav>
 
-    <section class="container">
-        <!-- 教練個人主視覺 -->
-        <header class="coach-profile">
-            <div class="profile-image-wrapper">
-                <img src="images/osaka2026.jpg" alt="古佳倫 KU CHIA LUN" class="profile-img">
+<div class="main-wrapper">
+    <div class="runner-header">
+        <h1>跑者能量補給站</h1>
+        <div class="subtitle">RUNNERS' ENERGY STATION</div>
+        <div class="highlight-box">讓我們聽見您の腳步聲</div>
+        <div class="intro-desc">
+            <p>無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。</p>
+            <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
+            <p>讓我們一起朝更好的方向邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。</p>
+            <p>希望這裡不只是網站，更是跑者們的補給站 ت</p>
+        </div>
+        <div class="service-time">
+            ☀️服務時間：週一至週五 09:00 - 18:00<br>
+            (跑者不休息，但小編需要一些運動時間)
+        </div>
+    </div>
+
+    <div class="form-content">
+        <form onsubmit="return false;">
+            <div class="field">
+                <label>姓名 / Name</label>
+                <input type="text" placeholder="請輸入您的姓名">
             </div>
-            <div class="coach-info">
-                <h1>古佳倫 <span class="en-name">KU CHIA LUN</span></h1>
-                <p class="affiliation">隸屬台灣大腳ㄚ長跑協會贊助選手</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/kuchialun" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/1C6DxMXzxu" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <div class="field">
+                <label>電子信箱 / E-mail</label>
+                <input type="email" placeholder="runner@gmail.com">
+            </div>
+            <div class="field">
+                <label>跑者屬性 / Runner Type</label>
+                <select>
+                    <option value="" disabled selected>請選擇 / Please Select</option>
+                    <option value="beginner">新手跑者 / Beginner</option>
+                    <option value="half-marathon">半馬跑者 / Half Marathon Runner</option>
+                    <option value="marathon">全馬跑者 / Full Marathon Runner</option>
+                    <option value="ultra-trail">超馬/越野跑者 / Ultra & Trail Runner</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>最佳成績 / Personal Best</label>
+                <input type="text" placeholder="例如：全馬3:30:00">
+            </div>
+            <div class="field">
+                <label>目標成績 / Target Goal</label>
+                <input type="text" placeholder="例如：全馬2:59:59">
+            </div>
+            <div class="field">
+                <label>穿戴配備 / Wearable Device</label>
+                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
+            </div>
+            <div class="field">
+                <label>您的問題 / Your Inquiry</label>
+                <textarea rows="8" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+            </div>
+            
+            <div class="field">
+                <label>驗證碼 / Verification Code</label>
+                <div class="captcha-group">
+                    <input type="text" class="captcha-input-small" placeholder="輸入碼">
+                    <div class="captcha-display-small" id="captchaText">7 W 8 Q</div>
+                    <span class="refresh-btn" onclick="refreshCaptcha()">↻</span>
                 </div>
             </div>
-        </header>
+            
+            <button type="submit" class="submit-btn">送出表單 / Submit Form</button>
+        </form>
+    </div>
+</div>
 
-        <!-- 全馬最佳表現 -->
-        <div class="pb-section">
-            <h2 class="section-title">全馬最佳表現 (PB)</h2>
-            <div class="pb-card">
-                <div class="pb-detail">
-                    <h3>2026 麗晨臺中國際馬拉松</h3>
-                    <p>總排第五名 ∞ 國內第一名</p>
-                </div>
-                <div class="pb-time">2:33:32</div>
-            </div>
-        </div>
-
-        <!-- 跑步經歷清單 -->
-        <div class="experience-section">
-            <h2 class="section-title">跑步經歷</h2>
-            <ul class="exp-list">
-                <li>
-                    <span class="year">2026</span>
-                    <div class="desc">南山人壽臺北國道馬拉松<br><small>總排第二名 · 國內第一名 2:37:23</small></div>
-                </li>
-                <li>
-                    <span class="year">2026</span>
-                    <div class="desc">麗晨臺中國際馬拉松<br><small>總排第五名 · 國內第一名 2:33:32 (PB)</small></div>
-                </li>
-                <li>
-                    <span class="year">2026</span>
-                    <div class="desc">大阪馬拉松<br><small>臺灣跑者最佳 2:33:56</small></div>
-                </li>
-                <li>
-                    <span class="year">2025</span>
-                    <div class="desc">嘉義雙潭馬拉松菁英賽<br><small>全馬男子組 · 國內第二名 2:43:17</small></div>
-                </li>
-                <li>
-                    <span class="year">2025</span>
-                    <div class="desc">新北市萬金石馬拉松<br><small>全馬男子組 · 國內第四名 2:39:36</small></div>
-                </li>
-                <li>
-                    <span class="year">2025</span>
-                    <div class="desc">渣打臺北公益馬拉松<br><small>全馬男子組 · 總排第七名 2:38:55</small></div>
-                </li>
-                <li>
-                    <span class="year">2024</span>
-                    <div class="desc">新北市萬金石馬拉松<br><small>全馬男子組 · 國內第五名 2:41:27</small></div>
-                </li>
-                <li>
-                    <span class="year">2024</span>
-                    <div class="desc">TAISHIN WOMEN RUN 臺中場<br><small>訓練營教練</small></div>
-                </li>
-                <li>
-                    <span class="year">2023</span>
-                    <div class="desc">馬祖馬拉松<br><small>全馬男子組第一名</small></div>
-                </li>
-                <li>
-                    <span class="year">2023</span>
-                    <div class="desc">臺北馬拉松<br><small>完賽時間 2:34:24</small></div>
-                </li>
-            </ul>
-        </div>
-    </section>
+<script>
+    function refreshCaptcha() {
+        const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let result = '';
+        for (let i = 0; i < 4; i++) {
+            result += chars.charAt(Math.floor(Math.random() * chars.length)) + ' ';
+        }
+        document.getElementById('captchaText').innerText = result.trim();
+    }
+</script>
 
 </body>
 </html>
