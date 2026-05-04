@@ -28,7 +28,7 @@
             font-size: 14px;
         }
 
-        /* 奶黃色拋物線頁首：完全依照圖 IMG_5595_15.jpg */
+        /* 奶黃色拋物線頁首：完全依照圖 IMG_5595_16.jpg */
         .playground-header {
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 20%; 
@@ -51,6 +51,7 @@
             font-weight: bold;
             display: inline-block;
             margin-bottom: 35px;
+            text-decoration: none;
         }
 
         .copywriting {
@@ -67,7 +68,7 @@
             line-height: 1.6;
         }
 
-        /* 表單區域與配色 */
+        /* 表單區域 */
         .form-container { width: 100%; max-width: 500px; padding: 40px 35px; box-sizing: border-box; }
         .field { margin-bottom: 25px; }
         
@@ -87,6 +88,7 @@
             background-color: #fafafa;
             font-size: 14px;
             box-sizing: border-box;
+            outline: none;
         }
 
         /* 送出按鈕：深咖啡色 #554d44 */
@@ -102,8 +104,10 @@
             cursor: pointer;
         }
 
+        /* 驗證碼區域與復原刷新按鈕 */
         .captcha-area { display: flex; align-items: center; gap: 12px; }
         .captcha-code { background: #f4f4f4; padding: 11px 18px; border-radius: 8px; font-weight: bold; letter-spacing: 4px; }
+        .refresh-btn { background: none; border: none; cursor: pointer; font-size: 18px; color: #888; }
     </style>
 </head>
 <body>
@@ -112,7 +116,7 @@
         <div class="nav-inner">
             <a href="index.html" class="nav-link">教練資歷</a>
             <a href="courses.html" class="nav-link">課程簡介</a>
-            <!-- 恢復頁面連結內容 -->
+            <!-- 恢復頁面內容連結 -->
             <a href="pace_tool.html" class="nav-link">配速工具</a>
             <a href="training_log.html" class="nav-link">訓練日誌</a>
             <a href="race_log.html" class="nav-link">賽事日誌</a>
@@ -122,7 +126,7 @@
     <header class="playground-header">
         <h1 class="title">跑者能量補給站</h1>
         <div class="en-subtitle">RUNNERS ENERGY STATION</div>
-        <div class="cta-button">讓我們聽見您の腳步聲</div>
+        <div class="cta-button">讓我們聽見您的腳步聲</div>
         <div class="copywriting">
             無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們。<br><br>
             您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。<br><br>
@@ -130,7 +134,7 @@
             希望這裡不只是起點，更是跑者們的補給站 ◡̈
         </div>
         <div class="footer-info">
-            服務時間：週一至週五 09:00-18:00<br>
+            客服服務時間：週一至週五 09:00-18:00<br>
             跑者不停息，但小編需要一些運動時間
         </div>
     </header>
@@ -174,7 +178,7 @@
 
         <div class="field">
             <label>您的問題 / Your Inquiry</label>
-            <textarea placeholder="每一滴汗水，都值得被聽見..."></textarea>
+            <textarea style="height: 120px; resize: none;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
         </div>
 
         <div class="field">
@@ -182,6 +186,7 @@
             <div class="captcha-area">
                 <input type="text" style="width: 90px;" placeholder="輸入碼">
                 <div class="captcha-code">1 8 0 X</div>
+                <button type="button" class="refresh-btn">↻</button>
             </div>
         </div>
 
