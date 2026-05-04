@@ -3,255 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>古佳倫 - 教練資歷</title>
+    <title>教練資歷 - 古佳倫</title>
     <style>
-        /* 導覽列：鎖定外觀 */
-        .top-nav {
-            background-color: #2c2c2c; 
-            width: 100%;
-            padding: 15px 0;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        .top-nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        body {
-            margin: 0;
-            padding: 80px 0 40px 0;
-            background-color: #ffffff;
-            font-family: "Microsoft JhengHei", sans-serif;
-            display: flex;
-            justify-content: center;
-        }
-
-        .container {
-            width: 92%;
-            max-width: 480px;
-            padding-top: 20px;
-        }
-
-        /* 個人資訊區：精確對照 IMG_5555_2.jpg */
-        .header-section {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-        .avatar {
-            width: 95px;
-            height: 95px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 1px solid #ddd;
-            margin-right: 20px;
-        }
-        .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .name-info h1 {
-            font-size: 26px;
-            margin: 0;
-            color: #333;
-        }
-        .name-info h1 span {
-            font-size: 14px;
-            color: #999;
-            margin-left: 8px;
-            font-weight: normal;
-        }
-        .team-tag {
-            color: #b8a02c; 
-            font-size: 13px;
-            font-weight: bold;
-            margin: 8px 0;
-        }
-        .social-icons {
-            display: flex;
-            gap: 12px;
-            margin-top: 10px;
-        }
-
-        /* 標題樣式 */
-        .section-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin: 35px 0 15px 0;
-            color: #333;
-        }
-        .title-underline {
-            width: 35px;
-            height: 4px;
-            background-color: #f2c029;
-            margin-top: 6px;
-        }
-
-        /* PB 區塊 */
-        .pb-box {
-            border: 1px solid #e8e8e8;
-            border-radius: 12px;
-            padding: 22px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-            margin-bottom: 30px;
-        }
-        .pb-label { font-size: 14px; color: #333; font-weight: 500; margin-bottom: 4px; }
-        .pb-sub { font-size: 12px; color: #888; }
-        .pb-time {
-            font-size: 34px;
-            font-weight: bold;
-            color: #b58c44;
-            font-family: Arial, sans-serif;
-        }
-
-        /* 時間軸經歷 */
-        .timeline {
-            position: relative;
-            padding-left: 25px;
-            margin-top: 20px;
-        }
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 5px;
-            top: 5px;
-            bottom: 5px;
-            width: 2px;
-            background-color: #eee;
-        }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 28px;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: -25px;
-            top: 4px;
-            width: 10px;
-            height: 10px;
-            background-color: #fff;
-            border: 2px solid #b8a02c;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        .event-row {
-            display: flex;
-            gap: 12px;
-            font-size: 14px;
-            color: #333;
-            font-weight: 500;
-        }
-        .event-year { font-weight: bold; min-width: 35px; }
-        .event-result {
-            font-size: 12px;
-            color: #b58c44;
-            font-weight: bold;
-            margin-top: 4px;
-            padding-left: 47px;
-        }
-
-        hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
+        body { font-family: -apple-system, sans-serif; margin: 0; padding: 0; background-color: #fff; }
+        .header-nav { background-color: #222; padding: 25px 0 15px; text-align: center; }
+        .nav-links a { color: #fff; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        
+        .container { max-width: 500px; margin: 0 auto; padding: 30px 20px; }
+        .profile { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; }
+        .avatar { width: 90px; height: 90px; border-radius: 50%; border: 1px solid #eee; }
+        .name-info h1 { margin: 0; font-size: 24px; color: #333; }
+        .name-info p { margin: 5px 0; font-size: 12px; color: #8b7355; font-weight: bold; }
+        
+        .section-title { font-size: 18px; font-weight: bold; margin: 30px 0 15px; border-bottom: 2px solid #fcf6e3; display: inline-block; }
+        
+        .pb-box { background: #fff; border: 1px solid #f0f0f0; border-radius: 12px; padding: 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .pb-time { font-size: 28px; color: #8b7355; font-weight: bold; }
+        
+        .timeline { list-style: none; padding: 0; margin-top: 20px; border-left: 2px solid #fcf6e3; margin-left: 10px; }
+        .timeline-item { position: relative; padding-left: 30px; margin-bottom: 20px; }
+        .timeline-item::before { content: ""; position: absolute; left: -7px; top: 5px; width: 12px; height: 12px; background: #fff; border: 2px solid #b5a489; border-radius: 50%; }
+        .year { font-weight: bold; color: #333; margin-right: 10px; font-size: 14px; }
+        .event-detail { font-size: 13px; color: #666; line-height: 1.6; }
+        .highlight { color: #d47a3c; font-weight: bold; }
     </style>
 </head>
 <body>
-
-<nav class="top-nav">
-    <a href="index.html">教練資歷</a>
-    <a href="form.html">預約諮詢</a>
-    <a href="tools.html">配速工具</a>
-</nav>
-
-<div class="container">
-    <!-- 個人資訊 -->
-    <div class="header-section">
-        <div class="avatar"><img src="coach_photo.jpg" alt="古佳倫"></div>
-        <div class="name-info">
-            <h1>古佳倫 <span>KU CHIA LUN</span></h1>
-            <div class="team-tag">隸屬台灣大腳ㄚ長跑協會贊助選手</div>
-            <div class="social-icons"><span>📷</span> <span>📘</span></div>
+    <div class="header-nav">
+        <div class="nav-links">
+            <a href="index.html">教練資歷</a>
+            <a href="courses.html">課程簡介</a>
+            <a href="tools.html">配速工具</a>
+            <a href="training.html">訓練日誌</a>
+            <a href="match.html">賽事日誌</a>
         </div>
     </div>
 
-    <hr>
-
-    <!-- 全馬最佳表現 -->
-    <div class="section-title">全馬最佳表現 (PB)<div class="title-underline"></div></div>
-    <div class="pb-box">
-        <div>
-            <div class="pb-label">2026 麗晨臺中國際馬拉松</div>
-            <div class="pb-sub">總排第五名 ∞ 國內第一名</div>
+    <div class="container">
+        <div class="profile">
+            <img src="avatar.jpg" class="avatar">
+            <div class="name-info">
+                <h1>古佳倫 <span style="font-size:12px; color:#999;">KU CHIA LUN</span></h1>
+                <p>隸屬台灣大哥大長跑協會贊助選手</p>
+            </div>
         </div>
-        <div class="pb-time">2:33:32</div>
+
+        <div class="section-title">全馬最佳表現 (PB)</div>
+        <div class="pb-box">
+            <div>
+                <div style="font-size:13px; color:#666;">2026 麗晨臺中國際馬拉松</div>
+                <div style="font-size:11px; color:#999;">總排第五名 ∞ 國內第一名</div>
+            </div>
+            <div class="pb-time">2:33:32</div>
+        </div>
+
+        <div class="section-title">跑步經歷</div>
+        <ul class="timeline">
+            <li class="timeline-item"><span class="year">2026</span><div class="event-detail">南山人壽臺北國道馬拉松<br><span class="highlight">總排第二名 · 國內第一名 2:37:23</span></div></li>
+            <li class="timeline-item"><span class="year">2026</span><div class="event-detail">麗晨臺中國際馬拉松<br><span class="highlight">總排第五名 · 國內第一名 2:33:32 (PB)</span></div></li>
+            <li class="timeline-item"><span class="year">2026</span><div class="event-detail">大阪馬拉松<br><span class="highlight">臺灣跑者最佳 2:33:56</span></div></li>
+            <li class="timeline-item"><span class="year">2025</span><div class="event-detail">嘉義雙潭馬拉松菁英賽<br><span class="highlight">全馬男子組 · 國內第二名 2:43:17</span></div></li>
+        </ul>
     </div>
-
-    <!-- 跑步經歷 -->
-    <div class="section-title">跑步經歷<div class="title-underline"></div></div>
-    <div class="timeline">
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2026</span><span>南山人壽臺北國道馬拉松</span></div>
-            <div class="event-result">總排第二名 ‧ 國內第一名 2:37:23</div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2026</span><span>麗晨臺中國際馬拉松</span></div>
-            <div class="event-result">總排第五名 ‧ 國內第一名 2:33:32 (PB)</div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2026</span><span>大阪馬拉松</span></div>
-            <div class="event-result">臺灣跑者最佳 2:33:56</div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2025</span><span>嘉義雙潭馬拉松菁英賽</span></div>
-            <div class="event-result">全馬男子組 ‧ 國內第二名 2:43:17</div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2025</span><span>新北市萬金石馬拉松</span></div>
-            <div class="event-result">全馬男子組 ‧ 國內第四名 2:39:36</div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2025</span><span>渣打臺北公益馬拉松</span></div>
-            <div class="event-result">全馬男子組 ‧ 總排第七名 2:38:55</div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2024</span><span>新北市萬金石馬拉松</span></div>
-            <div class="event-result">全馬男子組 ‧ 國內第五名 2:41:27</div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2024</span><span>TAISHIN WOMEN RUN 臺中場</span></div>
-            <div class="event-result">訓練營教練</div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2023</span><span>馬祖馬拉松</span></div>
-            <div class="event-result">全馬男子組第一名</div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2023</span><span>臺北馬拉松</span></div>
-            <div class="event-result">完賽時間 2:34:24</div>
-        </div>
-    </div>
-</div>
-
 </body>
 </html>
