@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>古佳倫 - 教練資歷</title>
+    <title>古佳倫 - 跑者資歷</title>
     <style>
         /* 導覽列樣式 - 鎖定 */
         .top-nav {
@@ -48,88 +48,93 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .avatar {
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
-            border: 3px solid #e0e0e0;
+            border: 2px solid #e0e0e0;
             overflow: hidden;
+            flex-shrink: 0;
         }
         .avatar img { width: 100%; height: 100%; object-fit: cover; }
 
-        .info h1 { font-size: 24px; margin: 0; color: #333; }
-        .info h1 span { font-size: 14px; color: #999; margin-left: 10px; font-weight: normal; }
-        .info .team { color: #b5a11d; font-size: 13px; margin: 5px 0; font-weight: bold; }
-        .social-icons { display: flex; gap: 10px; margin-top: 8px; }
-        .social-icons img { width: 20px; opacity: 0.7; }
+        .info h1 { font-size: 24px; margin: 0; color: #333; display: flex; align-items: baseline; }
+        .info h1 span { font-size: 13px; color: #999; margin-left: 10px; font-weight: normal; letter-spacing: 0.5px; }
+        .info .team { color: #a4911d; font-size: 13px; margin: 6px 0; font-weight: bold; }
+        .social-icons { display: flex; gap: 12px; margin-top: 10px; }
+        .social-icons span { font-size: 18px; cursor: pointer; opacity: 0.8; }
 
         /* 標題樣式 */
         .section-title {
             font-size: 20px;
             font-weight: bold;
             color: #333;
-            margin: 25px 0 15px 0;
+            margin: 30px 0 15px 0;
             position: relative;
         }
         .section-title::after {
             content: "";
             display: block;
-            width: 30px;
+            width: 35px;
             height: 4px;
             background-color: #f1c40f;
-            margin-top: 5px;
+            margin-top: 6px;
         }
 
         /* PB 區塊 */
         .pb-card {
-            border: 1px solid #eee;
-            border-radius: 15px;
-            padding: 20px;
+            border: 1px solid #f0f0f0;
+            border-radius: 18px;
+            padding: 20px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            background: #fff;
         }
-        .pb-info .race-name { font-size: 14px; color: #333; margin-bottom: 5px; }
-        .pb-info .rank { font-size: 12px; color: #888; }
-        .pb-time { font-size: 32px; font-weight: bold; color: #b58c44; }
+        .pb-info .race-name { font-size: 14px; color: #333; font-weight: bold; margin-bottom: 6px; }
+        .pb-info .rank { font-size: 12px; color: #777; letter-spacing: 0.5px; }
+        .pb-time { font-size: 34px; font-weight: bold; color: #b58c44; font-family: Arial, sans-serif; }
 
         /* 時間軸經歷 */
         .timeline {
-            margin-top: 20px;
-            padding-left: 20px;
-            border-left: 2px solid #e0e0e0;
+            margin-top: 25px;
+            padding-left: 15px;
+            border-left: 2px solid #f0f0f0;
         }
         .timeline-item {
             position: relative;
-            margin-bottom: 25px;
-            padding-left: 20px;
+            margin-bottom: 28px;
+            padding-left: 25px;
         }
         .timeline-item::before {
             content: "";
             position: absolute;
-            left: -27px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
+            left: -22px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background-color: #fff;
-            border: 2px solid #b5a11d;
+            border: 2px solid #d4c11d;
         }
-        .time-row { display: flex; align-items: baseline; gap: 10px; }
-        .year { font-weight: bold; color: #333; font-size: 15px; }
-        .race { font-size: 14px; color: #444; }
-        .detail { font-size: 12px; color: #b58c44; margin-top: 2px; }
+        .time-row { display: flex; align-items: center; gap: 12px; }
+        .year { font-weight: bold; color: #333; font-size: 15px; width: 40px; flex-shrink: 0; }
+        .race { font-size: 14px; color: #444; font-weight: 500; }
+        .detail { font-size: 12px; color: #b58c44; margin-top: 4px; font-weight: bold; }
+
+        hr { border: 0; border-top: 1px solid #f5f5f5; margin: 10px 0; }
 
     </style>
 </head>
 <body>
 
+<!-- 導覽列：教練資歷已改為 index.html -->
 <nav class="top-nav">
-    <a href="about.html">教練資歷</a>
+    <a href="index.html">教練資歷</a>
     <a href="courses.html">課程簡介</a>
     <a href="tools.html">配速工具</a>
     <a href="training.html">訓練日誌</a>
@@ -137,21 +142,21 @@
 </nav>
 
 <div class="container">
-    <!-- 個人資訊 -->
+    <!-- 個人資訊區塊 (參考 IMG_5555.jpg) -->
     <div class="profile-section">
         <div class="avatar">
-            <img src="https://via.placeholder.com/100" alt="古佳倫"> <!-- 請自行替換為您的照片路徑 -->
+            <img src="https://via.placeholder.com/100" alt="古佳倫">
         </div>
         <div class="info">
             <h1>古佳倫 <span>KU CHIA LUN</span></h1>
             <p class="team">隸屬台灣大腳ㄚ長跑協會贊助選手</p>
             <div class="social-icons">
-                <span>📷</span> <span>📘</span> <!-- 此處可用圖示取代 -->
+                <span>📷</span> <span>📘</span>
             </div>
         </div>
     </div>
 
-    <hr style="border: 0; border-top: 1px solid #eee;">
+    <hr>
 
     <!-- 全馬最佳表現 -->
     <div class="section-title">全馬最佳表現 (PB)</div>
@@ -163,7 +168,7 @@
         <div class="pb-time">2:33:32</div>
     </div>
 
-    <!-- 跑步經歷 -->
+    <!-- 跑步經歷時間軸 -->
     <div class="section-title">跑步經歷</div>
     <div class="timeline">
         <div class="timeline-item">
