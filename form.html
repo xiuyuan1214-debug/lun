@@ -7,7 +7,7 @@
     <style>
         body { font-family: sans-serif; margin: 0; background-color: #ffffff; display: flex; flex-direction: column; align-items: center; }
         
-        /* 導覽列 */
+        /* 導覽列：保持深灰色 #333333 */
         .top-navbar {
             background-color: #333333;
             width: 100%;
@@ -28,7 +28,7 @@
             font-size: 14px;
         }
 
-        /* 奶黃底頁首格式：完全依照 IMG_5595_17.jpg */
+        /* 奶黃底頁首格式：完全依照照片格式 */
         .playground-header {
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 20%; 
@@ -68,27 +68,35 @@
             line-height: 1.6;
         }
 
-        /* 表單樣式 */
+        /* 表單區域 */
         .form-container { width: 100%; max-width: 500px; padding: 40px 35px; box-sizing: border-box; }
         .field { margin-bottom: 25px; }
         
+        /* 標題文字顏色：深褐色 #8b7355 */
         label { 
             display: block; 
             font-weight: bold; 
             margin-bottom: 12px; 
-            color: #444444; 
+            color: #8b7355; 
             font-size: 15px;
         }
         
+        /* 修正：輸入框配色完全依照 IMG_5595_18.jpg */
         input, select, textarea {
             width: 100%;
             padding: 16px;
-            border: 1px solid #f0f0f0;
+            border: 1px solid #eeeeee; /* 淺灰色邊框 */
             border-radius: 12px;
-            background-color: #fafafa;
+            background-color: #fdfaf2; /* 極淺奶黃背景 */
             font-size: 14px;
             box-sizing: border-box;
             outline: none;
+            color: #666666;
+        }
+
+        /* Placeholder 顏色修正 */
+        ::placeholder {
+            color: #bbbbbb;
         }
 
         /* 送出按鈕：深咖啡色 #554d44 */
@@ -104,7 +112,7 @@
             cursor: pointer;
         }
 
-        /* 驗證碼區域：精確縮小並靠近 */
+        /* 驗證碼區域：緊湊排列 */
         .captcha-area { display: flex; align-items: center; gap: 8px; }
         .captcha-input { width: 85px !important; padding: 12px !important; }
         .captcha-code { 
@@ -185,6 +193,7 @@
 
         <div class="field">
             <label>您的問題 / Your Inquiry</label>
+            <!-- 保持 6 行高度 -->
             <textarea rows="6" style="resize: none;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
         </div>
 
