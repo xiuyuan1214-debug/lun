@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跑者能量補給站</title>
     <style>
+        /* 導覽列：鎖定視覺 */
         .top-nav {
             background-color: #2c2c2c; 
             width: 100%;
@@ -44,6 +45,7 @@
             box-shadow: 0 5px 25px rgba(0,0,0,0.05);
         }
 
+        /* 奶黃底區域：維持原始間距（上 40px, 下 55px） */
         .runner-header {
             position: relative;
             background-color: #fcefb3; 
@@ -92,6 +94,8 @@
             z-index: 1;
             padding: 0 5px;
         }
+        .intro-desc p { margin: 0 0 8px 0; }
+        .intro-desc p:last-child { margin-bottom: 0; }
 
         .service-time {
             font-size: 11px;
@@ -104,6 +108,7 @@
             line-height: 1.5;
         }
 
+        /* 內容區域與輸入框：鎖定設定 */
         .form-content { padding: 60px 25px 30px 25px; }
         .field { 
             margin-bottom: 22px; 
@@ -113,10 +118,12 @@
         }
         .field label { 
             width: 90%; 
+            display: block; 
             font-weight: bold; 
             margin-bottom: 10px; 
             color: #796151; 
             font-size: 16px; 
+            text-align: left;
         }
         
         .field input, .field select, .field textarea {
@@ -130,6 +137,7 @@
             outline: none;
         }
 
+        /* 驗證碼維持縮小尺寸 */
         .captcha-group { 
             width: 90%; 
             display: flex; 
@@ -203,32 +211,7 @@
                 <label>姓名 / Name</label>
                 <input type="text" placeholder="請輸入您的姓名">
             </div>
-            <div class="field">
-                <label>電子信箱 / E-mail</label>
-                <input type="email" placeholder="runner@gmail.com">
-            </div>
-            <div class="field">
-                <label>跑者屬性 / Runner Type</label>
-                <select>
-                    <option value="" disabled selected>請選擇 / Please Select</option>
-                    <option value="beginner">新手跑者 / Beginner</option>
-                    <option value="half-marathon">半馬跑者 / Half Marathon Runner</option>
-                    <option value="marathon">全馬跑者 / Full Marathon Runner</option>
-                    <option value="ultra-trail">超馬/越野跑者 / Ultra & Trail Runner</option>
-                </select>
-            </div>
-            <div class="field">
-                <label>最佳成績 / Personal Best</label>
-                <input type="text" placeholder="例如：全馬3:30:00">
-            </div>
-            <div class="field">
-                <label>目標成績 / Target Goal</label>
-                <input type="text" placeholder="例如：全馬2:59:59">
-            </div>
-            <div class="field">
-                <label>穿戴配備 / Wearable Device</label>
-                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
-            </div>
+            
             <div class="field">
                 <label>您的問題 / Your Inquiry</label>
                 <textarea rows="8" placeholder="每一滴汗水，都值得被聽見..."></textarea>
