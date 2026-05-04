@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跑者能量補給站</title>
     <style>
-        /* 頂部導覽列樣式 - 嚴格鎖定 */
+        /* 頂部導覽列樣式 - 鎖定 */
         .top-nav {
             background-color: #2c2c2c; 
             width: 100%;
@@ -45,11 +45,11 @@
             box-shadow: 0 5px 25px rgba(0,0,0,0.05);
         }
 
-        /* 調整重點：縮減奶黃底上下距離 */
+        /* 奶黃底區域：完全恢復原始間距 */
         .runner-header {
             position: relative;
             background-color: #fcefb3; 
-            padding: 20px 35px 35px 35px; /* 上方 40->20, 下方 55->35 */
+            padding: 40px 35px 55px 35px; /* 恢復為原始：上 40px, 下 55px */
             text-align: center;
             color: #796151;
             border-bottom-left-radius: 50% 30%;
@@ -95,6 +95,7 @@
             padding: 0 5px;
         }
         .intro-desc p { margin: 0 0 8px 0; }
+        .intro-desc p:last-child { margin-bottom: 0; }
 
         .service-time {
             font-size: 11px;
@@ -104,9 +105,10 @@
             text-align: center;
             position: relative;
             z-index: 1;
+            line-height: 1.5;
         }
 
-        /* 內容區域與輸入框：維持原樣 */
+        /* 內容區域與輸入框：維持鎖定設定 */
         .form-content { padding: 60px 25px 30px 25px; }
         .field { 
             margin-bottom: 22px; 
@@ -116,10 +118,12 @@
         }
         .field label { 
             width: 90%; 
+            display: block; 
             font-weight: bold; 
             margin-bottom: 10px; 
             color: #796151; 
             font-size: 16px; 
+            text-align: left;
         }
         
         .field input, .field select, .field textarea {
@@ -130,20 +134,24 @@
             background-color: #faf9f6;   
             box-sizing: border-box; 
             font-size: 15px;
+            color: #555;
             outline: none;
         }
 
-        /* 驗證碼顯示框：維持縮小尺寸 */
+        /* 驗證碼維持縮小尺寸 */
         .captcha-group { 
             width: 90%; 
             display: flex; 
             gap: 10px; 
             align-items: center; 
+            justify-content: flex-start;
         }
         
         .captcha-input-small {
             width: 80px !important; 
+            padding: 6px 10px !important; 
             flex: none !important;
+            border-radius: 10px !important;
         }
 
         .captcha-display-small {
@@ -154,19 +162,26 @@
             display: flex; 
             align-items: center; 
             justify-content: center;
+            letter-spacing: 1px; 
             font-weight: bold; 
             font-size: 14px;
             color: #4e443f;
+            user-select: none;
         }
         
         .refresh-btn { 
             font-size: 20px; 
             color: #a88d70; 
             cursor: pointer; 
+            padding: 0 5px;
+            display: flex;
+            align-items: center;
         }
 
         .submit-btn {
             width: 90%; 
+            display: block;
+            margin: 10px 0 0 0; 
             padding: 14px; 
             background-color: #4e443f; 
             color: white;
@@ -191,14 +206,17 @@
 <div class="main-wrapper">
     <div class="runner-header">
         <h1>跑者能量補給站</h1>
-        <div class="subtitle">RUNNERS ENERGY STATION</div>
+        <div class="subtitle">RUNNERS' ENERGY STATION</div>
         <div class="highlight-box">讓我們聽見您の腳步聲</div>
         <div class="intro-desc">
             <p>無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。</p>
-            <p>您的回饋是我們進化的動力，您的提問是我們探索的方向ᴗ̈ </p>
+            <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
+            <p>讓我們一起朝更好的方向邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。</p>
+            <p>希望這裡不只是網站，更是跑者們的補給站 ت</p>
         </div>
         <div class="service-time">
-            𖤐服務時間：週一至週五 09:00-18:00
+            ☀️服務時間：週一至週五 09:00 - 18:00<br>
+            (跑者不休息，但小編需要一些運動時間)
         </div>
     </div>
 
@@ -208,10 +226,34 @@
                 <label>姓名 / Name</label>
                 <input type="text" placeholder="請輸入您的姓名">
             </div>
-            
+            <div class="field">
+                <label>電子信箱 / E-mail</label>
+                <input type="email" placeholder="runner@gmail.com">
+            </div>
+            <div class="field">
+                <label>跑者屬性 / Runner Type</label>
+                <select>
+                    <option value="" disabled selected>請選擇 / Please Select</option>
+                    <option value="beginner">新手跑者 / Beginner</option>
+                    <option value="half-marathon">半馬跑者 / Half Marathon Runner</option>
+                    <option value="marathon">全馬跑者 / Full Marathon Runner</option>
+                    <option value="ultra-trail">超馬/越野跑者 / Ultra & Trail Runner</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>最佳成績 / Personal Best</label>
+                <input type="text" placeholder="例如：全馬3:30:00">
+            </div>
+            <div class="field">
+                <label>目標成績 / Target Goal</label>
+                <input type="text" placeholder="例如：全馬2:59:59">
+            </div>
+            <div class="field">
+                <label>穿戴配備 / Wearable Device</label>
+                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
+            </div>
             <div class="field">
                 <label>您的問題 / Your Inquiry</label>
-                <!-- 維持 8 列高度 -->
                 <textarea rows="8" placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
             
