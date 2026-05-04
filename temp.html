@@ -116,7 +116,7 @@
             outline: none;
         }
 
-        /* 調整重點：再次縮小驗證碼右邊顯示框 */
+        /* 驗證碼維持鎖定尺寸 */
         .captcha-group { 
             width: 90%; 
             display: flex; 
@@ -133,16 +133,16 @@
         }
 
         .captcha-display-small {
-            width: 65px; /* 從 80px 縮小至 65px */
+            width: 65px; 
             background: #f4f1ed; 
             height: 32px; 
             border-radius: 10px;
             display: flex; 
             align-items: center; 
             justify-content: center;
-            letter-spacing: 1px; /* 緊縮字距 */
+            letter-spacing: 1px; 
             font-weight: bold; 
-            font-size: 14px; /* 微調字號 */
+            font-size: 14px;
             color: #4e443f;
             user-select: none;
         }
@@ -176,16 +176,16 @@
 <div class="main-wrapper">
     <div class="runner-header">
         <h1>跑者能量補給站</h1>
-        <div class="subtitle">RUNNERS ENERGY STATION</div>
+        <div class="subtitle">RUNNERS' ENERGY STATION</div>
         <div class="highlight-box">讓我們聽見您の腳步聲</div>
         <div class="intro-desc">
             <p>無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。</p>
             <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
             <p>讓我們一起朝更好的方向邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。</p>
-            <p>希望這裡不只是網站，更是跑者們的補給站 ᴗ̈</p>
+            <p>希望這裡不只是網站，更是跑者們的補給站 ت</p>
         </div>
         <div class="service-time">
-            𖤐服務時間：週一至週五 09:00-18:00<br>
+            ☀️服務時間：週一至週五 09:00 - 18:00<br>
             (跑者不休息，但小編需要一些運動時間)
         </div>
     </div>
@@ -224,7 +224,8 @@
             </div>
             <div class="field">
                 <label>您的問題 / Your Inquiry</label>
-                <textarea rows="4" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+                <!-- 調整重點：rows 增加至 8 -->
+                <textarea rows="8" placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
             
             <div class="field">
