@@ -28,12 +28,12 @@
             font-size: 14px;
         }
 
-        /* 奶黃底區塊樣式修正：縮小下方空餘空間 */
+        /* 奶黃底區塊：根據照片縮小間距與底部留白 */
         .playground-header {
             background-color: #fcf6e3; 
-            border-bottom-left-radius: 50% 25%; 
-            border-bottom-right-radius: 50% 25%;
-            padding: 50px 35px 60px 35px; /* 縮小底部 padding (從 100px 縮至 60px) */
+            border-bottom-left-radius: 50% 20%; 
+            border-bottom-right-radius: 50% 20%;
+            padding: 45px 35px 35px 35px; /* 縮小上下 Padding，特別是底部 */
             text-align: center;
             width: 100%;
             max-width: 500px;
@@ -41,24 +41,25 @@
             position: relative;
         }
 
-        /* 白色線條：修正弧度使其與底色邊界完全平行 */
+        /* 白色線條：調整線條與邊界的間距，使其與照片完全一樣 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 15px;
-            left: 15px;
-            right: 15px;
-            bottom: 25px; /* 同步縮小線條底部位置 */
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            bottom: 20px;
             border: 1px solid rgba(255, 255, 255, 0.9);
-            border-bottom-left-radius: 200px 85px;
-            border-bottom-right-radius: 200px 85px;
+            border-bottom-left-radius: 200px 75px;
+            border-bottom-right-radius: 200px 75px;
             pointer-events: none;
         }
         
-        /* 調整文字間隔 */
+        /* 標題與副標題：縮小間距 */
         .title { color: #8b7355; font-size: 28px; font-weight: bold; margin: 0; letter-spacing: 2px; }
-        .en-subtitle { color: #b5a442; font-size: 11px; margin: 5px 0 15px 0; letter-spacing: 3px; }
+        .en-subtitle { color: #b5a442; font-size: 11px; margin: 5px 0 12px 0; letter-spacing: 3px; }
         
+        /* 按鈕：縮小下方間距 */
         .cta-button {
             background-color: #ffffff;
             color: #d47a3c; 
@@ -66,30 +67,32 @@
             border-radius: 35px;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 25px; /* 縮小與下方文案的距離 */
+            margin-bottom: 20px; 
             text-decoration: none;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             font-size: 16px;
         }
 
+        /* 文案間隔：調緊距離 */
         .copywriting {
             font-size: 13.5px;
-            line-height: 1.7;
+            line-height: 1.6; /* 縮小行高使其更緊湊 */
             color: #7a6e5d;
             text-align: left;
-            margin: 0 auto 20px auto;
+            margin: 0 auto 15px auto;
             max-width: 88%;
         }
 
+        /* 服務時間：縮小上方間距與底部留白 */
         .footer-info {
             font-size: 10px;
             color: #b5a442;
-            line-height: 1.5;
+            line-height: 1.4;
             opacity: 0.8;
             margin-top: 5px;
         }
 
-        /* 表單區域：維持既有指令不准動 */
+        /* 表單區域：維持原狀不准動 */
         .form-container { width: 100%; max-width: 500px; padding: 30px 35px; box-sizing: border-box; }
         .field { margin-bottom: 18px; }
         label { display: block; font-weight: bold; margin-bottom: 8px; color: #8b7355; font-size: 14px; }
@@ -118,7 +121,7 @@
             cursor: pointer;
         }
 
-        /* 驗證碼區域：維持縮小不准動 */
+        /* 驗證碼：不准動 */
         .captcha-area { display: flex; align-items: center; gap: 6px; }
         .captcha-input { width: 60px !important; padding: 5px 8px !important; font-size: 12px; }
         .captcha-code { background: #f4f4f4; padding: 5px 10px; border-radius: 6px; font-weight: bold; letter-spacing: 2px; font-size: 12px; }
