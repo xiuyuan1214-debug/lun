@@ -5,44 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>課程簡介 - Runner Service Center</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; background-color: #fff; color: #333; line-height: 1.5; }
+        /* 基礎樣式設定 */
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            margin: 0; 
+            background-color: #fff; 
+            color: #333; 
+            line-height: 1.6; 
+        }
         
-        /* 黑色導航欄 - 完全對照 IMG_5377_4.jpeg */
-        .header-nav { background-color: #222; padding: 25px 0 15px 0; text-align: center; }
-        .nav-links { display: flex; justify-content: center; gap: 20px; }
-        .nav-links a { color: #fff; text-decoration: none; font-size: 14px; font-weight: normal; }
-        .nav-links a.active { font-weight: bold; }
+        /* 黑色導航欄位 - 完全對照 IMG_5377_5.jpeg */
+        .header-nav { 
+            background-color: #222; 
+            padding: 25px 0 15px 0; 
+            text-align: center; 
+        }
+        .nav-links { 
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+        }
+        .nav-links a { 
+            color: #fff; 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: normal; 
+        }
+        .nav-links a.active { 
+            font-weight: bold; 
+        }
 
-        /* 內容容器樣式 - 對照 IMG_5554_3.png */
-        .container { padding: 80px 20px; max-width: 600px; margin: 0 auto; text-align: center; background-color: #fcf6e333; }
+        /* 內容容器 - 對照 IMG_5554_4.png 氛圍 */
+        .container { 
+            padding: 60px 20px; 
+            max-width: 600px; 
+            margin: 0 auto; 
+            text-align: center; 
+            background-color: #fcf6e333; /* 淺米色背景微調 */
+        }
 
-        .main-title { font-size: 26px; font-weight: bold; color: #333; margin-bottom: 8px; letter-spacing: 2px; }
-        .sub-title { font-size: 18px; font-weight: bold; color: #d47a3c; margin-bottom: 50px; letter-spacing: 1px; }
+        .main-title { 
+            font-size: 26px; 
+            font-weight: bold; 
+            color: #333; 
+            margin-bottom: 8px; 
+            letter-spacing: 2px; 
+        }
+        .sub-title { 
+            font-size: 18px; 
+            font-weight: bold; 
+            color: #d47a3c; 
+            margin-bottom: 45px; 
+            letter-spacing: 1px; 
+        }
 
-        /* 核心價值區塊 - 對照 IMG_5554_3.png */
+        /* 核心價值卡片樣式 - 對照 IMG_5554_4.png */
         .highlight-box { 
             background: #fff; 
-            border: 2px solid #d47a3c;
-            border-left: 8px solid #d47a3c; 
-            padding: 30px; 
-            border-radius: 12px; 
-            margin-bottom: 50px; 
+            border: 1px solid #f2f2f2;
+            border-left: 6px solid #d47a3c; 
+            padding: 25px; 
+            border-radius: 10px; 
+            margin-bottom: 40px; 
             text-align: left;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
-        .highlight-box p { margin: 0; font-size: 16px; color: #444; line-height: 1.8; }
+        .highlight-box p { 
+            margin: 0; 
+            font-size: 15px; 
+            color: #444; 
+            line-height: 1.8; 
+        }
 
-        /* 課程細項 - 對照 IMG_5554_3.png */
-        .course-details { text-align: left; display: inline-block; width: 100%; max-width: 500px; }
-        .detail-item { margin-bottom: 25px; font-size: 15px; color: #444; display: flex; align-items: flex-start; }
-        .detail-item span { color: #d47a3c; margin-right: 12px; font-weight: bold; }
-        .detail-item strong { color: #000; font-weight: bold; }
+        /* 課程細項清單 - 對照 IMG_5554_4.png */
+        .course-details { 
+            text-align: left; 
+            display: inline-block; 
+            width: 100%; 
+            max-width: 480px; 
+        }
+        .detail-item { 
+            margin-bottom: 20px; 
+            font-size: 14px; 
+            color: #444; 
+            display: flex; 
+            align-items: flex-start; 
+        }
+        .detail-item span { 
+            color: #d47a3c; 
+            margin-right: 12px; 
+            font-weight: bold; 
+        }
+        .detail-item strong { 
+            color: #000; 
+            font-weight: bold;
+        }
 
+        /* 底部預約連結區域 */
+        .footer-cta { 
+            margin-top: 60px; 
+            padding-bottom: 80px; 
+        }
+        .footer-text { 
+            color: #888; 
+            font-size: 13px; 
+            margin-bottom: 20px; 
+        }
+        .cta-button { 
+            background-color: #614e1a; 
+            color: white; 
+            display: inline-block; 
+            padding: 15px 45px; 
+            border-radius: 15px; 
+            font-weight: bold; 
+            text-decoration: none; 
+            font-size: 15px;
+        }
     </style>
 </head>
 <body>
 
-    <!-- 黑色導航欄位 -->
+    <!-- 黑色頂部導航 - 依照 IMG_5377_5.jpeg 樣式復原 -->
     <div class="header-nav">
         <div class="nav-links">
             <a href="index.html">教練資歷</a>
@@ -54,7 +137,7 @@
     </div>
 
     <div class="container">
-        <!-- 標題完全對照 IMG_5554_3.png -->
+        <!-- 標題與內容 - 完全對照 IMG_5554_4.png 文字內容 -->
         <div class="main-title">私人教學</div>
         <div class="sub-title">ONE-ON-ONE COACHING</div>
 
@@ -67,6 +150,12 @@
             <div class="detail-item"><span>•</span> <div><strong>體感配速建立</strong>：協助跑者建立對各心率區間的感知。</div></div>
             <div class="detail-item"><span>•</span> <div><strong>動態負荷調控</strong>：根據疲勞程度，即時調整訓練強度。</div></div>
             <div class="detail-item"><span>•</span> <div><strong>跑者專項強化引導</strong>：針對薄弱環節設計輔助訓練。</div></div>
+        </div>
+
+        <!-- 底部引導區域 -->
+        <div class="footer-cta">
+            <div class="footer-text">讓我們一起跑出健康快樂的每一步 ◡̈</div>
+            <a href="form.html" class="cta-button">預約一份溫暖的諮詢</a>
         </div>
     </div>
 
