@@ -5,43 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>課程簡介 - Runner Service Center</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; background-color: #fff; color: #333; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; background-color: #fff; color: #333; line-height: 1.5; }
         
-        /* 黑色背景導航欄 (對照 IMG_8041) */
-        .nav-header { background-color: #333; padding: 15px 0; text-align: center; }
-        .nav-container { display: flex; justify-content: center; gap: 25px; }
-        .nav-container a { text-decoration: none; color: #fff; font-size: 14px; font-weight: normal; }
-        .nav-container a.active { font-weight: bold; }
+        /* 黑色導航欄 - 完全對照 IMG_5377_2.jpeg */
+        .header-nav { background-color: #222; padding: 25px 0 15px 0; text-align: center; }
+        .nav-links { display: flex; justify-content: center; gap: 20px; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 14px; font-weight: normal; }
+        .nav-links a.active { font-weight: bold; }
 
-        .content { padding: 60px 25px; max-width: 500px; margin: 0 auto; text-align: center; }
-        
-        /* 私人教練標題區塊 */
-        .main-title { font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px; letter-spacing: 2px; }
-        .sub-title { font-size: 18px; font-weight: bold; color: #d47a3c; margin-bottom: 40px; letter-spacing: 1px; }
+        .container { padding: 60px 20px; max-width: 600px; margin: 0 auto; text-align: center; }
 
-        /* 核心價值區塊 (對照 IMG_8039) */
-        .highlight-card { 
+        /* 標題樣式 - 完全對照 IMG_5554.png */
+        .main-title { font-size: 26px; font-weight: bold; color: #333; margin-bottom: 5px; letter-spacing: 2px; }
+        .sub-title { font-size: 18px; font-weight: bold; color: #d47a3c; margin-bottom: 45px; letter-spacing: 1px; }
+
+        /* 核心價值區塊 - 完全對照 IMG_5554.png */
+        .highlight-box { 
             background: #fff; 
-            border: 1px solid #f0f0f0;
+            border: 1px solid #f2f2f2;
             border-left: 6px solid #d47a3c; 
             padding: 25px; 
-            border-radius: 12px; 
+            border-radius: 8px; 
             margin-bottom: 40px; 
             text-align: left;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
-        .highlight-card p { margin: 0; font-size: 15px; color: #444; line-height: 1.8; }
+        .highlight-box p { margin: 0; font-size: 15px; color: #444; line-height: 1.8; }
 
-        /* 列表區塊 */
-        .course-list { text-align: left; margin-top: 30px; }
-        .list-item { margin-bottom: 18px; font-size: 14px; color: #555; display: flex; align-items: flex-start; }
-        .list-item span { color: #d47a3c; margin-right: 8px; font-weight: bold; }
-        .list-item strong { color: #333; }
+        /* 課程列表 - 完全對照 IMG_5554.png */
+        .course-details { text-align: left; display: inline-block; width: 100%; max-width: 480px; }
+        .detail-item { margin-bottom: 20px; font-size: 14px; color: #444; display: flex; align-items: flex-start; }
+        .detail-item span { color: #d47a3c; margin-right: 10px; font-weight: bold; }
+        .detail-item strong { color: #000; }
 
-        /* 底部區域 */
-        .footer-area { margin-top: 60px; padding-bottom: 80px; }
-        .footer-note { color: #888; font-size: 13px; margin-bottom: 20px; }
-        .booking-btn { 
+        /* 底部按鈕區 */
+        .footer-cta { margin-top: 60px; padding-bottom: 80px; }
+        .footer-text { color: #888; font-size: 13px; margin-bottom: 20px; }
+        .cta-button { 
             background-color: #614e1a; 
             color: white; 
             display: inline-block; 
@@ -55,9 +55,9 @@
 </head>
 <body>
 
-    <!-- 導航欄 (依照圖四還原) -->
-    <div class="nav-header">
-        <div class="nav-container">
+    <!-- 導航欄位 - 依照截圖還原 -->
+    <div class="header-nav">
+        <div class="nav-links">
             <a href="index.html">教練資歷</a>
             <a href="courses.html" class="active">課程簡介</a>
             <a href="tools.html">配速工具</a>
@@ -66,28 +66,25 @@
         </div>
     </div>
 
-    <div class="content">
-        <!-- 私人教學標題 (依照圖三還原) -->
+    <div class="container">
+        <!-- 內容區域 - 完全對照 IMG_5554.png -->
         <div class="main-title">私人教學</div>
         <div class="sub-title">ONE-ON-ONE COACHING</div>
 
-        <!-- 核心價值卡片 (依照圖三還原) -->
-        <div class="highlight-card">
+        <div class="highlight-box">
             <p>✫ 核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</p>
         </div>
 
-        <!-- 列表內容 (依照圖三還原) -->
-        <div class="course-list">
-            <div class="list-item"><span>•</span> <div><strong>跑姿校正</strong>：透過錄影分析與拆解，使肌肉記憶正確動作。</div></div>
-            <div class="list-item"><span>•</span> <div><strong>體感配速建立</strong>：協助跑者建立對各心率區間的感知。</div></div>
-            <div class="list-item"><span>•</span> <div><strong>動態負荷調控</strong>：根據疲勞程度，即時調整訓練強度。</div></div>
-            <div class="list-item"><span>•</span> <div><strong>跑者專項強化引導</strong>：針對薄弱環節設計輔助訓練。</div></div>
+        <div class="course-details">
+            <div class="detail-item"><span>•</span> <div><strong>跑姿校正</strong>：透過錄影分析與拆解，使肌肉記憶正確動作。</div></div>
+            <div class="detail-item"><span>•</span> <div><strong>體感配速建立</strong>：協助跑者建立對各心率區間的感知。</div></div>
+            <div class="detail-item"><span>•</span> <div><strong>動態負荷調控</strong>：根據疲勞程度，即時調整訓練強度。</div></div>
+            <div class="detail-item"><span>•</span> <div><strong>跑者專項強化引導</strong>：針對薄弱環節設計輔助訓練。</div></div>
         </div>
 
-        <!-- 按鈕區域 (修正連結並移除重複紫色文字) -->
-        <div class="footer-area">
-            <div class="footer-note">讓我們一起跑出健康快樂的每一步 ◡̈</div>
-            <a href="form.html" class="booking-btn">預約一份溫暖的諮詢</a>
+        <div class="footer-cta">
+            <div class="footer-text">讓我們一起跑出健康快樂的每一步 ◡̈</div>
+            <a href="form.html" class="cta-button">預約一份溫暖的諮詢</a>
         </div>
     </div>
 
