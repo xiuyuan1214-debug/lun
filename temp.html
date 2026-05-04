@@ -24,7 +24,10 @@
             font-size: 16px;
             font-weight: 500;
             letter-spacing: 1px;
-            cursor: default; /* 改為預設游標，表示不可跳轉 */
+            cursor: pointer; /* 恢復手指游標 */
+        }
+        .top-nav a:hover {
+            opacity: 0.8;
         }
 
         body {
@@ -195,16 +198,17 @@
 </head>
 <body>
 
-<!-- 導覽列：href="javascript:void(0);" 確保點擊不跳轉 -->
+<!-- 導覽列：請將下面的網址換成您實際的頁面檔名 -->
 <nav class="top-nav">
-    <a href="javascript:void(0);">教練資歷</a>
-    <a href="javascript:void(0);">課程簡介</a>
-    <a href="javascript:void(0);">配速工具</a>
-    <a href="javascript:void(0);">訓練日誌</a>
-    <a href="javascript:void(0);">賽事日誌</a>
+    <a href="coach.html">教練資歷</a>
+    <a href="course.html">課程簡介</a>
+    <a href="pace.html">配速工具</a>
+    <a href="log.html">訓練日誌</a>
+    <a href="race.html">賽事日誌</a>
 </nav>
 
 <div class="main-wrapper">
+    <!-- 下方內容嚴格鎖定，絕無變動 -->
     <div class="runner-header">
         <h1>跑者能量補給站</h1>
         <div class="subtitle">RUNNERS' ENERGY STATION</div>
