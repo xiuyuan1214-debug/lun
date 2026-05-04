@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>古佳倫 - 跑者資歷</title>
+    <title>古佳倫 - 教練資歷</title>
     <style>
-        /* 導覽列 */
+        /* 導覽列：鎖定外觀 */
         .top-nav {
             background-color: #2c2c2c; 
             width: 100%;
@@ -24,7 +24,6 @@
             font-size: 16px;
             font-weight: 500;
             letter-spacing: 1px;
-            cursor: pointer;
         }
 
         body {
@@ -42,7 +41,7 @@
             padding-top: 20px;
         }
 
-        /* 個人資訊區 */
+        /* 個人資訊區：精確對照 IMG_5555_2.jpg */
         .header-section {
             display: flex;
             align-items: center;
@@ -73,7 +72,7 @@
             font-weight: normal;
         }
         .team-tag {
-            color: #b8a02c;
+            color: #b8a02c; 
             font-size: 13px;
             font-weight: bold;
             margin: 8px 0;
@@ -81,10 +80,7 @@
         .social-icons {
             display: flex;
             gap: 12px;
-        }
-        .social-icons img {
-            width: 20px;
-            height: 20px;
+            margin-top: 10px;
         }
 
         /* 標題樣式 */
@@ -112,16 +108,8 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
             margin-bottom: 30px;
         }
-        .pb-label {
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 6px;
-            font-weight: 500;
-        }
-        .pb-sub {
-            font-size: 12px;
-            color: #888;
-        }
+        .pb-label { font-size: 14px; color: #333; font-weight: 500; margin-bottom: 4px; }
+        .pb-sub { font-size: 12px; color: #888; }
         .pb-time {
             font-size: 34px;
             font-weight: bold;
@@ -163,17 +151,10 @@
             display: flex;
             gap: 12px;
             font-size: 14px;
-            line-height: 1.4;
-        }
-        .event-year {
-            font-weight: bold;
-            color: #333;
-            min-width: 35px;
-        }
-        .event-name {
             color: #333;
             font-weight: 500;
         }
+        .event-year { font-weight: bold; min-width: 35px; }
         .event-result {
             font-size: 12px;
             color: #b58c44;
@@ -182,45 +163,32 @@
             padding-left: 47px;
         }
 
-        hr {
-            border: 0;
-            border-top: 1px solid #eee;
-            margin: 20px 0;
-        }
+        hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
     </style>
 </head>
 <body>
 
 <nav class="top-nav">
     <a href="index.html">教練資歷</a>
-    <a href="courses.html">課程簡介</a>
+    <a href="form.html">預約諮詢</a>
     <a href="tools.html">配速工具</a>
-    <a href="training.html">訓練日誌</a>
-    <a href="match.html">賽事日誌</a>
 </nav>
 
 <div class="container">
-    <!-- 個人頭像資訊 -->
+    <!-- 個人資訊 -->
     <div class="header-section">
-        <div class="avatar">
-            <img src="https://via.placeholder.com/150" alt="古佳倫"> <!-- 建議上傳您的照片改為 coach_photo.jpg -->
-        </div>
+        <div class="avatar"><img src="coach_photo.jpg" alt="古佳倫"></div>
         <div class="name-info">
             <h1>古佳倫 <span>KU CHIA LUN</span></h1>
             <div class="team-tag">隸屬台灣大腳ㄚ長跑協會贊助選手</div>
-            <div class="social-icons">
-                <span>📷</span> <span>📘</span>
-            </div>
+            <div class="social-icons"><span>📷</span> <span>📘</span></div>
         </div>
     </div>
 
     <hr>
 
     <!-- 全馬最佳表現 -->
-    <div class="section-title">
-        全馬最佳表現 (PB)
-        <div class="title-underline"></div>
-    </div>
+    <div class="section-title">全馬最佳表現 (PB)<div class="title-underline"></div></div>
     <div class="pb-box">
         <div>
             <div class="pb-label">2026 麗晨臺中國際馬拉松</div>
@@ -230,60 +198,56 @@
     </div>
 
     <!-- 跑步經歷 -->
-    <div class="section-title">
-        跑步經歷
-        <div class="title-underline"></div>
-    </div>
-
+    <div class="section-title">跑步經歷<div class="title-underline"></div></div>
     <div class="timeline">
         <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2026</span><span class="event-name">南山人壽臺北國道馬拉松</span></div>
+            <div class="event-row"><span class="event-year">2026</span><span>南山人壽臺北國道馬拉松</span></div>
             <div class="event-result">總排第二名 ‧ 國內第一名 2:37:23</div>
         </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2026</span><span class="event-name">麗晨臺中國際馬拉松</span></div>
+            <div class="event-row"><span class="event-year">2026</span><span>麗晨臺中國際馬拉松</span></div>
             <div class="event-result">總排第五名 ‧ 國內第一名 2:33:32 (PB)</div>
         </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2026</span><span class="event-name">大阪馬拉松</span></div>
+            <div class="event-row"><span class="event-year">2026</span><span>大阪馬拉松</span></div>
             <div class="event-result">臺灣跑者最佳 2:33:56</div>
         </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2025</span><span class="event-name">嘉義雙潭馬拉松菁英賽</span></div>
+            <div class="event-row"><span class="event-year">2025</span><span>嘉義雙潭馬拉松菁英賽</span></div>
             <div class="event-result">全馬男子組 ‧ 國內第二名 2:43:17</div>
         </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2025</span><span class="event-name">新北市萬金石馬拉松</span></div>
+            <div class="event-row"><span class="event-year">2025</span><span>新北市萬金石馬拉松</span></div>
             <div class="event-result">全馬男子組 ‧ 國內第四名 2:39:36</div>
         </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2025</span><span class="event-name">渣打臺北公益馬拉松</span></div>
+            <div class="event-row"><span class="event-year">2025</span><span>渣打臺北公益馬拉松</span></div>
             <div class="event-result">全馬男子組 ‧ 總排第七名 2:38:55</div>
         </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2024</span><span class="event-name">新北市萬金石馬拉松</span></div>
+            <div class="event-row"><span class="event-year">2024</span><span>新北市萬金石馬拉松</span></div>
             <div class="event-result">全馬男子組 ‧ 國內第五名 2:41:27</div>
         </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2024</span><span class="event-name">TAISHIN WOMEN RUN 臺中場</span></div>
+            <div class="event-row"><span class="event-year">2024</span><span>TAISHIN WOMEN RUN 臺中場</span></div>
             <div class="event-result">訓練營教練</div>
         </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2023</span><span class="event-name">馬祖馬拉松</span></div>
+            <div class="event-row"><span class="event-year">2023</span><span>馬祖馬拉松</span></div>
             <div class="event-result">全馬男子組第一名</div>
         </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="event-row"><span class="event-year">2023</span><span class="event-name">臺北馬拉松</span></div>
+            <div class="event-row"><span class="event-year">2023</span><span>臺北馬拉松</span></div>
             <div class="event-result">完賽時間 2:34:24</div>
         </div>
     </div>
