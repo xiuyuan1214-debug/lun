@@ -7,7 +7,7 @@
     <style>
         body { font-family: sans-serif; margin: 0; background-color: #ffffff; display: flex; flex-direction: column; align-items: center; }
         
-        /* 導覽列：恢復連結功能 */
+        /* 導覽列：精確深灰色 #333333 並恢復所有功能頁面連結 */
         .top-navbar {
             background-color: #333333;
             width: 100%;
@@ -28,7 +28,7 @@
             font-size: 14px;
         }
 
-        /* 奶黃色拋物線頁首：完全依照圖 IMG_5595_11.jpg */
+        /* 頁首：嚴格執行奶黃色 #fcf6e3 與高拱形拋物線設計 */
         .playground-header {
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 20%; 
@@ -67,7 +67,7 @@
             line-height: 1.6;
         }
 
-        /* 表單區域 */
+        /* 表單區域：嚴格執行指定欄位 */
         .form-container { width: 100%; max-width: 500px; padding: 40px 35px; box-sizing: border-box; }
         
         .field { margin-bottom: 25px; }
@@ -88,9 +88,10 @@
             background-color: #fafafa;
             font-size: 14px;
             box-sizing: border-box;
+            outline: none;
         }
 
-        /* 送出按鈕：深咖啡色 (#554d44) */
+        /* 送出按鈕：嚴格執行深咖啡色 #554d44 */
         .submit-btn {
             width: 100%;
             background-color: #554d44;
@@ -113,6 +114,7 @@
         <div class="nav-inner">
             <a href="index.html" class="nav-link">教練資歷</a>
             <a href="courses.html" class="nav-link">課程簡介</a>
+            <!-- 恢復頁面連結：確保點擊後能進入對應功能頁面 -->
             <a href="pace_tool.html" class="nav-link">配速工具</a>
             <a href="training_log.html" class="nav-link">訓練日誌</a>
             <a href="race_log.html" class="nav-link">賽事日誌</a>
@@ -153,6 +155,7 @@
             </select>
         </div>
 
+        <!-- 嚴格恢復與保留以下指定欄位 -->
         <div class="field">
             <label>最佳成績 / Personal Best</label>
             <input type="text" placeholder="例如：全馬3:30:00">
