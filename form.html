@@ -7,7 +7,7 @@
     <style>
         body { font-family: sans-serif; margin: 0; background-color: #ffffff; display: flex; flex-direction: column; align-items: center; }
         
-        /* 導覽列：維持既有設計 */
+        /* 導覽列：維持深灰色與所有功能連結 */
         .top-navbar {
             background-color: #333333;
             width: 100%;
@@ -28,7 +28,7 @@
             font-size: 14px;
         }
 
-        /* 奶黃底頁首格式：維持既有設計 */
+        /* 奶黃底頁首格式：維持既有高拱形拋物線設計 */
         .playground-header {
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 20%; 
@@ -70,7 +70,7 @@
 
         /* 表單區域 */
         .form-container { width: 100%; max-width: 500px; padding: 30px 35px; box-sizing: border-box; }
-        .field { margin-bottom: 20px; }
+        .field { margin-bottom: 18px; }
         
         label { 
             display: block; 
@@ -80,12 +80,12 @@
             font-size: 14px;
         }
         
-        /* 修正：縮小所有輸入框的 Padding 與高度 */
+        /* 嚴格執行：縮小所有表單框的內距與高度 */
         input, select, textarea {
             width: 100%;
-            padding: 10px 14px; /* 大幅縮小 Padding */
+            padding: 8px 12px; /* 進一步縮小 padding */
             border: 1px solid #eeeeee;
-            border-radius: 10px;
+            border-radius: 8px;
             background-color: #fdfaf2; /* 依照照片配色 */
             font-size: 13px;
             box-sizing: border-box;
@@ -97,26 +97,26 @@
             color: #bbbbbb;
         }
 
-        /* 送出按鈕：維持既有配色與設計 */
+        /* 送出按鈕：維持深咖啡色設計 */
         .submit-btn {
             width: 100%;
             background-color: #554d44;
             color: #ffffff;
-            padding: 15px;
+            padding: 14px;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             font-size: 15px;
             font-weight: bold;
             cursor: pointer;
         }
 
-        /* 驗證碼區域：縮小輸入框並靠近 */
-        .captcha-area { display: flex; align-items: center; gap: 8px; }
-        .captcha-input { width: 70px !important; padding: 8px !important; }
+        /* 驗證碼區域：緊湊縮小 */
+        .captcha-area { display: flex; align-items: center; gap: 6px; }
+        .captcha-input { width: 65px !important; padding: 6px !important; }
         .captcha-code { 
             background: #f4f4f4; 
-            padding: 8px 12px; 
-            border-radius: 8px; 
+            padding: 6px 10px; 
+            border-radius: 6px; 
             font-weight: bold; 
             letter-spacing: 2px;
             font-size: 13px;
