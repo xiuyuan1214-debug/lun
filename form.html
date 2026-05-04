@@ -3,145 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>跑者服務中心</title>
+    <title>古佳倫 - 教練資歷</title>
     <style>
-        body {
-            background-color: #f4f4f4;
+        .top-nav {
+            background-color: #2c2c2c; 
+            width: 100%;
+            padding: 15px 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            gap: 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .top-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            padding: 80px 0 40px 0;
+            background-color: #ffffff;
+            font-family: "Microsoft JhengHei", sans-serif;
+            display: flex;
+            justify-content: center;
         }
 
         .container {
-            position: relative;
-            background: #ffe8a1; /* 基礎奶黃底 */
-            border-radius: 120px 120px 50px 50px;
-            width: 375px; /* 模擬手機寬度 */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden; /* 確保內容不超出圓角 */
+            width: 92%;
+            max-width: 480px;
+            padding-top: 20px;
         }
 
-        /* 操場跑道背景紋理 */
-        .container::before {
-            content: '';
-            position: absolute;
-            top: -100%;
-            left: -100%;
-            width: 300%;
-            height: 300%;
-            /* 使用多重徑向漸變和線性漸變模擬跑道弧線和顆粒感 */
-            background-image: 
-                radial-gradient(ellipse at 50% 120%, transparent 65%, rgba(139, 69, 19, 0.05) 66%, transparent 68%), /* 棕色弧線 (跑道) */
-                radial-gradient(ellipse at 50% 120%, transparent 69%, rgba(139, 69, 19, 0.03) 70%, transparent 72%),
-                radial-gradient(ellipse at 50% 120%, transparent 73%, rgba(139, 69, 19, 0.02) 74%, transparent 76%),
-                radial-gradient(ellipse at 50% 120%, transparent 77%, rgba(139, 69, 19, 0.01) 78%, transparent 80%),
-                radial-gradient(circle, rgba(139, 69, 19, 0.02) 1px, transparent 1px), /* 微小顆粒 */
-                linear-gradient(rgba(255, 232, 161, 0.8), rgba(255, 232, 161, 0.8)); /* 疊加奶黃色透明度 */
-            background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 8px 8px, 100% 100%;
-            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat, no-repeat;
-            opacity: 0.8; /* 控制背景圖案的整體深淺 */
-            z-index: 1;
-        }
+        /* 個人資訊區 - 嚴格對照 IMG_5555_2.jpg */
+        .header-section { display: flex; align-items: center; margin-bottom: 25px; }
+        .avatar { width: 95px; height: 95px; border-radius: 50%; overflow: hidden; border: 1px solid #ddd; margin-right: 20px; }
+        .avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .name-info h1 { font-size: 26px; margin: 0; color: #333; }
+        .name-info h1 span { font-size: 14px; color: #999; margin-left: 8px; font-weight: normal; }
+        .team-tag { color: #b8a02c; font-size: 13px; font-weight: bold; margin: 8px 0; }
+        .social-icons { display: flex; gap: 12px; }
 
-        .header {
-            position: relative;
-            z-index: 2; /* 確保內容在背景紋理上方 */
-            text-align: center;
-            color: #5d4037; /* 深棕色文字 */
-            padding-top: 60px;
-        }
+        .section-title { font-size: 20px; font-weight: bold; margin: 35px 0 15px 0; color: #333; }
+        .title-underline { width: 35px; height: 4px; background-color: #f2c029; margin-top: 6px; }
 
-        h1 {
-            font-size: 32px;
-            font-weight: 800;
-            margin: 0;
-            letter-spacing: 2px;
+        /* PB 區塊 */
+        .pb-box {
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
+        .pb-time { font-size: 34px; font-weight: bold; color: #b58c44; font-family: Arial, sans-serif; }
 
-        .subtitle {
-            font-size: 14px;
-            letter-spacing: 5px;
-            margin-top: 10px;
-            text-transform: uppercase;
-        }
+        /* 時間軸經歷 */
+        .timeline { position: relative; padding-left: 25px; margin-top: 20px; }
+        .timeline::before { content: ""; position: absolute; left: 5px; top: 5px; bottom: 5px; width: 2px; background-color: #eee; }
+        .timeline-item { position: relative; margin-bottom: 28px; }
+        .timeline-dot { position: absolute; left: -25px; top: 4px; width: 10px; height: 10px; background-color: #fff; border: 2px solid #b8a02c; border-radius: 50%; z-index: 1; }
+        .event-row { display: flex; gap: 12px; font-size: 14px; color: #333; font-weight: 500; }
+        .event-year { font-weight: bold; min-width: 35px; }
+        .event-result { font-size: 12px; color: #b58c44; font-weight: bold; margin-top: 4px; padding-left: 47px; }
 
-        .highlight-box {
-            position: relative;
-            z-index: 2;
-            display: inline-block;
-            background: #fff8e1; /* 更亮一點的奶黃 */
-            border-radius: 30px;
-            padding: 8px 30px;
-            color: #d1941c; /* 亮金色文字 */
-            font-weight: bold;
-            font-size: 18px;
-            margin: 35px auto 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        .content {
-            position: relative;
-            z-index: 2;
-            color: #5d4037;
-            padding: 30px 40px;
-            line-height: 1.8;
-            font-size: 15px;
-            font-weight: 500;
-        }
-
-        .content p {
-            margin: 0 0 20px 0;
-        }
-
-        .footer {
-            position: relative;
-            z-index: 2;
-            color: rgba(93, 64, 55, 0.6); /* 半透明棕色 */
-            font-size: 11px;
-            padding: 0 40px 30px 40px;
-            text-align: left;
-        }
-
-        /* 紅色裝飾線 (絕對不准動) */
-        .red-line {
-            width: 100%;
-            height: 4px;
-            background: #ff4747;
-            border-radius: 2px;
-            margin-top: 10px; /* 這裡的 margin-top 是為了對齊，紅線本身不變 */
-        }
+        hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>跑者服務中心</h1>
-            <div class="subtitle">RUNNER SERVICE CENTER</div>
-        </div>
 
-        <div style="text-align: center;">
-            <div class="highlight-box">
-                讓我們聽見您的腳步聲
-            </div>
-        </div>
+<nav class="top-nav">
+    <a href="index.html">教練資歷</a>
+    <a href="form.html">預約諮詢</a> <!-- 表單現在獨立在 form.html -->
+    <a href="tools.html">配速工具</a>
+</nav>
 
-        <div class="content">
-            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。</p>
-            <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
-            <p>讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。希望這裡不只是網站，更是跑者們的補給站。</p>
+<div class="container">
+    <div class="header-section">
+        <div class="avatar"><img src="coach_photo.jpg"></div>
+        <div class="name-info">
+            <h1>古佳倫 <span>KU CHIA LUN</span></h1>
+            <div class="team-tag">隸屬台灣大腳ㄚ長跑協會贊助選手</div>
+            <div class="social-icons"><span>📷</span> <span>📘</span></div>
         </div>
-
-        <div class="footer">
-            ＊ 服務時間：週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
-        </div>
-
-        <!-- 紅色裝飾線 (紅線以上內容完全保留，位置精確) -->
-        <div class="red-line"></div>
     </div>
+    <hr>
+    <div class="section-title">全馬最佳表現 (PB)<div class="title-underline"></div></div>
+    <div class="pb-box">
+        <div><div style="font-size:14px;">2026 麗晨臺中國際馬拉松</div><div style="font-size:12px; color:#888;">總排第五名 ∞ 國內第一名</div></div>
+        <div class="pb-time">2:33:32</div>
+    </div>
+    <div class="section-title">跑步經歷<div class="title-underline"></div></div>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="event-row"><span class="event-year">2026</span><span>南山人壽臺北國道馬拉松</span></div>
+            <div class="event-result">總排第二名 ‧ 國內第一名 2:37:23</div>
+        </div>
+        <!-- 跑步經歷內容以此類推 -->
+    </div>
+</div>
+
 </body>
 </html>
