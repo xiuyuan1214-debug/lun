@@ -9,7 +9,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             margin: 0;
             background-color: #ffffff;
-            color: #555555;
+            color: #555;
             display: flex;
             justify-content: center;
         }
@@ -18,86 +18,88 @@
             width: 100%;
             max-width: 500px;
             background-color: #fff;
-            padding-bottom: 50px;
         }
 
-        /* 高拱形操場樣式頁首 */
+        /* 頁首：高拱形拋物線 (奶黃色底) */
         .header-playground {
-            background-color: #fcf6e3; /* 奶黃色 */
-            border-bottom-left-radius: 50% 20%;
-            border-bottom-right-radius: 50% 20%;
-            padding: 60px 40px 80px 40px;
+            background-color: #fcf6e3; /* 奶黃色 #fcf6e3 */
+            border-bottom-left-radius: 50% 25%;
+            border-bottom-right-radius: 50% 25%;
+            padding: 50px 35px 70px 35px;
             text-align: center;
-            position: relative;
         }
 
         .header-playground h1 {
-            color: #8b7355; /* 深褐色 */
+            color: #8b7355; /* 深褐色 #8b7355 */
             font-size: 24px;
+            font-weight: bold;
             margin: 0 0 5px 0;
             letter-spacing: 2px;
         }
 
         .header-playground .sub-title {
             color: #b5a442;
-            font-size: 12px;
+            font-size: 11px;
             letter-spacing: 1px;
             margin-bottom: 25px;
-            text-transform: uppercase;
+            font-weight: 500;
         }
 
+        /* 聽見腳步聲按鈕 */
         .highlight-btn {
             background-color: #ffffff;
             color: #d47a3c;
             padding: 8px 25px;
-            border-radius: 20px;
+            border-radius: 25px;
             font-size: 15px;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
+        /* 文案內容 */
         .intro-text {
-            font-size: 13px;
+            font-size: 12px;
             line-height: 1.8;
             color: #666;
             text-align: left;
+            margin-bottom: 25px;
         }
 
         .service-hours {
-            font-size: 11px;
-            color: #999;
-            margin-top: 20px;
-            line-height: 1.5;
+            font-size: 10px;
+            color: #aaa;
+            line-height: 1.6;
+            text-align: center;
         }
 
-        /* 表單區域 */
+        /* 表單區域細節 */
         .form-content {
-            padding: 40px 30px;
+            padding: 40px 35px;
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 22px;
         }
 
         label {
             display: block;
             font-size: 14px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: #444;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 12px 15px;
+            padding: 14px 18px;
             border: 1px solid #f2f2f2;
-            border-radius: 10px;
-            background-color: #f9f9f9;
+            border-radius: 12px;
+            background-color: #fafafa;
             font-size: 13px;
             box-sizing: border-box;
-            outline: none;
+            color: #333;
         }
 
         input::placeholder, textarea::placeholder {
@@ -105,45 +107,46 @@
         }
 
         textarea {
-            height: 100px;
+            height: 120px;
             resize: none;
         }
 
-        /* 驗證碼區域 */
-        .verification-container {
+        /* 驗證碼 */
+        .v-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
-        .v-input { width: 80px; }
+        .v-input { width: 90px; }
         .v-code {
             background: #f0f0f0;
-            padding: 8px 15px;
-            border-radius: 5px;
+            padding: 10px 18px;
+            border-radius: 8px;
             font-family: monospace;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             font-weight: bold;
+            font-size: 15px;
         }
 
-        /* 提交按鈕 */
+        /* 提交按鈕 (深褐色) */
         .submit-btn {
             width: 100%;
-            background-color: #554d44; /* 深咖啡色 */
+            background-color: #554d44; /* 深咖啡色 #554d44 */
             color: white;
-            padding: 15px;
+            padding: 16px;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 15px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- 頁首：操場造型 -->
+        <!-- 奶黃色操場頁首 -->
         <div class="header-playground">
             <h1>跑者能量補給站</h1>
             <div class="sub-title">RUNNERS ENERGY STATION</div>
@@ -154,7 +157,7 @@
                 無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們。<br><br>
                 您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。<br><br>
                 讓我們一起朝更好的方向邁進，讓這份對跑步熱愛，連結每一個熱血的靈魂。<br><br>
-                希望這裡不只是謝站，更是跑者們的補給站 ◡̈
+                希望這裡不只是起點，更是跑者們的補給站 ◡̈
             </div>
 
             <div class="service-hours">
@@ -163,9 +166,9 @@
             </div>
         </div>
 
-        <!-- 表單欄位 -->
+        <!-- 雙語表單欄位 -->
         <div class="form-content">
-            <form action="#">
+            <form>
                 <div class="form-group">
                     <label>姓名 / Name</label>
                     <input type="text" placeholder="請輸入您的姓名">
@@ -180,9 +183,9 @@
                     <label>跑者屬性 / Runner Type</label>
                     <select>
                         <option value="">請選擇 / Please Select</option>
-                        <option value="beginner">初階跑者</option>
-                        <option value="marathoner">馬拉松跑者</option>
-                        <option value="ultra">超馬/越野跑者</option>
+                        <option>初階跑者 / Beginner</option>
+                        <option>馬拉松跑者 / Marathoner</option>
+                        <option>超馬、越野跑者 / Ultra & Trail</option>
                     </select>
                 </div>
 
@@ -208,14 +211,14 @@
 
                 <div class="form-group">
                     <label>驗證碼 / Verification Code</label>
-                    <div class="verification-container">
+                    <div class="v-container">
                         <input type="text" class="v-input" placeholder="輸入碼">
                         <div class="v-code">1 8 0 X</div>
                         <span style="cursor:pointer; font-size: 18px;">↻</span>
                     </div>
                 </div>
 
-                <button type="submit" class="submit-btn">送出表單 / Submit Form</button>
+                <button type="button" class="submit-btn">送出表單 / Submit Form</button>
             </form>
         </div>
     </div>
