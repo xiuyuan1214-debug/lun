@@ -9,30 +9,49 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             margin: 0;
             background-color: #ffffff;
-            color: #555;
-            display: flex;
-            justify-content: center;
+            color: #555555;
         }
 
-        .container {
+        /* 圖 2：黑色最上層選項導覽列 */
+        .top-nav {
+            background-color: #333333; /* 黑色背景 */
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             width: 100%;
+        }
+        .nav-container {
             max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+        }
+        .nav-item {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .main-wrapper {
+            max-width: 500px;
+            margin: 0 auto;
             background-color: #fff;
         }
 
-        /* 頁首：高拱形拋物線 (奶黃色底) */
+        /* 圖 1：奶黃色高拱形拋物線頁首 */
         .header-playground {
-            background-color: #fcf6e3; /* 奶黃色 #fcf6e3 */
-            border-bottom-left-radius: 50% 25%;
-            border-bottom-right-radius: 50% 25%;
+            background-color: #fcf6e3; /* 奶黃色 */
+            border-bottom-left-radius: 50% 20%;
+            border-bottom-right-radius: 50% 20%;
             padding: 50px 35px 70px 35px;
             text-align: center;
         }
 
         .header-playground h1 {
-            color: #8b7355; /* 深褐色 #8b7355 */
-            font-size: 24px;
-            font-weight: bold;
+            color: #8b7355; /* 深褐色 */
+            font-size: 26px;
             margin: 0 0 5px 0;
             letter-spacing: 2px;
         }
@@ -40,15 +59,13 @@
         .header-playground .sub-title {
             color: #b5a442;
             font-size: 11px;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             margin-bottom: 25px;
-            font-weight: 500;
         }
 
-        /* 聽見腳步聲按鈕 */
         .highlight-btn {
             background-color: #ffffff;
-            color: #d47a3c;
+            color: #d47a3c; /* 亮橘色 */
             padding: 8px 25px;
             border-radius: 25px;
             font-size: 15px;
@@ -58,9 +75,8 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
-        /* 文案內容 */
         .intro-text {
-            font-size: 12px;
+            font-size: 12.5px;
             line-height: 1.8;
             color: #666;
             text-align: left;
@@ -70,11 +86,10 @@
         .service-hours {
             font-size: 10px;
             color: #aaa;
-            line-height: 1.6;
-            text-align: center;
+            line-height: 1.5;
         }
 
-        /* 表單區域細節 */
+        /* 表單區域 */
         .form-content {
             padding: 40px 35px;
         }
@@ -97,13 +112,9 @@
             border: 1px solid #f2f2f2;
             border-radius: 12px;
             background-color: #fafafa;
-            font-size: 13px;
+            font-size: 14px;
             box-sizing: border-box;
-            color: #333;
-        }
-
-        input::placeholder, textarea::placeholder {
-            color: #ccc;
+            outline: none;
         }
 
         textarea {
@@ -111,7 +122,6 @@
             resize: none;
         }
 
-        /* 驗證碼 */
         .v-container {
             display: flex;
             align-items: center;
@@ -125,28 +135,38 @@
             font-family: monospace;
             letter-spacing: 4px;
             font-weight: bold;
-            font-size: 15px;
         }
 
-        /* 提交按鈕 (深褐色) */
+        /* 送出按鈕 (深褐色) */
         .submit-btn {
             width: 100%;
-            background-color: #554d44; /* 深咖啡色 #554d44 */
+            background-color: #554d44; /* 深咖啡色 */
             color: white;
             padding: 16px;
             border: none;
             border-radius: 12px;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 15px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- 奶黃色操場頁首 -->
+    <!-- 黑色最上層選項導覽列 (圖 2) -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-item">教練資歷</a>
+            <a href="courses.html" class="nav-item">課程簡介</a>
+            <a href="pace_tool.html" class="nav-item">配速工具</a>
+            <a href="training_log.html" class="nav-item">訓練日誌</a>
+            <a href="race_log.html" class="nav-item">賽事日誌</a>
+        </div>
+    </nav>
+
+    <div class="main-wrapper">
+        <!-- 奶黃色操場頁首 (圖 1) -->
         <div class="header-playground">
             <h1>跑者能量補給站</h1>
             <div class="sub-title">RUNNERS ENERGY STATION</div>
@@ -166,7 +186,7 @@
             </div>
         </div>
 
-        <!-- 雙語表單欄位 -->
+        <!-- 表單內容 -->
         <div class="form-content">
             <form>
                 <div class="form-group">
