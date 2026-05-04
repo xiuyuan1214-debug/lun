@@ -5,48 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>課程簡介 - Runner Service Center</title>
     <style>
-        body { font-family: -apple-system, sans-serif; margin: 0; background-color: #fff; color: #333; line-height: 1.6; }
-        .container { max-width: 600px; margin: 0 auto; padding: 40px 20px; }
+        body { font-family: -apple-system, sans-serif; margin: 0; background-color: #fff; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
         
-        /* 區塊通用樣式 */
-        .course-section { border-radius: 15px; padding: 30px; margin-bottom: 30px; }
-        .section-title { font-size: 22px; font-weight: bold; margin-bottom: 5px; }
-        .section-en { font-size: 13px; letter-spacing: 1px; margin-bottom: 25px; font-weight: bold; }
+        /* 區塊通用設定 */
+        .course-section { border-radius: 15px; padding: 30px; margin-bottom: 25px; }
+        .section-title { font-size: 24px; font-weight: bold; margin-bottom: 5px; color: #333; }
+        .section-en { font-size: 14px; letter-spacing: 1.5px; margin-bottom: 25px; font-weight: bold; }
         
-        .core-value-box { background: #fff; padding: 20px; border-radius: 10px; margin-bottom: 25px; display: flex; align-items: flex-start; }
-        .core-value-box i { margin-right: 10px; font-style: normal; }
-        .core-value-text { font-size: 15px; font-weight: bold; color: #444; }
+        /* 核心重點/價值框 */
+        .core-value-box { background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 25px; display: flex; align-items: flex-start; }
+        .core-value-box span { margin-right: 10px; font-size: 18px; line-height: 1.2; }
+        .core-value-text { font-size: 16px; font-weight: bold; color: #555; line-height: 1.6; }
 
+        /* 細項列表 */
         .detail-list { list-style: none; padding: 0; margin: 0; }
-        .detail-item { font-size: 13px; margin-bottom: 12px; display: flex; align-items: center; }
+        .detail-item { font-size: 14px; margin-bottom: 15px; display: flex; color: #444; line-height: 1.5; }
         .detail-item::before { content: "•"; margin-right: 8px; font-weight: bold; }
-        .detail-item strong { margin-right: 5px; }
+        .detail-item strong { color: #333; margin-right: 2px; }
 
-        /* 線上課表 - 藍色系 (IMG_5560_2.jpg) */
-        .online-course { background-color: #f0f7ff; }
-        .online-course .section-title { color: #2c3e50; }
-        .online-course .section-en { color: #5dade2; }
-        .online-course .core-value-box { border-left: 5px solid #5dade2; }
-        .online-course .detail-item::before { color: #5dade2; }
+        /* 線上課表顏色 (藍) */
+        .online-programming { background-color: #f1f8ff; }
+        .online-programming .section-en { color: #5dade2; }
+        .online-programming .core-value-box { border-left: 6px solid #5dade2; }
+        .online-programming .core-value-box span { color: #5dade2; }
+        .online-programming .detail-item::before { color: #5dade2; }
 
-        /* 私人教學 - 粉色系 (IMG_5554_7.png) */
-        .private-coaching { background-color: #fff5f5; }
-        .private-coaching .section-title { color: #333; }
-        .private-coaching .section-en { color: #e67e22; }
-        .private-coaching .core-value-box { border-left: 5px solid #e67e22; }
-        .private-coaching .detail-item::before { color: #e67e22; }
+        /* 私人教學顏色 (粉) */
+        .one-on-one { background-color: #fff5f6; }
+        .one-on-one .section-en { color: #d47a3c; }
+        .one-on-one .core-value-box { border-left: 6px solid #d47a3c; }
+        .one-on-one .core-value-box span { color: #d47a3c; }
+        .one-on-one .detail-item::before { color: #d47a3c; }
 
-        /* 企業包班 - 綠色系 (IMG_5560_2.jpg) */
-        .corporate-group { background-color: #f2fcf5; }
-        .corporate-group .section-title { color: #2d3436; }
-        .corporate-group .section-en { color: #27ae60; }
-        .corporate-group .core-value-box { border-left: 5px solid #27ae60; }
-        .corporate-group .detail-item::before { color: #27ae60; }
+        /* 企業包班顏色 (綠) */
+        .corporate-group { background-color: #f4faf6; }
+        .corporate-group .section-en { color: #2ecc71; }
+        .corporate-group .core-value-box { border-left: 6px solid #2ecc71; }
+        .corporate-group .core-value-box span { color: #2ecc71; }
+        .corporate-group .detail-item::before { color: #2ecc71; }
 
-        /* 底部預約區域 */
-        .footer-action { text-align: center; margin-top: 50px; padding-bottom: 60px; }
-        .footer-note { font-size: 13px; color: #888; margin-bottom: 20px; }
-        .cta-btn { background-color: #333; color: white; padding: 15px 50px; border-radius: 10px; text-decoration: none; font-weight: bold; display: inline-block; }
+        /* 底部樣式 */
+        .footer-action { text-align: center; margin-top: 60px; padding-bottom: 80px; }
+        .footer-note { font-size: 13px; color: #888; margin-bottom: 25px; }
+        .cta-btn { background-color: #333; color: white; padding: 18px 60px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 16px; display: inline-block; }
     </style>
 </head>
 <body>
@@ -54,11 +56,11 @@
     <div class="container">
         
         <!-- 線上課表 -->
-        <section class="course-section online-course">
+        <section class="course-section online-programming">
             <div class="section-title">線上課表</div>
             <div class="section-en">ONLINE PROGRAMMING</div>
             <div class="core-value-box">
-                <i>✾</i>
+                <span>✾</span>
                 <div class="core-value-text">核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。</div>
             </div>
             <ul class="detail-list">
@@ -70,11 +72,11 @@
         </section>
 
         <!-- 私人教學 -->
-        <section class="course-section private-coaching">
+        <section class="course-section one-on-one">
             <div class="section-title">私人教學</div>
             <div class="section-en">ONE-ON-ONE COACHING</div>
             <div class="core-value-box">
-                <i>✾</i>
+                <span>✾</span>
                 <div class="core-value-text">核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</div>
             </div>
             <ul class="detail-list">
@@ -90,7 +92,7 @@
             <div class="section-title">企業包班</div>
             <div class="section-en">CORPORATE GROUP</div>
             <div class="core-value-box">
-                <i>✾</i>
+                <span>✾</span>
                 <div class="core-value-text">核心價值：職場健康與活力、團體共榮，將運動融入企業文化。</div>
             </div>
             <ul class="detail-list">
@@ -100,7 +102,6 @@
             </ul>
         </section>
 
-        <!-- 底部行動 -->
         <div class="footer-action">
             <div class="footer-note">讓我們一起跑出健康快樂的每一步 ◡̈</div>
             <a href="form.html" class="cta-btn">預約一份溫暖的諮詢</a>
