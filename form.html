@@ -7,7 +7,7 @@
     <style>
         body { font-family: sans-serif; margin: 0; background-color: #ffffff; display: flex; flex-direction: column; align-items: center; }
         
-        /* 導覽列：深灰色 #333333 */
+        /* 導覽列 */
         .top-navbar {
             background-color: #333333;
             width: 100%;
@@ -28,7 +28,7 @@
             font-size: 14px;
         }
 
-        /* 奶黃色拋物線頁首：完全依照圖 IMG_5595_16.jpg */
+        /* 奶黃底頁首格式：完全依照 IMG_5595_17.jpg */
         .playground-header {
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 20%; 
@@ -68,7 +68,7 @@
             line-height: 1.6;
         }
 
-        /* 表單區域 */
+        /* 表單樣式 */
         .form-container { width: 100%; max-width: 500px; padding: 40px 35px; box-sizing: border-box; }
         .field { margin-bottom: 25px; }
         
@@ -104,12 +104,18 @@
             cursor: pointer;
         }
 
-        /* 驗證碼區域與刷新按鈕 */
-        .captcha-area { display: flex; align-items: center; gap: 12px; }
-        /* 驗證碼輸入框縮小 */
-        .captcha-input { width: 80px !important; }
-        .captcha-code { background: #f4f4f4; padding: 11px 18px; border-radius: 8px; font-weight: bold; letter-spacing: 4px; }
-        .refresh-btn { background: none; border: none; cursor: pointer; font-size: 18px; color: #888; }
+        /* 驗證碼區域：精確縮小並靠近 */
+        .captcha-area { display: flex; align-items: center; gap: 8px; }
+        .captcha-input { width: 85px !important; padding: 12px !important; }
+        .captcha-code { 
+            background: #f4f4f4; 
+            padding: 11px 15px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            letter-spacing: 3px;
+            font-size: 14px;
+        }
+        .refresh-btn { background: none; border: none; cursor: pointer; font-size: 14px; color: #888; padding: 0; }
     </style>
 </head>
 <body>
@@ -179,14 +185,12 @@
 
         <div class="field">
             <label>您的問題 / Your Inquiry</label>
-            <!-- 調整為 6 行字高度 -->
             <textarea rows="6" style="resize: none;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
         </div>
 
         <div class="field">
             <label>驗證碼 / Verification Code</label>
             <div class="captcha-area">
-                <!-- 驗證碼輸入框縮小 -->
                 <input type="text" class="captcha-input" placeholder="輸入碼">
                 <div class="captcha-code">1 8 0 X</div>
                 <button type="button" class="refresh-btn">↻</button>
