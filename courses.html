@@ -1,229 +1,87 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>課程簡介 - 跑班訓練營</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  
-
-
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; border: none; outline: none; }
-        *:before, *:after { content: none !important; display: none !important; }
-        
-        body {
-            font-family: -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
-            background-color: #ffffff;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* 區塊間的巨大白色縫隙 */
-        .wrapper { display: flex; flex-direction: column; gap: 70px; } 
-
-        .section { width: 100%; padding: 85px 25px; }
-        .container { max-width: 500px; margin: 0 auto; }
-
-        /* 顏色定義 */
-        .bg-blue { background-color: #f1f7fe; }
-        .text-blue { color: #64a7d4; }
-        .bg-red { background-color: #fff4f4; }
-        .text-orange-custom { color: #D97B30; } 
-        .bg-green { background-color: #f2f9f5; }
-        .text-green { color: #4e9a78; }
-
-        .main-title { font-size: 26px; color: #333333; font-weight: 700; margin-bottom: 8px; text-align: center; }
-        
-        /* 英文副標題超粗體 */
-        .sub-title { 
-            font-size: 15px; 
-            font-weight: 900; 
-            letter-spacing: 1.5px; 
-            margin-bottom: 45px; 
-            text-align: center; 
-            display: block; 
-        }
-
-        .card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            margin-bottom: 45px;
-            display: flex;
-            overflow: hidden;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.03);
-        }
-
-        .card-bar { width: 6px; flex-shrink: 0; border-radius: 12px 0 0 12px; }
-        .bar-blue { background-color: #64a7d4; }
-        .bar-orange { background-color: #D97B30; }
-        .bar-green { background-color: #4e9a78; }
-
-        .card-content { padding: 30px 22px; font-size: 16px; line-height: 1.8; color: #444444; }
-        .star { color: #999999; font-size: 18px; margin-right: 5px; vertical-align: middle; font-weight: normal; }
-
-        .list { list-style: none; }
-        .list-item { 
-            font-size: 14px; 
-            margin-bottom: 22px; 
-            color: #666666; 
-            display: flex; 
-            line-height: 1.6; 
-        }
-        
-        /* 點靠近文字 */
-        .dot { 
-            font-size: 20px; 
-            margin-right: 2px; 
-            line-height: 0.8; 
-            font-weight: 900; 
-        }
-
-        /* 列表標題粗體修正 (對應 IMG_5347_2.jpg) */
-        .list-title {
-            font-weight: 900; 
-            color: #1a1a1a; 
-        }
-
-        .footer { padding: 130px 20px; text-align: center; }
-        .btn { background-color: #333333; color: #ffffff; padding: 20px 80px; border-radius: 8px; display: inline-block; font-size: 16px; font-weight: 600; text-decoration: none; }
-    </style>
-</head>
-<body>
-
-<div class="wrapper">
-    <div class="section bg-blue">
-        <div class="container">
-            <h2 class="main-title">線上課表</h2>
-            <span class="sub-title text-blue">ONLINE PROGRAMMING</span>
-            <div class="card">
-                <div class="card-bar bar-blue"></div>
-                <div class="card-content"><span class="star">𖤐</span>核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。</div>
-            </div>
-            <ul class="list">
-                <li class="list-item"><span class="dot text-blue">·</span><span class="list-title">週期化備賽規劃：</span>針對目標科學化安排訓練週期。</li>
-                <li class="list-item"><span class="dot text-blue">·</span><span class="list-title">數據即時反饋：</span>遠端即時監測訓練與恢復狀態。</li>
-                <li class="list-item"><span class="dot text-blue">·</span><span class="list-title">動態調整：</span>根據回報狀態，隨時調整下週課表。</li>
-                <li class="list-item"><span class="dot text-blue">·</span><span class="list-title">線上諮詢機制：</span>定期討論訓練成效，解答疑難雜症。</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="section bg-red">
-        <div class="container">
-            <h2 class="main-title">私人教學</h2>
-            <span class="sub-title text-orange-custom">ONE-ON-ONE COACHING</span>
-            <div class="card">
-                <div class="card-bar bar-orange"></div>
-                <div class="card-content"><span class="star">𖤐</span>核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</div>
-            </div>
-            <ul class="list">
-                <li class="list-item"><span class="dot text-orange-custom">·</span><span class="list-title">跑姿校正：</span>透過錄影分析與拆解，使肌肉記憶正確動作。</li>
-                <li class="list-item"><span class="dot text-orange-custom">·</span><span class="list-title">體感配速建立：</span>協助跑者建立對各心率區間的感知。</li>
-                <li class="list-item"><span class="dot text-orange-custom">·</span><span class="list-title">動態負荷調控：</span>根據疲勞程度，即時調整訓練強度。</li>
-                <li class="list-item"><span class="dot text-orange-custom">·</span><span class="list-title">跑者專項強化引導：</span>針對薄弱環節設計輔助訓練。</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="section bg-green">
-        <div class="container">
-            <h2 class="main-title">企業包班</h2>
-            <span class="sub-title text-green">CORPORATE GROUP</span>
-            <div class="card">
-                <div class="card-bar bar-green"></div>
-                <div class="card-content"><span class="star">𖤐</span>核心價值：職場健康與活力、團體共榮，將運動融入企業文化。</div>
-            </div>
-            <ul class="list">
-                <li class="list-item"><span class="dot text-green">·</span><span class="list-title">提升團隊凝聚力：</span>挑戰目標過程中，建立跨部門情感連結。</li>
-                <li class="list-item"><span class="dot text-green">·</span><span class="list-title">企業賽事推動：</span>協助組隊參與路跑賽事，塑造品牌形象。</li>
-                <li class="list-item"><span class="dot text-green">·</span><span class="list-title">職場壓力紓解：</span>透過運動釋放壓力，提升團隊工作效率。</li>
-            </ul>
-        </div>
+<!-- 課程簡介結尾區塊 -->
+<div style="text-align: center; margin-top: 50px; padding-bottom: 50px;">
+    <p style="color: #888; font-size: 14px;">讓我們一起跑出健康快樂的每一步 ◡̈</p>
+    
+    <!-- 已刪除重複的紫色連結，僅保留咖啡色圓角按鈕樣式 -->
+    <div style="background-color: #614e1a; color: white; display: inline-block; padding: 12px 40px; border-radius: 15px; font-weight: bold; cursor: pointer; margin-top: 10px;">
+        預約一份溫暖的諮詢
     </div>
 </div>
 
-<div class="footer">
-    <p style="color:#999; font-size:14px; margin-bottom:35px;">讓我們一起跑出健康快樂的每一步 ᴗ̈</p>
-  <a href="your-page-name.html">
-  <div class="warm-button-container">
-    <a href="form.html" class="btn-warm">預約一份溫暖的諮詢</a>
-</div>
-  </style>
-    <!-- 1. 按鈕的樣式指令 -->
-<style>
-    .warm-btn-box {
-        text-align: center;
-        margin: 50px 0;
-    }
-    .my-custom-button {
-        display: inline-block;
-        background-color: #5d4a26; /* 深褐色 */
-        color: #ffffff !important;
-        padding: 15px 40px;
-        font-size: 18px;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        transition: 0.3s;
-        border: none;
-        cursor: pointer;
-    }
-    .my-custom-button:hover {
-        background-color: #4a3b1e;
-        transform: translateY(-2px);
-    }
-</style>
-
-<!-- 2. 真正的按鈕本體 -->
-<div class="warm-btn-box">
-    <a href="form.html" class="my-custom-button">預約一份溫暖的諮詢</a>
-</div>
-</style>
+<!-- 下半部表單區塊：完全依照圖二還原 -->
+<div style="background-color: #f7f1d5; border-radius: 180px 180px 0 0; padding: 60px 25px 40px 25px; margin-top: 20px; color: #614e1a;">
+    <div style="max-width: 400px; margin: 0 auto; line-height: 1.8; font-size: 14px;">
+        <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
+        <p>讓我們一起朝更好的方向邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。</p>
+        <p>希望這裡不只是網站，更是跑者們的補給站 ◡̈</p>
+        <p style="text-align: center; font-size: 12px; margin-top: 20px;">
+            ☀️ 服務時間：週一至週五 09:00 - 18:00<br>
+            跑者不休息，但小編需要一些睡眠時間
+        </p>
+    </div>
 </div>
 
-</body>
-</html>
+<div style="background-color: #fff; padding: 40px 25px;">
+    <div style="max-width: 400px; margin: 0 auto;">
+        <form style="display: flex; flex-direction: column; gap: 20px; color: #333;">
+            <!-- 姓名 -->
+            <div>
+                <label style="display: block; font-weight: bold; margin-bottom: 8px;">姓名 / Name</label>
+                <input type="text" placeholder="請輸入您的姓名" style="width: 100%; padding: 12px; border: 1px solid #eee; border-radius: 10px; background-color: #f9f9f9; box-sizing: border-box;">
+            </div>
 
-</body>
-</html>
+            <!-- 電子信箱 -->
+            <div>
+                <label style="display: block; font-weight: bold; margin-bottom: 8px;">電子信箱 / E-mail</label>
+                <input type="email" placeholder="runner@gmail.com" style="width: 100%; padding: 12px; border: 1px solid #eee; border-radius: 10px; background-color: #f9f9f9; box-sizing: border-box;">
+            </div>
 
-</body>
-</html>
+            <!-- 跑者屬性 -->
+            <div>
+                <label style="display: block; font-weight: bold; margin-bottom: 8px;">跑者屬性 / Runner Type</label>
+                <select style="width: 100%; padding: 12px; border: 1px solid #eee; border-radius: 10px; background-color: #f9f9f9; box-sizing: border-box; color: #888;">
+                    <option>請選擇 / Please Select</option>
+                </select>
+            </div>
 
-</body>
-</html>
+            <!-- 最佳成績 -->
+            <div>
+                <label style="display: block; font-weight: bold; margin-bottom: 8px;">最佳成績 / Personal Best</label>
+                <input type="text" placeholder="例如：全馬3:30:00" style="width: 100%; padding: 12px; border: 1px solid #eee; border-radius: 10px; background-color: #f9f9f9; box-sizing: border-box;">
+            </div>
 
-</body>
-</html>
+            <!-- 目標成績 -->
+            <div>
+                <label style="display: block; font-weight: bold; margin-bottom: 8px;">目標成績 / Target Goal</label>
+                <input type="text" placeholder="例如：全馬2:59:59" style="width: 100%; padding: 12px; border: 1px solid #eee; border-radius: 10px; background-color: #f9f9f9; box-sizing: border-box;">
+            </div>
 
-</body>
-</html>
-       
-</body>
-</html>
+            <!-- 穿戴配備 -->
+            <div>
+                <label style="display: block; font-weight: bold; margin-bottom: 8px;">穿戴配備 / Wearable Device</label>
+                <input type="text" placeholder="例如：Garmin, Apple Watch, Coros" style="width: 100%; padding: 12px; border: 1px solid #eee; border-radius: 10px; background-color: #f9f9f9; box-sizing: border-box;">
+            </div>
 
-</body>
-</html>
+            <!-- 您的問題 -->
+            <div>
+                <label style="display: block; font-weight: bold; margin-bottom: 8px;">您的問題 / Your Inquiry</label>
+                <textarea placeholder="每一滴汗水，都值得被聽見..." style="width: 100%; padding: 12px; border: 1px solid #eee; border-radius: 10px; background-color: #f9f9f9; box-sizing: border-box; height: 120px;"></textarea>
+            </div>
 
-</body>
-</html>
+            <!-- 驗證碼 -->
+            <div>
+                <label style="display: block; font-weight: bold; margin-bottom: 8px;">驗證碼 / Verification Code</label>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <input type="text" placeholder="輸入碼" style="width: 80px; padding: 10px; border: 1px solid #eee; border-radius: 10px; background-color: #f9f9f9;">
+                    <div style="background-color: #f0f0f0; padding: 8px 15px; border-radius: 5px; font-family: monospace; letter-spacing: 3px; font-weight: bold;">7 W 8 Q</div>
+                    <span style="font-size: 18px; cursor: pointer;">↻</span>
+                </div>
+            </div>
 
-</body>
-</html>
-
-</body>
-</html>
-
-</body>
-</html>
-
-</body>
-</html>
+            <!-- 送出按鈕 -->
+            <button type="submit" style="width: 100%; padding: 15px; background-color: #614e1a; color: white; border: none; border-radius: 15px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px;">
+                送出表單 / Submit Form
+            </button>
+        </form>
+    </div>
+</div>
