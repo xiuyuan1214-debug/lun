@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跑者能量補給站</title>
     <style>
-        /* 恢復導覽列樣式 */
+        /* 頂部導覽列樣式 */
         .top-nav {
-            background-color: #2c2c2c; /* 深灰色背景 */
+            background-color: #2c2c2c; 
             width: 100%;
             padding: 15px 0;
             display: flex;
@@ -24,11 +24,12 @@
             font-size: 16px;
             font-weight: 500;
             letter-spacing: 1px;
+            cursor: default; /* 改為預設游標，表示不可跳轉 */
         }
 
         body {
             margin: 0;
-            padding: 80px 0 20px 0; /* 預留空間給 fixed 導覽列 */
+            padding: 80px 0 20px 0; 
             background-color: #fdfcfb;
             display: flex;
             justify-content: center;
@@ -194,13 +195,13 @@
 </head>
 <body>
 
-<!-- 恢復的導覽列 -->
+<!-- 導覽列：href="javascript:void(0);" 確保點擊不跳轉 -->
 <nav class="top-nav">
-    <a href="#">教練資歷</a>
-    <a href="#">課程簡介</a>
-    <a href="#">配速工具</a>
-    <a href="#">訓練日誌</a>
-    <a href="#">賽事日誌</a>
+    <a href="javascript:void(0);">教練資歷</a>
+    <a href="javascript:void(0);">課程簡介</a>
+    <a href="javascript:void(0);">配速工具</a>
+    <a href="javascript:void(0);">訓練日誌</a>
+    <a href="javascript:void(0);">賽事日誌</a>
 </nav>
 
 <div class="main-wrapper">
