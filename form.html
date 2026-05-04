@@ -104,8 +104,10 @@
             cursor: pointer;
         }
 
-        /* 驗證碼區域與復原刷新按鈕 */
+        /* 驗證碼區域與刷新按鈕 */
         .captcha-area { display: flex; align-items: center; gap: 12px; }
+        /* 驗證碼輸入框縮小 */
+        .captcha-input { width: 80px !important; }
         .captcha-code { background: #f4f4f4; padding: 11px 18px; border-radius: 8px; font-weight: bold; letter-spacing: 4px; }
         .refresh-btn { background: none; border: none; cursor: pointer; font-size: 18px; color: #888; }
     </style>
@@ -116,7 +118,6 @@
         <div class="nav-inner">
             <a href="index.html" class="nav-link">教練資歷</a>
             <a href="courses.html" class="nav-link">課程簡介</a>
-            <!-- 恢復頁面內容連結 -->
             <a href="pace_tool.html" class="nav-link">配速工具</a>
             <a href="training_log.html" class="nav-link">訓練日誌</a>
             <a href="race_log.html" class="nav-link">賽事日誌</a>
@@ -178,13 +179,15 @@
 
         <div class="field">
             <label>您的問題 / Your Inquiry</label>
-            <textarea style="height: 120px; resize: none;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+            <!-- 調整為 6 行字高度 -->
+            <textarea rows="6" style="resize: none;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
         </div>
 
         <div class="field">
             <label>驗證碼 / Verification Code</label>
             <div class="captcha-area">
-                <input type="text" style="width: 90px;" placeholder="輸入碼">
+                <!-- 驗證碼輸入框縮小 -->
+                <input type="text" class="captcha-input" placeholder="輸入碼">
                 <div class="captcha-code">1 8 0 X</div>
                 <button type="button" class="refresh-btn">↻</button>
             </div>
