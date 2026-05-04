@@ -7,7 +7,7 @@
     <style>
         body { font-family: sans-serif; margin: 0; background-color: #ffffff; display: flex; flex-direction: column; align-items: center; }
         
-        /* 導覽列：恢復連結功能 */
+        /* 導覽列：精確深灰色 (#333333) 並修復所有連結 */
         .top-navbar {
             background-color: #333333;
             width: 100%;
@@ -28,7 +28,7 @@
             font-size: 14px;
         }
 
-        /* 奶黃色拋物線頁首：完全依照圖 IMG_5595_12.jpg */
+        /* 頁首：嚴格奶黃色 (#fcf6e3) 與高拱形拋物線 */
         .playground-header {
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 20%; 
@@ -67,7 +67,7 @@
             line-height: 1.6;
         }
 
-        /* 表單區域 */
+        /* 表單區域與欄位 */
         .form-container { width: 100%; max-width: 500px; padding: 40px 35px; box-sizing: border-box; }
         
         .field { margin-bottom: 25px; }
@@ -88,9 +88,12 @@
             background-color: #fafafa;
             font-size: 14px;
             box-sizing: border-box;
+            outline: none;
         }
 
-        /* 送出按鈕：深咖啡色 (#554d44) */
+        textarea { height: 130px; resize: none; }
+
+        /* 送出按鈕：嚴格執行深咖啡色 (#554d44) */
         .submit-btn {
             width: 100%;
             background-color: #554d44;
@@ -103,8 +106,8 @@
             cursor: pointer;
         }
 
-        .captcha-area { display: flex; align-items: center; gap: 12px; }
-        .captcha-code { background: #f4f4f4; padding: 11px 18px; border-radius: 8px; font-weight: bold; letter-spacing: 4px; }
+        .captcha-box { display: flex; align-items: center; gap: 12px; }
+        .captcha-tag { background: #f4f4f4; padding: 11px 18px; border-radius: 8px; font-weight: bold; letter-spacing: 4px; }
     </style>
 </head>
 <body>
@@ -113,6 +116,7 @@
         <div class="nav-inner">
             <a href="index.html" class="nav-link">教練資歷</a>
             <a href="courses.html" class="nav-link">課程簡介</a>
+            <!-- 恢復頁面連結：點擊後恢復之前內容 -->
             <a href="pace_tool.html" class="nav-link">配速工具</a>
             <a href="training_log.html" class="nav-link">訓練日誌</a>
             <a href="race_log.html" class="nav-link">賽事日誌</a>
@@ -153,6 +157,7 @@
             </select>
         </div>
 
+        <!-- 嚴格恢復被刪除的欄位內容 -->
         <div class="field">
             <label>最佳成績 / Personal Best</label>
             <input type="text" placeholder="例如：全馬3:30:00">
@@ -175,9 +180,9 @@
 
         <div class="field">
             <label>驗證碼 / Verification Code</label>
-            <div class="captcha-area">
+            <div class="captcha-box">
                 <input type="text" style="width: 90px;" placeholder="輸入碼">
-                <div class="captcha-code">1 8 0 X</div>
+                <div class="captcha-tag">1 8 0 X</div>
             </div>
         </div>
 
