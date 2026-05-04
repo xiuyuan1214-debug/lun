@@ -15,7 +15,7 @@
             align-items: center;
         }
 
-        /* 導覽列連結修復：指向各功能頁面 */
+        /* 導覽列連結修復：指向配速工具、訓練日誌、賽事日誌 */
         .top-navbar {
             background-color: #333333; 
             width: 100%;
@@ -29,14 +29,12 @@
             margin: 0 auto;
             display: flex;
             justify-content: space-around;
-            padding: 0 10px;
         }
         .nav-link {
             color: #ffffff;
             text-decoration: none;
             font-size: 14px;
             letter-spacing: 1px;
-            font-weight: 500;
         }
 
         .page-wrapper {
@@ -44,28 +42,27 @@
             max-width: 500px;
         }
 
-        /* 操場頁首：嚴格執行奶黃色 (#fcf6e3) 與拋物線形狀 */
+        /* 操場頁首：嚴格執行奶黃色 (#fcf6e3) 與拋物線高拱形狀 */
         .playground-header {
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 20%; 
             border-bottom-right-radius: 50% 20%;
             padding: 60px 35px 90px 35px;
             text-align: center;
-            color: #8b7355; 
         }
 
         .playground-header h1 {
+            color: #8b7355;
             font-size: 26px;
             margin: 0;
-            letter-spacing: 2px;
             font-weight: bold;
         }
 
         .en-subtitle {
+            color: #b5a442;
             font-size: 11px;
             letter-spacing: 1.5px;
             margin: 5px 0 25px 0;
-            color: #b5a442;
         }
 
         .white-cta {
@@ -77,7 +74,6 @@
             font-weight: bold;
             display: inline-block;
             margin-bottom: 35px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .copywriting {
@@ -94,7 +90,7 @@
             line-height: 1.6;
         }
 
-        /* 表單區域 */
+        /* 表單區域與配色 */
         .form-area {
             padding: 40px 35px;
         }
@@ -127,7 +123,7 @@
             resize: none;
         }
 
-        /* 送出按鈕：嚴格執行深咖啡色 (#554d44) */
+        /* 送出按鈕：精準咖啡色 (#554d44) */
         .btn-submit {
             width: 100%;
             background-color: #554d44; 
@@ -160,7 +156,7 @@
 </head>
 <body>
 
-    <!-- 導覽列：點擊後恢復各頁面內容 -->
+    <!-- 導覽列：確保連結正確以恢復頁面內容 -->
     <nav class="top-navbar">
         <div class="nav-inner">
             <a href="index.html" class="nav-link">教練資歷</a>
@@ -208,7 +204,7 @@
                     <option>請選擇 / Please Select</option>
                     <option>初階跑者 / Beginner</option>
                     <option>馬拉松跑者 / Marathoner</option>
-                    <option>超馬、越野跑者 / Ultra & Trail</option>
+                    <option>超馬、越野跑者 / Ultra & Trail Runner</option>
                 </select>
             </div>
 
