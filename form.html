@@ -35,11 +35,11 @@
             position: relative;
         }
 
-        /* 修正跑道線條：遠離外緣且嚴禁覆蓋文字 */
+        /* 修正跑道線條：嚴禁與標題/按鈕文字疊在一起，移至標題下方區域 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 35px; 
+            top: 125px; /* 下移確保不與文字疊加 */
             left: 18px; 
             right: 18px; 
             bottom: 15px; 
