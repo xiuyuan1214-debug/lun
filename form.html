@@ -35,13 +35,13 @@
             position: relative;
         }
 
-        /* 修正跑道線條：範圍加大並於中間呈現 */
+        /* 修正跑道線條：左右縮減範圍，不接觸邊緣，並維持置中 */
         .playground-header::before {
             content: "";
             position: absolute;
             top: 115px; 
-            left: 2px; 
-            right: 2px; 
+            left: 15px; /* 增加邊距以縮減左右範圍 */
+            right: 15px; /* 增加邊距以縮減左右範圍 */
             bottom: 5px; 
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-top-left-radius: 180px;
