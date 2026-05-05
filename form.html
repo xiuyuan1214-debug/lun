@@ -23,11 +23,12 @@
         }
         .nav-link { color: #ffffff; text-decoration: none; font-size: 14px; }
 
+        /* 奶黃底操場格式：縮減左右距離 */
         .playground-header {
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 25%; 
             border-bottom-right-radius: 50% 25%;
-            padding: 40px 35px 25px 35px; 
+            padding: 40px 45px 30px 45px; 
             text-align: center;
             width: 100%;
             max-width: 420px;
@@ -35,16 +36,19 @@
             position: relative;
         }
 
-        /* 跑道線條：精確避開文字，維持適當距離 */
+        /* 跑道線條：擴張至最外圍，包圍所有內容而不壓字 */
         .playground-header::before {
             content: "";
             position: absolute;
             top: 15px;
             left: 15px; 
             right: 15px; 
-            bottom: 40%; 
+            bottom: 15px; 
             border: 1px solid rgba(255, 255, 255, 0.8);
-            border-radius: 180px;
+            border-bottom-left-radius: 200px 100px; 
+            border-bottom-right-radius: 200px 100px;
+            border-top-left-radius: 200px;
+            border-top-right-radius: 200px;
             pointer-events: none;
         }
         
@@ -70,7 +74,7 @@
             color: #7a6e5d;
             text-align: left;
             margin: 0 auto;
-            max-width: 90%;
+            max-width: 100%;
         }
         .copywriting p { margin: 0 0 8px 0; } 
 
@@ -99,7 +103,6 @@
             color: #666666;
         }
 
-        /* 驗證碼框大小縮小並確保文字完整 */
         .captcha-group { display: flex; gap: 8px; align-items: center; }
         .captcha-input { 
             width: 60px !important; 
@@ -183,19 +186,19 @@
             </select>
         </div>
         <div class="field">
-            <label>跑步最佳成績 (PB)</label>
+            <label>跑步最佳成績 / Personal Best (PB)</label>
             <input type="text" placeholder="例如：全馬 3:30:00">
         </div>
         <div class="field">
-            <label>目標成績</label>
+            <label>目標成績 / Target Goal</label>
             <input type="text" placeholder="例如：全馬 2:59:59">
         </div>
         <div class="field">
-            <label>慣用穿戴配備</label>
+            <label>慣用穿戴配備 / Wearable Device</label>
             <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
         </div>
         <div class="field">
-            <label>您的問題</label>
+            <label>您的問題 / Your Message</label>
             <textarea rows="5" placeholder="每一滴汗水，都值得被聽見..."></textarea>
         </div>
         <div class="field">
