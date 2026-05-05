@@ -35,14 +35,14 @@
             position: relative;
         }
 
-        /* 再次修正跑道線條：增加偏移量以確保不壓字並遠離邊緣 */
+        /* 重新設計跑道線條：精確避開所有文字，並與邊緣保持安全間距 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 58px;
-            left: 35px; 
-            right: 35px; 
-            bottom: 25px; 
+            top: 65px;
+            left: 42px; 
+            right: 42px; 
+            bottom: 32px; 
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-top-left-radius: 180px;
             border-top-right-radius: 180px;
