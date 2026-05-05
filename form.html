@@ -28,12 +28,12 @@
             font-size: 14px;
         }
 
-        /* 奶黃底區塊：依照圖2調整形狀與縮減上方空格 */
+        /* 奶黃底區塊：恢復圖1顏色，形狀維持圖2高弧度 */
         .playground-header {
-            background-color: #f4f0a6; 
-            border-bottom-left-radius: 50% 30%; /* 恢復圖2的高弧度拋物線 */
+            background-color: #fcf6e3; /* 恢復圖1米黃色 */
+            border-bottom-left-radius: 50% 30%; 
             border-bottom-right-radius: 50% 30%;
-            padding: 25px 35px 50px 35px; /* padding-top 縮小讓標題往上移 */
+            padding: 25px 35px 25px 35px; /* 標題上移，底部縮小 */
             text-align: center;
             width: 100%;
             max-width: 500px;
@@ -48,14 +48,13 @@
             top: 10px;
             left: 10px;
             right: 10px;
-            bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            bottom: 15px; /* 線條底部同步上移 */
+            border: 1px solid rgba(255, 255, 255, 0.9);
             border-bottom-left-radius: 200px 100px;
             border-bottom-right-radius: 200px 100px;
             pointer-events: none;
         }
         
-        /* 標題與副標題：往上移並壓縮間距 */
         .title { color: #8b7355; font-size: 28px; font-weight: bold; margin: 0; letter-spacing: 2px; }
         .en-subtitle { color: #b5a442; font-size: 11px; margin: 2px 0 10px 0; letter-spacing: 3px; }
         
@@ -81,14 +80,14 @@
             max-width: 88%;
         }
 
-        /* 服務時間：下方多增加一些空格 */
+        /* 服務時間：下方空格調整縮小 */
         .footer-info {
             font-size: 10px;
             color: #b5a442;
             line-height: 1.3;
             opacity: 0.8;
             margin-top: 5px;
-            padding-bottom: 30px; /* 增加下方空格距離 */
+            padding-bottom: 15px; /* 縮減下方多餘空格 */
         }
 
         /* 表單區域：維持原狀不准動 */
