@@ -29,49 +29,63 @@
             margin: 0 auto;
         }
 
-        /* 奶黃底操場格式容器 */
+        /* 奶黃底操場格式 Header */
         .stadium-header {
-            background-color: #FFF9E7;
-            border-radius: 120px;
+            background-color: #FFF9E7; /* 奶黃底 */
+            border-radius: 120px; /* 操場格式 */
             padding: 40px 30px;
             text-align: center;
             position: relative;
             margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        .title-main { font-size: 28px; font-weight: bold; color: #8D7353; margin: 0; letter-spacing: 2px; }
+        .title-main { font-size: 28px; font-weight: bold; margin: 0; letter-spacing: 2px; }
         .title-sub { font-size: 14px; letter-spacing: 4px; margin: 5px 0 20px 0; color: #C5B08A; }
-        .highlight-btn { background-color: #ffffff; color: #D28B52; padding: 8px 25px; border-radius: 20px; display: inline-block; font-weight: bold; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        
+        .highlight-tag { 
+            background-color: #ffffff; 
+            color: #D28B52; 
+            padding: 8px 25px; 
+            border-radius: 20px; 
+            font-weight: bold; 
+            margin-bottom: 15px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+        }
 
-        /* 指令執行：內部細線垂直置中 */
+        /* 指令執行：線條垂直置中 */
         .inner-line {
             width: 85%;
             height: 1px;
             background-color: #E8E0C5;
-            margin: 15px auto;
+            margin: 10px 0;
         }
 
-        .description { font-size: 13px; line-height: 1.8; color: #8D7353; text-align: justify; margin: 15px 0; }
-        .service-time-small { font-size: 11px; color: #C5B08A; margin-top: 15px; line-height: 1.5; }
+        .description { font-size: 13px; line-height: 1.8; text-align: justify; margin: 15px 0; }
+        .service-time-small { font-size: 11px; color: #C5B08A; margin-top: 10px; line-height: 1.5; }
 
-        /* 完整表單樣式復原 */
-        .form-label { font-weight: bold; font-size: 16px; margin-bottom: 10px; display: block; color: #8D7353; }
-        .input-field {
+        /* 表單欄位樣式 */
+        .form-label { font-weight: bold; font-size: 16px; margin-bottom: 8px; display: block; }
+        .input-box {
             width: 100%;
             padding: 12px;
             border: 1px solid #F2F2F2;
             background-color: #F9F9F9;
             border-radius: 10px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             box-sizing: border-box;
             font-size: 14px;
+            color: #333;
         }
-        
-        .captcha-container { display: flex; align-items: center; gap: 10px; margin-bottom: 25px; }
-        .captcha-input { width: 80px !important; margin-bottom: 0; }
-        .refresh-symbol { cursor: pointer; font-size: 20px; font-weight: bold; color: #8D7353; }
 
-        button {
+        .captcha-area { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+        .captcha-input { width: 80px !important; margin-bottom: 0; }
+        .refresh-btn { cursor: pointer; font-size: 20px; font-weight: bold; }
+
+        .submit-btn {
             width: 100%;
             padding: 15px;
             background-color: #8D7353;
@@ -87,20 +101,20 @@
 <body>
 
     <div class="nav-bar">
-        <div>教練資歷 / Coach Profile</div>
-        <div>課程簡介 / Course</div>
-        <div>配速工具 / Pace Tool</div>
-        <div>訓練日誌 / Training Log</div>
-        <div>賽事日誌 / Race Log</div>
+        <div>教練資歷</div>
+        <div>課程簡介</div>
+        <div>配速工具</div>
+        <div>訓練日誌</div>
+        <div>賽事日誌</div>
     </div>
 
     <div class="main-container">
         <div class="stadium-header">
             <h1 class="title-main">跑者服務中心</h1>
             <p class="title-sub">RUNNER SERVICE CENTER</p>
-            <div class="highlight-btn">讓我們聽見您的腳步聲</div>
+            <div class="highlight-tag">讓我們聽見您的腳步聲</div>
             
-            <div class="inner-line"></div> <!-- 線條已置中 -->
+            <div class="inner-line"></div> <!-- 已置中線條 -->
 
             <div class="description">
                 無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。<br><br>
@@ -117,40 +131,40 @@
 
         <form>
             <label class="form-label">姓名 / Name</label>
-            <input type="text" class="input-field" placeholder="請輸入您的姓名">
+            <input type="text" class="input-box" placeholder="請輸入您的姓名">
 
             <label class="form-label">電子信箱 / E-mail</label>
-            <input type="email" class="input-field" placeholder="runner@example.com">
+            <input type="email" class="input-box" placeholder="runner@example.com">
 
             <label class="form-label">跑者屬性 / Runner Type</label>
-            <select class="input-field">
+            <select class="input-box">
                 <option value="">請選擇 / Please Select</option>
-                <option>新手跑者 / Newbie</option>
-                <option>半馬跑者 / Half Marathon</option>
-                <option>全馬跑者 / Full Marathon</option>
-                <option>專業教練 / Coach</option>
+                <option>新手跑者</option>
+                <option>半馬跑者</option>
+                <option>全馬跑者</option>
+                <option>專業教練</option>
             </select>
 
             <label class="form-label">個人最佳成績 (PB) / Personal Best</label>
-            <input type="text" class="input-field" placeholder="HH:MM:SS">
+            <input type="text" class="input-box" placeholder="HH:MM:SS">
 
             <label class="form-label">目標挑戰 / Target Goal</label>
-            <input type="text" class="input-field" placeholder="欲挑戰的賽事或成績">
+            <input type="text" class="input-box" placeholder="欲挑戰的賽事或成績">
 
             <label class="form-label">穿戴裝置 / Wearable Device</label>
-            <input type="text" class="input-field" placeholder="Garmin, Apple Watch, etc.">
+            <input type="text" class="input-box" placeholder="Garmin, Apple Watch, etc.">
 
             <label class="form-label">諮詢內容 / Inquiry</label>
-            <textarea class="input-field" rows="5" style="height: auto;"></textarea>
+            <textarea class="input-box" rows="5" style="height:auto;"></textarea>
 
             <label class="form-label">驗證碼 / Verification Code</label>
-            <div class="captcha-container">
-                <input type="text" class="input-field captcha-input">
-                <span style="background: #eee; padding: 5px 15px; border-radius: 5px; font-weight: bold; color: #333;">8A2F</span>
-                <span class="refresh-symbol">↻</span>
+            <div class="captcha-area">
+                <input type="text" class="input-box captcha-input">
+                <span style="background:#eee; padding:5px 15px; border-radius:5px; font-weight:bold;">8A2F</span>
+                <span class="refresh-btn">↻</span>
             </div>
 
-            <button type="submit">送出諮詢 / Submit</button>
+            <button type="submit" class="submit-btn">送出諮詢 / Submit</button>
         </form>
     </div>
 
