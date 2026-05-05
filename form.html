@@ -35,11 +35,12 @@
             padding: 20px;
         }
 
-        /* 奶黃底：操場形狀、增加上下間距、維持合適行距 */
+        /* 奶黃底：操場形狀、外圍細框、合適間距 */
         .stadium-header {
             background-color: #FFF9E7;
+            border: 1px solid #E6D5B8; /* 加上細框 */
             border-radius: 200px; 
-            padding: 55px 60px;   /* 增加上下間距 (55px) */
+            padding: 55px 60px;   
             text-align: center;
             margin-bottom: 30px;
             line-height: 1.8;     
@@ -47,14 +48,15 @@
         .title-main { font-size: 26px; font-weight: bold; margin: 0; }
         .title-sub { font-size: 14px; letter-spacing: 2px; margin: 5px 0 15px 0; color: #C5B08A; }
         
+        /* 文字放大修正 */
         .highlight-box {
             background-color: #ffffff;
             color: #D28B52;
-            padding: 5px 12px; 
+            padding: 8px 16px; 
             border-radius: 20px;
             display: inline-block;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 16px; /* 再大一點 */
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             margin-bottom: 15px;
             line-height: 1;
@@ -88,20 +90,21 @@
             font-size: 14px;
         }
 
-        /* 驗證碼區塊：顯示框左右距離再縮減 */
+        /* 驗證碼區塊：↻ 距離顯示框更近 */
         .captcha-container {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 4px; /* 縮減間距到 4px */
         }
         .captcha-input {
             width: 75px !important;
             padding: 8px !important;
             text-align: center;
+            margin-right: 4px;
         }
         .captcha-display {
             background-color: #E8E8E8; 
-            padding: 4px 6px; /* 左右距離再縮減 (由 10px 降至 6px) */
+            padding: 4px 6px; 
             border-radius: 6px;
             font-weight: bold;
             letter-spacing: 2px;
@@ -114,6 +117,7 @@
             cursor: pointer;
             border: none;
             background: none;
+            padding: 0 2px; /* 縮減內距 */
         }
 
         .submit-btn {
