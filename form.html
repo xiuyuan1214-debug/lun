@@ -12,7 +12,7 @@
             color: #8D7353;
         }
 
-        /* 導覽列：英文縮小至底部、刪除 / 符號 */
+        /* 導覽列：英文置底、無斜線 */
         .nav-bar {
             background-color: #333;
             display: flex;
@@ -30,22 +30,22 @@
         .nav-bar .en { font-size: 10px; opacity: 0.9; margin-top: 2px; text-transform: uppercase; }
 
         .main-container {
-            max-width: 600px;
+            max-width: 500px; /* 縮減整體左右距離，讓輸入框看起來更窄 */
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* 奶黃底：操場形狀相似、縮小行距、無內線條 */
+        /* 奶黃底：操場形狀相似、增加行距、無內線條 */
         .stadium-header {
             background-color: #FFF9E7;
-            border-radius: 150px; /* 調整圓角以符合操場格式 */
-            padding: 15px 40px; 
+            border-radius: 200px; /* 極大圓角以形成操場跑道形狀 */
+            padding: 40px 60px;   /* 增加內距以支撐操場形狀 */
             text-align: center;
             margin-bottom: 30px;
-            line-height: 1.2; /* 進一步縮小行字間上下間距 */
+            line-height: 1.8;     /* 增加行字間上下間距，避免密集 */
         }
         .title-main { font-size: 26px; font-weight: bold; margin: 0; }
-        .title-sub { font-size: 14px; letter-spacing: 2px; margin: 2px 0 8px 0; color: #C5B08A; }
+        .title-sub { font-size: 14px; letter-spacing: 2px; margin: 5px 0 15px 0; color: #C5B08A; }
         
         .highlight-box {
             background-color: #ffffff;
@@ -56,38 +56,39 @@
             font-weight: bold;
             font-size: 14px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            margin-bottom: 8px;
+            margin-bottom: 15px;
+            line-height: 1;
         }
 
         .description {
             font-size: 13px;
             text-align: justify;
-            margin: 8px 0;
+            margin: 15px 0;
             color: #8D7353;
         }
 
         .service-time {
             font-size: 11px;
             color: #C5B08A;
-            margin-top: 4px; 
-            line-height: 1.2;
+            margin-top: 10px; 
+            line-height: 1.5;
         }
 
-        /* 輸入框配色深一點 */
+        /* 輸入框樣式與配色 */
         .form-group { margin-bottom: 25px; }
         .form-label { font-weight: bold; font-size: 15px; margin-bottom: 10px; display: block; color: #8D7353; }
         .input-box {
             width: 100%;
             padding: 14px;
             border: 1px solid #F5EEDB;
-            background-color: #F9F5EA; /* 稍微加深的奶油灰 */
+            background-color: #F9F5EA; 
             border-radius: 12px;
             box-sizing: border-box;
             color: #333;
             font-size: 14px;
         }
 
-        /* 驗證碼顯示框再縮小 */
+        /* 驗證碼區塊 */
         .captcha-container {
             display: flex;
             align-items: center;
@@ -100,13 +101,12 @@
         }
         .captcha-display {
             background-color: #E8E8E8; 
-            padding: 4px 10px; /* 再縮小上下左右 */
+            padding: 4px 10px;
             border-radius: 6px;
             font-weight: bold;
             letter-spacing: 2px;
             color: #333;
             font-size: 13px;
-            user-select: none;
         }
         .refresh-btn {
             font-size: 18px;
@@ -114,7 +114,6 @@
             cursor: pointer;
             border: none;
             background: none;
-            padding: 0;
         }
 
         .submit-btn {
@@ -218,8 +217,7 @@
         function refreshCaptcha() {
             const codes = ['C 2 L 2', 'R 8 T 4', 'P 9 X 1', 'M 5 K 7', 'A 3 Q 6'];
             const display = document.getElementById('captcha');
-            let newCode = codes[Math.floor(Math.random() * codes.length)];
-            display.innerText = newCode;
+            display.innerText = codes[Math.floor(Math.random() * codes.length)];
         }
     </script>
 
