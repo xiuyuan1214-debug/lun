@@ -1,18 +1,148 @@
-<!-- 僅針對線條位置進行 CSS 修正 -->
-<style>
-  /* 確保奶黃底容器為 Flex 並將內容完全置中 */
-  .stadium-header {
-    background-color: #FFFDD0; /* 奶黃底 */
-    border-radius: 50px; /* 操場格式 */
-    display: flex;
-    align-items: center; /* 垂直置中：確保內部線條往上移至中心 */
-    justify-content: center; /* 水平置中 */
-    /* 其餘高度與寬度維持原狀 */
-  }
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跑者服務中心</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
 
-  /* 線條本身的調整 */
-  .inner-line {
-    margin: 0 auto; /* 移除可能導致偏移的上下 margin */
-    /* 其餘樣式不准變動 */
-  }
-</style>
+        /* 奶黃底操場格式 Header */
+        .stadium-header {
+            background-color: #FFFDD0; /* 奶黃底 */
+            border: 2px solid #000;
+            border-radius: 100px; /* 操場圓角格式 */
+            width: 100%;
+            max-width: 800px;
+            height: 120px;
+            margin: 0 auto 30px auto;
+            
+            /* 執行指令：將內部內容往上移至垂直置中 */
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            position: relative;
+        }
+
+        /* 內部線條 */
+        .inner-line {
+            width: 90%;
+            height: 2px;
+            background-color: #000;
+            /* 移除任何可能造成偏移的 margin，確保由父容器 Flex 置中 */
+            margin: 0; 
+        }
+
+        .header-title {
+            position: absolute;
+            top: -15px;
+            background-color: #f4f4f4;
+            padding: 0 15px;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        /* 表單區塊維持原樣 */
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .captcha-input {
+            width: 80px !important; /* 依照先前指令縮小寬度 */
+        }
+
+        .refresh-btn {
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .service-time {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 跑者服務中心 Header -->
+    <div class="stadium-header">
+        <div class="header-title">跑者服務中心 / Runner Service Center</div>
+        <!-- 執行指令：此線條已置中 -->
+        <div class="inner-line"></div>
+    </div>
+
+    <div class="form-container">
+        <form>
+            <div class="form-group">
+                <label>姓名 / Name</label>
+                <input type="text" placeholder="請輸入姓名">
+            </div>
+
+            <div class="form-group">
+                <label>電子信箱 / E-mail</label>
+                <input type="email" placeholder="example@mail.com">
+            </div>
+
+            <div class="form-group">
+                <label>跑者屬性 / Runner Attributes</label>
+                <select>
+                    <option>新手跑者</option>
+                    <option>半馬跑者</option>
+                    <option>全馬跑者</option>
+                    <option>專業教練</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>驗證碼 / Verification Code</label>
+                <div class="captcha-container">
+                    <input type="text" class="captcha-input">
+                    <span style="background: #eee; padding: 5px 10px;">8A2F</span>
+                    <span class="refresh-btn">↻</span> <!-- 重新整理符號 -->
+                </div>
+            </div>
+
+            <button type="submit" style="width: 100%; padding: 10px; background: #333; color: #fff; border: none; cursor: pointer;">送出諮詢</button>
+        </form>
+
+        <div class="service-time">
+            週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
+        </div>
+    </div>
+
+</body>
+</html>
