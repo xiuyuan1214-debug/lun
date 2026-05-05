@@ -35,14 +35,14 @@
             position: relative;
         }
 
-        /* 修正跑道線條：遠離外框且完全不壓文字 */
+        /* 調整跑道線條：優化與邊框及文字的距離 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 12px;
-            left: 12px; 
-            right: 12px; 
-            bottom: 12px; 
+            top: 10px;
+            left: 10px; 
+            right: 10px; 
+            bottom: 10px; 
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-top-left-radius: 180px;
             border-top-right-radius: 180px;
@@ -109,7 +109,6 @@
 
         .captcha-group { display: flex; gap: 8px; align-items: center; }
         
-        /* 縮小驗證碼框體大小 */
         .captcha-input { 
             height: 24px !important; 
             width: 50px !important; 
@@ -212,7 +211,7 @@
             <label>驗證碼 / Verification Code</label>
             <div class="captcha-group">
                 <input type="text" class="captcha-input" placeholder="驗證碼">
-                <div class="captcha-img" id="captcha">X 4 K 9</div>
+                <div class="captcha-img" id="captcha">R 8 T 2</div>
                 <span class="refresh-icon" onclick="refreshCaptcha()">↻</span>
             </div>
         </div>
