@@ -43,15 +43,16 @@
             margin-bottom: 25px;
         }
         
-        /* 標題與英文在同一行 */
+        /* 標題與英文縮小至同一行 */
         .title-group {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
+            align-items: baseline;
+            gap: 8px;
             margin-bottom: 10px;
         }
-        .title-main { font-size: 26px; font-weight: bold; margin: 0; }
-        .title-sub-en { font-size: 14px; letter-spacing: 2px; margin: 0; color: #C5B08A; text-transform: uppercase; }
+        .title-main { font-size: 22px; font-weight: bold; margin: 0; }
+        .title-sub-en { font-size: 11px; letter-spacing: 1px; margin: 0; color: #C5B08A; text-transform: uppercase; }
         
         .highlight-box {
             background-color: #ffffff;
@@ -85,7 +86,6 @@
         .form-group { margin-bottom: 15px; }
         .form-label { font-weight: bold; font-size: 14px; margin-bottom: 5px; display: block; color: #8D7353; }
         
-        /* 恢復原狀的輸入框 */
         .input-box {
             width: 100%;
             padding: 6px 12px; 
@@ -97,38 +97,39 @@
             font-size: 13px;
         }
         
-        /* 僅「您的問題」增加高度 */
         .input-box-large {
             padding: 12px 14px;
             font-size: 14px;
         }
 
+        /* 驗證碼區塊：距離接近 */
         .captcha-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 4px; /* 縮小間距 */
         }
         .captcha-input {
-            width: 80px !important;
+            width: 70px !important;
             padding: 6px 8px !important;
             text-align: center;
         }
         .captcha-display {
             background-color: #E8E8E8; 
-            padding: 6px 12px; 
+            padding: 6px 10px; 
             border-radius: 6px;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             color: #333;
-            font-size: 13px;
+            font-size: 12px;
         }
         .refresh-btn {
-            font-size: 18px;
+            font-size: 16px;
             color: #8D7353;
             cursor: pointer;
             border: none;
             background: none;
             padding: 0;
+            margin-left: -2px;
         }
 
         .submit-btn {
@@ -215,7 +216,6 @@
 
             <div class="form-group">
                 <label class="form-label">您的問題 / Your Inquiry</label>
-                <!-- 僅此處增加高度 -->
                 <textarea class="input-box input-box-large" rows="5" placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
 
