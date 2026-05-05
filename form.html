@@ -23,7 +23,7 @@
         }
         .nav-link { color: #ffffff; text-decoration: none; font-size: 14px; }
 
-        /* 奶黃底操場格式：完全參照 IMG_5595_9.jpeg */
+        /* 奶黃底操場格式：嚴格參照 IMG_5595_9.jpeg */
         .playground-header {
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 25%; 
@@ -36,16 +36,16 @@
             position: relative;
         }
 
-        /* 跑道線條：調整至外圍，底部距離 20% 徹底避開文字 */
+        /* 跑道線條：橢圓形狀，底部大幅上提，避開文字 */
         .playground-header::before {
             content: "";
             position: absolute;
             top: 15px;
-            left: 20px; 
-            right: 20px; 
-            bottom: 20%; 
+            left: 15px; 
+            right: 15px; 
+            bottom: 35%; 
             border: 1px solid rgba(255, 255, 255, 0.9);
-            border-radius: 180px;
+            border-radius: 200px;
             pointer-events: none;
         }
         
@@ -65,7 +65,6 @@
             font-size: 18px;
         }
 
-        /* 文字間距離：參照照片調整為 8px */
         .copywriting {
             font-size: 13.5px;
             line-height: 1.7;
@@ -101,6 +100,7 @@
             color: #666666;
         }
 
+        /* 驗證碼框大小復原 */
         .captcha-group { display: flex; gap: 8px; align-items: center; }
         .captcha-input { width: 80px !important; flex: none !important; }
         .captcha-img {
@@ -116,7 +116,6 @@
         }
         .refresh-icon { cursor: pointer; color: #8b7355; font-size: 18px; }
 
-        /* 按鈕顏色復原至 #554d44 */
         .submit-btn {
             width: 100%;
             background-color: #554d44;
@@ -159,25 +158,44 @@
     </header>
 
     <div class="form-container">
-        <div class="field"><label>姓名 / Name</label><input type="text"></div>
-        <div class="field"><label>電子信箱 / E-mail</label><input type="email"></div>
+        <div class="field">
+            <label>姓名 / Name</label>
+            <input type="text" placeholder="請輸入您的姓名">
+        </div>
+        <div class="field">
+            <label>電子信箱 / E-mail</label>
+            <input type="email" placeholder="runner@example.com">
+        </div>
         <div class="field">
             <label>跑者屬性 / Runner Type</label>
             <select>
-                <option>新手跑者 / Beginner Runner</option>
-                <option>半馬跑者 / Half Marathon Runner</option>
-                <option>全馬跑者 / Full Marathon Runner</option>
-                <option>超馬/越野跑者 / Ultra & Trail Runner</option>
+                <option value="">請選擇 / Please Select</option>
+                <option value="beginner">新手跑者 / Beginner Runner</option>
+                <option value="half-marathon">半馬跑者 / Half Marathon Runner</option>
+                <option value="marathon">全馬跑者 / Full Marathon Runner</option>
+                <option value="ultra-trail">超馬/越野跑者 / Ultra & Trail Runner</option>
             </select>
         </div>
-        <div class="field"><label>跑步最佳成績 (PB)</label><input type="text"></div>
-        <div class="field"><label>目標成績</label><input type="text"></div>
-        <div class="field"><label>慣用穿戴配備</label><input type="text"></div>
-        <div class="field"><label>您的問題</label><textarea rows="5"></textarea></div>
+        <div class="field">
+            <label>跑步最佳成績 (PB)</label>
+            <input type="text" placeholder="例如：全馬 3:30:00">
+        </div>
+        <div class="field">
+            <label>目標成績</label>
+            <input type="text" placeholder="例如：全馬 2:59:59">
+        </div>
+        <div class="field">
+            <label>慣用穿戴配備</label>
+            <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
+        </div>
+        <div class="field">
+            <label>您的問題</label>
+            <textarea rows="5" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+        </div>
         <div class="field">
             <label>驗證碼 / Verification Code</label>
             <div class="captcha-group">
-                <input type="text" class="captcha-input">
+                <input type="text" class="captcha-input" placeholder="驗證碼">
                 <div class="captcha-img">R 8 N 2</div>
                 <span class="refresh-icon">↻</span>
             </div>
