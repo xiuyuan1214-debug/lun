@@ -12,7 +12,7 @@
             color: #8D7353;
         }
 
-        /* 導覽列修正：連結正確跳轉、英文置底、刪除 / 符號 */
+        /* 最上層按鈕按跳轉正確頁面 */
         .nav-bar {
             background-color: #333;
             display: flex;
@@ -35,72 +35,86 @@
             padding: 20px;
         }
 
-        /* 標題區：奶黃底、無內線條、縮小上空格 */
+        /* 奶黃底操場格式修正 (刪除內線條、縮小上空格、縮小行距) */
         .stadium-header {
             background-color: #FFF9E7;
             border-radius: 120px;
-            padding: 20px 30px;
+            padding: 15px 30px; 
             text-align: center;
             margin-bottom: 30px;
+            line-height: 1.4; /* 縮小行字間上下間距 */
         }
-        .title-main { font-size: 26px; font-weight: bold; margin: 0; }
-        .title-sub { font-size: 14px; letter-spacing: 2px; margin: 5px 0 15px 0; color: #C5B08A; }
+        .title-main { font-size: 26px; font-weight: bold; margin: 0; color: #8D7353; }
+        .title-sub { font-size: 14px; letter-spacing: 2px; margin: 2px 0 10px 0; color: #C5B08A; }
         
+        /* 框框左右距離縮減 */
         .highlight-box {
             background-color: #ffffff;
             color: #D28B52;
-            padding: 8px 15px; /* 縮減左右距離 */
+            padding: 6px 12px; 
             border-radius: 20px;
             display: inline-block;
             font-weight: bold;
             font-size: 14px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
-        .description { font-size: 13px; line-height: 1.8; text-align: justify; margin: 15px 0; }
-        
-        .service-time { font-size: 11px; color: #C5B08A; margin-top: 5px; line-height: 1.5; }
+        /* 奶黃底內容文字完整復原 */
+        .description {
+            font-size: 13px;
+            text-align: justify;
+            margin: 10px 0;
+            color: #8D7353;
+        }
 
-        /* 表單與輸入框配色復原 */
+        /* 服務時間上層空格縮小 */
+        .service-time {
+            font-size: 11px;
+            color: #C5B08A;
+            margin-top: 5px; 
+            line-height: 1.3;
+        }
+
+        /* 所有配色跟照片一樣 (圖1) */
         .form-group { margin-bottom: 25px; }
         .form-label { font-weight: bold; font-size: 15px; margin-bottom: 10px; display: block; color: #8D7353; }
         .input-box {
             width: 100%;
             padding: 14px;
-            border: 1px solid #F0F0F0;
-            background-color: #F8F8F8; /* 淺灰底色 */
+            border: 1px solid #FDF8ED;
+            background-color: #FFFDF9; /* 對齊照片的淡奶油配色 */
             border-radius: 12px;
             box-sizing: border-box;
             color: #333;
             font-size: 14px;
         }
+        .input-box::placeholder { color: #C0C0C0; }
 
-        /* 驗證碼區塊大小與配色修正 */
+        /* 驗證碼顯示框上下左右縮小 */
         .captcha-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         .captcha-input {
-            width: 85px !important;
-            padding: 12px !important;
+            width: 80px !important;
+            padding: 8px !important;
             text-align: center;
         }
         .captcha-display {
-            background-color: #EEEEEE; 
-            padding: 12px 20px;
-            border-radius: 10px;
+            background-color: #F0F0F0; 
+            padding: 6px 12px; /* 上下左右縮小 */
+            border-radius: 8px;
             font-weight: bold;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             color: #333;
             font-size: 14px;
         }
         .refresh-btn {
-            font-size: 20px;
+            font-size: 18px;
             color: #8D7353;
             cursor: pointer;
-            user-select: none;
         }
 
         .submit-btn {
@@ -124,7 +138,6 @@
         <a href="tools.html"><span class="cn">配速工具</span><span class="en">Pace Tool</span></a>
         <a href="training.html"><span class="cn">訓練日誌</span><span class="en">Training Log</span></a>
         <a href="match.html"><span class="cn">賽事日誌</span><span class="en">Race Log</span></a>
-        <a href="form.html"><span class="cn">補給站</span><span class="en">Station</span></a>
     </nav>
 
     <div class="main-container">
@@ -132,18 +145,21 @@
             <h1 class="title-main">跑者能量補給站</h1>
             <p class="title-sub">RUNNERS ENERGY STATION</p>
             <div class="highlight-box">讓我們聽見您的腳步聲</div>
+            
             <div class="description">
                 無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。<br><br>
+                您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。<br><br>
                 讓我們一起朝更好的方向邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。<br><br>
-                希望這裡不只是網站，更是跑者們的補給站ᴗ̈
+                希望這裡不只是網站，更是跑者們的補給站。
             </div>
+
             <div class="service-time">
                 服務時間：週一至週五 09:00-18:00<br>
                 （跑者不休息，但小編需要一些運動時間)
             </div>
         </div>
 
-        <form>
+        <form action="form.html">
             <div class="form-group">
                 <label class="form-label">姓名 / Name</label>
                 <input type="text" class="input-box" placeholder="請輸入您的姓名">
