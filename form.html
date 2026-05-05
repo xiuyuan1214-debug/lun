@@ -101,16 +101,17 @@
             color: #666666;
         }
 
-        /* 調整驗證碼框大小與高度，恢復寬度 */
+        /* 驗證碼框：寬度減少至 65px，高度維持 30px */
         .captcha-group { display: flex; gap: 10px; align-items: center; }
         .captcha-input { 
             height: 30px !important; 
-            width: 100px !important; 
-            padding: 0 10px !important; 
+            width: 65px !important; 
+            padding: 0 5px !important; 
+            text-align: center;
         }
         .captcha-img {
             height: 30px;
-            width: 100px;
+            width: 65px;
             background-color: #e0e0e0;
             border-radius: 4px;
             display: flex;
@@ -119,10 +120,9 @@
             font-style: italic;
             color: #8b7355;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 13px;
         }
-        .refresh-icon { cursor: pointer; color: #8b7355; font-size: 20px; transition: transform 0.2s; }
-        .refresh-icon:active { transform: rotate(90deg); }
+        .refresh-icon { cursor: pointer; color: #8b7355; font-size: 20px; }
 
         .submit-btn {
             width: 100%;
@@ -204,11 +204,11 @@
             <label>驗證碼 / Verification Code</label>
             <div class="captcha-group">
                 <input type="text" class="captcha-input" placeholder="驗證碼">
-                <div class="captcha-img" id="captcha-box">A 7 B 9</div>
-                <span class="refresh-icon" onclick="location.reload()">↻</span>
+                <div class="captcha-img">A 7 B 9</div>
+                <span class="refresh-icon" onclick="window.location.reload();">↻</span>
             </div>
         </div>
-        <button type="button" class="submit-btn" onclick="alert('表單已模擬送出！')">送出表單 / Submit Form</button>
+        <button type="button" class="submit-btn" onclick="alert('表單已送出！')">送出表單 / Submit Form</button>
     </div>
 
 </body>
