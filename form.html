@@ -35,14 +35,14 @@
             position: relative;
         }
 
-        /* 修正跑道線條位置，避免壓到文字 */
+        /* 修正跑道線條至最外緣，確保不壓到文字 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 8px;
-            left: 8px; 
-            right: 8px; 
-            bottom: 8px; 
+            top: 4px;
+            left: 4px; 
+            right: 4px; 
+            bottom: 4px; 
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-top-left-radius: 180px;
             border-top-right-radius: 180px;
@@ -54,11 +54,11 @@
         .title { color: #8b7355; font-size: 28px; font-weight: bold; margin: 0; letter-spacing: 2px; }
         .en-subtitle { color: #b5a442; font-size: 11px; margin: 2px 0 15px 0; letter-spacing: 3px; }
         
-        /* 縮減按鈕框大小至合適比例 */
+        /* 縮減按鈕左右框線大小 */
         .cta-button {
             background-color: #ffffff;
             color: #d47a3c; 
-            padding: 4px 18px;
+            padding: 4px 12px;
             border-radius: 35px;
             font-weight: bold;
             display: inline-block;
