@@ -35,14 +35,14 @@
             position: relative;
         }
 
-        /* 最終修正跑道線條：增加邊距以徹底遠離文字與邊緣 */
+        /* 再次修正跑道線條：增加偏移量以確保不壓字並遠離邊緣 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 52px;
-            left: 30px; 
-            right: 30px; 
-            bottom: 22px; 
+            top: 58px;
+            left: 35px; 
+            right: 35px; 
+            bottom: 25px; 
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-top-left-radius: 180px;
             border-top-right-radius: 180px;
@@ -213,7 +213,7 @@
             <label>驗證碼 / Verification Code</label>
             <div class="captcha-group">
                 <input type="text" class="captcha-input" placeholder="驗證碼">
-                <div class="captcha-img" id="captcha">R 8 T 2</div>
+                <div class="captcha-img" id="captcha">C 2 L 2</div>
                 <span class="refresh-icon" onclick="refreshCaptcha()">↻</span>
             </div>
         </div>
