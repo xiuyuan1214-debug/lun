@@ -34,7 +34,6 @@
             padding: 20px;
         }
 
-        /* 奶黃底：操場形狀、外圍細框 */
         .stadium-header {
             background-color: #FFF9E7;
             border: 1px solid #E6D5B8;
@@ -44,7 +43,10 @@
             margin-bottom: 25px;
         }
         .title-main { font-size: 26px; font-weight: bold; margin: 0; }
-        .title-sub { font-size: 14px; letter-spacing: 2px; margin: 5px 0 10px 0; color: #C5B08A; }
+        
+        /* 復原：跑者能量補給站下方英文 */
+        .title-sub-en { font-size: 14px; letter-spacing: 2px; margin: 5px 0 2px 0; color: #C5B08A; text-transform: uppercase; }
+        .title-sub-cn { font-size: 14px; letter-spacing: 2px; margin: 0 0 10px 0; color: #C5B08A; }
         
         .highlight-box {
             background-color: #ffffff;
@@ -55,7 +57,7 @@
             font-weight: bold;
             font-size: 16px; 
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            margin-bottom: 5px; /* 紅色打勾處：縮短與下方文字的距離 */
+            margin-bottom: 5px;
             line-height: 1;
         }
 
@@ -66,9 +68,7 @@
             color: #8D7353;
             line-height: 1.6;
         }
-        .description p {
-            margin: 12px 0; 
-        }
+        .description p { margin: 12px 0; }
 
         .service-time {
             font-size: 10px;
@@ -79,51 +79,56 @@
 
         .form-group { margin-bottom: 15px; }
         .form-label { font-weight: bold; font-size: 14px; margin-bottom: 5px; display: block; color: #8D7353; }
+        
+        /* 輸入框高度增加 */
         .input-box {
             width: 100%;
-            padding: 6px 12px;
+            padding: 12px 14px; 
             border: 1px solid #F5EEDB;
             background-color: #F9F5EA; 
             border-radius: 10px;
             box-sizing: border-box;
             color: #333;
-            font-size: 13px;
+            font-size: 14px;
         }
 
-        /* 驗證碼區塊：↻ 貼近顯示框 */
+        /* 驗證碼區塊：間距加大並統一 */
         .captcha-container {
             display: flex;
             align-items: center;
-            gap: 0px; /* 移除間距 */
+            gap: 12px; /* 統一間距 */
         }
         .captcha-input {
-            width: 60px !important;
-            padding: 4px 8px !important;
+            width: 80px !important;
+            padding: 10px 8px !important;
             text-align: center;
-            margin-right: 4px;
         }
         .captcha-display {
             background-color: #E8E8E8; 
-            padding: 2px 4px; 
-            border-radius: 4px;
+            padding: 8px 12px; 
+            border-radius: 6px;
             font-weight: bold;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             color: #333;
-            font-size: 10px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .refresh-btn {
-            font-size: 14px;
+            font-size: 18px;
             color: #8D7353;
             cursor: pointer;
             border: none;
             background: none;
             padding: 0;
-            margin-left: -2px; /* 讓圖示更接近顯示框 */
+            display: flex;
+            align-items: center;
         }
 
         .submit-btn {
             width: 100%;
-            padding: 14px;
+            padding: 16px;
             background-color: #4E4A46;
             color: #fff;
             border: none;
@@ -147,7 +152,9 @@
     <div class="main-container">
         <div class="stadium-header">
             <h1 class="title-main">跑者能量補給站</h1>
-            <p class="title-sub">再痛也行</p>
+            <!-- 復原副標題英文與原本的再痛也行 -->
+            <p class="title-sub-en">RUNNERS ENERGY STATION</p>
+            <p class="title-sub-cn">再痛也行</p>
             <div class="highlight-box">讓我們聽見您的腳步聲</div>
             
             <div class="description">
@@ -202,7 +209,8 @@
 
             <div class="form-group">
                 <label class="form-label">您的問題 / Your Inquiry</label>
-                <textarea class="input-box" rows="3" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+                <!-- 增加高度 -->
+                <textarea class="input-box" rows="5" placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
 
             <div class="form-group">
