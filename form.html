@@ -33,7 +33,7 @@
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 30%; 
             border-bottom-right-radius: 50% 30%;
-            padding: 25px 35px 12px 35px; /* 大幅壓縮底部內距 */
+            padding: 25px 35px 12px 35px; 
             text-align: center;
             width: 100%;
             max-width: 500px;
@@ -41,17 +41,17 @@
             position: relative;
         }
 
-        /* 跑道線條：不准動 */
+        /* 跑道線條：往內移，不壓字 */
         .playground-header::before {
             content: "";
             position: absolute;
             top: 15px;
-            left: 15px;
-            right: 15px;
-            bottom: 10px; /* 線條底部微調 */
+            left: 35px;   /* 往內移 */
+            right: 35px;  /* 往內移 */
+            bottom: 10px; 
             border: 1px solid rgba(255, 255, 255, 0.9);
-            border-bottom-left-radius: 200px 100px;
-            border-bottom-right-radius: 200px 100px;
+            border-bottom-left-radius: 180px 90px;
+            border-bottom-right-radius: 180px 90px;
             pointer-events: none;
         }
         
@@ -71,24 +71,24 @@
             font-size: 16px;
         }
 
-        /* 行與行間距離校正 */
+        /* 段落間距離縮小 (打勾處) */
         .copywriting {
             font-size: 13.5px;
-            line-height: 1.8; /* 恢復專業疏密度行高 */
+            line-height: 1.8;
             color: #7a6e5d;
             text-align: left;
-            margin: 0 auto 10px auto;
+            margin: 0 auto 5px auto;
             max-width: 88%;
         }
-        .copywriting p { margin-bottom: 15px; } /* 調整段落間距離 */
+        .copywriting p { margin-bottom: 6px; } /* 縮小段落間距 */
 
-        /* 服務時間樣式調整 */
+        /* 服務時間：顏色調整與線條距離微調 */
         .footer-info {
             font-size: 8px; 
-            color: #9b8e76; /* 精確照片顏色 */
+            color: #a5a5a5; /* 顏色精確調整為照片灰 */
             line-height: 1.5;
             margin-top: 5px;
-            padding-bottom: 10px; /* 縮小與底部/線條距離 */
+            padding-bottom: 15px; 
             position: relative;
             z-index: 10;
         }
@@ -98,7 +98,7 @@
         .field { margin-bottom: 18px; }
         label { display: block; font-weight: bold; margin-bottom: 8px; color: #8b7355; font-size: 14px; }
         
-        input, select, textarea {
+        input, select {
             width: 100%;
             padding: 8px 12px;
             border: 1px solid #eeeeee;
@@ -169,22 +169,6 @@
                 <option value="marathon">全馬跑者 / Full Marathon Runner</option>
                 <option value="ultra-trail">超馬/越野跑者 / Ultra & Trail Runner</option>
             </select>
-        </div>
-        <div class="field">
-            <label>跑步最佳成績 (PB)</label>
-            <input type="text" placeholder="例如：全馬 3:30:00">
-        </div>
-        <div class="field">
-            <label>目標成績</label>
-            <input type="text" placeholder="例如：全馬 2:59:59">
-        </div>
-        <div class="field">
-            <label>慣用穿戴配備</label>
-            <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
-        </div>
-        <div class="field">
-            <label>您的問題</label>
-            <textarea rows="6" style="resize: none;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
         </div>
         <button type="button" class="submit-btn">送出表單 / Submit Form</button>
     </div>
