@@ -43,16 +43,17 @@
             margin-bottom: 25px;
         }
         
-        /* 標題與英文縮小至同一行 */
-        .title-group {
-            display: flex;
-            justify-content: center;
-            align-items: baseline;
-            gap: 8px;
-            margin-bottom: 10px;
+        .title-main { font-size: 26px; font-weight: bold; margin: 0; }
+        
+        /* 英文副標題：縮小、單行呈現（不分上下），且與中文標題分行 */
+        .title-sub-en { 
+            font-size: 12px; 
+            letter-spacing: 1px; 
+            margin: 5px 0 10px 0; 
+            color: #C5B08A; 
+            text-transform: uppercase;
+            white-space: nowrap; /* 強制英文在同一行呈現 */
         }
-        .title-main { font-size: 22px; font-weight: bold; margin: 0; }
-        .title-sub-en { font-size: 11px; letter-spacing: 1px; margin: 0; color: #C5B08A; text-transform: uppercase; }
         
         .highlight-box {
             background-color: #ffffff;
@@ -102,11 +103,11 @@
             font-size: 14px;
         }
 
-        /* 驗證碼區塊：距離接近 */
+        /* 驗證碼區塊：間距重新分開一點 */
         .captcha-container {
             display: flex;
             align-items: center;
-            gap: 4px; /* 縮小間距 */
+            gap: 15px; /* 增加間距 */
         }
         .captcha-input {
             width: 70px !important;
@@ -115,7 +116,7 @@
         }
         .captcha-display {
             background-color: #E8E8E8; 
-            padding: 6px 10px; 
+            padding: 6px 12px; 
             border-radius: 6px;
             font-weight: bold;
             letter-spacing: 1px;
@@ -123,13 +124,12 @@
             font-size: 12px;
         }
         .refresh-btn {
-            font-size: 16px;
+            font-size: 18px;
             color: #8D7353;
             cursor: pointer;
             border: none;
             background: none;
             padding: 0;
-            margin-left: -2px;
         }
 
         .submit-btn {
@@ -157,10 +157,9 @@
 
     <div class="main-container">
         <div class="stadium-header">
-            <div class="title-group">
-                <h1 class="title-main">跑者能量補給站</h1>
-                <p class="title-sub-en">RUNNERS ENERGY STATION</p>
-            </div>
+            <h1 class="title-main">跑者能量補給站</h1>
+            <!-- 英文副標題縮小且單行呈現 -->
+            <p class="title-sub-en">RUNNERS ENERGY STATION</p>
             
             <div class="highlight-box">讓我們聽見您的腳步聲</div>
             
