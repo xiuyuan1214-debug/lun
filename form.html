@@ -33,7 +33,7 @@
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 30%; 
             border-bottom-right-radius: 50% 30%;
-            padding: 25px 35px 20px 35px; 
+            padding: 25px 35px 30px 35px; /* 增加底部 padding 確保空間 */
             text-align: center;
             width: 100%;
             max-width: 500px;
@@ -48,7 +48,7 @@
             top: 15px;
             left: 15px;
             right: 15px;
-            bottom: 25px;
+            bottom: 20px;
             border: 1px solid rgba(255, 255, 255, 0.9);
             border-bottom-left-radius: 200px 100px;
             border-bottom-right-radius: 200px 100px;
@@ -65,7 +65,7 @@
             border-radius: 35px;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-decoration: none;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             font-size: 16px;
@@ -74,21 +74,24 @@
         /* 文字高度調整：與照片完全一樣 */
         .copywriting {
             font-size: 13.5px;
-            line-height: 1.8; /* 依照照片調大行高 */
+            line-height: 1.8; 
             color: #7a6e5d;
             text-align: left;
-            margin: 0 auto 5px auto;
+            margin: 0 auto 15px auto;
             max-width: 88%;
         }
 
-        /* 服務時間：顏色與照片完全一樣 */
+        /* 服務時間：顏色校正，且與線條保持距離不重疊 */
         .footer-info {
             font-size: 10px;
-            color: #9b8e76; /* 依照照片校正色碼 */
-            line-height: 1.3;
-            opacity: 0.9;
-            margin-top: 5px;
-            padding-bottom: 10px; 
+            color: #9b8e76; 
+            line-height: 1.5;
+            opacity: 1;
+            margin-top: 15px; /* 與上方文案保持距離 */
+            padding-top: 10px;
+            border-top: 1px solid rgba(139, 115, 85, 0.1); /* 增加細微分隔感 */
+            position: relative;
+            z-index: 10; /* 確保在線條上方但不壓線 */
         }
 
         /* 表單區域：維持原狀不准動 */
@@ -140,18 +143,17 @@
     </nav>
 
     <header class="playground-header">
-        <h1 class="title">跑者能量補給站</h1>
-        <div class="en-subtitle">RUNNERS ENERGY STATION</div>
+        <h1 class="title">跑者服務中心</h1>
+        <div class="en-subtitle">RUNNER SERVICE CENTER</div>
         <div class="cta-button">讓我們聽見您的腳步聲</div>
         <div class="copywriting">
             無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。
             您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。
-            讓我們一起朝更好的方向邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。
-            希望這裡不只是網站，更是跑者們的補給站 ◡̈
+            讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。
+            希望這裡不只是網站，更是跑者們的補給站。
         </div>
         <div class="footer-info">
-            ※ 服務時間：週一至週五 09:00-18:00<br>
-            (跑者不停息，但小編需要一些運動時間)
+            ※ 服務時間：週一至週五 09:00 - 18:00 (跑者不停息，但小編需要一些運動時間)
         </div>
     </header>
 
@@ -162,7 +164,7 @@
         </div>
         <div class="field">
             <label>電子信箱 / E-mail</label>
-            <input type="email" placeholder="runner@gmail.com">
+            <input type="email" placeholder="runner@example.com">
         </div>
         <div class="field">
             <label>跑者屬性 / Runner Type</label>
@@ -175,19 +177,19 @@
             </select>
         </div>
         <div class="field">
-            <label>最佳成績 / Personal Best</label>
-            <input type="text" placeholder="例如：全馬3:30:00">
+            <label>跑步最佳成績 (PB)</label>
+            <input type="text" placeholder="例如：全馬 3:30:00">
         </div>
         <div class="field">
-            <label>目標成績 / Target Goal</label>
-            <input type="text" placeholder="例如：全馬2:59:59">
+            <label>目標成績</label>
+            <input type="text" placeholder="例如：全馬 2:59:59">
         </div>
         <div class="field">
-            <label>穿戴配備 / Wearable Device</label>
+            <label>慣用穿戴配備</label>
             <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
         </div>
         <div class="field">
-            <label>您的問題 / Your Inquiry</label>
+            <label>您的問題</label>
             <textarea rows="6" style="resize: none;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
         </div>
         <div class="field">
