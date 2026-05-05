@@ -35,14 +35,14 @@
             position: relative;
         }
 
-        /* 修正跑道線條：移至外圍邊緣，嚴禁接觸任何文字 */
+        /* 修正跑道線條：位於所有文字外圍邊緣，保持適當距離 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 15px;
-            left: 8px; 
-            right: 8px; 
-            bottom: 10px; 
+            top: 5px;
+            left: 5px; 
+            right: 5px; 
+            bottom: 5px; 
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-top-left-radius: 180px;
             border-top-right-radius: 180px;
@@ -108,7 +108,7 @@
             height: 34px;
         }
 
-        /* 驗證碼並列模式，顯示框寬度縮減 */
+        /* 驗證碼並列模式，高度縮減 */
         .captcha-group { display: flex; gap: 8px; align-items: center; }
         
         .captcha-input { 
@@ -120,8 +120,8 @@
             box-sizing: border-box;
         }
         .captcha-img {
-            height: 34px;
-            width: 45px; /* 寬度縮減 */
+            height: 24px; /* 高度縮減 */
+            width: 45px;
             background-color: #e0e0e0;
             border-radius: 4px;
             display: flex;
@@ -168,7 +168,7 @@
             <p>無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。</p>
             <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
             <p>讓我們一起朝更好的方向邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。</p>
-            <p>希望這裡不只是網站，更是跑者們的補給站。</p>
+            <p>希望這裡不職是網站，更是跑者們的補給站。</p>
         </div>
         <div class="footer-info">
             服務時間：週一至週五 09:00-18:00<br>
