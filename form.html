@@ -35,14 +35,14 @@
             position: relative;
         }
 
-        /* 調整跑道線條：不壓文字、不貼死邊框 */
+        /* 修正跑道線條：遠離外框且完全不壓文字 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 6px;
-            left: 6px; 
-            right: 6px; 
-            bottom: 6px; 
+            top: 12px;
+            left: 12px; 
+            right: 12px; 
+            bottom: 12px; 
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-top-left-radius: 180px;
             border-top-right-radius: 180px;
@@ -90,7 +90,6 @@
         .field { margin-bottom: 18px; }
         label { display: block; font-weight: bold; margin-bottom: 8px; color: #8b7355; font-size: 14px; }
         
-        /* 基礎輸入框樣式 */
         input, select, textarea {
             width: 100%;
             padding: 10px 12px;
@@ -103,22 +102,24 @@
             color: #666666;
         }
 
-        /* 針對姓名、信箱、PB、目標、配備進行縮小 */
         .small-input {
             padding: 6px 12px;
             font-size: 12px;
         }
 
-        .captcha-group { display: flex; gap: 10px; align-items: center; }
+        .captcha-group { display: flex; gap: 8px; align-items: center; }
+        
+        /* 縮小驗證碼框體大小 */
         .captcha-input { 
-            height: 30px !important; 
-            width: 65px !important; 
+            height: 24px !important; 
+            width: 50px !important; 
             padding: 0 5px !important; 
             text-align: center;
+            font-size: 11px;
         }
         .captcha-img {
-            height: 30px;
-            width: 65px;
+            height: 24px;
+            width: 50px;
             background-color: #e0e0e0;
             border-radius: 4px;
             display: flex;
@@ -127,9 +128,9 @@
             font-style: italic;
             color: #8b7355;
             font-weight: bold;
-            font-size: 13px;
+            font-size: 11px;
         }
-        .refresh-icon { cursor: pointer; color: #8b7355; font-size: 20px; user-select: none; }
+        .refresh-icon { cursor: pointer; color: #8b7355; font-size: 18px; user-select: none; }
 
         .submit-btn {
             width: 100%;
