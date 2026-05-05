@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>課程簡介 | Runner Service Center</title>
     <style>
-        /* 依照照片顏色精確取色 */
+        /* 依照 IMG_5656.jpg 精確取色與間距校正 */
         :root {
             --blue-sub: #5992B2;    /* ONLINE PROGRAMMING 藍 */
             --red-sub: #A65D57;     /* ONE-ON-ONE COACHING 紅 */
             --green-sub: #4E8C67;   /* CORPORATE GROUP 綠 */
-            --bg-blue: #F0F7FA;     /* 第一區塊淺藍底 */
-            --bg-red: #FFF5F4;      /* 第二區塊淺粉底 */
-            --bg-green: #F3F8F5;    /* 第三區塊淺綠底 */
-            --text-dark: #333333;   /* 主要文字深灰 */
+            --bg-blue: #F3F8FB;     /* 第一區塊背景藍 */
+            --bg-red: #FFF5F4;      /* 第二區塊背景粉 */
+            --bg-green: #F3F8F5;    /* 第三區塊背景綠 */
+            --text-dark: #333333;   /* 標題與內文深灰 */
             --btn-gray: #333333;    /* 預約按鈕深灰底 */
+            --card-border: #E8E8E8;
         }
 
         body {
@@ -22,26 +23,25 @@
             color: var(--text-dark);
             margin: 0;
             padding: 0;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
+        /* 恢復區塊間距，確保緊密銜接 */
         .section {
-            padding: 40px 25px;
-            margin: 0;
+            padding: 35px 25px;
+            margin: 0; /* 移除外距確保色塊相連 */
         }
 
-        /* 區塊背景顏色 */
         .online-programming { background-color: var(--bg-blue); }
         .one-on-one { background-color: var(--bg-red); }
         .corporate-group { background-color: var(--bg-green); }
 
-        h2 { font-size: 24px; margin-bottom: 5px; color: #333; }
+        h2 { font-size: 24px; margin: 0 0 5px 0; color: #333; }
         
         .subtitle { 
             font-size: 14px; 
             font-weight: bold; 
-            margin-top: 0;
-            margin-bottom: 20px;
+            margin: 0 0 20px 0;
             letter-spacing: 1px;
         }
 
@@ -49,59 +49,66 @@
         .one-on-one .subtitle { color: var(--red-sub); }
         .corporate-group .subtitle { color: var(--green-sub); }
 
-        /* 核心價值白盒 */
+        /* 核心價值白盒 - 恢復照片中的樣式與框線顏色 */
         .highlight-card {
             background: #fff;
-            padding: 20px;
+            padding: 18px;
             border-radius: 12px;
             margin-bottom: 20px;
-            border-left: 6px solid;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border-left: 5px solid;
+            display: flex;
+            align-items: flex-start;
         }
         .online-programming .highlight-card { border-left-color: var(--blue-sub); }
         .one-on-one .highlight-card { border-left-color: var(--red-sub); }
         .corporate-group .highlight-card { border-left-color: var(--green-sub); }
 
-        /* 列表樣式 */
+        .highlight-card strong {
+            font-weight: bold;
+        }
+
+        /* 列表點樣式 */
         ul { list-style: none; padding: 0; margin: 0; }
-        li { margin-bottom: 12px; font-size: 15px; }
-        li::before { content: "•"; margin-right: 8px; font-weight: bold; }
+        li { margin-bottom: 10px; font-size: 15px; display: flex; align-items: center; }
+        li::before { content: "•"; margin-right: 8px; font-weight: bold; font-size: 18px; }
         .online-programming li::before { color: var(--blue-sub); }
         .one-on-one li::before { color: var(--red-sub); }
         .corporate-group li::before { color: var(--green-sub); }
 
-        /* 底部預約區塊 - 已縮小間距並移除紅色線條 */
+        /* 底部預約區塊 - 已大幅往上移並移除所有紅線 */
         .booking-container {
             text-align: center;
-            padding: 30px 20px; /* 縮短與上方的距離 */
+            padding: 15px 20px 40px 20px; /* 縮小與上方的間距 */
             background-color: #fff;
         }
 
         .booking-text {
             color: #888;
-            font-size: 16px;
-            margin-bottom: 15px;
+            font-size: 15px;
+            margin-bottom: 12px;
         }
 
         .btn-booking {
             display: inline-block;
             background-color: var(--btn-gray);
             color: #ffffff !important;
-            padding: 12px 60px;
+            padding: 12px 65px;
             text-decoration: none;
             border-radius: 6px;
             font-weight: bold;
             font-size: 16px;
+            transition: 0.2s;
         }
     </style>
 </head>
 <body>
 
+    <!-- 第一區塊 -->
     <div class="section online-programming">
         <h2>線上課表</h2>
         <p class="subtitle">ONLINE PROGRAMMING</p>
         <div class="highlight-card">
-            ★ 核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。
+            <strong>★ 核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。</strong>
         </div>
         <ul>
             <li>週期化備賽規劃：針對目標科學化安排訓練週期。</li>
@@ -111,11 +118,12 @@
         </ul>
     </div>
 
+    <!-- 第二區塊 -->
     <div class="section one-on-one">
         <h2>私人教學</h2>
         <p class="subtitle">ONE-ON-ONE COACHING</p>
         <div class="highlight-card">
-            ★ 核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。
+            <strong>★ 核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</strong>
         </div>
         <ul>
             <li>跑姿校正：透過錄影分析與拆解，使肌肉記憶正確動作。</li>
@@ -125,11 +133,12 @@
         </ul>
     </div>
 
+    <!-- 第三區塊 -->
     <div class="section corporate-group">
         <h2>企業包班</h2>
         <p class="subtitle">CORPORATE GROUP</p>
         <div class="highlight-card">
-            ★ 核心價值：職場健康與活力、團體共榮，將運動融入企業文化。
+            <strong>★ 核心價值：職場健康與活力、團體共榮，將運動融入企業文化。</strong>
         </div>
         <ul>
             <li>提升團隊凝聚力：挑戰目標過程中，建立跨部門情感連結。</li>
@@ -138,7 +147,7 @@
         </ul>
     </div>
 
-    <!-- 底部預約區塊：已移除紅色框線並導向 form.html -->
+    <!-- 底部諮詢預約：已上移並導向 form.html -->
     <div class="booking-container">
         <p class="booking-text">讓我們一起跑出健康快樂的每一步 ☺</p>
         <a href="form.html" class="btn-booking">預約一份溫暖的諮詢</a>
