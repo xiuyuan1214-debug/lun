@@ -22,11 +22,7 @@
             display: flex;
             justify-content: space-around;
         }
-        .nav-link {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 14px;
-        }
+        .nav-link { color: #ffffff; text-decoration: none; font-size: 14px; }
 
         /* 奶黃底區塊 */
         .playground-header {
@@ -41,17 +37,17 @@
             position: relative;
         }
 
-        /* 跑道線條：左右大幅往內縮，不壓到東西 */
+        /* 跑道線條：嚴禁壓字，往外推至安全距離 */
         .playground-header::before {
             content: "";
             position: absolute;
             top: 15px;
-            left: 55px;   /* 往內縮 */
-            right: 55px;  /* 往內縮 */
+            left: 75px;   /* 大幅往外縮，確保不靠近文字 */
+            right: 75px;  /* 大幅往外縮，確保不靠近文字 */
             bottom: 10px; 
             border: 1px solid rgba(255, 255, 255, 0.9);
-            border-bottom-left-radius: 160px 80px;
-            border-bottom-right-radius: 160px 80px;
+            border-bottom-left-radius: 120px 60px;
+            border-bottom-right-radius: 120px 60px;
             pointer-events: none;
         }
         
@@ -71,7 +67,7 @@
             font-size: 16px;
         }
 
-        /* 段落間距離：維持合適距離，不多留白 */
+        /* 段落間距離：維持合適距離 */
         .copywriting {
             font-size: 13.5px;
             line-height: 1.6;
@@ -80,9 +76,9 @@
             margin: 0 auto 5px auto;
             max-width: 88%;
         }
-        .copywriting p { margin-bottom: 4px; } /* 合適距離 */
+        .copywriting p { margin-bottom: 4px; } 
 
-        /* 服務時間：不准動 */
+        /* 服務時間：顏色不准動 */
         .footer-info {
             font-size: 8px; 
             color: #9b8e76; 
