@@ -12,7 +12,7 @@
             color: #8D7353;
         }
 
-        /* 導覽列修正 (圖2樣式)：刪除 / 符號，英文縮小置於底部 */
+        /* 導覽列修正：連結正確跳轉、英文置底、刪除 / 符號 */
         .nav-bar {
             background-color: #333;
             display: flex;
@@ -35,18 +35,17 @@
             padding: 20px;
         }
 
-        /* 標題區修正：縮小空格、改名、刪除線條 */
+        /* 標題區：奶黃底、無內線條、縮小上空格 */
         .stadium-header {
             background-color: #FFF9E7;
             border-radius: 120px;
-            padding: 20px 30px; /* 縮小上層空格 */
+            padding: 20px 30px;
             text-align: center;
             margin-bottom: 30px;
         }
-
-        .title-main { font-size: 26px; font-weight: bold; margin: 0; color: #8D7353; }
+        .title-main { font-size: 26px; font-weight: bold; margin: 0; }
         .title-sub { font-size: 14px; letter-spacing: 2px; margin: 5px 0 15px 0; color: #C5B08A; }
-
+        
         .highlight-box {
             background-color: #ffffff;
             color: #D28B52;
@@ -59,46 +58,55 @@
             margin-bottom: 15px;
         }
 
-        /* 內容文字完整復原 */
-        .description {
-            font-size: 13px;
-            line-height: 1.8;
-            text-align: justify;
-            margin: 15px 0;
-            color: #8D7353;
-        }
+        .description { font-size: 13px; line-height: 1.8; text-align: justify; margin: 15px 0; }
+        
+        .service-time { font-size: 11px; color: #C5B08A; margin-top: 5px; line-height: 1.5; }
 
-        /* 縮小空格 */
-        .service-time {
-            font-size: 11px;
-            color: #C5B08A;
-            margin-top: 5px; 
-            line-height: 1.5;
-        }
-
-        /* 表單內容復原 (圖1配色與文字) */
+        /* 表單與輸入框配色復原 */
         .form-group { margin-bottom: 25px; }
         .form-label { font-weight: bold; font-size: 15px; margin-bottom: 10px; display: block; color: #8D7353; }
-        
         .input-box {
             width: 100%;
             padding: 14px;
             border: 1px solid #F0F0F0;
-            background-color: #F8F8F8; /* 復原配色 */
+            background-color: #F8F8F8; /* 淺灰底色 */
             border-radius: 12px;
             box-sizing: border-box;
             color: #333;
             font-size: 14px;
         }
-        .input-box::placeholder { color: #C0C0C0; }
 
-        .captcha-row { display: flex; align-items: center; gap: 10px; }
-        .captcha-input { width: 90px !important; }
+        /* 驗證碼區塊大小與配色修正 */
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .captcha-input {
+            width: 85px !important;
+            padding: 12px !important;
+            text-align: center;
+        }
+        .captcha-display {
+            background-color: #EEEEEE; 
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: #333;
+            font-size: 14px;
+        }
+        .refresh-btn {
+            font-size: 20px;
+            color: #8D7353;
+            cursor: pointer;
+            user-select: none;
+        }
 
         .submit-btn {
             width: 100%;
             padding: 16px;
-            background-color: #4E4A46; /* 圖1深咖啡色 */
+            background-color: #4E4A46;
             color: #fff;
             border: none;
             border-radius: 12px;
@@ -110,31 +118,25 @@
 </head>
 <body>
 
-    <!-- 修正轉跳與格式導覽列 -->
     <nav class="nav-bar">
         <a href="coach.html"><span class="cn">教練資歷</span><span class="en">Coach Profile</span></a>
-        <a href="course.html"><span class="cn">課程簡介</span><span class="en">Course</span></a>
-        <a href="pace.html"><span class="cn">配速工具</span><span class="en">Pace Tool</span></a>
+        <a href="courses.html"><span class="cn">課程簡介</span><span class="en">Course</span></a>
+        <a href="tools.html"><span class="cn">配速工具</span><span class="en">Pace Tool</span></a>
         <a href="training.html"><span class="cn">訓練日誌</span><span class="en">Training Log</span></a>
-        <a href="race.html"><span class="cn">賽事日誌</span><span class="en">Race Log</span></a>
+        <a href="match.html"><span class="cn">賽事日誌</span><span class="en">Race Log</span></a>
+        <a href="form.html"><span class="cn">補給站</span><span class="en">Station</span></a>
     </nav>
 
     <div class="main-container">
         <div class="stadium-header">
-            <!-- 更名為 跑者能量補給站 / RUNNERS ENERGY STATION -->
             <h1 class="title-main">跑者能量補給站</h1>
             <p class="title-sub">RUNNERS ENERGY STATION</p>
-            
             <div class="highlight-box">讓我們聽見您的腳步聲</div>
-
-            <!-- 完整復原所有段落文字 -->
             <div class="description">
                 無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。<br><br>
                 讓我們一起朝更好的方向邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。<br><br>
                 希望這裡不只是網站，更是跑者們的補給站ᴗ̈
             </div>
-
-            <!-- 服務時間區塊 -->
             <div class="service-time">
                 服務時間：週一至週五 09:00-18:00<br>
                 （跑者不休息，但小編需要一些運動時間)
@@ -154,8 +156,12 @@
 
             <div class="form-group">
                 <label class="form-label">跑者屬性 / Runner Type</label>
-                <select class="input-box" style="appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2214%22%20height%3D%228%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22m1%201%206%206%206-6%22%20stroke%3D%22%238D7353%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 15px center;">
-                    <option>請選擇 / Please Select</option>
+                <select class="input-box">
+                    <option value="">請選擇 / Please Select</option>
+                    <option value="beginner">新手跑者 / Beginner Runner</option>
+                    <option value="half">半馬跑者 / Half Marathoner</option>
+                    <option value="full">全馬跑者 / Full Marathoner</option>
+                    <option value="ultra">超馬/越野跑者 / Ultra & Trail Runner</option>
                 </select>
             </div>
 
@@ -181,10 +187,10 @@
 
             <div class="form-group">
                 <label class="form-label">驗證碼 / Verification Code</label>
-                <div class="captcha-row">
+                <div class="captcha-container">
                     <input type="text" class="input-box captcha-input" placeholder="輸入碼">
-                    <span style="letter-spacing: 2px; font-weight: bold; color: #333;">7 W 8 Q</span>
-                    <span style="cursor: pointer;">↻</span>
+                    <div class="captcha-display">C 2 L 2</div>
+                    <span class="refresh-btn">↻</span>
                 </div>
             </div>
 
