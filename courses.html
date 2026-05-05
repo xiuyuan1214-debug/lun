@@ -3,117 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>課程簡介</title>
     <style>
+        /* 字體顏色精確校正 */
+        :root {
+            --blue-text: #5992B2;    /* 線上課表標題藍 */
+            --red-text: #A65D57;     /* 私人教學標題紅 */
+            --green-text: #4E8C67;   /* 企業包班標題綠 */
+            --dark-gray: #333333;    /* 內文深灰 */
+            --btn-bg: #333333;       /* 按鈕深背景色 */
+        }
+
         body {
-            font-family: "Microsoft JhengHei", sans-serif;
-            margin: 0;
-            padding: 15px;
-            background-color: #ffffff;
-            color: #4A5568;
-            line-height: 1.2;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
         }
 
-        .main-container {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        /* 課程卡片容器 */
-        .course-card {
-            border-radius: 15px;
+        .course-section {
             padding: 20px;
-            margin-bottom: 25px;
-            text-align: left;
+            margin-bottom: 30px;
         }
 
-        .card-cn-title { font-size: 22px; font-weight: bold; display: block; }
-        .card-en-title { font-size: 12px; font-weight: bold; display: block; margin-top: 4px; margin-bottom: 15px; text-transform: uppercase; }
+        /* 標題與副標顏色校正 */
+        .online-programming h2 { color: #333; }
+        .online-programming .subtitle { color: var(--blue-text); font-weight: bold; }
 
-        /* 白色核心重點/價值區塊 */
-        .core-highlight {
-            background-color: #ffffff;
-            border-radius: 12px;
+        .one-on-one h2 { color: #333; }
+        .one-on-one .subtitle { color: var(--red-text); font-weight: bold; }
+
+        .corporate-group h2 { color: #333; }
+        .corporate-group .subtitle { color: var(--green-text); font-weight: bold; }
+
+        /* 核心重點/價值區塊樣式 */
+        .highlight-box {
+            background-color: #fff;
+            border-radius: 10px;
             padding: 15px;
-            margin-bottom: 15px;
-            font-size: 14px;
-            line-height: 1.5;
-            display: flex;
-            align-items: flex-start;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 5px solid;
         }
-        .core-highlight::before { content: "✾"; margin-right: 8px; font-size: 16px; }
+        .online-programming .highlight-box { border-left-color: var(--blue-text); }
+        .one-on-one .highlight-box { border-left-color: var(--red-text); }
+        .corporate-group .highlight-box { border-left-color: var(--green-text); }
 
-        /* 列表細項 */
-        .list-items { list-style: none; padding: 0; margin: 0; font-size: 13px; }
-        .list-items li { margin-bottom: 6px; display: flex; align-items: baseline; }
-        .list-items b { margin-right: 2px; }
-        .dot-symbol { margin-right: 4px; font-weight: bold; }
+        /* 底部預約諮詢區塊 (紅圈處復原) */
+        .consultation-cta {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px 20px;
+            border: 2px solid #ff4d4d; /* 對應照片中紅圈提醒 */
+            border-radius: 15px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-        /* 藍色系：線上課表 */
-        .theme-online { background-color: #F0F7FF; }
-        .theme-online .card-en-title { color: #5DA9E9; }
-        .theme-online .core-highlight { border-left: 4px solid #5DA9E9; }
-        .theme-online .dot-symbol, .theme-online b { color: #5DA9E9; }
+        .consultation-cta p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
 
-        /* 紅色系：私人教學 */
-        .theme-private { background-color: #FFF5F5; }
-        .theme-private .card-en-title { color: #E53E3E; }
-        .theme-private .core-highlight { border-left: 4px solid #E53E3E; }
-        .theme-private .dot-symbol, .theme-private b { color: #E53E3E; }
+        .btn-consult {
+            display: inline-block;
+            background-color: var(--btn-bg);
+            color: #fff;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
 
-        /* 綠色系：企業包班 */
-        .theme-corporate { background-color: #F0FFF4; }
-        .theme-corporate .card-en-title { color: #48BB78; }
-        .theme-corporate .core-highlight { border-left: 4px solid #48BB78; }
-        .theme-corporate .dot-symbol, .theme-corporate b { color: #48BB78; }
+        .btn-consult:hover {
+            opacity: 0.9;
+        }
+
+        ul { list-style: none; padding: 0; }
+        li::before { content: "• "; margin-right: 5px; }
+        .online-programming li::before { color: var(--blue-text); }
+        .one-on-one li::before { color: var(--red-text); }
+        .corporate-group li::before { color: var(--green-text); }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <!-- 線上課表 -->
-        <div class="course-card theme-online">
-            <span class="card-cn-title">線上課表</span>
-            <span class="card-en-title">ONLINE PROGRAMMING</span>
-            <div class="core-highlight">
-                <div><b>核心重點：</b>數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。</div>
-            </div>
-            <ul class="list-items">
-                <li><span class="dot-symbol">·</span><b>週期化競賽規劃：</b>針對目標科學化安排訓練週期。</li>
-                <li><span class="dot-symbol">·</span><b>數據即時反饋：</b>遠端即時監測訓練與恢復狀態。</li>
-                <li><span class="dot-symbol">·</span><b>動態調整：</b>根據回報狀態，隨時調整下週課表。</li>
-                <li><span class="dot-symbol">·</span><b>線上諮詢機制：</b>定期討論訓練成效，解答疑難雜症。</li>
-            </ul>
+    <!-- 線上課表 -->
+    <section class="course-section online-programming">
+        <h2>線上課表</h2>
+        <p class="subtitle">ONLINE PROGRAMMING</p>
+        <div class="highlight-box">
+            <strong>★ 核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。</strong>
         </div>
+        <ul>
+            <li>週期化備賽規劃：針對目標科學化安排訓練週期。</li>
+            <li>數據即時回饋：遠端即時監測訓練與恢復狀態。</li>
+            <li>動態調整：根據回報狀態，隨時調整下週課表。</li>
+            <li>線上諮詢機制：定期討論訓練成效，解答疑難雜症。</li>
+        </ul>
+    </section>
 
-        <!-- 私人教學 -->
-        <div class="course-card theme-private">
-            <span class="card-cn-title">私人教學</span>
-            <span class="card-en-title">ONE-ON-ONE COACHING</span>
-            <div class="core-highlight">
-                <div><b>核心價值：</b>根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</div>
-            </div>
-            <ul class="list-items">
-                <li><span class="dot-symbol">·</span><b>跑姿校正：</b>透過錄影分析與拆解，使肌肉記憶正確動作。</li>
-                <li><span class="dot-symbol">·</span><b>體感配速建立：</b>協助跑者建立對各心率區間的感知。</li>
-                <li><span class="dot-symbol">·</span><b>動態負荷調控：</b>根據疲勞程度，即時調整訓練強度。</li>
-                <li><span class="dot-symbol">·</span><b>跑者專項強化引導：</b>針對弱項環節設計輔助訓練。</li>
-            </ul>
+    <!-- 私人教學 -->
+    <section class="course-section one-on-one">
+        <h2>私人教學</h2>
+        <p class="subtitle">ONE-ON-ONE COACHING</p>
+        <div class="highlight-box">
+            <strong>★ 核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</strong>
         </div>
+        <ul>
+            <li>跑姿校正：透過錄影分析與拆解，使肌肉記憶正確動作。</li>
+            <li>體感配速建立：協助跑者建立對各心率區間的感知。</li>
+            <li>動態負荷調控：根據疲勞程度，即時調整訓練強度。</li>
+            <li>跑者專項強化引導：針對薄弱環節設計輔助訓練。</li>
+        </ul>
+    </section>
 
-        <!-- 企業包班 -->
-        <div class="course-card theme-corporate">
-            <span class="card-cn-title">企業包班</span>
-            <span class="card-en-title">CORPORATE GROUP</span>
-            <div class="core-highlight">
-                <div><b>核心價值：</b>職場健康與活力、團體共榮，將運動融入企業文化。</div>
-            </div>
-            <ul class="list-items">
-                <li><span class="dot-symbol">·</span><b>提升團隊凝聚力：</b>挑戰目標過程中，建立跨部門情感連結。</li>
-                <li><span class="dot-symbol">·</span><b>企業賽事推動：</b>協助組隊參與路跑賽事，塑造品牌形象。</li>
-                <li><span class="dot-symbol">·</span><b>職場壓力紓解：</b>透過運動釋放壓力，提升團隊工作效率。</li>
-            </ul>
+    <!-- 企業包班 -->
+    <section class="course-section corporate-group">
+        <h2>企業包班</h2>
+        <p class="subtitle">CORPORATE GROUP</p>
+        <div class="highlight-box">
+            <strong>★ 核心價值：職場健康與活力、團體共榮，將運動融入企業文化。</strong>
         </div>
+        <ul>
+            <li>提升團隊凝聚力：挑戰目標過程中，建立跨部門情感連結。</li>
+            <li>企業賽事推動：協助組隊參與路跑賽事，塑造品牌形象。</li>
+            <li>職場壓力紓解：透過運動釋放壓力，提升團隊工作效率。</li>
+        </ul>
+    </section>
+
+    <!-- 復原紅圈處的文字表單區塊 -->
+    <div class="consultation-cta">
+        <p>讓我們一起跑出健康快樂的每一步 ☺</p>
+        <a href="#" class="btn-consult">預約一份溫暖的諮詢</a>
     </div>
 
 </body>
