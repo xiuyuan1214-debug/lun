@@ -35,11 +35,11 @@
             position: relative;
         }
 
-        /* 調整跑道線條：增加 top 距離以避開標題文字 */
+        /* 調整跑道線條：增加 top 距離至 22px，徹底避開標題文字 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 18px;
+            top: 22px;
             left: 10px; 
             right: 10px; 
             bottom: 10px; 
@@ -67,8 +67,9 @@
             font-size: 16px;
         }
 
+        /* 調小文案字體大小 1 號 */
         .copywriting {
-            font-size: 13.5px;
+            font-size: 12.5px;
             line-height: 1.7;
             color: #7a6e5d;
             text-align: left;
