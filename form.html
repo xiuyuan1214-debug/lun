@@ -34,16 +34,18 @@
             padding: 20px;
         }
 
-        /* 奶黃底：對齊 IMG_5615.jpg 的操場形狀與適當間距 */
+        /* 奶黃底：操場跑道形狀、外圍細框 */
         .stadium-header {
             background-color: #FFF9E7;
             border: 1px solid #E6D5B8;
-            border-radius: 250px; /* 強化操場跑道弧度 */
-            padding: 50px 70px;  /* 增加內距以支撐操場造型 */
+            border-radius: 250px; 
+            padding: 50px 70px;  
             text-align: center;
             margin-bottom: 25px;
         }
         .title-main { font-size: 26px; font-weight: bold; margin: 0; }
+        
+        /* 副標題調整為：再痛也行 */
         .title-sub { font-size: 14px; letter-spacing: 2px; margin: 5px 0 10px 0; color: #C5B08A; }
         
         .highlight-box {
@@ -55,7 +57,7 @@
             font-weight: bold;
             font-size: 16px; 
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            margin-bottom: 20px; /* 增加下方距離避免擁擠 */
+            margin-bottom: 15px; 
             line-height: 1;
         }
 
@@ -64,16 +66,18 @@
             text-align: justify;
             margin: 0 auto;
             color: #8D7353;
-            line-height: 1.6; /* 優化行距 */
+            line-height: 1.6;
         }
+        
+        /* 打勾處（段落間距）縮短距離 */
         .description p {
-            margin: 15px 0; /* 保持適當段落間距 */
+            margin: 8px 0; 
         }
 
         .service-time {
             font-size: 10px;
             color: #C5B08A;
-            margin-top: 15px; 
+            margin-top: 10px; 
             line-height: 1.4;
         }
 
@@ -90,10 +94,11 @@
             font-size: 13px;
         }
 
+        /* 驗證碼區塊：↻ 請接近顯示框 */
         .captcha-container {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 2px; /* 縮減間距至極小 */
         }
         .captcha-input {
             width: 60px !important;
@@ -115,6 +120,8 @@
             cursor: pointer;
             border: none;
             background: none;
+            padding: 0;
+            margin-left: 1px; /* 確保按鈕貼近顯示框 */
         }
 
         .submit-btn {
@@ -143,7 +150,8 @@
     <div class="main-container">
         <div class="stadium-header">
             <h1 class="title-main">跑者能量補給站</h1>
-            <p class="title-sub">RUNNERS ENERGY STATION</p>
+            <!-- 調整後的副標題 -->
+            <p class="title-sub">再痛也行</p>
             <div class="highlight-box">讓我們聽見您的腳步聲</div>
             
             <div class="description">
@@ -198,7 +206,7 @@
 
             <div class="form-group">
                 <label class="form-label">您的問題 / Your Inquiry</label>
-                <textarea class="input-box" rows="3" placeholder="每一滴汗水，都值得 be 聽見..."></textarea>
+                <textarea class="input-box" rows="3" placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
 
             <div class="form-group">
@@ -206,6 +214,7 @@
                 <div class="captcha-container">
                     <input type="text" class="input-box captcha-input" placeholder="輸入碼">
                     <div class="captcha-display" id="captcha">C 2 L 2</div>
+                    <!-- 縮減間距後的按鈕 -->
                     <button type="button" class="refresh-btn" onclick="refreshCaptcha()">↻</button>
                 </div>
             </div>
