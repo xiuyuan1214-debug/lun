@@ -12,7 +12,7 @@
             color: #8D7353;
         }
 
-        /* 導覽列連結跳轉正確 */
+        /* 導覽列 */
         .nav-bar {
             background-color: #333;
             display: flex;
@@ -35,18 +35,18 @@
             padding: 20px;
         }
 
-        /* 奶黃底：操場形狀、外圍細框、內部間距調小 */
+        /* 奶黃底：操場形狀、外圍細框、縮小內部間距 */
         .stadium-header {
             background-color: #FFF9E7;
             border: 1px solid #E6D5B8;
             border-radius: 200px; 
-            padding: 20px 60px; /* 再次縮小上下間距 */
+            padding: 30px 60px; /* 縮小上下間距 */
             text-align: center;
-            margin-bottom: 25px;
-            line-height: 1.4; 
+            margin-bottom: 30px;
+            line-height: 1.4; /* 縮小行字間上下間距 */
         }
         .title-main { font-size: 26px; font-weight: bold; margin: 0; }
-        .title-sub { font-size: 14px; letter-spacing: 2px; margin: 2px 0 6px 0; color: #C5B08A; }
+        .title-sub { font-size: 14px; letter-spacing: 2px; margin: 2px 0 8px 0; color: #C5B08A; }
         
         .highlight-box {
             background-color: #ffffff;
@@ -57,30 +57,30 @@
             font-weight: bold;
             font-size: 16px; 
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             line-height: 1;
         }
 
         .description {
             font-size: 13px;
             text-align: justify;
-            margin: 5px 0;
+            margin: 8px 0;
             color: #8D7353;
         }
 
         .service-time {
             font-size: 11px;
             color: #C5B08A;
-            margin-top: 5px; 
+            margin-top: 6px; 
             line-height: 1.3;
         }
 
-        /* 輸入框大小再調小 */
-        .form-group { margin-bottom: 18px; }
-        .form-label { font-weight: bold; font-size: 15px; margin-bottom: 6px; display: block; color: #8D7353; }
+        /* 輸入框大小調小 */
+        .form-group { margin-bottom: 20px; }
+        .form-label { font-weight: bold; font-size: 15px; margin-bottom: 8px; display: block; color: #8D7353; }
         .input-box {
             width: 100%;
-            padding: 8px 14px; /* 垂直內距縮減 */
+            padding: 10px 14px; /* 調小高度 */
             border: 1px solid #F5EEDB;
             background-color: #F9F5EA; 
             border-radius: 12px;
@@ -89,33 +89,34 @@
             font-size: 14px;
         }
 
-        /* 驗證碼顯示框再調小 */
+        /* 驗證碼區塊：顯示框再調小 */
         .captcha-container {
             display: flex;
             align-items: center;
             gap: 4px;
         }
         .captcha-input {
-            width: 65px !important;
-            padding: 5px !important;
+            width: 70px !important;
+            padding: 6px !important;
             text-align: center;
+            margin-right: 2px;
         }
         .captcha-display {
             background-color: #E8E8E8; 
-            padding: 2px 4px; /* 左右間距再縮減 */
+            padding: 2px 5px; /* 再調小 */
             border-radius: 4px;
             font-weight: bold;
             letter-spacing: 1px;
             color: #333;
-            font-size: 11px; /* 字體再調小 */
+            font-size: 12px;
         }
         .refresh-btn {
-            font-size: 15px;
+            font-size: 16px;
             color: #8D7353;
             cursor: pointer;
             border: none;
             background: none;
-            padding: 0;
+            padding: 0 2px;
         }
 
         .submit-btn {
@@ -199,7 +200,7 @@
 
             <div class="form-group">
                 <label class="form-label">您的問題 / Your Inquiry</label>
-                <textarea class="input-box" rows="4" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+                <textarea class="input-box" rows="5" placeholder="每一滴汗水，都值得被聽見..."></textarea>
             </div>
 
             <div class="form-group">
