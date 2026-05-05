@@ -3,73 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>課程簡介 - 跑者能量補給站</title>
+    <title>課程簡介</title>
     <style>
         body {
             font-family: "Microsoft JhengHei", sans-serif;
             margin: 0;
+            padding: 15px;
             background-color: #ffffff;
             color: #8D7353;
             line-height: 1.2;
         }
 
-        /* 2. 導覽列按鈕 (參照照片樣式) */
-        .nav-bar {
-            background-color: #333;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 15px 0;
-        }
-        .nav-bar a {
-            text-decoration: none;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .nav-bar .cn { font-size: 18px; font-weight: bold; letter-spacing: 1px; }
-        .nav-bar .en { font-size: 11px; opacity: 0.9; margin-top: 4px; text-transform: uppercase; font-family: Arial, sans-serif; }
-
         .main-container {
             max-width: 500px;
             margin: 0 auto;
-            padding: 10px 20px;
         }
 
-        /* 奶黃底操場標頭 */
-        .stadium-header {
-            background-color: #FFF9E7;
-            border: 1px solid #E6D5B8;
-            border-radius: 250px; 
-            padding: 25px 70px;  
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .title-main { font-size: 24px; font-weight: bold; margin: 0; }
-        .title-sub-en { font-size: 12px; letter-spacing: 1px; color: #C5B08A; text-transform: uppercase; margin-bottom: 5px; }
-        
-        .header-desc { font-size: 13px; text-align: center; margin-bottom: 10px; }
-        .header-desc p { margin: 2px 0; }
-        .dot { margin-right: -1px; }
-
-        /* 課程卡片樣式：完全對齊照片配色與排版 */
+        /* 課程卡片容器：完全參照照片比例 */
         .course-card {
             border-radius: 15px;
             padding: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: left;
         }
-        .card-header { margin-bottom: 12px; }
-        .card-cn { font-size: 22px; font-weight: bold; display: block; }
-        .card-en { font-size: 12px; text-transform: uppercase; display: block; margin-top: 2px; }
         
-        /* 核心重點/價值區塊 (白色圓角) */
+        .card-title-cn { font-size: 22px; font-weight: bold; display: block; margin-bottom: 2px; }
+        .card-title-en { font-size: 12px; text-transform: uppercase; display: block; margin-bottom: 15px; }
+        
+        /* 核心重點/價值白色區塊 */
         .core-box {
             background-color: #ffffff;
             border-radius: 12px;
             padding: 15px;
-            margin: 15px 0;
+            margin-bottom: 15px;
             font-size: 14px;
             line-height: 1.5;
             display: flex;
@@ -77,117 +43,79 @@
         }
         .core-box::before { content: "✾"; margin-right: 10px; font-size: 18px; }
 
-        /* 細項列表：符號靠近文字 */
-        .item-list { list-style: none; padding: 0; margin: 0; font-size: 13px; }
-        .item-list li { margin-bottom: 6px; display: flex; align-items: baseline; }
-        .item-list b { margin-right: 2px; }
-        .list-symbol { margin-right: 4px; font-weight: bold; }
+        /* 列表細項：符號貼近文字 */
+        .details-list { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+        .details-list li { margin-bottom: 6px; display: flex; align-items: baseline; }
+        .details-list b { margin-right: 2px; }
+        .marker { margin-right: 4px; font-weight: bold; }
 
         /* 藍色系：線上課表 */
-        .blue-section { background-color: #F0F7FF; }
-        .blue-section .card-cn { color: #4A5568; }
-        .blue-section .card-en { color: #5DA9E9; }
-        .blue-section .core-box { border-left: 4px solid #5DA9E9; }
-        .blue-section .list-symbol, .blue-section b { color: #5DA9E9; }
+        .theme-blue { background-color: #F0F7FF; }
+        .theme-blue .card-title-cn { color: #4A5568; }
+        .theme-blue .card-title-en { color: #5DA9E9; }
+        .theme-blue .core-box { border-left: 4px solid #5DA9E9; }
+        .theme-blue .marker, .theme-blue b { color: #5DA9E9; }
 
         /* 紅色系：私人教學 */
-        .red-section { background-color: #FFF5F5; }
-        .red-section .card-cn { color: #4A5568; }
-        .red-section .card-en { color: #E53E3E; }
-        .red-section .core-box { border-left: 4px solid #E53E3E; }
-        .red-section .list-symbol, .red-section b { color: #E53E3E; }
+        .theme-red { background-color: #FFF5F5; }
+        .theme-red .card-title-cn { color: #4A5568; }
+        .theme-red .card-title-en { color: #E53E3E; }
+        .theme-red .core-box { border-left: 4px solid #E53E3E; }
+        .theme-red .marker, .theme-red b { color: #E53E3E; }
 
         /* 綠色系：企業包班 */
-        .green-section { background-color: #F0FFF4; }
-        .green-section .card-cn { color: #4A5568; }
-        .green-section .card-en { color: #48BB78; }
-        .green-section .core-box { border-left: 4px solid #48BB78; }
-        .green-section .list-symbol, .green-section b { color: #48BB78; }
-
-        .service-footer {
-            font-size: 10px;
-            color: #C5B08A;
-            text-align: center;
-            margin-top: 20px;
-            padding-bottom: 20px;
-        }
+        .theme-green { background-color: #F0FFF4; }
+        .theme-green .card-title-cn { color: #4A5568; }
+        .theme-green .card-title-en { color: #48BB78; }
+        .theme-green .core-box { border-left: 4px solid #48BB78; }
+        .theme-green .marker, .theme-green b { color: #48BB78; }
     </style>
 </head>
 <body>
 
-    <!-- 頂部導覽列按鈕 -->
-    <nav class="nav-bar">
-        <a href="coach.html"><span class="cn">教練資歷</span><span class="en">COACH PROFILE</span></a>
-        <a href="courses.html"><span class="cn">課程簡介</span><span class="en">COURSE</span></a>
-        <a href="tools.html"><span class="cn">配速工具</span><span class="en">PACE TOOL</span></a>
-        <a href="training.html"><span class="cn">訓練日誌</span><span class="en">TRAINING LOG</span></a>
-        <a href="match.html"><span class="cn">賽事日誌</span><span class="en">RACE LOG</span></a>
-    </nav>
-
     <div class="main-container">
-        <!-- 奶黃標頭 -->
-        <div class="stadium-header">
-            <h1 class="title-main">跑者能量補給站</h1>
-            <p class="title-sub-en">RUNNERS ENERGY STATION</p>
-            <div class="header-desc">
-                <p><span class="dot">·</span>讓我們一起跑出健康快樂的每一步 ◡̈</p>
-                <p><span class="dot">·</span>預約一份溫暖的諮詢</p>
-            </div>
-        </div>
-
-        <!-- 線上課表 -->
-        <div class="course-card blue-section">
-            <div class="card-header">
-                <span class="card-cn">線上課表</span>
-                <span class="card-en">ONLINE PROGRAMMING</span>
-            </div>
+        <!-- 線上課表區塊 -->
+        <div class="course-card theme-blue">
+            <span class="card-title-cn">線上課表</span>
+            <span class="card-title-en">ONLINE PROGRAMMING</span>
             <div class="core-box">
                 <div><b>核心重點：</b>數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。</div>
             </div>
-            <ul class="item-list">
-                <li><span class="list-symbol">·</span><b>週期化競賽規劃：</b>針對目標科學化安排訓練週期。</li>
-                <li><span class="list-symbol">·</span><b>數據即時反饋：</b>遠端即時監測訓練與恢復狀態。</li>
-                <li><span class="list-symbol">·</span><b>動態調整：</b>根據回報狀態，隨時調整下週課表。</li>
-                <li><span class="list-symbol">·</span><b>線上諮詢機制：</b>定期討論訓練成效，解答疑難雜症。</li>
+            <ul class="details-list">
+                <li><span class="marker">·</span><b>週期化競賽規劃：</b>針對目標科學化安排訓練週期。</li>
+                <li><span class="marker">·</span><b>數據即時反饋：</b>遠端即時監測訓練與恢復狀態。</li>
+                <li><span class="marker">·</span><b>動態調整：</b>根據回報狀態，隨時調整下週課表。</li>
+                <li><span class="marker">·</span><b>線上諮詢機制：</b>定期討論訓練成效，解答疑難雜症。</li>
             </ul>
         </div>
 
-        <!-- 私人教學 -->
-        <div class="course-card red-section">
-            <div class="card-header">
-                <span class="card-cn">私人教學</span>
-                <span class="card-en">ONE-ON-ONE COACHING</span>
-            </div>
+        <!-- 私人教學區塊 -->
+        <div class="course-card theme-red">
+            <span class="card-title-cn">私人教學</span>
+            <span class="card-title-en">ONE-ON-ONE COACHING</span>
             <div class="core-box">
                 <div><b>核心價值：</b>根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</div>
             </div>
-            <ul class="item-list">
-                <li><span class="list-symbol">·</span><b>跑姿校正：</b>透過錄影分析與拆解，使肌肉記憶正確動作。</li>
-                <li><span class="list-symbol">·</span><b>體感配速建立：</b>協助跑者建立對各心率區間的感知。</li>
-                <li><span class="list-symbol">·</span><b>動態負荷調控：</b>根據疲勞程度，即時調整訓練強度。</li>
-                <li><span class="list-symbol">·</span><b>跑者專項強化引導：</b>針對弱項環節設計輔助訓練。</li>
+            <ul class="details-list">
+                <li><span class="marker">·</span><b>跑姿校正：</b>透過錄影分析與拆解，使肌肉記憶正確動作。</li>
+                <li><span class="marker">·</span><b>體感配速建立：</b>協助跑者建立對各心率區間的感知。</li>
+                <li><span class="marker">·</span><b>動態負荷調控：</b>根據疲勞程度，即時調整訓練強度。</li>
+                <li><span class="marker">·</span><b>跑者專項強化引導：</b>針對弱項環節設計輔助訓練。</li>
             </ul>
         </div>
 
-        <!-- 企業包班 -->
-        <div class="course-card green-section">
-            <div class="card-header">
-                <span class="card-cn">企業包班</span>
-                <span class="card-en">CORPORATE GROUP</span>
-            </div>
+        <!-- 企業包班區塊 -->
+        <div class="course-card theme-green">
+            <span class="card-title-cn">企業包班</span>
+            <span class="card-title-en">CORPORATE GROUP</span>
             <div class="core-box">
                 <div><b>核心價值：</b>職場健康與活力、團體共榮，將運動融入企業文化。</div>
             </div>
-            <ul class="item-list">
-                <li><span class="list-symbol">·</span><b>提升團隊凝聚力：</b>挑戰目標過程中，建立跨部門情感連結。</li>
-                <li><span class="list-symbol">·</span><b>企業賽事推動：</b>協助組隊參與路跑賽事，塑造品牌形象。</li>
-                <li><span class="list-symbol">·</span><b>職場壓力紓解：</b>透過運動釋放壓力，提升團隊工作效率。</li>
+            <ul class="details-list">
+                <li><span class="marker">·</span><b>提升團隊凝聚力：</b>挑戰目標過程中，建立跨部門情感連結。</li>
+                <li><span class="marker">·</span><b>企業賽事推動：</b>協助組隊參與路跑賽事，塑造品牌形象。</li>
+                <li><span class="marker">·</span><b>職場壓力紓解：</b>透過運動釋放壓力，提升團隊工作效率。</li>
             </ul>
-        </div>
-
-        <div class="service-footer">
-            服務時間：週一至週五 09:00-18:00<br>
-            （跑者不休息，但小編需要一些運動時間)
         </div>
     </div>
 
