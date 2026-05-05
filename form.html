@@ -30,25 +30,26 @@
             padding: 20px 20px 30px 20px; 
             text-align: center;
             width: 100%;
-            max-width: 240px; /* 寬度再次縮減 */
+            max-width: 280px; /* 寬度復原微調 */
             box-sizing: border-box;
             position: relative;
         }
 
-        /* 修正跑道線條：嚴禁覆蓋標題字，移至按鈕與標題下方的文案區域 */
+        /* 修正跑道線條：位於外圍邊緣，嚴禁覆蓋在跑者服務中心字上面 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 130px; /* 大幅下移，確保不覆蓋標題文字 */
-            left: 4px; 
-            right: 4px; 
-            bottom: 5px; 
+            top: 16px; 
+            left: 6px; 
+            right: 6px; 
+            bottom: 6px; 
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-top-left-radius: 180px;
             border-top-right-radius: 180px;
             border-bottom-left-radius: 180px 100px; 
             border-bottom-right-radius: 180px 100px;
             pointer-events: none;
+            z-index: 1;
         }
         
         .title { color: #8b7355; font-size: 28px; font-weight: bold; margin: 0; letter-spacing: 2px; position: relative; z-index: 10; }
