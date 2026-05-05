@@ -2,25 +2,19 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跑者服務中心</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-
         /* 奶黃底操場格式 Header */
         .stadium-header {
             background-color: #FFFDD0; /* 奶黃底 */
-            border-radius: 50px; /* 操場格式 */
+            border-radius: 100px; /* 操場格式 */
             width: 100%;
-            height: 100px; /* 維持原高度 */
+            height: 100px;
+            
+            /* 執行指令：內部線條往上移置中 */
             display: flex;
-            align-items: center; /* 指令：線條往上移置中 */
+            align-items: center; 
             justify-content: center;
-            position: relative;
         }
 
         /* 內部線條 */
@@ -28,57 +22,38 @@
             width: 80%;
             height: 1px;
             background-color: #000;
-            margin: 0; /* 確保在中心 */
+            margin: 0; 
         }
 
-        /* 標題與其他內容維持原狀 */
-        h1 {
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
+        /* 驗證碼框寬度 */
         .captcha-input {
-            width: 60px; /* 縮小寬度 */
-        }
-
-        .service-time {
-            text-align: center;
-            margin-top: 20px;
+            width: 60px;
         }
     </style>
 </head>
 <body>
 
-    <h1>跑者服務中心</h1>
-
     <div class="stadium-header">
-        <!-- 執行指令：線條置中 -->
         <div class="inner-line"></div>
     </div>
 
     <form>
-        <div class="form-group">
+        <div>
             <label>姓名 / Name</label>
             <input type="text">
         </div>
-        <div class="form-group">
+        <div>
             <label>電子信箱 / E-mail</label>
             <input type="email">
         </div>
-        <div class="form-group">
+        <div>
             <label>驗證碼 / Verification Code</label>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <input type="text" class="captcha-input">
-                <span>(驗證碼)</span>
-                <span>↻</span>
-            </div>
+            <input type="text" class="captcha-input">
+            <span>重新整理符號 ↻</span>
         </div>
     </form>
 
-    <div class="service-time">
+    <div>
         週一至週五 09:00 - 18:00 (跑者不休息，但小編需要一些運動時間)
     </div>
 
