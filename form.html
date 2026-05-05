@@ -24,7 +24,7 @@
         }
         .nav-link { color: #ffffff; text-decoration: none; font-size: 14px; }
 
-        /* 奶黃底區塊 */
+        /* 奶黃底區塊：不准動 */
         .playground-header {
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 30%; 
@@ -35,26 +35,24 @@
             max-width: 500px;
             box-sizing: border-box;
             position: relative;
-            overflow: hidden;
         }
 
-        /* 跑道線條：修正為絕對不壓字，只保留上半部邊界線 */
+        /* 跑道線條：高拱形拋物線，左右往內推 75px 確保不壓字 */
         .playground-header::before {
             content: "";
             position: absolute;
             top: 15px;
-            left: 20px;
-            right: 20px;
-            height: 120px; /* 限制高度，確保線條不延伸至下方文字區 */
+            left: 75px;
+            right: 75px;
+            bottom: 10px; 
             border: 1px solid rgba(255, 255, 255, 0.9);
-            border-bottom: none; /* 去除底部橫線，徹底防壓字 */
-            border-top-left-radius: 180px;
-            border-top-right-radius: 180px;
+            border-bottom-left-radius: 120px 60px;
+            border-bottom-right-radius: 120px 60px;
             pointer-events: none;
         }
         
-        .title { color: #8b7355; font-size: 28px; font-weight: bold; margin: 0; letter-spacing: 2px; position: relative; z-index: 5; }
-        .en-subtitle { color: #b5a442; font-size: 11px; margin: 2px 0 10px 0; letter-spacing: 3px; position: relative; z-index: 5; }
+        .title { color: #8b7355; font-size: 28px; font-weight: bold; margin: 0; letter-spacing: 2px; }
+        .en-subtitle { color: #b5a442; font-size: 11px; margin: 2px 0 10px 0; letter-spacing: 3px; }
         
         .cta-button {
             background-color: #ffffff;
@@ -67,11 +65,9 @@
             text-decoration: none;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             font-size: 16px;
-            position: relative;
-            z-index: 5;
         }
 
-        /* 段落間距離：維持合適距離 */
+        /* 段落間距離：合適距離不多留白 */
         .copywriting {
             font-size: 13.5px;
             line-height: 1.6;
@@ -79,12 +75,10 @@
             text-align: left;
             margin: 0 auto 5px auto;
             max-width: 88%;
-            position: relative;
-            z-index: 5;
         }
         .copywriting p { margin: 0 0 4px 0; } 
 
-        /* 服務時間：顏色不准動 */
+        /* 服務時間：顏色顏色 #9b8e76 */
         .footer-info {
             font-size: 8px; 
             color: #9b8e76; 
@@ -95,12 +89,12 @@
             z-index: 10;
         }
 
-        /* 表單區域：不准動 */
+        /* 表單區域：已全面恢復原始欄位，不准擅自增刪 */
         .form-container { width: 100%; max-width: 500px; padding: 30px 35px; box-sizing: border-box; }
         .field { margin-bottom: 18px; }
         label { display: block; font-weight: bold; margin-bottom: 8px; color: #8b7355; font-size: 14px; }
         
-        input, select {
+        input, select, textarea {
             width: 100%;
             padding: 8px 12px;
             border: 1px solid #eeeeee;
@@ -171,6 +165,22 @@
                 <option value="marathon">全馬跑者 / Full Marathon Runner</option>
                 <option value="ultra-trail">超馬/越野跑者 / Ultra & Trail Runner</option>
             </select>
+        </div>
+        <div class="field">
+            <label>跑步最佳成績 (PB)</label>
+            <input type="text" placeholder="例如：全馬 3:30:00">
+        </div>
+        <div class="field">
+            <label>目標成績</label>
+            <input type="text" placeholder="例如：全馬 2:59:59">
+        </div>
+        <div class="field">
+            <label>慣用穿戴配備</label>
+            <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
+        </div>
+        <div class="field">
+            <label>您的問題</label>
+            <textarea rows="6" style="resize: none;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
         </div>
         <button type="button" class="submit-btn">送出表單 / Submit Form</button>
     </div>
