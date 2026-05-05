@@ -33,7 +33,7 @@
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 30%; 
             border-bottom-right-radius: 50% 30%;
-            padding: 25px 35px 12px 35px; 
+            padding: 25px 35px 15px 35px; /* 大幅縮小底部內距 */
             text-align: center;
             width: 100%;
             max-width: 500px;
@@ -46,12 +46,12 @@
             content: "";
             position: absolute;
             top: 15px;
-            left: 35px;   
-            right: 35px;  
-            bottom: 10px; 
+            left: 15px;
+            right: 15px;
+            bottom: 12px; /* 同步拉高線條底部 */
             border: 1px solid rgba(255, 255, 255, 0.9);
-            border-bottom-left-radius: 180px 90px;
-            border-bottom-right-radius: 180px 90px;
+            border-bottom-left-radius: 200px 100px;
+            border-bottom-right-radius: 200px 100px;
             pointer-events: none;
         }
         
@@ -71,24 +71,23 @@
             font-size: 16px;
         }
 
-        /* 段落間距離再縮小 (打勾處指令) */
+        /* 文字高度調整：維持照片比例 */
         .copywriting {
             font-size: 13.5px;
-            line-height: 1.8;
+            line-height: 1.8; 
             color: #7a6e5d;
             text-align: left;
-            margin: 0 auto 5px auto;
+            margin: 0 auto 12px auto;
             max-width: 88%;
         }
-        .copywriting p { margin-bottom: 2px; } /* 進一步縮減間距至 2px */
 
-        /* 服務時間：不准動 */
+        /* 服務時間：字體縮小、縮減下方距離 */
         .footer-info {
-            font-size: 8px; 
-            color: #a5a5a5; 
+            font-size: 9px; /* 字體進一步縮小 */
+            color: #9b8e76; 
             line-height: 1.5;
-            margin-top: 5px;
-            padding-bottom: 15px; 
+            margin-top: 10px;
+            padding-bottom: 15px; /* 縮小與跑道線的距離 */
             position: relative;
             z-index: 10;
         }
@@ -98,7 +97,7 @@
         .field { margin-bottom: 18px; }
         label { display: block; font-weight: bold; margin-bottom: 8px; color: #8b7355; font-size: 14px; }
         
-        input, select {
+        input, select, textarea {
             width: 100%;
             padding: 8px 12px;
             border: 1px solid #eeeeee;
@@ -121,6 +120,11 @@
             font-weight: bold;
             cursor: pointer;
         }
+
+        .captcha-area { display: flex; align-items: center; gap: 6px; }
+        .captcha-input { width: 60px !important; padding: 5px 8px !important; font-size: 12px; }
+        .captcha-code { background: #f4f4f4; padding: 5px 10px; border-radius: 6px; font-weight: bold; letter-spacing: 2px; font-size: 12px; }
+        .refresh-btn { background: none; border: none; cursor: pointer; font-size: 12px; color: #888; padding: 0; }
     </style>
 </head>
 <body>
@@ -140,10 +144,10 @@
         <div class="en-subtitle">RUNNER SERVICE CENTER</div>
         <div class="cta-button">讓我們聽見您的腳步聲</div>
         <div class="copywriting">
-            <p>無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。</p>
-            <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
-            <p>讓我們一起朝更好的方向邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。</p>
-            <p>希望這裡不只是網站，更是跑者們的補給站。</p>
+            無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。
+            您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。
+            讓我們一起朝更好的自己邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。
+            希望這裡不只是網站，更是跑者們的補給站。
         </div>
         <div class="footer-info">
             服務時間：週一至週五 09:00-18:00<br>
@@ -169,6 +173,30 @@
                 <option value="marathon">全馬跑者 / Full Marathon Runner</option>
                 <option value="ultra-trail">超馬/越野跑者 / Ultra & Trail Runner</option>
             </select>
+        </div>
+        <div class="field">
+            <label>跑步最佳成績 (PB)</label>
+            <input type="text" placeholder="例如：全馬 3:30:00">
+        </div>
+        <div class="field">
+            <label>目標成績</label>
+            <input type="text" placeholder="例如：全馬 2:59:59">
+        </div>
+        <div class="field">
+            <label>慣用穿戴配備</label>
+            <input type="text" placeholder="例如：Garmin, Apple Watch, Coros">
+        </div>
+        <div class="field">
+            <label>您的問題</label>
+            <textarea rows="6" style="resize: none;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+        </div>
+        <div class="field">
+            <label>驗證碼 / Verification Code</label>
+            <div class="captcha-area">
+                <input type="text" class="captcha-input" placeholder="輸入碼">
+                <div class="captcha-code">1 8 0 X</div>
+                <button type="button" class="refresh-btn">↻</button>
+            </div>
         </div>
         <button type="button" class="submit-btn">送出表單 / Submit Form</button>
     </div>
