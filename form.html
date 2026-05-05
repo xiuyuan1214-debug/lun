@@ -35,14 +35,14 @@
             position: relative;
         }
 
-        /* 修正跑道線條：置中呈現，避開文字 */
+        /* 修正跑道線條：範圍加大並置中，避開文字 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 115px; 
-            left: 40px; 
-            right: 40px; 
-            bottom: 20px; 
+            top: 105px; /* 調整置中位置 */
+            left: 15px; /* 縮減邊距以加大範圍 */
+            right: 15px; /* 縮減邊距以加大範圍 */
+            bottom: 10px; /* 調整置中位置 */
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-top-left-radius: 180px;
             border-top-right-radius: 180px;
