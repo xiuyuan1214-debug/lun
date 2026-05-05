@@ -23,7 +23,7 @@
         }
         .nav-link { color: #ffffff; text-decoration: none; font-size: 14px; }
 
-        /* 奶黃底操場格式：嚴格參照 IMG_5595_9.jpeg */
+        /* 奶黃底框：左右縮減至 420px */
         .playground-header {
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 25%; 
@@ -31,21 +31,21 @@
             padding: 40px 35px 25px 35px; 
             text-align: center;
             width: 100%;
-            max-width: 500px;
+            max-width: 420px;
             box-sizing: border-box;
             position: relative;
         }
 
-        /* 跑道線條：橢圓形狀，底部大幅上提，避開文字 */
+        /* 細跑道線條：左右縮至 10px，底部提升至 42% 確保不壓字 */
         .playground-header::before {
             content: "";
             position: absolute;
             top: 15px;
-            left: 15px; 
-            right: 15px; 
-            bottom: 35%; 
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            border-radius: 200px;
+            left: 10px; 
+            right: 10px; 
+            bottom: 42%; 
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 180px;
             pointer-events: none;
         }
         
@@ -100,9 +100,9 @@
             color: #666666;
         }
 
-        /* 驗證碼框大小復原 */
+        /* 驗證碼輸入框：精確縮小至 60px */
         .captcha-group { display: flex; gap: 8px; align-items: center; }
-        .captcha-input { width: 80px !important; flex: none !important; }
+        .captcha-input { width: 60px !important; flex: none !important; }
         .captcha-img {
             height: 38px;
             background-color: #e0e0e0;
