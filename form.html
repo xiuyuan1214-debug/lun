@@ -35,7 +35,7 @@
             position: relative;
         }
 
-        /* 線條：擴展至 95px 並微調底部，徹底避開文字區塊 */
+        /* 弧線：維持 95px 寬度，徹底避開文字 */
         .playground-header::before {
             content: "";
             position: absolute;
@@ -75,8 +75,9 @@
         }
         .copywriting p { margin: 0 0 4px 0; } 
 
+        /* 服務時間：縮小至 6px */
         .footer-info {
-            font-size: 8px; 
+            font-size: 6px; 
             color: #9b8e76; 
             line-height: 1.5;
             margin-top: 5px;
@@ -177,7 +178,6 @@
             <label>您的問題</label>
             <textarea rows="6" style="resize: none;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
         </div>
-        <!-- 復原驗證碼欄位 -->
         <div class="field">
             <label>驗證碼 / Verification Code</label>
             <input type="text" placeholder="請輸入驗證碼">
