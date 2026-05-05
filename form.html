@@ -12,7 +12,7 @@
             color: #8D7353;
         }
 
-        /* 導覽列：英文置底、無斜線 */
+        /* 導覽列 */
         .nav-bar {
             background-color: #333;
             display: flex;
@@ -30,19 +30,19 @@
         .nav-bar .en { font-size: 10px; opacity: 0.9; margin-top: 2px; text-transform: uppercase; }
 
         .main-container {
-            max-width: 500px; /* 縮減整體左右距離，讓輸入框看起來更窄 */
+            max-width: 500px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* 奶黃底：操場形狀相似、增加行距、無內線條 */
+        /* 奶黃底：操場形狀、增加上下間距、維持合適行距 */
         .stadium-header {
             background-color: #FFF9E7;
-            border-radius: 200px; /* 極大圓角以形成操場跑道形狀 */
-            padding: 40px 60px;   /* 增加內距以支撐操場形狀 */
+            border-radius: 200px; 
+            padding: 55px 60px;   /* 增加上下間距 (55px) */
             text-align: center;
             margin-bottom: 30px;
-            line-height: 1.8;     /* 增加行字間上下間距，避免密集 */
+            line-height: 1.8;     
         }
         .title-main { font-size: 26px; font-weight: bold; margin: 0; }
         .title-sub { font-size: 14px; letter-spacing: 2px; margin: 5px 0 15px 0; color: #C5B08A; }
@@ -74,7 +74,7 @@
             line-height: 1.5;
         }
 
-        /* 輸入框樣式與配色 */
+        /* 輸入框樣式 */
         .form-group { margin-bottom: 25px; }
         .form-label { font-weight: bold; font-size: 15px; margin-bottom: 10px; display: block; color: #8D7353; }
         .input-box {
@@ -88,7 +88,7 @@
             font-size: 14px;
         }
 
-        /* 驗證碼區塊 */
+        /* 驗證碼區塊：顯示框左右距離再縮減 */
         .captcha-container {
             display: flex;
             align-items: center;
@@ -101,7 +101,7 @@
         }
         .captcha-display {
             background-color: #E8E8E8; 
-            padding: 4px 10px;
+            padding: 4px 6px; /* 左右距離再縮減 (由 10px 降至 6px) */
             border-radius: 6px;
             font-weight: bold;
             letter-spacing: 2px;
