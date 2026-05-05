@@ -35,14 +35,14 @@
             position: relative;
         }
 
-        /* 重新修正跑道線條：大幅下移與內縮，嚴禁壓字並維持適當距離 */
+        /* 修正跑道線條：離開文字區域，嚴禁在文字上 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 115px;
-            left: 55px; 
-            right: 55px; 
-            bottom: 50px; 
+            top: 165px;
+            left: 20px; 
+            right: 20px; 
+            bottom: 30px; 
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-top-left-radius: 180px;
             border-top-right-radius: 180px;
@@ -105,13 +105,14 @@
         .small-input {
             padding: 6px 12px;
             font-size: 12px;
+            height: 34px;
         }
 
-        /* 驗證碼並列模式與加大尺寸（100px x 36px） */
+        /* 驗證碼並列模式，高度與上方輸入框一致（34px） */
         .captcha-group { display: flex; gap: 8px; align-items: center; }
         
         .captcha-input { 
-            height: 36px !important; 
+            height: 34px !important; 
             width: 100px !important; 
             padding: 0 10px !important; 
             text-align: center;
@@ -119,7 +120,7 @@
             box-sizing: border-box;
         }
         .captcha-img {
-            height: 36px;
+            height: 34px;
             width: 100px;
             background-color: #e0e0e0;
             border-radius: 4px;
@@ -186,7 +187,7 @@
         </div>
         <div class="field">
             <label>跑者屬性 / Runner Type</label>
-            <select>
+            <select class="small-input" style="height:34px;">
                 <option value="">請選擇 / Please Select</option>
                 <option value="beginner">新手跑者 / Beginner Runner</option>
                 <option value="half-marathon">半馬跑者 / Half Marathon Runner</option>
