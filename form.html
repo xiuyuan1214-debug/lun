@@ -34,22 +34,6 @@
             box-sizing: border-box;
             position: relative;
         }
-
-        /* 重新設計跑道線條：往外移且嚴禁壓字，維持適當距離 */
-        .playground-header::before {
-            content: "";
-            position: absolute;
-            top: 40px;
-            left: 20px; 
-            right: 20px; 
-            bottom: 15px; 
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            border-top-left-radius: 180px;
-            border-top-right-radius: 180px;
-            border-bottom-left-radius: 180px 100px; 
-            border-bottom-right-radius: 180px 100px;
-            pointer-events: none;
-        }
         
         .title { color: #8b7355; font-size: 28px; font-weight: bold; margin: 0; letter-spacing: 2px; }
         .en-subtitle { color: #b5a442; font-size: 11px; margin: 2px 0 15px 0; letter-spacing: 3px; }
@@ -107,30 +91,29 @@
             font-size: 12px;
         }
 
-        /* 驗證碼框體大小調整與上方輸入框一致 */
-        .captcha-group { display: flex; flex-direction: column; gap: 8px; }
+        /* 恢復驗證碼並列模式與統一尺寸 */
+        .captcha-group { display: flex; gap: 8px; align-items: center; }
         
-        .captcha-row { display: flex; gap: 8px; align-items: center; }
-
         .captcha-input { 
-            height: 34px !important; 
-            width: 100% !important; 
-            padding: 6px 12px !important; 
-            font-size: 12px;
+            height: 24px !important; 
+            width: 50px !important; 
+            padding: 0 5px !important; 
+            text-align: center;
+            font-size: 11px;
             box-sizing: border-box;
         }
         .captcha-img {
-            height: 34px;
-            width: 100%;
+            height: 24px;
+            width: 50px;
             background-color: #e0e0e0;
-            border-radius: 8px;
+            border-radius: 4px;
             display: flex;
             justify-content: center;
             align-items: center;
             font-style: italic;
             color: #8b7355;
             font-weight: bold;
-            font-size: 13px;
+            font-size: 11px;
             box-sizing: border-box;
         }
         .refresh-icon { cursor: pointer; color: #8b7355; font-size: 18px; user-select: none; }
@@ -214,11 +197,9 @@
         <div class="field">
             <label>驗證碼 / Verification Code</label>
             <div class="captcha-group">
-                <input type="text" class="captcha-input" placeholder="請輸入驗證碼">
-                <div class="captcha-row">
-                    <div class="captcha-img" id="captcha">C 2 L 2</div>
-                    <span class="refresh-icon" onclick="refreshCaptcha()">↻</span>
-                </div>
+                <input type="text" class="captcha-input" placeholder="驗證碼">
+                <div class="captcha-img" id="captcha">C 2 L 2</div>
+                <span class="refresh-icon" onclick="refreshCaptcha()">↻</span>
             </div>
         </div>
         <button type="button" class="submit-btn" onclick="alert('表單已送出！')">送出表單 / Submit Form</button>
