@@ -34,6 +34,22 @@
             box-sizing: border-box;
             position: relative;
         }
+
+        /* 重新加入細跑道線條：嚴禁壓字，與邊緣及文字保持適當距離 */
+        .playground-header::before {
+            content: "";
+            position: absolute;
+            top: 60px;
+            left: 45px; 
+            right: 45px; 
+            bottom: 25px; 
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-top-left-radius: 180px;
+            border-top-right-radius: 180px;
+            border-bottom-left-radius: 180px 100px; 
+            border-bottom-right-radius: 180px 100px;
+            pointer-events: none;
+        }
         
         .title { color: #8b7355; font-size: 28px; font-weight: bold; margin: 0; letter-spacing: 2px; }
         .en-subtitle { color: #b5a442; font-size: 11px; margin: 2px 0 15px 0; letter-spacing: 3px; }
@@ -91,20 +107,20 @@
             font-size: 12px;
         }
 
-        /* 恢復驗證碼並列模式與統一尺寸 */
+        /* 驗證碼並列模式與加大尺寸 */
         .captcha-group { display: flex; gap: 8px; align-items: center; }
         
         .captcha-input { 
-            height: 24px !important; 
-            width: 50px !important; 
-            padding: 0 5px !important; 
+            height: 30px !important; 
+            width: 70px !important; 
+            padding: 0 8px !important; 
             text-align: center;
-            font-size: 11px;
+            font-size: 12px;
             box-sizing: border-box;
         }
         .captcha-img {
-            height: 24px;
-            width: 50px;
+            height: 30px;
+            width: 70px;
             background-color: #e0e0e0;
             border-radius: 4px;
             display: flex;
@@ -113,7 +129,7 @@
             font-style: italic;
             color: #8b7355;
             font-weight: bold;
-            font-size: 11px;
+            font-size: 12px;
             box-sizing: border-box;
         }
         .refresh-icon { cursor: pointer; color: #8b7355; font-size: 18px; user-select: none; }
