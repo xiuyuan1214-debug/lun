@@ -41,13 +41,13 @@
             position: relative;
         }
 
-        /* 跑道線條：往內移，不壓字 */
+        /* 跑道線條：不准動 */
         .playground-header::before {
             content: "";
             position: absolute;
             top: 15px;
-            left: 35px;   /* 往內移 */
-            right: 35px;  /* 往內移 */
+            left: 35px;   
+            right: 35px;  
             bottom: 10px; 
             border: 1px solid rgba(255, 255, 255, 0.9);
             border-bottom-left-radius: 180px 90px;
@@ -71,7 +71,7 @@
             font-size: 16px;
         }
 
-        /* 段落間距離縮小 (打勾處) */
+        /* 段落間距離再縮小 (打勾處指令) */
         .copywriting {
             font-size: 13.5px;
             line-height: 1.8;
@@ -80,12 +80,12 @@
             margin: 0 auto 5px auto;
             max-width: 88%;
         }
-        .copywriting p { margin-bottom: 6px; } /* 縮小段落間距 */
+        .copywriting p { margin-bottom: 2px; } /* 進一步縮減間距至 2px */
 
-        /* 服務時間：顏色調整與線條距離微調 */
+        /* 服務時間：不准動 */
         .footer-info {
             font-size: 8px; 
-            color: #a5a5a5; /* 顏色精確調整為照片灰 */
+            color: #a5a5a5; 
             line-height: 1.5;
             margin-top: 5px;
             padding-bottom: 15px; 
