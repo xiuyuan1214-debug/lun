@@ -30,19 +30,19 @@
             padding: 20px 20px 30px 20px; 
             text-align: center;
             width: 100%;
-            max-width: 280px; /* 寬度復原微調 */
+            max-width: 280px; 
             box-sizing: border-box;
             position: relative;
         }
 
-        /* 修正跑道線條：位於外圍邊緣，嚴禁覆蓋在跑者服務中心字上面 */
+        /* 修正跑道線條：遠離外緣且嚴禁覆蓋文字 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 16px; 
-            left: 6px; 
-            right: 6px; 
-            bottom: 6px; 
+            top: 35px; 
+            left: 18px; 
+            right: 18px; 
+            bottom: 15px; 
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-top-left-radius: 180px;
             border-top-right-radius: 180px;
