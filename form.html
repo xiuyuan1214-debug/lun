@@ -7,7 +7,6 @@
     <style>
         body { font-family: sans-serif; margin: 0; background-color: #ffffff; display: flex; flex-direction: column; align-items: center; }
         
-        /* 導覽列：不准動 */
         .top-navbar {
             background-color: #333333;
             width: 100%;
@@ -24,7 +23,6 @@
         }
         .nav-link { color: #ffffff; text-decoration: none; font-size: 14px; }
 
-        /* 奶黃底區塊：不准動 */
         .playground-header {
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 30%; 
@@ -37,17 +35,17 @@
             position: relative;
         }
 
-        /* 跑道線條：高拱形拋物線，左右往內推 75px 確保不壓字 */
+        /* 線條：擴展至 95px 並微調底部，徹底避開文字區塊 */
         .playground-header::before {
             content: "";
             position: absolute;
             top: 15px;
-            left: 75px;
-            right: 75px;
-            bottom: 10px; 
+            left: 95px; 
+            right: 95px; 
+            bottom: 5px; 
             border: 1px solid rgba(255, 255, 255, 0.9);
-            border-bottom-left-radius: 120px 60px;
-            border-bottom-right-radius: 120px 60px;
+            border-bottom-left-radius: 100px 50px;
+            border-bottom-right-radius: 100px 50px;
             pointer-events: none;
         }
         
@@ -67,7 +65,6 @@
             font-size: 16px;
         }
 
-        /* 段落間距離：合適距離不多留白 */
         .copywriting {
             font-size: 13.5px;
             line-height: 1.6;
@@ -78,7 +75,6 @@
         }
         .copywriting p { margin: 0 0 4px 0; } 
 
-        /* 服務時間：顏色顏色 #9b8e76 */
         .footer-info {
             font-size: 8px; 
             color: #9b8e76; 
@@ -89,7 +85,6 @@
             z-index: 10;
         }
 
-        /* 表單區域：已全面恢復原始欄位，不准擅自增刪 */
         .form-container { width: 100%; max-width: 500px; padding: 30px 35px; box-sizing: border-box; }
         .field { margin-bottom: 18px; }
         label { display: block; font-weight: bold; margin-bottom: 8px; color: #8b7355; font-size: 14px; }
@@ -181,6 +176,11 @@
         <div class="field">
             <label>您的問題</label>
             <textarea rows="6" style="resize: none;" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+        </div>
+        <!-- 復原驗證碼欄位 -->
+        <div class="field">
+            <label>驗證碼 / Verification Code</label>
+            <input type="text" placeholder="請輸入驗證碼">
         </div>
         <button type="button" class="submit-btn">送出表單 / Submit Form</button>
     </div>
