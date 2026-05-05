@@ -33,7 +33,7 @@
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 30%; 
             border-bottom-right-radius: 50% 30%;
-            padding: 25px 35px 50px 35px; /* 增加底部內距，確保整體空間充足 */
+            padding: 25px 35px 15px 35px; /* 大幅縮小底部內距 */
             text-align: center;
             width: 100%;
             max-width: 500px;
@@ -48,7 +48,7 @@
             top: 15px;
             left: 15px;
             right: 15px;
-            bottom: 20px;
+            bottom: 12px; /* 同步拉高線條底部 */
             border: 1px solid rgba(255, 255, 255, 0.9);
             border-bottom-left-radius: 200px 100px;
             border-bottom-right-radius: 200px 100px;
@@ -65,29 +65,29 @@
             border-radius: 35px;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             text-decoration: none;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             font-size: 16px;
         }
 
-        /* 文字行高調整：與照片完全一致 */
+        /* 文字高度調整：維持照片比例 */
         .copywriting {
             font-size: 13.5px;
             line-height: 1.8; 
             color: #7a6e5d;
             text-align: left;
-            margin: 0 auto 15px auto;
+            margin: 0 auto 12px auto;
             max-width: 88%;
         }
 
-        /* 服務時間：顏色校正、上下排列、絕不壓線 */
+        /* 服務時間：字體縮小、縮減下方距離 */
         .footer-info {
-            font-size: 10px;
+            font-size: 9px; /* 字體進一步縮小 */
             color: #9b8e76; 
-            line-height: 1.6;
-            margin-top: 20px;
-            padding-bottom: 25px; /* 大幅增加底部距離，確保不壓到弧線 */
+            line-height: 1.5;
+            margin-top: 10px;
+            padding-bottom: 15px; /* 縮小與跑道線的距離 */
             position: relative;
             z-index: 10;
         }
