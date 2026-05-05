@@ -33,7 +33,7 @@
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 30%; 
             border-bottom-right-radius: 50% 30%;
-            padding: 25px 35px 30px 35px; /* 增加底部 padding 確保空間 */
+            padding: 25px 35px 50px 35px; /* 增加底部內距，確保整體空間充足 */
             text-align: center;
             width: 100%;
             max-width: 500px;
@@ -71,7 +71,7 @@
             font-size: 16px;
         }
 
-        /* 文字高度調整：與照片完全一樣 */
+        /* 文字行高調整：與照片完全一致 */
         .copywriting {
             font-size: 13.5px;
             line-height: 1.8; 
@@ -81,20 +81,18 @@
             max-width: 88%;
         }
 
-        /* 服務時間：顏色校正，且與線條保持距離不重疊 */
+        /* 服務時間：顏色校正、上下排列、絕不壓線 */
         .footer-info {
             font-size: 10px;
             color: #9b8e76; 
-            line-height: 1.5;
-            opacity: 1;
-            margin-top: 15px; /* 與上方文案保持距離 */
-            padding-top: 10px;
-            border-top: 1px solid rgba(139, 115, 85, 0.1); /* 增加細微分隔感 */
+            line-height: 1.6;
+            margin-top: 20px;
+            padding-bottom: 25px; /* 大幅增加底部距離，確保不壓到弧線 */
             position: relative;
-            z-index: 10; /* 確保在線條上方但不壓線 */
+            z-index: 10;
         }
 
-        /* 表單區域：維持原狀不准動 */
+        /* 表單區域：不准動 */
         .form-container { width: 100%; max-width: 500px; padding: 30px 35px; box-sizing: border-box; }
         .field { margin-bottom: 18px; }
         label { display: block; font-weight: bold; margin-bottom: 8px; color: #8b7355; font-size: 14px; }
@@ -123,7 +121,6 @@
             cursor: pointer;
         }
 
-        /* 驗證碼：不准動 */
         .captcha-area { display: flex; align-items: center; gap: 6px; }
         .captcha-input { width: 60px !important; padding: 5px 8px !important; font-size: 12px; }
         .captcha-code { background: #f4f4f4; padding: 5px 10px; border-radius: 6px; font-weight: bold; letter-spacing: 2px; font-size: 12px; }
@@ -153,7 +150,7 @@
             希望這裡不只是網站，更是跑者們的補給站。
         </div>
         <div class="footer-info">
-            ※服務時間：週一至週五 09:00-18:00 
+            服務時間：週一至週五 09:00-18:00<br>
             (跑者不停息，但小編需要一些運動時間)
         </div>
     </header>
