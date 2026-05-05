@@ -34,56 +34,54 @@
             padding: 20px;
         }
 
-        /* 奶黃底：操場形狀、外圍細框、縮小紅線標示處間距 */
+        /* 奶黃底：對齊 IMG_5615.jpg 的操場形狀與適當間距 */
         .stadium-header {
             background-color: #FFF9E7;
             border: 1px solid #E6D5B8;
-            border-radius: 180px; /* 操場格式 */
-            padding: 25px 50px; 
+            border-radius: 250px; /* 強化操場跑道弧度 */
+            padding: 50px 70px;  /* 增加內距以支撐操場造型 */
             text-align: center;
             margin-bottom: 25px;
         }
         .title-main { font-size: 26px; font-weight: bold; margin: 0; }
-        .title-sub { font-size: 14px; letter-spacing: 2px; margin: 2px 0 5px 0; color: #C5B08A; }
+        .title-sub { font-size: 14px; letter-spacing: 2px; margin: 5px 0 10px 0; color: #C5B08A; }
         
         .highlight-box {
             background-color: #ffffff;
             color: #D28B52;
-            padding: 6px 16px; 
-            border-radius: 20px;
+            padding: 6px 18px; 
+            border-radius: 25px;
             display: inline-block;
             font-weight: bold;
             font-size: 16px; 
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            margin-bottom: 5px; /* 縮小與下方距離 */
+            margin-bottom: 20px; /* 增加下方距離避免擁擠 */
             line-height: 1;
         }
 
-        /* 紅線標示處：段落間距縮小 */
         .description {
             font-size: 13px;
             text-align: justify;
             margin: 0 auto;
             color: #8D7353;
-            line-height: 1.4;
+            line-height: 1.6; /* 優化行距 */
         }
         .description p {
-            margin: 4px 0; /* 極小化段落間距 */
+            margin: 15px 0; /* 保持適當段落間距 */
         }
 
         .service-time {
             font-size: 10px;
             color: #C5B08A;
-            margin-top: 5px; 
-            line-height: 1.2;
+            margin-top: 15px; 
+            line-height: 1.4;
         }
 
-        /* 輸入框大小再調小 */
         .form-group { margin-bottom: 15px; }
         .form-label { font-weight: bold; font-size: 14px; margin-bottom: 5px; display: block; color: #8D7353; }
         .input-box {
             width: 100%;
-            padding: 6px 12px; /* 再次縮減高度 */
+            padding: 6px 12px;
             border: 1px solid #F5EEDB;
             background-color: #F9F5EA; 
             border-radius: 10px;
@@ -92,7 +90,6 @@
             font-size: 13px;
         }
 
-        /* 驗證碼顯示框再調小 */
         .captcha-container {
             display: flex;
             align-items: center;
@@ -110,7 +107,7 @@
             font-weight: bold;
             letter-spacing: 1px;
             color: #333;
-            font-size: 10px; /* 極小化 */
+            font-size: 10px;
         }
         .refresh-btn {
             font-size: 14px;
@@ -201,7 +198,7 @@
 
             <div class="form-group">
                 <label class="form-label">您的問題 / Your Inquiry</label>
-                <textarea class="input-box" rows="3" placeholder="每一滴汗水，都值得被聽見..."></textarea>
+                <textarea class="input-box" rows="3" placeholder="每一滴汗水，都值得 be 聽見..."></textarea>
             </div>
 
             <div class="form-group">
