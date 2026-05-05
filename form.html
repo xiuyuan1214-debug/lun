@@ -41,14 +41,14 @@
             position: relative;
         }
 
-        /* 紅圈處線條距離調整：完全比照圖2 */
+        /* 跑道線條：不准動 */
         .playground-header::before {
             content: "";
             position: absolute;
             top: 15px;
-            left: 15px;  /* 增加邊距使其更往內縮，對齊圖2 */
-            right: 15px; /* 增加邊距使其更往內縮，對齊圖2 */
-            bottom: 25px; /* 調整底部弧線距離 */
+            left: 15px;
+            right: 15px;
+            bottom: 25px;
             border: 1px solid rgba(255, 255, 255, 0.9);
             border-bottom-left-radius: 200px 100px;
             border-bottom-right-radius: 200px 100px;
@@ -71,26 +71,22 @@
             font-size: 16px;
         }
 
-        /* 紅色直線高度縮小：壓縮段落間距 */
+        /* 文字高度調整：與照片完全一樣 */
         .copywriting {
             font-size: 13.5px;
-            line-height: 1.4; /* 縮小行高 */
+            line-height: 1.8; /* 依照照片調大行高 */
             color: #7a6e5d;
             text-align: left;
             margin: 0 auto 5px auto;
             max-width: 88%;
         }
-        .copywriting br {
-            content: "";
-            display: block;
-            margin: 5px 0; /* 嚴格控制換行產生的空格高度 */
-        }
 
+        /* 服務時間：顏色與照片完全一樣 */
         .footer-info {
             font-size: 10px;
-            color: #b5a442;
+            color: #9b8e76; /* 依照照片校正色碼 */
             line-height: 1.3;
-            opacity: 0.8;
+            opacity: 0.9;
             margin-top: 5px;
             padding-bottom: 10px; 
         }
@@ -148,9 +144,9 @@
         <div class="en-subtitle">RUNNERS ENERGY STATION</div>
         <div class="cta-button">讓我們聽見您的腳步聲</div>
         <div class="copywriting">
-            無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。<br>
-            您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。<br>
-            讓我們一起朝更好的方向邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。<br>
+            無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。
+            您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。
+            讓我們一起朝更好的方向邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。
             希望這裡不只是網站，更是跑者們的補給站 ◡̈
         </div>
         <div class="footer-info">
