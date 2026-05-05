@@ -35,24 +35,26 @@
             max-width: 500px;
             box-sizing: border-box;
             position: relative;
+            overflow: hidden;
         }
 
-        /* 跑道線條：嚴禁壓字，往外推至安全距離 */
+        /* 跑道線條：修正為絕對不壓字，只保留上半部邊界線 */
         .playground-header::before {
             content: "";
             position: absolute;
             top: 15px;
-            left: 75px;   /* 大幅往外縮，確保不靠近文字 */
-            right: 75px;  /* 大幅往外縮，確保不靠近文字 */
-            bottom: 10px; 
+            left: 20px;
+            right: 20px;
+            height: 120px; /* 限制高度，確保線條不延伸至下方文字區 */
             border: 1px solid rgba(255, 255, 255, 0.9);
-            border-bottom-left-radius: 120px 60px;
-            border-bottom-right-radius: 120px 60px;
+            border-bottom: none; /* 去除底部橫線，徹底防壓字 */
+            border-top-left-radius: 180px;
+            border-top-right-radius: 180px;
             pointer-events: none;
         }
         
-        .title { color: #8b7355; font-size: 28px; font-weight: bold; margin: 0; letter-spacing: 2px; }
-        .en-subtitle { color: #b5a442; font-size: 11px; margin: 2px 0 10px 0; letter-spacing: 3px; }
+        .title { color: #8b7355; font-size: 28px; font-weight: bold; margin: 0; letter-spacing: 2px; position: relative; z-index: 5; }
+        .en-subtitle { color: #b5a442; font-size: 11px; margin: 2px 0 10px 0; letter-spacing: 3px; position: relative; z-index: 5; }
         
         .cta-button {
             background-color: #ffffff;
@@ -65,6 +67,8 @@
             text-decoration: none;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             font-size: 16px;
+            position: relative;
+            z-index: 5;
         }
 
         /* 段落間距離：維持合適距離 */
@@ -75,8 +79,10 @@
             text-align: left;
             margin: 0 auto 5px auto;
             max-width: 88%;
+            position: relative;
+            z-index: 5;
         }
-        .copywriting p { margin-bottom: 4px; } 
+        .copywriting p { margin: 0 0 4px 0; } 
 
         /* 服務時間：顏色不准動 */
         .footer-info {
