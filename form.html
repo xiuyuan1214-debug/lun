@@ -27,21 +27,21 @@
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 25%; 
             border-bottom-right-radius: 50% 25%;
-            padding: 20px 30px 30px 30px; 
+            padding: 20px 20px 30px 20px; 
             text-align: center;
             width: 100%;
-            max-width: 340px;
+            max-width: 240px; /* 寬度再次縮減 */
             box-sizing: border-box;
             position: relative;
         }
 
-        /* 修正跑道線條：位於所有文字外圍邊緣，保持適當距離 */
+        /* 修正跑道線條：嚴禁覆蓋標題字，移至按鈕與標題下方的文案區域 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 5px;
-            left: 5px; 
-            right: 5px; 
+            top: 130px; /* 大幅下移，確保不覆蓋標題文字 */
+            left: 4px; 
+            right: 4px; 
             bottom: 5px; 
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-top-left-radius: 180px;
@@ -51,8 +51,8 @@
             pointer-events: none;
         }
         
-        .title { color: #8b7355; font-size: 28px; font-weight: bold; margin: 0; letter-spacing: 2px; }
-        .en-subtitle { color: #b5a442; font-size: 11px; margin: 2px 0 15px 0; letter-spacing: 3px; }
+        .title { color: #8b7355; font-size: 28px; font-weight: bold; margin: 0; letter-spacing: 2px; position: relative; z-index: 10; }
+        .en-subtitle { color: #b5a442; font-size: 11px; margin: 2px 0 15px 0; letter-spacing: 3px; position: relative; z-index: 10; }
         
         .cta-button {
             background-color: #ffffff;
@@ -65,6 +65,8 @@
             text-decoration: none;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             font-size: 16px;
+            position: relative;
+            z-index: 10;
         }
 
         .copywriting {
@@ -74,6 +76,8 @@
             text-align: left;
             margin: 0 auto;
             max-width: 100%;
+            position: relative;
+            z-index: 10;
         }
         .copywriting p { margin: 0 0 8px 0; } 
 
@@ -108,7 +112,6 @@
             height: 34px;
         }
 
-        /* 驗證碼並列模式，高度縮減 */
         .captcha-group { display: flex; gap: 8px; align-items: center; }
         
         .captcha-input { 
@@ -120,7 +123,7 @@
             box-sizing: border-box;
         }
         .captcha-img {
-            height: 24px; /* 高度縮減 */
+            height: 24px;
             width: 45px;
             background-color: #e0e0e0;
             border-radius: 4px;
@@ -168,7 +171,7 @@
             <p>無論您是因突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。</p>
             <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
             <p>讓我們一起朝更好的方向邁進，讓這份對跑步熱愛，連結起每一個熱血的靈魂。</p>
-            <p>希望這裡不職是網站，更是跑者們的補給站。</p>
+            <p>希望這裡不只是網站，更是跑者們的補給站。</p>
         </div>
         <div class="footer-info">
             服務時間：週一至週五 09:00-18:00<br>
