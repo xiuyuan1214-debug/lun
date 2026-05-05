@@ -23,7 +23,6 @@
         }
         .nav-link { color: #ffffff; text-decoration: none; font-size: 14px; }
 
-        /* 奶黃底框：左右縮減至 420px */
         .playground-header {
             background-color: #fcf6e3; 
             border-bottom-left-radius: 50% 25%; 
@@ -36,14 +35,14 @@
             position: relative;
         }
 
-        /* 細跑道線條：左右縮至 10px，底部提升至 42% 確保不壓字 */
+        /* 跑道線條：精確避開文字，維持適當距離 */
         .playground-header::before {
             content: "";
             position: absolute;
             top: 15px;
-            left: 10px; 
-            right: 10px; 
-            bottom: 42%; 
+            left: 15px; 
+            right: 15px; 
+            bottom: 40%; 
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-radius: 180px;
             pointer-events: none;
@@ -100,19 +99,26 @@
             color: #666666;
         }
 
-        /* 驗證碼輸入框：精確縮小至 60px */
+        /* 驗證碼框大小縮小並確保文字完整 */
         .captcha-group { display: flex; gap: 8px; align-items: center; }
-        .captcha-input { width: 60px !important; flex: none !important; }
+        .captcha-input { 
+            width: 60px !important; 
+            flex: none !important; 
+            padding: 10px 5px !important; 
+            text-align: center;
+        }
         .captcha-img {
             height: 38px;
+            width: 80px;
             background-color: #e0e0e0;
             border-radius: 4px;
-            padding: 0 12px;
             display: flex;
+            justify-content: center;
             align-items: center;
             font-style: italic;
             color: #8b7355;
             font-weight: bold;
+            font-size: 14px;
         }
         .refresh-icon { cursor: pointer; color: #8b7355; font-size: 18px; }
 
