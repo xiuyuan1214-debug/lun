@@ -53,7 +53,6 @@
         .title { color: #8b7355; font-size: 28px; font-weight: bold; margin: 0; letter-spacing: 2px; }
         .en-subtitle { color: #b5a442; font-size: 11px; margin: 2px 0 15px 0; letter-spacing: 3px; }
         
-        /* 縮減下方間距讓文字往上移 */
         .cta-button {
             background-color: #ffffff;
             color: #d47a3c; 
@@ -122,7 +121,7 @@
             font-weight: bold;
             font-size: 13px;
         }
-        .refresh-icon { cursor: pointer; color: #8b7355; font-size: 20px; }
+        .refresh-icon { cursor: pointer; color: #8b7355; font-size: 20px; user-select: none; }
 
         .submit-btn {
             width: 100%;
@@ -204,12 +203,23 @@
             <label>驗證碼 / Verification Code</label>
             <div class="captcha-group">
                 <input type="text" class="captcha-input" placeholder="驗證碼">
-                <div class="captcha-img">A 7 B 9</div>
-                <span class="refresh-icon" onclick="window.location.reload();">↻</span>
+                <div class="captcha-img" id="captcha">X 4 K 9</div>
+                <span class="refresh-icon" onclick="refreshCaptcha()">↻</span>
             </div>
         </div>
         <button type="button" class="submit-btn" onclick="alert('表單已送出！')">送出表單 / Submit Form</button>
     </div>
+
+    <script>
+        function refreshCaptcha() {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+            let code = '';
+            for (let i = 0; i < 4; i++) {
+                code += chars.charAt(Math.floor(Math.random() * chars.length)) + ' ';
+            }
+            document.getElementById('captcha').innerText = code.trim();
+        }
+    </script>
 
 </body>
 </html>
