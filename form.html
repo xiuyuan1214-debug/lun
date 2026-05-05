@@ -35,14 +35,14 @@
             position: relative;
         }
 
-        /* 重新設計跑道線條：嚴禁壓字，增加與文字及邊緣的距離 */
+        /* 重新設計跑道線條：往外移且嚴禁壓字，維持適當距離 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 72px;
-            left: 48px; 
-            right: 48px; 
-            bottom: 38px; 
+            top: 40px;
+            left: 20px; 
+            right: 20px; 
+            bottom: 15px; 
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-top-left-radius: 180px;
             border-top-right-radius: 180px;
@@ -107,28 +107,30 @@
             font-size: 12px;
         }
 
-        .captcha-group { display: flex; gap: 8px; align-items: center; }
+        /* 驗證碼框體大小調整與上方輸入框一致 */
+        .captcha-group { display: flex; flex-direction: column; gap: 8px; }
         
+        .captcha-row { display: flex; gap: 8px; align-items: center; }
+
         .captcha-input { 
-            height: 24px !important; 
-            width: 50px !important; 
-            padding: 0 5px !important; 
-            text-align: center;
-            font-size: 11px;
+            height: 34px !important; 
+            width: 100% !important; 
+            padding: 6px 12px !important; 
+            font-size: 12px;
             box-sizing: border-box;
         }
         .captcha-img {
-            height: 24px;
-            width: 50px;
+            height: 34px;
+            width: 100%;
             background-color: #e0e0e0;
-            border-radius: 4px;
+            border-radius: 8px;
             display: flex;
             justify-content: center;
             align-items: center;
             font-style: italic;
             color: #8b7355;
             font-weight: bold;
-            font-size: 11px;
+            font-size: 13px;
             box-sizing: border-box;
         }
         .refresh-icon { cursor: pointer; color: #8b7355; font-size: 18px; user-select: none; }
@@ -212,9 +214,11 @@
         <div class="field">
             <label>驗證碼 / Verification Code</label>
             <div class="captcha-group">
-                <input type="text" class="captcha-input" placeholder="驗證碼">
-                <div class="captcha-img" id="captcha">C 2 L 2</div>
-                <span class="refresh-icon" onclick="refreshCaptcha()">↻</span>
+                <input type="text" class="captcha-input" placeholder="請輸入驗證碼">
+                <div class="captcha-row">
+                    <div class="captcha-img" id="captcha">C 2 L 2</div>
+                    <span class="refresh-icon" onclick="refreshCaptcha()">↻</span>
+                </div>
             </div>
         </div>
         <button type="button" class="submit-btn" onclick="alert('表單已送出！')">送出表單 / Submit Form</button>
