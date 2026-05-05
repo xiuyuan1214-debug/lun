@@ -35,14 +35,14 @@
             position: relative;
         }
 
-        /* 修正跑道線條：精確定位以遠離邊緣與文字 */
+        /* 最終修正跑道線條：增加邊距以徹底遠離文字與邊緣 */
         .playground-header::before {
             content: "";
             position: absolute;
-            top: 45px;
-            left: 25px; 
-            right: 25px; 
-            bottom: 18px; 
+            top: 52px;
+            left: 30px; 
+            right: 30px; 
+            bottom: 22px; 
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-top-left-radius: 180px;
             border-top-right-radius: 180px;
