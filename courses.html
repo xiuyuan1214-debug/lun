@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            --nav-bg: #333333;
             --bg-red: #FFF1F0;
             --c-orange: #D97E38; 
             --text-dark: #333333;
@@ -17,9 +16,9 @@
             margin: 0; padding: 0; color: var(--text-dark); background: #fff;
         }
 
-        /* 導覽列全復原 */
+        /* 導覽列 */
         .navbar {
-            background-color: var(--nav-bg);
+            background-color: #333;
             padding: 15px 0;
             display: flex;
             justify-content: center;
@@ -29,32 +28,60 @@
         .nav-item span { display: block; font-size: 18px; font-weight: bold; margin-bottom: 2px; }
         .nav-item small { display: block; font-size: 10px; text-transform: uppercase; }
 
-        /* 私人教學區塊 (完全對標 IMG_5554_5.png) */
-        .section { padding: 80px 0 40px 0; text-align: center; background-color: var(--bg-red); }
-        h2 { font-size: 26px; font-weight: 600; margin: 0 0 10px 0; color: #333; }
-        .subtitle { font-size: 16px; font-weight: 900; margin: 0 0 45px 0; letter-spacing: 1.5px; text-transform: uppercase; color: var(--c-orange); }
+        /* 主區塊 (對標 IMG_5554_6.png) */
+        .section { 
+            padding: 80px 0 60px 0; 
+            text-align: center; 
+            background-color: var(--bg-red); 
+        }
+        
+        h2 { font-size: 28px; font-weight: 600; margin: 0 0 12px 0; color: #333; }
+        .subtitle { 
+            font-size: 16px; 
+            font-weight: 900; 
+            margin: 0 0 45px 0; 
+            letter-spacing: 1.5px; 
+            text-transform: uppercase; 
+            color: var(--c-orange); 
+        }
 
         /* 核心價值白盒 */
         .card {
-            background: #fff; padding: 30px; border-radius: 12px; max-width: 600px;
-            margin: 0 auto 45px auto; border-left: 8px solid var(--c-orange); text-align: left;
-            line-height: 1.8; font-size: 17px;
+            background: #fff; 
+            padding: 28px 32px; 
+            border-radius: 12px; 
+            max-width: 620px;
+            margin: 0 auto 45px auto; 
+            border-left: 8px solid var(--c-orange); 
+            text-align: left;
+            line-height: 1.8; 
+            font-size: 17px;
         }
 
-        /* 清單樣式校正：圓點與標題同步橘色 */
+        /* 清單樣式：橘色圓點 + 橘色標題 + 灰色描述 */
         .list-wrap { display: inline-block; text-align: left; padding: 0 20px; }
         ul { list-style: none; padding: 0; margin: 0; }
         li { margin-bottom: 18px; font-size: 15px; display: flex; align-items: flex-start; }
-        li::before { content: "•"; color: var(--c-orange); margin-right: 10px; font-weight: 900; font-size: 24px; line-height: 1; }
+        
+        li::before { 
+            content: "•"; 
+            color: var(--c-orange); 
+            margin-right: 10px; 
+            font-weight: 900; 
+            font-size: 24px; 
+            line-height: 1; 
+        }
 
         .list-title { color: var(--c-orange); font-weight: 800; }
         .list-desc { color: var(--text-desc); font-weight: 400; margin-left: 2px; }
 
-        /* 頁尾復原：移除按鈕與服務時間，對標照片底部 */
-        .footer { padding: 60px 0 0 0; text-align: center; background: #fff; }
-        .footer-msg { color: #888; font-size: 14px; margin-bottom: 40px; }
-        
-        /* 底部網址列 */
+        /* 頁尾復原：移除所有雜質，僅保留網址列風格 */
+        .footer { 
+            padding: 80px 0 0 0; 
+            background-color: #fff; 
+            text-align: center; 
+        }
+
         .browser-bar {
             background: #F8F8F8;
             padding: 12px 0;
@@ -65,7 +92,12 @@
             color: #333;
             border-top: 1px solid #eee;
         }
-        .browser-bar::before { content: "🔒"; margin-right: 8px; font-size: 14px; opacity: 0.7; }
+        .browser-bar::before { 
+            content: "🔒"; 
+            margin-right: 8px; 
+            font-size: 14px; 
+            opacity: 0.6; 
+        }
     </style>
 </head>
 <body>
@@ -97,7 +129,6 @@
     </div>
 
     <div class="footer">
-        <p class="footer-msg">讓我們一起跑出健康快樂的每一步 ☺</p>
         <div class="browser-bar">
             xiuyuan1214-debug.github.io
         </div>
