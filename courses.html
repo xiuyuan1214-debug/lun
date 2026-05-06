@@ -6,7 +6,7 @@
     <title>課程簡介 - 跑者服務中心</title>
     <style>
         :root {
-            /* 1. 指令：所有顏色重新調整 (維持專業墨感色調) */
+            /* 1. 指令：所有顏色重新調整 (調亮藍綠色調，維持專業墨感) */
             --nav-bg: #333333;
             --bg-blue: #F0F7FA;  
             --c-blue: #6A9AC4;   
@@ -25,13 +25,13 @@
             color: var(--text-main);
         }
 
-        /* 2. 指令：最上層按鈕排版與照片完全一樣 (參照 IMG_5779.jpeg，確保小標完整顯示) */
+        /* 2. 指令：最上層導覽列調整至與 IMG_5779.jpeg 完全一致 (修正爛排版與遮擋) */
         .navbar {
             background-color: var(--nav-bg);
-            padding: 22px 0 16px 0; /* 調整內距確保小標 COACH PROFILE 等完整顯示 */
+            padding: 22px 5px 16px 5px; /* 依照照片比例設定上下襯距，確保不遮擋小標 */
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: space-around; /* 橫向均勻分布 */
+            align-items: flex-end; /* 底部對齊 */
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -41,12 +41,11 @@
             text-decoration: none; 
             text-align: center; 
             color: #ffffff; 
-            flex: 1;
-            max-width: 20%;
+            flex: 1; /* 按鈕等寬排開 */
         }
         .nav-item span { 
             display: block; 
-            font-size: 21px; 
+            font-size: 21px; /* 依照照片字體比例設定 */
             font-weight: bold; 
             margin-bottom: 2px;
             letter-spacing: 0.5px;
@@ -54,7 +53,7 @@
         }
         .nav-item small { 
             display: block; 
-            font-size: 11px; 
+            font-size: 11px; /* 確保小標完整顯示，清晰不切到 */
             text-transform: uppercase; 
             font-weight: 300; 
             opacity: 0.8;
@@ -62,17 +61,17 @@
             white-space: nowrap;
         }
 
-        /* 3. 指令：區塊需要一行字的留白 */
+        /* 3. 指令：線上課表、私人教學、企業包班區塊需要一行字的留白 */
         .block-wrapper { 
-            padding: 24px 0; /* 留出一行字的高度間距 */
+            padding: 24px 0; /* 使用 24px (標準字高) 作為上下留白 */
             text-align: center; 
         }
         
-        .online { background-color: var(--bg-blue); margin-top: 5px; }
+        .online { background-color: var(--bg-blue); margin-top: 10px; }
         .private { background-color: var(--bg-red); }
         .group { background-color: var(--bg-green); }
 
-        /* 其餘 HTML 結構對應的 CSS 嚴格維持不動 */
+        /* 以下原始樣式與排版，嚴格維持不動 */
         .container { max-width: 600px; margin: 0 auto; text-align: left; padding: 0 25px; }
         h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; }
         .subtitle { font-size: 13px; font-weight: 900; margin: 0 0 25px 0; text-transform: uppercase; }
@@ -90,8 +89,6 @@
         .online li::before { color: var(--c-blue); }
         .private li::before { color: var(--c-orange); }
         .group li::before { color: var(--c-green); }
-
-        /* 預約諮詢區塊與按鈕復原 */
         .footer { padding: 40px 0 60px 0; text-align: center; }
         .footer-msg { color: #888888; font-size: 14px; margin-bottom: 25px; }
         .btn { display: inline-block; background-color: #333333; color: #ffffff !important; padding: 15px 75px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
@@ -156,7 +153,7 @@
 
     <div class="footer">
         <p class="footer-msg">讓我們一起跑出健康快樂的每一步 ☺</p>
-        <a href="form.html" class="btn">預約一份溫暖的諮詢</a>
+        <a href="form.html" class="btn">預約一份溫慢的諮詢</a>
     </div>
 
 </body>
