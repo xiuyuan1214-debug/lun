@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>課程簡介 | Runner Service Center</title>
     <style>
-        /* 嚴格依照 IMG_5311.jpg 精確配色 */
+        /* 嚴格依照 IMG_5311.jpg 精確取色與排版 */
         :root {
             --nav-bg: #333333;
-            --bg-blue: #F0F7FA;     /* 線上課表背景藍 */
-            --bg-red: #FFF5F4;      /* 私人教學背景紅 */
-            --bg-green: #F3F8F5;    /* 企業包班背景綠 */
-            --text-blue: #5992B2;   /* 英文副標及清單點顏色 */
-            --text-red: #A65D57;    /* 英文副標及清單點顏色 */
-            --text-green: #4E8C67;  /* 英文副標及清單點顏色 */
-            --text-dark: #333333;   /* 標題深灰色 */
-            --text-gray: #666666;   /* 清單內文顏色 */
+            --bg-blue: #F0F7FA;     /* 線上課表背景 */
+            --bg-red: #FFF5F4;      /* 私人教學背景 */
+            --bg-green: #F3F8F5;    /* 企業包班背景 */
+            --text-blue: #5992B2;   /* 英文/點顏色 */
+            --text-red: #A65D57;    /* 英文/點顏色 */
+            --text-green: #4E8C67;  /* 英文/點顏色 */
+            --dark-gray: #333333;   /* 標題顏色 */
+            --list-text: #666666;   /* 清單文字顏色 */
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--text-dark);
-            line-height: 1.4; /* 調整行高以符合照片緊湊感 */
+            color: var(--dark-gray);
+            line-height: 1.4; /* 緊湊行高 */
         }
 
-        /* 頂部導覽列 */
+        /* 導覽列 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 15px 0;
@@ -54,7 +53,7 @@
             text-transform: uppercase;
         }
 
-        /* 區塊排版與間距：左對齊 */
+        /* 區塊排版：左對齊與精確留白 */
         .section {
             padding: 30px 20px;
             text-align: left;
@@ -64,11 +63,12 @@
         .one-on-one { background-color: var(--bg-red); }
         .corporate-group { background-color: var(--bg-green); }
 
-        /* 字體顏色與粗細校正 */
+        /* 標題與副標字體校正 */
         h2 { 
             font-size: 20px; 
             margin: 0 0 4px 0; 
             font-weight: bold;
+            color: var(--dark-gray);
         }
         
         .subtitle { 
@@ -82,7 +82,7 @@
         .one-on-one .subtitle { color: var(--text-red); }
         .corporate-group .subtitle { color: var(--text-green); }
 
-        /* 核心重點/價值白盒 */
+        /* 白盒區塊樣式 */
         .highlight-card {
             background: #fff;
             padding: 15px 18px;
@@ -96,7 +96,7 @@
         .one-on-one .highlight-card { border-left-color: var(--text-red); }
         .corporate-group .highlight-card { border-left-color: var(--text-green); }
 
-        /* 清單樣式：彩色點緊貼文字 */
+        /* 清單點符號校正 */
         ul { 
             list-style: none; 
             padding: 0; 
@@ -106,7 +106,7 @@
         li { 
             margin-bottom: 6px; 
             font-size: 13px;
-            color: var(--text-gray);
+            color: var(--list-text);
             display: flex;
             align-items: center;
         }
@@ -122,7 +122,7 @@
         .one-on-one li::before { color: var(--text-red); }
         .corporate-group li::before { color: var(--text-green); }
 
-        /* 底部諮詢區塊 */
+        /* 底部諮詢 */
         .booking-container {
             text-align: center;
             padding: 20px 20px 40px 20px;
@@ -149,7 +149,6 @@
 </head>
 <body>
 
-    <!-- 頂部導覽列按鈕修復 -->
     <nav class="navbar">
         <a href="index.html" class="nav-item"><span>教練資歷</span><small>COACH PROFILE</small></a>
         <a href="courses.html" class="nav-item"><span>課程簡介</span><small>COURSE</small></a>
@@ -199,7 +198,6 @@
         </ul>
     </div>
 
-    <!-- 底部諮詢上移並連結至 form.html -->
     <div class="booking-container">
         <p class="booking-text">讓我們一起跑出健康快樂的每一步 ☺</p>
         <a href="form.html" class="btn-booking">預約一份溫暖的諮詢</a>
