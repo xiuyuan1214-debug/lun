@@ -23,7 +23,7 @@
             color: var(--text-dark);
         }
 
-        /* 導覽列 */
+        /* 頂部導覽列 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 20px 0;
@@ -52,9 +52,10 @@
             letter-spacing: 0.5px;
         }
 
-        /* 區塊留白 - 嚴格對齊照片比例 */
+        /* 區塊間距校正 */
         .section {
-            padding: 100px 20px; /* 增加上下留白至照片比例 */
+            padding-top: 120px; /* 大幅增加上方留白 */
+            padding-bottom: 120px;
             text-align: center;
         }
 
@@ -62,19 +63,19 @@
         .one-on-one { background-color: var(--bg-red); }
         .corporate-group { background-color: var(--bg-green); }
 
-        /* 字體顏色與粗細校正 */
+        /* 字體與粗細 */
         h2 { 
-            font-size: 28px; 
+            font-size: 30px; 
             font-weight: 700; 
-            margin: 0 0 15px 0; 
+            margin: 0 0 20px 0; /* 標題與副標間距 */
             color: var(--text-dark); 
         }
         
         .subtitle { 
-            font-size: 16px; 
+            font-size: 17px; 
             font-weight: 900; 
-            margin: 0 0 45px 0; /* 增加副標與下方白盒間距 */
-            letter-spacing: 1.5px;
+            margin: 0 0 60px 0; /* 副標與內容間距 */
+            letter-spacing: 2px;
         }
 
         .online-programming .subtitle { color: var(--blue-sub); }
@@ -84,20 +85,20 @@
         /* 核心價值白盒 */
         .highlight-card {
             background: #fff;
-            padding: 28px;
+            padding: 30px;
             border-radius: 12px;
-            max-width: 580px;
-            margin: 0 auto 40px auto;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
             border-left: 6px solid;
             text-align: left;
-            line-height: 1.8;
+            line-height: 2;
             font-size: 16px;
         }
         .online-programming .highlight-card { border-left-color: var(--blue-sub); }
         .one-on-one .highlight-card { border-left-color: var(--orange-sub); }
         .corporate-group .highlight-card { border-left-color: var(--green-sub); }
 
-        /* 列表置中與點位置校正 */
+        /* 列表置中 */
         .list-wrapper {
             display: flex;
             justify-content: center;
@@ -111,17 +112,16 @@
         }
 
         li { 
-            margin-bottom: 12px; 
+            margin-bottom: 15px; 
             font-size: 16px;
-            color: #333;
             font-weight: 500;
         }
 
         li::before { 
             content: "·"; 
-            margin-right: 8px; 
+            margin-right: 10px; 
             font-weight: 900; 
-            font-size: 24px;
+            font-size: 26px;
             vertical-align: middle;
         }
 
@@ -129,28 +129,28 @@
         .one-on-one li::before { color: var(--orange-sub); }
         .corporate-group li::before { color: var(--green-sub); }
 
-        /* 底部諮詢區塊 - 往上移 */
+        /* 底部諮詢上移 */
         .booking-container {
             text-align: center;
-            padding: 20px 20px 60px 20px;
+            padding: 0px 20px 80px 20px;
             background-color: #fff;
+            margin-top: -30px;
         }
 
         .booking-text {
             color: #888;
             font-size: 16px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .btn-booking {
             display: inline-block;
             background-color: var(--nav-bg);
             color: #ffffff !important;
-            padding: 14px 70px;
+            padding: 15px 80px;
             text-decoration: none;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 16px;
         }
     </style>
 </head>
@@ -213,7 +213,7 @@
 
     <div class="booking-container">
         <p class="booking-text">讓我們一起跑出健康快樂的每一步 ☺</p>
-        <a href="form.html" class="btn-booking">預約一份溫慢的諮詢</a>
+        <a href="form.html" class="btn-booking">預約一份溫暖的諮詢</a>
     </div>
 
 </body>
