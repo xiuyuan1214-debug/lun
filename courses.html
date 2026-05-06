@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程簡介 - 跑者服務中心</title>
     <style>
         :root {
             --nav-bg: #333333;
@@ -53,12 +54,12 @@
             opacity: 0.9;
         }
 
-        /* 區塊樣式：完全復原 IMG_5311_3.jpg */
+        /* 內容區塊：完全復原 IMG_5311_3.jpg */
         .block-wrapper {
             padding: 45px 0;
             text-align: center;
         }
-        .online { background-color: var(--bg-blue); margin-top: 20px; }
+        .online { background-color: var(--bg-blue); margin-top: 10px; }
         .private { background-color: var(--bg-red); }
         .group { background-color: var(--bg-green); }
 
@@ -79,6 +80,7 @@
         .private .subtitle { color: var(--c-orange); }
         .group .subtitle { color: var(--c-green); }
 
+        /* 核心重點/價值框 */
         .card {
             background: #fff; padding: 22px 28px; border-radius: 10px;
             margin-bottom: 25px; border-left: 7px solid;
@@ -88,6 +90,7 @@
         .private .card { border-left-color: var(--c-orange); }
         .group .card { border-left-color: var(--c-green); }
 
+        /* 列表樣式：對齊 IMG_5311_3.jpg 的點點顏色 */
         ul { list-style: none; padding: 0; margin: 0; }
         li { margin-bottom: 12px; font-size: 14px; display: flex; align-items: flex-start; }
         li::before { content: "•"; margin-right: 8px; font-weight: 900; font-size: 20px; line-height: 1; }
@@ -99,6 +102,7 @@
         .list-title { font-weight: 800; }
         .list-desc { color: var(--text-desc); font-weight: 400; }
 
+        /* 頁尾按鈕 */
         .footer { padding: 40px 0 0 0; text-align: center; background: #fff; }
         .footer-msg { color: #888; font-size: 14px; margin-bottom: 25px; }
         .btn {
@@ -113,7 +117,7 @@
             margin-bottom: 45px;
         }
 
-        /* 網址列：依據 IMG_5311_3.jpg 修正 */
+        /* 手機瀏覽器網址列樣式 */
         .browser-bar {
             background: #F8F8F8; padding: 12px 0; font-size: 16px; color: #333; border-top: 1px solid #eee;
             display: flex; justify-content: center; align-items: center;
@@ -123,6 +127,7 @@
 </head>
 <body>
 
+    <!-- 導覽列 -->
     <nav class="navbar">
         <a href="index.html" class="nav-item"><span>教練資歷</span><small>COACH PROFILE</small></a>
         <a href="courses.html" class="nav-item"><span>課程簡介</span><small>COURSE</small></a>
@@ -131,6 +136,7 @@
         <a href="match.html" class="nav-item"><span>賽事日誌</span><small>RACE LOG</small></a>
     </nav>
 
+    <!-- 線上課表區塊 -->
     <div class="block-wrapper online">
         <div class="container">
             <h2>線上課表</h2>
@@ -147,6 +153,7 @@
         </div>
     </div>
 
+    <!-- 私人教學區塊 -->
     <div class="block-wrapper private">
         <div class="container">
             <h2>私人教學</h2>
@@ -163,6 +170,7 @@
         </div>
     </div>
 
+    <!-- 企業包班區塊 -->
     <div class="block-wrapper group">
         <div class="container">
             <h2>企業包班</h2>
@@ -178,6 +186,7 @@
         </div>
     </div>
 
+    <!-- 頁尾與網址列 -->
     <div class="footer">
         <p class="footer-msg">讓我們一起跑出健康快樂的每一步 ☺</p>
         <a href="form.html" class="btn">預約一份溫暖的諮詢</a>
