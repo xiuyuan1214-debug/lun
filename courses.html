@@ -13,19 +13,22 @@
             --c-blue: #5992B2;   
             --c-orange: #D97E38; 
             --c-green: #4E8C67;  
-            --text-dark: #333333;
             
-            /* 字體顏色修正：與照片 IMG_5311_3.jpg 一致的淡淡灰色 */
-            --text-desc: #AAAAAA; 
+            /* 顏色修正：採樣自照片 IMG_5311.jpg 的真實深色文字 */
+            --text-main: #333333;    /* 標題與重點文字 */
+            --text-list-t: #444444;  /* 清單標題，深且重 */
+            --text-list-d: #666666;  /* 清單內容描述，略帶質感的灰黑 */
+            --text-card: #555555;    /* 白盒內的說明文字 */
         }
 
         body {
-            font-family: -apple-system, "Noto Sans TC", sans-serif;
+            font-family: -apple-system, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
             margin: 0; padding: 0; background-color: #ffffff;
-            color: var(--text-dark);
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* 導覽列：嚴格復原 IMG_5624_6.jpeg */
+        /* 導覽列 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 15px 0;
@@ -37,42 +40,20 @@
             z-index: 1000;
         }
         .nav-item { 
-            text-decoration: none; 
-            text-align: center; 
-            color: #ffffff;
-            min-width: 80px;
+            text-decoration: none; text-align: center; color: #ffffff; min-width: 80px;
         }
-        .nav-item span { 
-            display: block; 
-            font-size: 18px; 
-            font-weight: bold; 
-            margin-bottom: 2px; 
-        }
-        .nav-item small { 
-            display: block; 
-            font-size: 10px; 
-            text-transform: uppercase; 
-            font-weight: 300;
-            opacity: 0.9;
-        }
+        .nav-item span { display: block; font-size: 18px; font-weight: bold; margin-bottom: 2px; }
+        .nav-item small { display: block; font-size: 10px; text-transform: uppercase; font-weight: 300; opacity: 0.8; }
 
-        /* 內容區塊：完全復原 IMG_5311_3.jpg */
-        .block-wrapper {
-            padding: 45px 0;
-            text-align: center;
-        }
+        /* 內容區塊樣式 */
+        .block-wrapper { padding: 45px 0; text-align: center; }
         .online { background-color: var(--bg-blue); margin-top: 10px; }
         .private { background-color: var(--bg-red); }
         .group { background-color: var(--bg-green); }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: left;
-            padding: 0 25px;
-        }
+        .container { max-width: 600px; margin: 0 auto; text-align: left; padding: 0 25px; }
 
-        h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; color: var(--text-dark); }
+        h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; color: var(--text-main); }
         .subtitle { 
             font-size: 13px; font-weight: 900; margin: 0 0 25px 0; 
             letter-spacing: 1px; text-transform: uppercase; 
@@ -82,38 +63,34 @@
         .private .subtitle { color: var(--c-orange); }
         .group .subtitle { color: var(--c-green); }
 
-        /* 白盒與文字顏色修正 */
+        /* 白盒卡片文字顏色 */
         .card {
             background: #fff; padding: 22px 28px; border-radius: 10px;
             margin-bottom: 25px; border-left: 7px solid;
             line-height: 1.7; font-size: 16px;
-            
-            /* 修正白盒內說明文字的顏色 */
-            color: var(--text-desc); 
+            color: var(--text-card); /* 修正：不再是淡灰色，是照片中的深色 */
         }
-        .card b { color: var(--text-dark); font-weight: 800; } /* 讓“核心重點/價值”字體深色 */
+        .card b { color: var(--text-main); font-weight: 900; }
 
         .online .card { border-left-color: var(--c-blue); }
         .private .card { border-left-color: var(--c-orange); }
         .group .card { border-left-color: var(--c-green); }
 
-        /* 列表樣式與淡淡灰色修正 */
+        /* 清單文字顏色修正 */
         ul { list-style: none; padding: 0; margin: 0; }
-        li { margin-bottom: 12px; font-size: 14px; display: flex; align-items: flex-start; }
-        li::before { content: "•"; margin-right: 8px; font-weight: 900; font-size: 20px; line-height: 1; }
+        li { margin-bottom: 14px; font-size: 15px; display: flex; align-items: flex-start; line-height: 1.5; }
+        li::before { content: "•"; margin-right: 10px; font-weight: 900; font-size: 22px; line-height: 1; }
 
-        .online li::before, .online li .list-title { color: var(--c-blue); }
-        .private li::before, .private li .list-title { color: var(--c-orange); }
-        .group li::before, .group li .list-title { color: var(--c-green); }
+        .online li::before { color: var(--c-blue); }
+        .private li::before { color: var(--c-orange); }
+        .group li::before { color: var(--c-green); }
 
-        .list-title { font-weight: 800; }
-        
-        /* 修正列表描述文字顏色 */
-        .list-desc { color: var(--text-desc); font-weight: 400; } 
+        .list-title { color: var(--text-list-t); font-weight: 800; }
+        .list-desc { color: var(--text-list-d); font-weight: 400; } 
 
-        /* 頁尾按鈕文字與網址列淡淡灰色 */
+        /* 頁尾按鈕與資訊 */
         .footer { padding: 40px 0 0 0; text-align: center; background: #fff; }
-        .footer-msg { color: #888; font-size: 14px; margin-bottom: 25px; }
+        .footer-msg { color: #888888; font-size: 14px; margin-bottom: 25px; }
         .btn {
             display: inline-block; 
             background-color: var(--nav-bg); 
