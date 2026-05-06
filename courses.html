@@ -5,30 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>課程簡介 | Runner Service Center</title>
     <style>
-        /* 嚴格依照照片精確取色 */
+        /* 嚴格依照照片精確配色 */
         :root {
             --nav-bg: #333333;
-            --bg-blue: #F0F7FA;     /* 線上課表背景藍 */
-            --bg-red: #FFF5F4;      /* 私人教學背景紅 */
-            --bg-green: #F3F8F5;    /* 企業包班背景綠 */
-            --text-blue: #5992B2;   /* 線上課表英文/點顏色 */
-            --text-red: #A65D57;    /* 私人教學英文/點顏色 */
-            --text-green: #4E8C67;  /* 企業包班英文/點顏色 */
-            --text-dark: #333333;   /* 標題與主要文字深灰 */
-            --text-content: #555555;/* 清單內文顏色 */
+            --bg-blue: #F0F7FA;
+            --bg-red: #FFF5F4;
+            --bg-green: #F3F8F5;
+            --text-blue: #5992B2;
+            --text-red: #A65D57;
+            --text-green: #4E8C67;
+            --dark-gray: #333333;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--text-dark);
+            color: var(--dark-gray);
+            line-height: 1.5;
         }
 
         /* 頂部導覽列 */
         .navbar {
             background-color: var(--nav-bg);
-            padding: 15px 0;
+            padding: 18px 0;
             display: flex;
             justify-content: center;
             gap: 25px;
@@ -44,19 +44,20 @@
             display: block;
             font-size: 18px;
             font-weight: bold;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         .nav-item small {
             display: block;
             font-size: 10px;
             text-transform: uppercase;
+            opacity: 0.8;
         }
 
-        /* 區塊排版與間距校正 */
+        /* 區塊排版：左對齊與精確間距 */
         .section {
-            padding: 40px 20px;
-            text-align: left; /* 依照照片左對齊 */
+            padding: 30px 25px;
+            text-align: left;
         }
 
         .online-programming { background-color: var(--bg-blue); }
@@ -65,14 +66,14 @@
 
         h2 { 
             font-size: 22px; 
-            margin: 0 0 5px 0; 
-            color: var(--text-dark); 
+            margin: 0 0 4px 0; 
+            font-weight: bold;
         }
         
         .subtitle { 
-            font-size: 14px; 
+            font-size: 13px; 
             font-weight: bold; 
-            margin: 0 0 20px 0;
+            margin: 0 0 18px 0;
             text-transform: uppercase;
         }
 
@@ -80,21 +81,21 @@
         .one-on-one .subtitle { color: var(--text-red); }
         .corporate-group .subtitle { color: var(--text-green); }
 
-        /* 核心重點/價值區塊 */
+        /* 核心重點/價值白盒 */
         .highlight-card {
             background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 25px;
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 20px;
             border-left: 5px solid;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            line-height: 1.6;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            font-size: 15px;
         }
         .online-programming .highlight-card { border-left-color: var(--text-blue); }
         .one-on-one .highlight-card { border-left-color: var(--text-red); }
         .corporate-group .highlight-card { border-left-color: var(--text-green); }
 
-        /* 清單樣式校正：左對齊、彩色點靠近文字 */
+        /* 清單校正：彩色點緊貼文字 */
         ul { 
             list-style: none; 
             padding: 0; 
@@ -102,43 +103,43 @@
         }
 
         li { 
-            margin-bottom: 10px; 
+            margin-bottom: 8px; 
             font-size: 14px;
-            color: var(--text-content);
             display: flex;
             align-items: flex-start;
+            color: #444;
         }
 
         li::before { 
             content: "•"; 
-            margin-right: 8px; 
+            margin-right: 6px; 
             font-weight: bold; 
             font-size: 18px;
-            line-height: 1;
+            line-height: 1.2;
         }
 
         .online-programming li::before { color: var(--text-blue); }
         .one-on-one li::before { color: var(--text-red); }
         .corporate-group li::before { color: var(--text-green); }
 
-        /* 底部預約區塊與按鈕 */
+        /* 底部諮詢上移 */
         .booking-container {
             text-align: center;
-            padding: 30px 20px 60px 20px;
+            padding: 20px 20px 50px 20px;
             background-color: #fff;
         }
 
         .booking-text {
             color: #888;
             font-size: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .btn-booking {
             display: inline-block;
             background-color: var(--nav-bg);
             color: #ffffff !important;
-            padding: 12px 60px;
+            padding: 12px 65px;
             text-decoration: none;
             border-radius: 6px;
             font-weight: bold;
@@ -160,13 +161,13 @@
         <h2>線上課表</h2>
         <p class="subtitle">ONLINE PROGRAMMING</p>
         <div class="highlight-card">
-            <strong>★ 核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。</strong>
+            ★ 核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。
         </div>
         <ul>
-            <li><strong>週期化備賽規劃：</strong>針對目標科學化安排訓練週期。</li>
-            <li><strong>數據即時回饋：</strong>遠端即時監測訓練與恢復狀態。</li>
-            <li><strong>動態調整：</strong>根據回報狀態，隨時調整下週課表。</li>
-            <li><strong>線上諮詢機制：</strong>定期討論訓練成效，解答疑難雜症。</li>
+            <li>週期化備賽規劃：針對目標科學化安排訓練週期。</li>
+            <li>數據即時回饋：遠端即時監測訓練與恢復狀態。</li>
+            <li>動態調整：根據回報狀態，隨時調整下週課表。</li>
+            <li>線上諮詢機制：定期討論訓練成效，解答疑難雜症。</li>
         </ul>
     </div>
 
@@ -174,13 +175,13 @@
         <h2>私人教學</h2>
         <p class="subtitle">ONE-ON-ONE COACHING</p>
         <div class="highlight-card">
-            <strong>★ 核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</strong>
+            ★ 核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。
         </div>
         <ul>
-            <li><strong>跑姿校正：</strong>透過錄影分析與拆解，使肌肉記憶正確動作。</li>
-            <li><strong>體感配速建立：</strong>協助跑者建立對各心率區間的感知。</li>
-            <li><strong>動態負荷調控：</strong>根據疲勞程度，即時調整訓練強度。</li>
-            <li><strong>跑者專項強化引導：</strong>針對薄弱環節設計輔助訓練。</li>
+            <li>跑姿校正：透過錄影分析與拆解，使肌肉記憶正確動作。</li>
+            <li>體感配速建立：協助跑者建立對各心率區間的感知。</li>
+            <li>動態負荷調控：根據疲勞程度，即時調整訓練強度。</li>
+            <li>跑者專項強化引導：針對薄弱環節設計輔助訓練。</li>
         </ul>
     </div>
 
@@ -188,12 +189,12 @@
         <h2>企業包班</h2>
         <p class="subtitle">CORPORATE GROUP</p>
         <div class="highlight-card">
-            <strong>★ 核心價值：職場健康與活力、團體共榮，將運動融入企業文化。</strong>
+            ★ 核心價值：職場健康與活力、團體共榮，將運動融入企業文化。
         </div>
         <ul>
-            <li><strong>提升團隊凝聚力：</strong>挑戰目標過程中，建立跨部門情感連結。</li>
-            <li><strong>企業賽事推動：</strong>協助組隊參與路跑賽事，塑造品牌形象。</li>
-            <li><strong>職場壓力紓解：</strong>透過運動釋放壓力，提升團隊工作效率。</li>
+            <li>提升團隊凝聚力：挑戰目標過程中，建立跨部門情感連結。</li>
+            <li>企業賽事推動：協助組隊參與路跑賽事，塑造品牌形象。</li>
+            <li>職場壓力紓解：透過運動釋放壓力，提升團隊工作效率。</li>
         </ul>
     </div>
 
