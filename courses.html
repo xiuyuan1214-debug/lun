@@ -8,12 +8,12 @@
         :root {
             --nav-bg: #333333;
             
-            /* 僅調整亮度，飽和度保持低調不鮮豔 */
-            --bg-blue: #F5FAFD;  /* 藍色背景調亮 */
-            --c-blue: #7FB3D1;   /* 藍色文字調亮 */
+            /* 顏色修正：僅調亮藍色與綠色，保持低飽和度不鮮豔 */
+            --bg-blue: #F5FAFD;  
+            --c-blue: #7FB3D1;   
             
-            --bg-green: #F7FAF8; /* 綠色背景調亮 */
-            --c-green: #76A589;  /* 綠色文字調亮 */
+            --bg-green: #F7FAF8; 
+            --c-green: #76A589;  
             
             /* 完全復原其餘顏色設定 */
             --bg-red: #FFF1F0;
@@ -73,4 +73,33 @@
         .group .card { border-left-color: var(--c-green); }
 
         ul { list-style: none; padding: 0; margin: 0; }
-        li { margin-bottom: 14px; font-size: 15px; display: flex; align
+        li { margin-bottom: 14px; font-size: 15px; display: flex; align-items: flex-start; line-height: 1.5; }
+        li::before { content: "•"; margin-right: 10px; font-weight: 900; font-size: 22px; line-height: 1; }
+
+        .online li::before { color: var(--c-blue); }
+        .private li::before { color: var(--c-orange); }
+        .group li::before { color: var(--c-green); }
+
+        .list-title { color: var(--text-list-t); font-weight: 800; }
+        .list-desc { color: var(--text-list-d); font-weight: 400; } 
+
+        .footer { padding: 40px 0 0 0; text-align: center; background: #fff; }
+        .footer-msg { color: #888888; font-size: 14px; margin-bottom: 25px; }
+        .btn {
+            display: inline-block; background-color: var(--nav-bg); color: #ffffff !important;
+            padding: 15px 75px; text-decoration: none; border-radius: 8px; 
+            font-weight: bold; font-size: 16px; margin-bottom: 45px;
+        }
+
+        /* 網址列：完全復原為你的設定 */
+        .browser-bar {
+            background: #F8F8F8; padding: 12px 0; font-size: 16px; color: #333; border-top: 1px solid #eee;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .browser-bar::before { content: "🔒"; margin-right: 8px; font-size: 14px; opacity: 0.6; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-item"><span>教練資歷</span><small>COACH PROFILE</small></a>
