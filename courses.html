@@ -8,14 +8,14 @@
         :root {
             --nav-bg: #333333;
             
-            /* 顏色修正：調高藍色與綠色的亮度，保持清爽不鮮豔 */
-            --bg-blue: #F0F7FA;  /* 調亮藍色背景 */
-            --c-blue: #66A3C2;   /* 調亮藍色文字 */
+            /* 僅調整亮度，飽和度保持低調不鮮豔 */
+            --bg-blue: #F5FAFD;  /* 藍色背景調亮 */
+            --c-blue: #7FB3D1;   /* 藍色文字調亮 */
             
-            --bg-green: #F2F9F5; /* 調亮綠色背景 */
-            --c-green: #5A9E75;  /* 調亮綠色文字 */
+            --bg-green: #F7FAF8; /* 綠色背景調亮 */
+            --c-green: #76A589;  /* 綠色文字調亮 */
             
-            /* 維持不變的其他設定 */
+            /* 完全復原其餘顏色設定 */
             --bg-red: #FFF1F0;
             --c-orange: #D97E38; 
             --text-main: #333333;
@@ -31,7 +31,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 導覽列：維持 IMG_5624.jpeg 樣式 */
+        /* 導覽列 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 15px 0;
@@ -73,42 +73,4 @@
         .group .card { border-left-color: var(--c-green); }
 
         ul { list-style: none; padding: 0; margin: 0; }
-        li { margin-bottom: 14px; font-size: 15px; display: flex; align-items: flex-start; line-height: 1.5; }
-        li::before { content: "•"; margin-right: 10px; font-weight: 900; font-size: 22px; line-height: 1; }
-
-        .online li::before { color: var(--c-blue); }
-        .private li::before { color: var(--c-orange); }
-        .group li::before { color: var(--c-green); }
-
-        .list-title { color: var(--text-list-t); font-weight: 800; }
-        .list-desc { color: var(--text-list-d); font-weight: 400; } 
-
-        .footer { padding: 40px 0 0 0; text-align: center; background: #fff; }
-        .footer-msg { color: #888888; font-size: 14px; margin-bottom: 25px; }
-        .btn {
-            display: inline-block; background-color: var(--nav-bg); color: #ffffff !important;
-            padding: 15px 75px; text-decoration: none; border-radius: 8px; 
-            font-weight: bold; font-size: 16px; margin-bottom: 45px;
-        }
-
-        .browser-bar {
-            background: #F8F8F8; padding: 12px 0; font-size: 16px; color: #333; border-top: 1px solid #eee;
-            display: flex; justify-content: center; align-items: center;
-        }
-        .browser-bar::before { content: "🔒"; margin-right: 8px; font-size: 14px; opacity: 0.6; }
-    </style>
-</head>
-<body>
-
-    <nav class="navbar">
-        <a href="index.html" class="nav-item"><span>教練資歷</span><small>COACH PROFILE</small></a>
-        <a href="courses.html" class="nav-item"><span>課程簡介</span><small>COURSE</small></a>
-        <a href="tools.html" class="nav-item"><span>配速工具</span><small>PACE TOOL</small></a>
-        <a href="training.html" class="nav-item"><span>訓練日誌</span><small>TRAINING LOG</small></a>
-        <a href="match.html" class="nav-item"><span>賽事日誌</span><small>RACE LOG</small></a>
-    </nav>
-
-    <div class="block-wrapper online">
-        <div class="container">
-            <h2>線上課表</h2>
-            <p class="subtitle">
+        li { margin-bottom: 14px; font-size: 15px; display: flex; align
