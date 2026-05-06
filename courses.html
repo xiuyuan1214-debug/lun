@@ -22,7 +22,7 @@
             color: var(--text-dark);
         }
 
-        /* 導覽列：精確對標照片樣式並加入跳轉連結 */
+        /* 導覽列 (IMG_5624_2.jpeg) */
         .navbar {
             background-color: var(--nav-bg);
             padding: 15px 0;
@@ -53,9 +53,9 @@
             opacity: 0.9;
         }
 
-        /* 區塊獨立，中間留白 */
+        /* 內容區塊與白色間隔 */
         .block-wrapper {
-            margin-top: 25px; /* 與上方區塊的白色間隔 */
+            margin-top: 25px; 
             padding: 45px 0;
             text-align: center;
         }
@@ -81,7 +81,7 @@
         .private .subtitle { color: var(--c-orange); }
         .group .subtitle { color: var(--c-green); }
 
-        /* 白盒樣式 */
+        /* 卡片白盒 */
         .card {
             background: #fff; padding: 22px 28px; border-radius: 10px;
             margin-bottom: 25px; border-left: 7px solid;
@@ -103,7 +103,7 @@
         .list-title { font-weight: 800; }
         .list-desc { color: var(--text-desc); font-weight: 400; }
 
-        /* 頁尾復原：黑色跳轉按鈕與文字 */
+        /* 頁尾 (IMG_5656_3.jpg) */
         .footer { padding: 40px 0 0 0; text-align: center; background: #fff; }
         .footer-msg { color: #888; font-size: 14px; margin-bottom: 25px; }
         .btn {
@@ -116,9 +116,7 @@
             font-weight: bold; 
             font-size: 16px;
             margin-bottom: 45px;
-            transition: opacity 0.2s;
         }
-        .btn:hover { opacity: 0.8; }
 
         .browser-bar {
             background: #F8F8F8; padding: 12px 0; font-size: 16px; color: #333; border-top: 1px solid #eee;
@@ -129,7 +127,7 @@
 </head>
 <body>
 
-    <!-- 導覽列：具備正確跳轉頁面功能 -->
+    <!-- 導覽列：確保 href 全部正確轉跳 -->
     <nav class="navbar">
         <a href="index.html" class="nav-item"><span>教練資歷</span><small>COACH PROFILE</small></a>
         <a href="courses.html" class="nav-item"><span>課程簡介</span><small>COURSE</small></a>
@@ -138,7 +136,6 @@
         <a href="match.html" class="nav-item"><span>賽事日誌</span><small>RACE LOG</small></a>
     </nav>
 
-    <!-- 線上課表區塊 -->
     <div class="block-wrapper online">
         <div class="container">
             <h2>線上課表</h2>
@@ -155,7 +152,6 @@
         </div>
     </div>
 
-    <!-- 私人教學區塊 -->
     <div class="block-wrapper private">
         <div class="container">
             <h2>私人教學</h2>
@@ -172,7 +168,6 @@
         </div>
     </div>
 
-    <!-- 企業包班區塊 -->
     <div class="block-wrapper group">
         <div class="container">
             <h2>企業包班</h2>
@@ -188,7 +183,7 @@
         </div>
     </div>
 
-    <!-- 頁尾：黑色按鈕與跳轉 -->
+    <!-- 頁尾：確保按鈕跳轉至 form.html -->
     <div class="footer">
         <p class="footer-msg">讓我們一起跑出健康快樂的每一步 ☺</p>
         <a href="form.html" class="btn">預約一份溫暖的諮詢</a>
