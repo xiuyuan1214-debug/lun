@@ -22,13 +22,16 @@
             color: var(--text-dark);
         }
 
-        /* 導覽列全復原 */
+        /* 導覽列：精確對標照片樣式並加入跳轉連結 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 15px 0;
             display: flex;
             justify-content: center;
             gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         .nav-item { 
             text-decoration: none; 
@@ -50,9 +53,9 @@
             opacity: 0.9;
         }
 
-        /* 產生區塊間的白色橫向間隔 */
+        /* 區塊獨立，中間留白 */
         .block-wrapper {
-            margin-bottom: 25px; 
+            margin-top: 25px; /* 與上方區塊的白色間隔 */
             padding: 45px 0;
             text-align: center;
         }
@@ -88,7 +91,7 @@
         .private .card { border-left-color: var(--c-orange); }
         .group .card { border-left-color: var(--c-green); }
 
-        /* 列表樣式：圓點與前段變色 */
+        /* 列表樣式 */
         ul { list-style: none; padding: 0; margin: 0; }
         li { margin-bottom: 12px; font-size: 14px; display: flex; align-items: flex-start; }
         li::before { content: "•"; margin-right: 8px; font-weight: 900; font-size: 20px; line-height: 1; }
@@ -100,14 +103,23 @@
         .list-title { font-weight: 800; }
         .list-desc { color: var(--text-desc); font-weight: 400; }
 
-        /* 頁尾復原 */
+        /* 頁尾復原：黑色跳轉按鈕與文字 */
         .footer { padding: 40px 0 0 0; text-align: center; background: #fff; }
         .footer-msg { color: #888; font-size: 14px; margin-bottom: 25px; }
         .btn {
-            display: inline-block; background-color: var(--nav-bg); color: #fff !important;
-            padding: 15px 75px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px;
+            display: inline-block; 
+            background-color: var(--nav-bg); 
+            color: #ffffff !important;
+            padding: 15px 75px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            font-size: 16px;
             margin-bottom: 45px;
+            transition: opacity 0.2s;
         }
+        .btn:hover { opacity: 0.8; }
+
         .browser-bar {
             background: #F8F8F8; padding: 12px 0; font-size: 16px; color: #333; border-top: 1px solid #eee;
             display: flex; justify-content: center; align-items: center;
@@ -117,7 +129,7 @@
 </head>
 <body>
 
-    <!-- 導覽列：點擊可跳轉至各頁面 -->
+    <!-- 導覽列：具備正確跳轉頁面功能 -->
     <nav class="navbar">
         <a href="index.html" class="nav-item"><span>教練資歷</span><small>COACH PROFILE</small></a>
         <a href="courses.html" class="nav-item"><span>課程簡介</span><small>COURSE</small></a>
@@ -176,7 +188,7 @@
         </div>
     </div>
 
-    <!-- 頁尾：黑色按鈕點擊可跳轉至表單 -->
+    <!-- 頁尾：黑色按鈕與跳轉 -->
     <div class="footer">
         <p class="footer-msg">讓我們一起跑出健康快樂的每一步 ☺</p>
         <a href="form.html" class="btn">預約一份溫暖的諮詢</a>
