@@ -3,36 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>課程簡介 - 跑者服務中心</title>
+    <title>跑者服務中心 - 預約與能量補給站</title>
     <style>
         :root {
-            --nav-bg: #333333;
+            /* 重新調整配色：採用淡淡的暖色調與墨色，營造溫暖質感 */
+            --bg-page: #FAF5F0;  /* 淡淡的暖米色背景 */
+            --bg-card: #FFF8F3;  /* 更溫暖的白卡片背景 */
             
-            /* 僅調亮藍色與綠色，保持低飽和度 */
-            --bg-blue: #F5FAFD;  
-            --c-blue: #7FB3D1;   
+            --color-text-desc: #7D7D7D; /* 描述性文字的灰色，採樣自 IMG_5656.jpg */
+            --color-text-main: #333333;  /* 主要文字的墨色 */
+            --color-link: #333333;      /* 導覽列墨色文字 */
             
-            --bg-green: #F7FAF8; 
-            --c-green: #76A589;  
+            --color-online: #B78F66;    /* 線上課表（Online Programming）墨金色 */
+            --color-group: #6A8E7F;     /* 企業包班（Group）墨綠色 */
+            --color-orange: #E89354;    /* 私人教學與亮點墨橘色 */
             
-            /* 維持原有的紅色與橘色設定 */
-            --bg-red: #FFF1F0;
-            --c-orange: #D97E38; 
-            
-            --text-main: #333333;
-            --text-list-t: #444444;
-            --text-list-d: #666666;
-            --text-card: #555555;
+            --nav-bg: #333333; /* 導覽列墨色背景 */
         }
 
         body {
-            font-family: -apple-system, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-            margin: 0; padding: 0; background-color: #ffffff;
-            color: var(--text-main);
-            -webkit-font-smoothing: antialiased;
+            font-family: -apple-system, "Noto Sans TC", sans-serif;
+            margin: 0; padding: 0; 
+            background-color: var(--nav-bg); /* 將頁面背景預設為導覽列墨色 */
+            color: var(--color-text-main);
         }
 
-        /* 導覽列：依據 IMG_5624.jpeg 復原 */
+        /* 導覽列：完全復原自 IMG_5624.jpeg 樣式 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 15px 0;
@@ -43,61 +39,148 @@
             top: 0;
             z-index: 1000;
         }
-        .nav-item { text-decoration: none; text-align: center; color: #ffffff; min-width: 80px; }
-        .nav-item span { display: block; font-size: 18px; font-weight: bold; margin-bottom: 2px; }
-        .nav-item small { display: block; font-size: 10px; text-transform: uppercase; font-weight: 300; opacity: 0.8; }
-
-        .block-wrapper { padding: 45px 0; text-align: center; }
-        .online { background-color: var(--bg-blue); margin-top: 10px; }
-        .private { background-color: var(--bg-red); }
-        .group { background-color: var(--bg-green); }
-
-        .container { max-width: 600px; margin: 0 auto; text-align: left; padding: 0 25px; }
-
-        h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; color: var(--text-main); }
-        .subtitle { font-size: 13px; font-weight: 900; margin: 0 0 25px 0; letter-spacing: 1px; text-transform: uppercase; }
-        
-        .online .subtitle { color: var(--c-blue); }
-        .private .subtitle { color: var(--c-orange); }
-        .group .subtitle { color: var(--c-green); }
-
-        .card {
-            background: #fff; padding: 22px 28px; border-radius: 10px;
-            margin-bottom: 25px; border-left: 7px solid;
-            line-height: 1.7; font-size: 16px;
-            color: var(--text-card);
+        .nav-item { 
+            text-decoration: none; 
+            text-align: center; 
+            color: #ffffff;
+            min-width: 80px;
         }
-        .card b { color: var(--text-main); font-weight: 900; }
-
-        .online .card { border-left-color: var(--c-blue); }
-        .private .card { border-left-color: var(--c-orange); }
-        .group .card { border-left-color: var(--c-green); }
-
-        ul { list-style: none; padding: 0; margin: 0; }
-        li { margin-bottom: 14px; font-size: 15px; display: flex; align-items: flex-start; line-height: 1.5; }
-        li::before { content: "•"; margin-right: 10px; font-weight: 900; font-size: 22px; line-height: 1; }
-
-        .online li::before { color: var(--c-blue); }
-        .private li::before { color: var(--c-orange); }
-        .group li::before { color: var(--c-green); }
-
-        .list-title { color: var(--text-list-t); font-weight: 800; }
-        .list-desc { color: var(--text-list-d); font-weight: 400; } 
-
-        .footer { padding: 40px 0 0 0; text-align: center; background: #fff; }
-        .footer-msg { color: #888888; font-size: 14px; margin-bottom: 25px; }
-        .btn {
-            display: inline-block; background-color: var(--nav-bg); color: #ffffff !important;
-            padding: 15px 75px; text-decoration: none; border-radius: 8px; 
-            font-weight: bold; font-size: 16px; margin-bottom: 45px;
+        .nav-item span { 
+            display: block; 
+            font-size: 18px; 
+            font-weight: bold; 
+            margin-bottom: 2px; 
+        }
+        .nav-item small { 
+            display: block; 
+            font-size: 10px; 
+            text-transform: uppercase; 
+            font-weight: 300;
+            opacity: 0.9;
         }
 
-        /* 網址列：依據 IMG_5733.jpg 嚴格復原 */
-        .browser-bar {
-            background: #F8F8F8; padding: 12px 0; font-size: 16px; color: #333; border-top: 1px solid #eee;
-            display: flex; justify-content: center; align-items: center;
+        /* 頁尾預約區塊與版面調整（依照黃色圈起來的指令） */
+        .booking-section {
+            background-color: var(--bg-page); /* 使用淡淡的暖米色 */
+            padding: 40px 0;
+            text-align: center;
         }
-        .browser-bar::before { content: "🔒"; margin-right: 8px; font-size: 14px; opacity: 0.6; }
+
+        .booking-msg {
+            color: var(--color-text-desc);
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        /* 預約一份溫暖的諮詢 按鈕：完全復原為墨色 */
+        .booking-btn {
+            display: inline-block;
+            background-color: var(--nav-bg);
+            color: #ffffff !important;
+            padding: 15px 75px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px; /* 調整與下方的距離，依照黃色指令 */
+        }
+
+        /* 刪除指令（依照黃色圈起來的指令）：xiuyuan1214... 部分已刪除 */
+
+        /* 跑者能量補給站區塊：依照指令配色重新調整 */
+        .补給站-wrapper {
+            background-color: #ffffff; /* 補給站主體使用純白 */
+            padding: 20px;
+        }
+
+        .補給站-circle {
+            background-color: var(--bg-card); /* 更溫暖的白卡片背景 */
+            border-radius: 50%;
+            width: 320px; height: 320px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: 1.5;
+            padding: 30px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .补給站-wrapper h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--color-text-main);
+        }
+
+        .補給站-wrapper .subtitle {
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: var(--color-text-desc);
+            margin-bottom: 15px;
+        }
+
+        .補給站-wrapper .highlight {
+            font-size: 14px;
+            color: var(--color-orange); /* 亮點墨橘色 */
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .補給站-wrapper p {
+            font-size: 13px;
+            color: var(--color-text-main);
+            margin-bottom: 15px;
+        }
+
+        .補給站-wrapper .service-info {
+            font-size: 11px;
+            color: var(--color-text-desc);
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+
+        /* 表單樣式：依照照片復原 */
+        .form-section {
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .form-section label {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--color-text-main);
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+
+        .form-section input[type="text"],
+        .form-section input[type="email"],
+        .form-section select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: var(--bg-card); /* 輸入框使用溫暖白背景 */
+            color: var(--color-text-desc); /* 輸入文字淡淡灰色 */
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .form-section input::placeholder {
+            color: #AAAAAA;
+        }
+
+        .form-section .hint {
+            font-size: 12px;
+            color: #AAAAAA;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -110,57 +193,39 @@
         <a href="match.html" class="nav-item"><span>賽事日誌</span><small>RACE LOG</small></a>
     </nav>
 
-    <div class="block-wrapper online">
-        <div class="container">
-            <h2>線上課表</h2>
-            <p class="subtitle">ONLINE PROGRAMMING</p>
-            <div class="card">
-                ★ <b>核心重點：</b>數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。
-            </div>
-            <ul>
-                <li><span class="list-title">週期化備賽規劃：</span><span class="list-desc">針對目標科學化安排訓練週期。</span></li>
-                <li><span class="list-title">數據即時回饋：</span><span class="list-desc">遠端即時監測訓練與恢復狀態。</span></li>
-                <li><span class="list-title">動態調整：</span><span class="list-desc">根據回報狀態，隨時調整下週課表。</span></li>
-                <li><span class="list-title">線上諮詢機制：</span><span class="list-desc">定期討論訓練成效，解答疑難雜症。</span></li>
-            </ul>
+    <div class="booking-section">
+        <p class="booking-msg">讓我們一起跑出健康快樂的每一步 ☺</p>
+        <a href="booking.html" class="booking-btn">預約一份溫暖的諮詢</a>
+    </div>
+
+    <div class="補給站-wrapper">
+        <div class="補給站-circle">
+            <h2>跑者能量補給站</h2>
+            <p class="subtitle">RUNNERS ENERGY STATION</p>
+            <span class="highlight">讓我們聽見您的腳步聲</span>
+            <p>無論您是因為突破個人最佳成績而興奮，亦或是正處於受傷低潮，有任何想回饋的想法，歡迎隨時聯繫我們唷。</p>
+            <p>您的回饋是我們進化的動力，您的提問是我們探索的方向，若您在訓練的路上遇到瓶頸，或者發現我們能做得更好的地方，請告訴我們。</p>
+            <p>讓我們一起朝更好的方向邁進，讓這份對跑步的熱愛，連結起每一個熱血的靈魂。</p>
+            <p>希望這裡不只是網站，更是跑者們的補給站。</p>
+            <p class="service-info">服務時間：週一至週五 09:00-18:00 (跑者不休息，但小編需要一些運動時間)</p>
         </div>
     </div>
 
-    <div class="block-wrapper private">
-        <div class="container">
-            <h2>私人教學</h2>
-            <p class="subtitle">ONE-ON-ONE COACHING</p>
-            <div class="card">
-                ★ <b>核心價值：</b>根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。
-            </div>
-            <ul>
-                <li><span class="list-title">跑姿校正：</span><span class="list-desc">透過錄影分析與拆解，使肌肉記憶正確動作。</span></li>
-                <li><span class="list-title">體感配速建立：</span><span class="list-desc">協助跑者建立對各心率區間的感知。</span></li>
-                <li><span class="list-title">動態負荷調控：</span><span class="list-desc">根據疲勞程度，即時調整訓練強度。</span></li>
-                <li><span class="list-title">跑者專項強化引導：</span><span class="list-desc">針對薄弱環節設計輔助訓練。</span></li>
-            </ul>
-        </div>
-    </div>
+    <div class="form-section">
+        <label for="name">姓名 / Name</label>
+        <input type="text" id="name" name="name" placeholder="請輸入您的姓名">
 
-    <div class="block-wrapper group">
-        <div class="container">
-            <h2>企業包班</h2>
-            <p class="subtitle">CORPORATE GROUP</p>
-            <div class="card">
-                ★ <b>核心價值：</b>職場健康與活力、團體共榮，將運動融入企業文化。
-            </div>
-            <ul>
-                <li><span class="list-title">提升團隊凝聚力：</span><span class="list-desc">挑戰目標過程中，建立跨部門情感連結。</span></li>
-                <li><span class="list-title">企業賽事推動：</span><span class="list-desc">協助組隊參與路跑賽事，塑造品牌形象。</span></li>
-                <li><span class="list-title">職場壓力紓解：</span><span class="list-desc">透過運動釋放壓力，提升團隊工作效率。</span></li>
-            </ul>
-        </div>
-    </div>
+        <label for="email">電子信箱 / E-mail</label>
+        <input type="email" id="email" name="email" placeholder="runner@gmail.com">
 
-    <div class="footer">
-        <p class="footer-msg">讓我們一起跑出健康快樂的每一步 ☺</p>
-        <a href="form.html" class="btn">預約一份溫暖的諮詢</a>
-        <div class="browser-bar">xiuyuan1214-debug.github.io</div>
+        <label for="runnerType">跑者屬性 / Runner Type</label>
+        <select id="runnerType" name="runnerType">
+            <option value="" disabled selected>請選擇 / Please Select</option>
+            <option value="recreational">休閒跑者 / Recreational Runner</option>
+            <option value="competitive">競賽跑者 / Competitive Runner</option>
+            <option value="marathon">馬拉松跑者 / Marathon Runner</option>
+            <option value="trail">越野跑者 / Trail Runner</option>
+        </select>
     </div>
 
 </body>
