@@ -14,7 +14,9 @@
             --c-orange: #D97E38; 
             --c-green: #4E8C67;  
             --text-dark: #333333;
-            --text-desc: #888888;
+            
+            /* 字體顏色修正：與照片 IMG_5311_3.jpg 一致的淡淡灰色 */
+            --text-desc: #AAAAAA; 
         }
 
         body {
@@ -70,7 +72,7 @@
             padding: 0 25px;
         }
 
-        h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; }
+        h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; color: var(--text-dark); }
         .subtitle { 
             font-size: 13px; font-weight: 900; margin: 0 0 25px 0; 
             letter-spacing: 1px; text-transform: uppercase; 
@@ -80,17 +82,22 @@
         .private .subtitle { color: var(--c-orange); }
         .group .subtitle { color: var(--c-green); }
 
-        /* 核心重點/價值框 */
+        /* 白盒與文字顏色修正 */
         .card {
             background: #fff; padding: 22px 28px; border-radius: 10px;
             margin-bottom: 25px; border-left: 7px solid;
             line-height: 1.7; font-size: 16px;
+            
+            /* 修正白盒內說明文字的顏色 */
+            color: var(--text-desc); 
         }
+        .card b { color: var(--text-dark); font-weight: 800; } /* 讓“核心重點/價值”字體深色 */
+
         .online .card { border-left-color: var(--c-blue); }
         .private .card { border-left-color: var(--c-orange); }
         .group .card { border-left-color: var(--c-green); }
 
-        /* 列表樣式：對齊 IMG_5311_3.jpg 的點點顏色 */
+        /* 列表樣式與淡淡灰色修正 */
         ul { list-style: none; padding: 0; margin: 0; }
         li { margin-bottom: 12px; font-size: 14px; display: flex; align-items: flex-start; }
         li::before { content: "•"; margin-right: 8px; font-weight: 900; font-size: 20px; line-height: 1; }
@@ -100,9 +107,11 @@
         .group li::before, .group li .list-title { color: var(--c-green); }
 
         .list-title { font-weight: 800; }
-        .list-desc { color: var(--text-desc); font-weight: 400; }
+        
+        /* 修正列表描述文字顏色 */
+        .list-desc { color: var(--text-desc); font-weight: 400; } 
 
-        /* 頁尾按鈕 */
+        /* 頁尾按鈕文字與網址列淡淡灰色 */
         .footer { padding: 40px 0 0 0; text-align: center; background: #fff; }
         .footer-msg { color: #888; font-size: 14px; margin-bottom: 25px; }
         .btn {
@@ -117,7 +126,6 @@
             margin-bottom: 45px;
         }
 
-        /* 手機瀏覽器網址列樣式 */
         .browser-bar {
             background: #F8F8F8; padding: 12px 0; font-size: 16px; color: #333; border-top: 1px solid #eee;
             display: flex; justify-content: center; align-items: center;
@@ -127,7 +135,6 @@
 </head>
 <body>
 
-    <!-- 導覽列 -->
     <nav class="navbar">
         <a href="index.html" class="nav-item"><span>教練資歷</span><small>COACH PROFILE</small></a>
         <a href="courses.html" class="nav-item"><span>課程簡介</span><small>COURSE</small></a>
@@ -136,7 +143,6 @@
         <a href="match.html" class="nav-item"><span>賽事日誌</span><small>RACE LOG</small></a>
     </nav>
 
-    <!-- 線上課表區塊 -->
     <div class="block-wrapper online">
         <div class="container">
             <h2>線上課表</h2>
@@ -153,7 +159,6 @@
         </div>
     </div>
 
-    <!-- 私人教學區塊 -->
     <div class="block-wrapper private">
         <div class="container">
             <h2>私人教學</h2>
@@ -170,7 +175,6 @@
         </div>
     </div>
 
-    <!-- 企業包班區塊 -->
     <div class="block-wrapper group">
         <div class="container">
             <h2>企業包班</h2>
@@ -186,7 +190,6 @@
         </div>
     </div>
 
-    <!-- 頁尾與網址列 -->
     <div class="footer">
         <p class="footer-msg">讓我們一起跑出健康快樂的每一步 ☺</p>
         <a href="form.html" class="btn">預約一份溫暖的諮詢</a>
