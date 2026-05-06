@@ -6,7 +6,7 @@
     <title>課程簡介 - 跑者服務中心</title>
     <style>
         :root {
-            /* 1. 指令：所有顏色調整 (根據照片調亮藍、綠、紅配色) */
+            /* 1. 指令：所有顏色重新調整 (參照 IMG_5733.jpg) */
             --nav-bg: #333333;
             --bg-blue: #F0F7FA;  
             --c-blue: #6A9AC4;   
@@ -25,13 +25,13 @@
             color: var(--text-main);
         }
 
-        /* 2. 指令：最上層按鈕排版調整跟照片一樣位置及大小 */
+        /* 2. 指令：頁面最上層按鈕排版調整跟照片一樣位置及大小 (參照 IMG_5779.jpeg) */
         .navbar {
             background-color: var(--nav-bg);
-            padding: 22px 0 16px 0; /* 參照照片高度 */
+            padding: 22px 0 16px 0; 
             display: flex;
             justify-content: center;
-            gap: 28px; /* 參照照片間距 */
+            gap: 28px; 
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -44,7 +44,7 @@
         }
         .nav-item span { 
             display: block; 
-            font-size: 22px; /* 參照照片字體大小 */
+            font-size: 22px; 
             font-weight: bold; 
             margin-bottom: 4px; 
         }
@@ -56,9 +56,9 @@
             opacity: 0.9;
         }
 
-        /* 3. 指令：區塊需要一行字的留白 */
+        /* 3. 指令：線上課表、私人教學、企業包班區塊需要一行字的留白 */
         .block-wrapper { 
-            padding: 24px 0; /* 上下各留出一行字的高度 */
+            padding: 24px 0; /* 指令要求：一行字的留白 */
             text-align: center; 
         }
         
@@ -66,41 +66,27 @@
         .private { background-color: var(--bg-red); }
         .group { background-color: var(--bg-green); }
 
+        /* 以下樣式嚴格維持您的設計理念，不作任何變更 */
         .container { max-width: 600px; margin: 0 auto; text-align: left; padding: 0 25px; }
-
         h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; }
         .subtitle { font-size: 13px; font-weight: 900; margin: 0 0 25px 0; text-transform: uppercase; }
-        
         .online .subtitle { color: var(--c-blue); }
         .private .subtitle { color: var(--c-orange); }
         .group .subtitle { color: var(--c-green); }
-
-        .card {
-            background: #fff; padding: 22px 28px; border-radius: 10px;
-            margin-bottom: 25px; border-left: 7px solid;
-            line-height: 1.7; font-size: 16px; color: var(--text-card);
-        }
+        .card { background: #fff; padding: 22px 28px; border-radius: 10px; margin-bottom: 25px; border-left: 7px solid; line-height: 1.7; font-size: 16px; color: var(--text-card); }
         .card b { color: var(--text-main); font-weight: 900; }
-
         .online .card { border-left-color: var(--c-blue); }
         .private .card { border-left-color: var(--c-orange); }
         .group .card { border-left-color: var(--c-green); }
-
         ul { list-style: none; padding: 0; margin: 0; }
         li { margin-bottom: 14px; font-size: 15px; display: flex; align-items: flex-start; line-height: 1.5; color: var(--text-list); }
         li::before { content: "•"; margin-right: 10px; font-weight: 900; font-size: 22px; line-height: 1; }
-
         .online li::before { color: var(--c-blue); }
         .private li::before { color: var(--c-orange); }
         .group li::before { color: var(--c-green); }
-
         .footer { padding: 40px 0 60px 0; text-align: center; }
         .footer-msg { color: #888888; font-size: 14px; margin-bottom: 25px; }
-        .btn {
-            display: inline-block; background-color: var(--nav-bg); color: #ffffff !important;
-            padding: 15px 75px; text-decoration: none; border-radius: 8px; 
-            font-weight: bold; font-size: 16px;
-        }
+        .btn { display: inline-block; background-color: var(--nav-bg); color: #ffffff !important; padding: 15px 75px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
     </style>
 </head>
 <body>
