@@ -6,7 +6,7 @@
     <title>課程簡介 - 跑者服務中心</title>
     <style>
         :root {
-            /* 1. 指令：所有顏色調整 (調亮藍、綠色調，維持專業墨感) */
+            /* 1. 指令：所有顏色調整 (根據 IMG_5311.jpg 調整更清爽的墨感配色) */
             --nav-bg: #333333;
             --bg-blue: #F0F7FA;  
             --c-blue: #6A9AC4;   
@@ -25,13 +25,13 @@
             color: var(--text-main);
         }
 
-        /* 2. 指令：頁面最上層按鈕排版調整跟照片一樣位置及大小 */
+        /* 2. 指令：頁面最上層按鈕排版調整跟照片一樣位置及大小 (參照 IMG_5624.jpeg 與 IMG_5779.jpeg) */
         .navbar {
             background-color: var(--nav-bg);
-            padding: 20px 0 15px 0; /* 依照照片比例增加上下襯距 */
+            padding: 22px 0 16px 0; 
             display: flex;
             justify-content: center;
-            gap: 25px; /* 依照照片 (IMG_5779.jpeg) 調整按鈕間距 */
+            gap: 28px; 
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -44,13 +44,13 @@
         }
         .nav-item span { 
             display: block; 
-            font-size: 20px; /* 依照照片大小調整 */
+            font-size: 22px; 
             font-weight: bold; 
-            margin-bottom: 2px; 
+            margin-bottom: 4px; 
         }
         .nav-item small { 
             display: block; 
-            font-size: 11px; /* 依照照片大小調整 */
+            font-size: 11px; 
             text-transform: uppercase; 
             font-weight: 300; 
             opacity: 0.9;
@@ -58,9 +58,30 @@
 
         /* 3. 指令：線上課表、私人教學、企業包班區塊需要一行字的留白 */
         .block-wrapper { 
-            padding: 24px 0; /* 使用 24px (約一行標準字高) 作為上下留白 */
+            padding: 24px 0; /* 留出一行字的高度間距 */
             text-align: center; 
         }
         
         .online { background-color: var(--bg-blue); margin-top: 10px; }
-        .private
+        .private { background-color: var(--bg-red); }
+        .group { background-color: var(--bg-green); }
+
+        /* 以下為原始排版與內容樣式，嚴格維持不動 */
+        .container { max-width: 600px; margin: 0 auto; text-align: left; padding: 0 25px; }
+        h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; }
+        .subtitle { font-size: 13px; font-weight: 900; margin: 0 0 25px 0; text-transform: uppercase; }
+        .online .subtitle { color: var(--c-blue); }
+        .private .subtitle { color: var(--c-orange); }
+        .group .subtitle { color: var(--c-green); }
+        .card { background: #fff; padding: 22px 28px; border-radius: 10px; margin-bottom: 25px; border-left: 7px solid; line-height: 1.7; font-size: 16px; color: var(--text-card); }
+        .card b { color: var(--text-main); font-weight: 900; }
+        .online .card { border-left-color: var(--c-blue); }
+        .private .card { border-left-color: var(--c-orange); }
+        .group .card { border-left-color: var(--c-green); }
+        ul { list-style: none; padding: 0; margin: 0; }
+        li { margin-bottom: 14px; font-size: 15px; display: flex; align-items: flex-start; line-height: 1.5; color: var(--text-list); }
+        li::before { content: "•"; margin-right: 10px; font-weight: 900; font-size: 22px; line-height: 1; }
+        .online li::before { color: var(--c-blue); }
+        .private li::before { color: var(--c-orange); }
+        .group li::before { color: var(--c-green); }
+        .footer { padding: 40px 0
