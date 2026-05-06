@@ -7,18 +7,21 @@
     <style>
         :root {
             --nav-bg: #333333;
-            --bg-blue: #F3F8FB; 
-            --bg-red: #FFF1F0;
-            --bg-green: #F3F8F5; 
-            --c-blue: #5992B2;   
-            --c-orange: #D97E38; 
-            --c-green: #4E8C67;  
             
-            /* 顏色修正：採樣自照片 IMG_5311.jpg 的真實深色文字 */
-            --text-main: #333333;    /* 標題與重點文字 */
-            --text-list-t: #444444;  /* 清單標題，深且重 */
-            --text-list-d: #666666;  /* 清單內容描述，略帶質感的灰黑 */
-            --text-card: #555555;    /* 白盒內的說明文字 */
+            /* 顏色修正：調高藍色與綠色的亮度，保持清爽不鮮豔 */
+            --bg-blue: #F0F7FA;  /* 調亮藍色背景 */
+            --c-blue: #66A3C2;   /* 調亮藍色文字 */
+            
+            --bg-green: #F2F9F5; /* 調亮綠色背景 */
+            --c-green: #5A9E75;  /* 調亮綠色文字 */
+            
+            /* 維持不變的其他設定 */
+            --bg-red: #FFF1F0;
+            --c-orange: #D97E38; 
+            --text-main: #333333;
+            --text-list-t: #444444;
+            --text-list-d: #666666;
+            --text-card: #555555;
         }
 
         body {
@@ -28,7 +31,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 導覽列 */
+        /* 導覽列：維持 IMG_5624.jpeg 樣式 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 15px 0;
@@ -39,13 +42,10 @@
             top: 0;
             z-index: 1000;
         }
-        .nav-item { 
-            text-decoration: none; text-align: center; color: #ffffff; min-width: 80px;
-        }
+        .nav-item { text-decoration: none; text-align: center; color: #ffffff; min-width: 80px; }
         .nav-item span { display: block; font-size: 18px; font-weight: bold; margin-bottom: 2px; }
         .nav-item small { display: block; font-size: 10px; text-transform: uppercase; font-weight: 300; opacity: 0.8; }
 
-        /* 內容區塊樣式 */
         .block-wrapper { padding: 45px 0; text-align: center; }
         .online { background-color: var(--bg-blue); margin-top: 10px; }
         .private { background-color: var(--bg-red); }
@@ -54,21 +54,17 @@
         .container { max-width: 600px; margin: 0 auto; text-align: left; padding: 0 25px; }
 
         h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; color: var(--text-main); }
-        .subtitle { 
-            font-size: 13px; font-weight: 900; margin: 0 0 25px 0; 
-            letter-spacing: 1px; text-transform: uppercase; 
-        }
+        .subtitle { font-size: 13px; font-weight: 900; margin: 0 0 25px 0; letter-spacing: 1px; text-transform: uppercase; }
         
         .online .subtitle { color: var(--c-blue); }
         .private .subtitle { color: var(--c-orange); }
         .group .subtitle { color: var(--c-green); }
 
-        /* 白盒卡片文字顏色 */
         .card {
             background: #fff; padding: 22px 28px; border-radius: 10px;
             margin-bottom: 25px; border-left: 7px solid;
             line-height: 1.7; font-size: 16px;
-            color: var(--text-card); /* 修正：不再是淡灰色，是照片中的深色 */
+            color: var(--text-card);
         }
         .card b { color: var(--text-main); font-weight: 900; }
 
@@ -76,7 +72,6 @@
         .private .card { border-left-color: var(--c-orange); }
         .group .card { border-left-color: var(--c-green); }
 
-        /* 清單文字顏色修正 */
         ul { list-style: none; padding: 0; margin: 0; }
         li { margin-bottom: 14px; font-size: 15px; display: flex; align-items: flex-start; line-height: 1.5; }
         li::before { content: "•"; margin-right: 10px; font-weight: 900; font-size: 22px; line-height: 1; }
@@ -88,19 +83,12 @@
         .list-title { color: var(--text-list-t); font-weight: 800; }
         .list-desc { color: var(--text-list-d); font-weight: 400; } 
 
-        /* 頁尾按鈕與資訊 */
         .footer { padding: 40px 0 0 0; text-align: center; background: #fff; }
         .footer-msg { color: #888888; font-size: 14px; margin-bottom: 25px; }
         .btn {
-            display: inline-block; 
-            background-color: var(--nav-bg); 
-            color: #ffffff !important;
-            padding: 15px 75px; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            font-size: 16px;
-            margin-bottom: 45px;
+            display: inline-block; background-color: var(--nav-bg); color: #ffffff !important;
+            padding: 15px 75px; text-decoration: none; border-radius: 8px; 
+            font-weight: bold; font-size: 16px; margin-bottom: 45px;
         }
 
         .browser-bar {
@@ -123,55 +111,4 @@
     <div class="block-wrapper online">
         <div class="container">
             <h2>線上課表</h2>
-            <p class="subtitle">ONLINE PROGRAMMING</p>
-            <div class="card">
-                ★ <b>核心重點：</b>數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。
-            </div>
-            <ul>
-                <li><span class="list-title">週期化備賽規劃：</span><span class="list-desc">針對目標科學化安排訓練週期。</span></li>
-                <li><span class="list-title">數據即時回饋：</span><span class="list-desc">遠端即時監測訓練與恢復狀態。</span></li>
-                <li><span class="list-title">動態調整：</span><span class="list-desc">根據回報狀態，隨時調整下週課表。</span></li>
-                <li><span class="list-title">線上諮詢機制：</span><span class="list-desc">定期討論訓練成效，解答疑難雜症。</span></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="block-wrapper private">
-        <div class="container">
-            <h2>私人教學</h2>
-            <p class="subtitle">ONE-ON-ONE COACHING</p>
-            <div class="card">
-                ★ <b>核心價值：</b>根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。
-            </div>
-            <ul>
-                <li><span class="list-title">跑姿校正：</span><span class="list-desc">透過錄影分析與拆解，使肌肉記憶正確動作。</span></li>
-                <li><span class="list-title">體感配速建立：</span><span class="list-desc">協助跑者建立對各心率區間的感知。</span></li>
-                <li><span class="list-title">動態負荷調控：</span><span class="list-desc">根據疲勞程度，即時調整訓練強度。</span></li>
-                <li><span class="list-title">跑者專項強化引導：</span><span class="list-desc">針對薄弱環節設計輔助訓練。</span></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="block-wrapper group">
-        <div class="container">
-            <h2>企業包班</h2>
-            <p class="subtitle">CORPORATE GROUP</p>
-            <div class="card">
-                ★ <b>核心價值：</b>職場健康與活力、團體共榮，將運動融入企業文化。
-            </div>
-            <ul>
-                <li><span class="list-title">提升團隊凝聚力：</span><span class="list-desc">挑戰目標過程中，建立跨部門情感連結。</span></li>
-                <li><span class="list-title">企業賽事推動：</span><span class="list-desc">協助組隊參與路跑賽事，塑造品牌形象。</span></li>
-                <li><span class="list-title">職場壓力紓解：</span><span class="list-desc">透過運動釋放壓力，提升團隊工作效率。</span></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p class="footer-msg">讓我們一起跑出健康快樂的每一步 ☺</p>
-        <a href="form.html" class="btn">預約一份溫暖的諮詢</a>
-        <div class="browser-bar">1214-debug.github.io</div>
-    </div>
-
-</body>
-</html>
+            <p class="subtitle">
