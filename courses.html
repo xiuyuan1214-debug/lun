@@ -25,7 +25,7 @@
             line-height: 1.6;
         }
 
-        /* 導覽列：嚴格對齊 form.html 單行結構，不影響下方 */
+        /* 導覽列：僅強制單行化，不影響下方內容 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 22px 0 16px 0;
@@ -56,7 +56,7 @@
             line-height: 1.1;
             margin-bottom: 2px;
             letter-spacing: 0.5px;
-            white-space: nowrap;
+            white-space: nowrap; /* 禁止換行，與 form.html 一致 */
         }
 
         .nav-item small { 
@@ -70,7 +70,7 @@
             white-space: nowrap;
         }
 
-        /* 頁面設計還原 */
+        /* 內容區塊排版：百分之百還原原始設計 */
         .block-wrapper { padding: 40px 0; }
         .online { background-color: var(--bg-blue); margin-top: 5px; }
         .private { background-color: var(--bg-pink); }
@@ -93,4 +93,4 @@
         .group .card { border-left-color: var(--c-green); }
 
         ul { list-style: none; padding: 0; margin: 0; text-align: left; }
-        li { margin-bottom: 14px; font-size: 15px; line-height: 1.5; color: var(--text-list); display: flex
+        li { margin-bottom: 14px; font-size: 15px; line-height
