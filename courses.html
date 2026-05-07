@@ -25,7 +25,7 @@
             line-height: 1.6;
         }
 
-        /* 導覽列：嚴格復刻 form.html 單行結構，不影響下方 */
+        /* 導覽列：嚴格復刻單行不換行，鎖定字體比例 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 22px 0 16px 0;
@@ -56,7 +56,7 @@
             line-height: 1.1;
             margin-bottom: 2px;
             letter-spacing: 0.5px;
-            white-space: nowrap; /* 強制單行 */
+            white-space: nowrap;
         }
 
         .nav-item small { 
@@ -70,7 +70,7 @@
             white-space: nowrap;
         }
 
-        /* 內容區塊排版：百分之百還原 */
+        /* 內容區塊樣式還原 */
         .block-wrapper { padding: 40px 0; }
         .online { background-color: var(--bg-blue); margin-top: 5px; }
         .private { background-color: var(--bg-pink); }
@@ -98,7 +98,6 @@
         
         .bold-item { font-weight: bold; color: var(--text-main); }
 
-        /* 頁尾還原 */
+        /* 頁尾樣式還原 */
         .footer { padding: 50px 0 80px 0; text-align: center; }
         .footer-msg { color: #888888; font-size: 14px; margin-bottom: 15px; }
-        .btn { display: inline-block; background-color: #333333; color:
