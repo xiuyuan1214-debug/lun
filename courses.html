@@ -26,7 +26,7 @@
             line-height: 1.6;
         }
 
-        /* 頂層導覽列：與補給站規格完全一致 */
+        /* 頂層導覽列：與 form.html 規格完全一致 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 22px 0 16px 0;
@@ -74,3 +74,29 @@
         .group .subtitle { color: var(--c-green); }
 
         .card { background: #fff; padding: 22px 28px; border-radius: 10px; margin-bottom: 25px; border-left: 7px solid; font-size: 16px; color: var(--text-card); }
+        .card b { color: var(--text-main); font-weight: 900; }
+        
+        .online .card { border-left-color: var(--c-blue); }
+        .private .card { border-left-color: var(--c-pink); }
+        .group .card { border-left-color: var(--c-green); }
+
+        ul { list-style: none; padding: 0; margin: 0; }
+        li { margin-bottom: 14px; font-size: 15px; line-height: 1.5; color: var(--text-list); display: flex; align-items: flex-start; }
+        li::before { content: "·"; margin-right: 10px; font-weight: 900; font-size: 22px; line-height: 1; }
+        .online li::before { color: var(--c-blue); }
+        .private li::before { color: var(--c-pink); }
+        .group li::before { color: var(--c-green); }
+        
+        .bold-item { font-weight: bold; color: var(--text-main); }
+
+        .footer { padding: 50px 0 80px 0; text-align: center; }
+        .footer-msg { color: #888888; font-size: 14px; margin-bottom: 25px; }
+        .btn { display: inline-block; background-color: #333333; color: #ffffff !important; padding: 15px 75px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-item"><span>教練資歷</span><small>COACH PROFILE</small></a>
+        <a href="courses.html" class="nav-item"><span>課程簡介</span><small>COURSE</small></a>
+        <a href="tools.
