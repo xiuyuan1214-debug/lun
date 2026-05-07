@@ -25,7 +25,7 @@
             line-height: 1.6;
         }
 
-        /* 導覽列：嚴格復刻單行不換行，鎖定字體比例 */
+        /* 導覽列：僅調整結構與 form.html 對齊，絕不影響下方設計 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 22px 0 16px 0;
@@ -46,7 +46,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-width: 0; /* 防止寬度溢出 */
+            min-width: 0;
         }
 
         .nav-item span { 
@@ -67,10 +67,10 @@
             opacity: 0.8;
             letter-spacing: 0.5px;
             line-height: 1;
-            white-space: nowrap; /* 強制單行 */
+            white-space: nowrap;
         }
 
-        /* 以下為還原後的原始內容樣式 */
+        /* 內容區塊：完全還原原始設計 */
         .block-wrapper { padding: 40px 0; }
         .online { background-color: var(--bg-blue); margin-top: 5px; }
         .private { background-color: var(--bg-pink); }
@@ -79,10 +79,4 @@
         .container { max-width: 600px; margin: 0 auto; padding: 0 25px; }
         
         h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; text-align: center; }
-        .subtitle { font-size: 13px; font-weight: 900; margin: 0 0 25px 0; text-transform: uppercase; text-align: center; }
-        
-        .online .subtitle { color: var(--c-blue); }
-        .private .subtitle { color: var(--c-pink); }
-        .group .subtitle { color: var(--c-green); }
-
-        .card { background: #fff; padding: 22px 28px; border-radius: 10px; margin-bottom: 25px; border-left: 7
+        .subtitle { font-size: 13px; font-weight: 90
