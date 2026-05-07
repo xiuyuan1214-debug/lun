@@ -7,12 +7,12 @@
     <style>
         :root {
             --nav-bg: #333333;
-            /* 配色微幅調亮：藍、粉、綠 */
             --bg-blue: #F5FBFE;  
             --c-blue: #6A9AC4;   
             --bg-pink: #FFF5F8; 
             --c-pink: #D97E96;  
-            --bg-green: #F7FCF9; 
+            /* 修正後的綠色背景 */
+            --bg-green: #F5FAF7; 
             --c-green: #5E8C73;  
             --text-main: #333333;
             --text-card: #555555;
@@ -26,7 +26,7 @@
             line-height: 1.6;
         }
 
-        /* 頂層導覽列：與 form.html 規格完全一致 */
+        /* 頂層導覽列：嚴格復刻跑者能量補給站規格 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 22px 0 16px 0;
@@ -60,7 +60,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* 區塊樣式 */
         .block-wrapper { padding: 40px 0; }
         .online { background-color: var(--bg-blue); margin-top: 5px; }
         .private { background-color: var(--bg-pink); }
@@ -68,7 +67,6 @@
 
         .container { max-width: 600px; margin: 0 auto; padding: 0 25px; }
         
-        /* 標題與英文小標置中 */
         h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; text-align: center; }
         .subtitle { font-size: 13px; font-weight: 900; margin: 0 0 25px 0; text-transform: uppercase; text-align: center; }
         
@@ -77,7 +75,9 @@
         .group .subtitle { color: var(--c-green); }
 
         .card { background: #fff; padding: 22px 28px; border-radius: 10px; margin-bottom: 25px; border-left: 7px solid; font-size: 16px; color: var(--text-card); text-align: left; }
-        .card b { color: var(--text-main); font-weight: 900; }
+        
+        /* 指令：核心價值內容文字加粗 */
+        .card b, .card .core-text { color: var(--text-main); font-weight: 900; }
         
         .online .card { border-left-color: var(--c-blue); }
         .private .card { border-left-color: var(--c-pink); }
@@ -85,8 +85,6 @@
 
         ul { list-style: none; padding: 0; margin: 0; text-align: left; }
         li { margin-bottom: 14px; font-size: 15px; line-height: 1.5; color: var(--text-list); display: flex; align-items: flex-start; }
-        
-        /* 符號靠近文字，維持適當距離 */
         li::before { content: "·"; margin-right: 6px; font-weight: 900; font-size: 22px; line-height: 1; }
         
         .online li::before { color: var(--c-blue); }
@@ -95,8 +93,9 @@
         
         .bold-item { font-weight: bold; color: var(--text-main); }
 
+        /* 頁尾位置調整：縮短標語與按鈕距離 */
         .footer { padding: 50px 0 80px 0; text-align: center; }
-        .footer-msg { color: #888888; font-size: 14px; margin-bottom: 25px; }
+        .footer-msg { color: #888888; font-size: 14px; margin-bottom: 12px; }
         .btn { display: inline-block; background-color: #333333; color: #ffffff !important; padding: 15px 75px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
     </style>
 </head>
@@ -115,7 +114,7 @@
             <h2>線上課表</h2>
             <p class="subtitle">ONLINE PROGRAMMING</p>
             <div class="card">
-                ★ <b>核心重點：</b>數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。
+                ★ <span class="core-text">核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。</span>
             </div>
             <ul>
                 <li><span class="bold-item">週期化備賽規劃：</span>針對目標科學化安排訓練週期。</li>
@@ -131,36 +130,10 @@
             <h2>私人教學</h2>
             <p class="subtitle">ONE-ON-ONE COACHING</p>
             <div class="card">
-                ★ <b>核心價值：</b>根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。
+                ★ <span class="core-text">核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</span>
             </div>
             <ul>
                 <li><span class="bold-item">跑姿校正：</span>透過錄影分析與拆解，使肌肉記憶正確動作。</li>
                 <li><span class="bold-item">體感配速建立：</span>協助跑者建立對各心率區間的感知（教練親自陪跑）。</li>
                 <li><span class="bold-item">動態負荷調控：</span>根據疲勞程度，即時調整訓練強度。</li>
-                <li><span class="bold-item">跑者專項強化引導：</span>針對薄弱環節設計輔助訓練。</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="block-wrapper group">
-        <div class="container">
-            <h2>企業包班</h2>
-            <p class="subtitle">CORPORATE GROUP</p>
-            <div class="card">
-                ★ <b>核心價值：</b>職場健康與活力、團體共榮，將運動融入企業文化。
-            </div>
-            <ul>
-                <li><span class="bold-item">提升團隊凝聚力：</span>挑戰目標過程中，建立跨部門情感連結。</li>
-                <li><span class="bold-item">企業賽事推動：</span>協助組隊參與路跑賽事，塑造品牌形象。</li>
-                <li><span class="bold-item">職場壓力紓解：</span>透過運動釋放壓力，提升團隊工作效率。</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p class="footer-msg">讓我們一起跑出健康快樂的每一步 ◡̈</p>
-        <a href="form.html" class="btn">預約一份溫暖的諮詢</a>
-    </div>
-
-</body>
-</html>
+                <li><span class="bold-item">跑者專項強化引導：</span>針對薄弱環節設計輔助訓練
