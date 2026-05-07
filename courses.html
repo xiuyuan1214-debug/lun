@@ -25,7 +25,7 @@
             line-height: 1.6;
         }
 
-        /* 導覽列：嚴格復刻 form.html 單行結構與樣式 */
+        /* 導覽列 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 22px 0 16px 0;
@@ -42,7 +42,7 @@
             text-decoration: none; 
             text-align: center; 
             color: #ffffff; 
-            flex: 1;
+            flex: 1; /* 復原 flex 比例 */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -70,7 +70,7 @@
             white-space: nowrap;
         }
 
-        /* 以下內容：百分之百還原，絕對不動 */
+        /* 內容區塊排版 */
         .block-wrapper { padding: 40px 0; }
         .online { background-color: var(--bg-blue); margin-top: 5px; }
         .private { background-color: var(--bg-pink); }
@@ -94,11 +94,22 @@
 
         ul { list-style: none; padding: 0; margin: 0; text-align: left; }
         li { margin-bottom: 14px; font-size: 15px; line-height: 1.5; color: var(--text-list); display: flex; align-items: flex-start; }
-        li::before { content: "·"; margin-right: 10px; font-weight: 900; font-size: 24px; line-height: 1; color: inherit; }
         
+        /* 復原 li 內的 HTML 結構與文字（使用 bold-item 標籤） */
         .bold-item { font-weight: bold; color: var(--text-main); }
 
-        .footer { padding: 50px 0 80px 0; text-align: center; }
+        /* 修正 2 & 3：圓點靠近文字並加上顏色 */
+        li::before { 
+            content: "·"; 
+            margin-right: 5px; /* 修正 2：縮小間距，靠近文字 */
+            font-weight: 900; 
+            font-size: 24px; 
+            line-height: 1; 
+            color: inherit; /* 修正 3：圓點顏色繼承文字顏色 */
+        }
+
+        /* 修正 1：頁尾文字上移 (padding-top 縮小) */
+        .footer { padding: 30px 0 80px 0; text-align: center; }
         .footer-msg { color: #888888; font-size: 14px; margin-bottom: 15px; }
         .btn { display: inline-block; background-color: #333333; color: #ffffff !important; padding: 15px 75px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
     </style>
@@ -110,8 +121,7 @@
         <a href="courses.html" class="nav-item"><span>課程簡介</span><small>COURSE</small></a>
         <a href="tools.html" class="nav-item"><span>配速工具</span><small>PACE TOOL</small></a>
         <a href="training.html" class="nav-item"><span>訓練日誌</span><small>TRAINING LOG</small></a>
-        <a href="match.html" class="nav-item"><span>賽事日誌</span><small>RACE LOG</small></a>
-    </nav>
+        <a href="match.html" class="nav-item"><span>賽事日誌</span><small>RACE LOG</small></a> </nav>
 
     <div class="block-wrapper online">
         <div class="container">
@@ -155,7 +165,7 @@
             <ul>
                 <li><span class="bold-item">團隊凝聚力提升：</span>透過共同挑戰訓練目標，建立跨部門的情感連結與默契。</li>
                 <li><span class="bold-item">企業形象塑造：</span>協助員工組隊參與各大路跑賽事，展現公司陽光與活力的形象。</li>
-                <li><span class="bold-item">職場壓力釋放：</span>規律的團體運動有助於降低工作焦慮，提升整體工作效率。</li>
+                <li><span class="bold-item">職場壓力釋放：</span>規律的團體運動有助於降低工作焦慮，提升團隊整體工作效率。</li>
                 <li><span class="bold-item">分級教學設計：</span>針對不同體能水準的同仁，設計兼具趣味與安全的階梯式課程。</li>
             </ul>
         </div>
