@@ -25,7 +25,7 @@
             line-height: 1.6;
         }
 
-        /* 導覽列：僅強制單行化 */
+        /* 導覽列：嚴格復刻 form.html 單行結構，不影響下方 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 22px 0 16px 0;
@@ -56,7 +56,7 @@
             line-height: 1.1;
             margin-bottom: 2px;
             letter-spacing: 0.5px;
-            white-space: nowrap;
+            white-space: nowrap; /* 強制單行 */
         }
 
         .nav-item small { 
@@ -70,10 +70,35 @@
             white-space: nowrap;
         }
 
-        /* 內容區塊：百分之百還原原始設計 */
+        /* 內容區塊排版：百分之百還原 */
         .block-wrapper { padding: 40px 0; }
         .online { background-color: var(--bg-blue); margin-top: 5px; }
         .private { background-color: var(--bg-pink); }
         .group { background-color: var(--bg-green); }
 
-        .container { max-width:
+        .container { max-width: 600px; margin: 0 auto; padding: 0 25px; }
+        
+        h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; text-align: center; }
+        .subtitle { font-size: 13px; font-weight: 900; margin: 0 0 25px 0; text-transform: uppercase; text-align: center; }
+        
+        .online .subtitle { color: var(--c-blue); }
+        .private .subtitle { color: var(--c-pink); }
+        .group .subtitle { color: var(--c-green); }
+
+        .card { background: #fff; padding: 22px 28px; border-radius: 10px; margin-bottom: 25px; border-left: 7px solid; font-size: 16px; color: var(--text-card); text-align: left; }
+        .card .core-text { color: var(--text-main); font-weight: 900; }
+        
+        .online .card { border-left-color: var(--c-blue); }
+        .private .card { border-left-color: var(--c-pink); }
+        .group .card { border-left-color: var(--c-green); }
+
+        ul { list-style: none; padding: 0; margin: 0; text-align: left; }
+        li { margin-bottom: 14px; font-size: 15px; line-height: 1.5; color: var(--text-list); display: flex; align-items: flex-start; }
+        li::before { content: "·"; margin-right: 6px; font-weight: 900; font-size: 22px; line-height: 1; }
+        
+        .bold-item { font-weight: bold; color: var(--text-main); }
+
+        /* 頁尾還原 */
+        .footer { padding: 50px 0 80px 0; text-align: center; }
+        .footer-msg { color: #888888; font-size: 14px; margin-bottom: 15px; }
+        .btn { display: inline-block; background-color: #333333; color:
