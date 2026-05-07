@@ -7,10 +7,11 @@
     <style>
         :root {
             --nav-bg: #333333;
+            /* 修正配色：藍、粉、綠 */
             --bg-blue: #F0F7FA;  
             --c-blue: #6A9AC4;   
-            --bg-red: #FFF1F0;
-            --c-orange: #D97E38; 
+            --bg-pink: #FFF0F5; /* 私人教學改為粉色底 */
+            --c-pink: #D97E96;  
             --bg-green: #F2F8F5; 
             --c-green: #5E8C73;  
             --text-main: #333333;
@@ -22,9 +23,10 @@
             font-family: -apple-system, "Noto Sans TC", sans-serif;
             margin: 0; padding: 0; background-color: #ffffff;
             color: var(--text-main);
+            line-height: 1.6;
         }
 
-        /* 頂層導覽列：與 form.html 跑者能量補給站設計完全一樣 */
+        /* 頂層導覽列：與補給站規格完全一致 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 22px 0 16px 0;
@@ -58,32 +60,31 @@
             letter-spacing: 0.5px;
         }
 
-        .block-wrapper { padding: 24px 0; text-align: center; }
+        .block-wrapper { padding: 40px 0; text-align: center; }
         .online { background-color: var(--bg-blue); margin-top: 5px; }
-        .private { background-color: var(--bg-red); }
+        .private { background-color: var(--bg-pink); } /* 這裡套用粉色 */
         .group { background-color: var(--bg-green); }
 
         .container { max-width: 600px; margin: 0 auto; text-align: left; padding: 0 25px; }
         h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; }
         .subtitle { font-size: 13px; font-weight: 900; margin: 0 0 25px 0; text-transform: uppercase; }
+        
         .online .subtitle { color: var(--c-blue); }
-        .private .subtitle { color: var(--c-orange); }
+        .private .subtitle { color: var(--c-pink); }
         .group .subtitle { color: var(--c-green); }
 
-        .card { background: #fff; padding: 22px 28px; border-radius: 10px; margin-bottom: 25px; border-left: 7px solid; line-height: 1.7; font-size: 16px; color: var(--text-card); }
+        .card { background: #fff; padding: 22px 28px; border-radius: 10px; margin-bottom: 25px; border-left: 7px solid; font-size: 16px; color: var(--text-card); }
         .card b { color: var(--text-main); font-weight: 900; }
+        
         .online .card { border-left-color: var(--c-blue); }
-        .private .card { border-left-color: var(--c-orange); }
+        .private .card { border-left-color: var(--c-pink); }
         .group .card { border-left-color: var(--c-green); }
 
         ul { list-style: none; padding: 0; margin: 0; }
-        li { margin-bottom: 14px; font-size: 15px; display: flex; align-items: flex-start; line-height: 1.5; color: var(--text-list); }
-        li::before { content: "·"; margin-right: 10px; font-weight: 900; font-size: 22px; line-height: 1; }
-        .online li::before { color: var(--c-blue); }
-        .private li::before { color: var(--c-orange); }
-        .group li::before { color: var(--c-green); }
+        li { margin-bottom: 14px; font-size: 15px; line-height: 1.5; color: var(--text-list); }
+        .bold-item { font-weight: bold; color: var(--text-main); }
 
-        .footer { padding: 40px 0 60px 0; text-align: center; }
+        .footer { padding: 50px 0 80px 0; text-align: center; }
         .footer-msg { color: #888888; font-size: 14px; margin-bottom: 25px; }
         .btn { display: inline-block; background-color: #333333; color: #ffffff !important; padding: 15px 75px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
     </style>
@@ -92,4 +93,5 @@
 
     <nav class="navbar">
         <a href="index.html" class="nav-item"><span>教練資歷</span><small>COACH PROFILE</small></a>
-        <a href="courses.html
+        <a href="courses.html" class="nav-item"><span>課程簡介</span><small>COURSE</small></a>
+        <a href="tools.html" class="nav-item"><span>配速工具</span><small>PACE TOOL</small
