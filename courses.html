@@ -25,13 +25,13 @@
             line-height: 1.6;
         }
 
-        /* 頂層導覽列：嚴格鎖定 IMG_5877 的大按鈕與斷行設計 */
+        /* 頂層導覽列：嚴格對齊 form.html 單行橫排規格 */
         .navbar {
             background-color: var(--nav-bg);
-            padding: 15px 0 10px 0;
+            padding: 22px 0 16px 0;
             display: flex;
-            justify-content: space-around;
-            align-items: flex-start; /* 對齊頂部，讓中文字維持高度一致 */
+            justify-content: center;
+            align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -43,30 +43,33 @@
             text-align: center; 
             color: #ffffff; 
             flex: 1;
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* 中文字：變大且強制斷行 */
         .nav-item span { 
             display: block; 
             font-size: 21px; 
             font-weight: bold; 
-            line-height: 1.1; 
-            margin-bottom: 4px;
+            line-height: 1.2;
+            margin-bottom: 2px;
             letter-spacing: 0.5px;
+            white-space: nowrap; /* 絕對禁止換行 */
         }
 
-        /* 英文小標：微小且與中文緊貼 */
         .nav-item small { 
             display: block; 
-            font-size: 10px; 
+            font-size: 11px; 
             text-transform: uppercase; 
             font-weight: 300; 
             opacity: 0.8;
-            letter-spacing: 0px;
+            letter-spacing: 0.5px;
             line-height: 1;
+            white-space: nowrap; /* 絕對禁止換行 */
         }
 
+        /* 區塊內容 */
         .block-wrapper { padding: 40px 0; }
         .online { background-color: var(--bg-blue); margin-top: 5px; }
         .private { background-color: var(--bg-pink); }
@@ -88,7 +91,7 @@
         li::before { content: "·"; margin-right: 6px; font-weight: 900; font-size: 22px; line-height: 1; }
         .bold-item { font-weight: bold; color: var(--text-main); }
 
-        /* 頁尾位置調整：極限往上移 */
+        /* 頁尾：依照指令極限上移 */
         .footer { padding: 0px 0 80px 0; text-align: center; }
         .footer-msg { color: #888888; font-size: 14px; margin-bottom: 5px; }
         .btn { display: inline-block; background-color: #333333; color: #ffffff !important; padding: 15px 75px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
@@ -97,11 +100,11 @@
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="nav-item"><span>教練<br>資歷</span><small>COACH<br>PROFILE</small></a>
-        <a href="courses.html" class="nav-item"><span>課程<br>簡介</span><small>COURSE</small></a>
-        <a href="tools.html" class="nav-item"><span>配速<br>工具</span><small>PACE<br>TOOL</small></a>
-        <a href="training.html" class="nav-item"><span>訓練<br>日誌</span><small>TRAINING<br>LOG</small></a>
-        <a href="match.html" class="nav-item"><span>賽事<br>日誌</span><small>RACE<br>LOG</small></a>
+        <a href="index.html" class="nav-item"><span>教練資歷</span><small>COACH PROFILE</small></a>
+        <a href="courses.html" class="nav-item"><span>課程簡介</span><small>COURSE</small></a>
+        <a href="tools.html" class="nav-item"><span>配速工具</span><small>PACE TOOL</small></a>
+        <a href="training.html" class="nav-item"><span>訓練日誌</span><small>TRAINING LOG</small></a>
+        <a href="match.html" class="nav-item"><span>賽事日誌</span><small>RACE LOG</small></a>
     </nav>
 
     <div class="block-wrapper online">
