@@ -58,4 +58,38 @@
             letter-spacing: 0.5px;
         }
 
-        .block-wrapper { padding: 24px 0; text-align: center
+        .block-wrapper { padding: 24px 0; text-align: center; }
+        .online { background-color: var(--bg-blue); margin-top: 5px; }
+        .private { background-color: var(--bg-red); }
+        .group { background-color: var(--bg-green); }
+
+        .container { max-width: 600px; margin: 0 auto; text-align: left; padding: 0 25px; }
+        h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; }
+        .subtitle { font-size: 13px; font-weight: 900; margin: 0 0 25px 0; text-transform: uppercase; }
+        .online .subtitle { color: var(--c-blue); }
+        .private .subtitle { color: var(--c-orange); }
+        .group .subtitle { color: var(--c-green); }
+
+        .card { background: #fff; padding: 22px 28px; border-radius: 10px; margin-bottom: 25px; border-left: 7px solid; line-height: 1.7; font-size: 16px; color: var(--text-card); }
+        .card b { color: var(--text-main); font-weight: 900; }
+        .online .card { border-left-color: var(--c-blue); }
+        .private .card { border-left-color: var(--c-orange); }
+        .group .card { border-left-color: var(--c-green); }
+
+        ul { list-style: none; padding: 0; margin: 0; }
+        li { margin-bottom: 14px; font-size: 15px; display: flex; align-items: flex-start; line-height: 1.5; color: var(--text-list); }
+        li::before { content: "·"; margin-right: 10px; font-weight: 900; font-size: 22px; line-height: 1; }
+        .online li::before { color: var(--c-blue); }
+        .private li::before { color: var(--c-orange); }
+        .group li::before { color: var(--c-green); }
+
+        .footer { padding: 40px 0 60px 0; text-align: center; }
+        .footer-msg { color: #888888; font-size: 14px; margin-bottom: 25px; }
+        .btn { display: inline-block; background-color: #333333; color: #ffffff !important; padding: 15px 75px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-item"><span>教練資歷</span><small>COACH PROFILE</small></a>
+        <a href="courses.html
