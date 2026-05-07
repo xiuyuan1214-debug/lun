@@ -25,17 +25,16 @@
             line-height: 1.6;
         }
 
-        /* 頂層導覽列：嚴格對照照片 IMG_5876 規格 */
+        /* 導覽列：嚴格復刻 IMG_5888 截圖比例 */
         .navbar {
             background-color: var(--nav-bg);
-            padding: 22px 0 16px 0; /* 鎖定照片中的高度感 */
+            padding: 22px 5px 16px 5px; 
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            width: 100%;
         }
         
         .nav-item { 
@@ -44,73 +43,66 @@
             color: #ffffff; 
             flex: 1;
             display: flex;
-            flex-direction: column; /* 強制垂直排列 */
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
 
+        /* 中文字體大小與緊密度 */
         .nav-item span { 
             display: block; 
-            font-size: 21px; /* 加大中文標題 */
+            font-size: 21px; 
             font-weight: bold; 
-            line-height: 1.2;
-            margin-bottom: 2px;
-            letter-spacing: 0.5px;
-            white-space: pre-line; /* 確保內容能依需求換行 */
+            line-height: 1.1; /* 縮減行高，讓中文文字更緊湊 */
+            letter-spacing: 1px;
         }
 
+        /* 英文小標位置與大小 */
         .nav-item small { 
             display: block; 
-            font-size: 11px; /* 縮小英文副標 */
+            font-size: 10px; 
             text-transform: uppercase; 
             font-weight: 300; 
-            opacity: 0.8;
-            letter-spacing: 0.5px;
-            line-height: 1;
+            opacity: 0.9;
+            letter-spacing: 0px;
+            line-height: 1.2;
+            margin-top: 4px;
         }
 
-        /* 內容區塊樣式 */
         .block-wrapper { padding: 40px 0; }
         .online { background-color: var(--bg-blue); margin-top: 5px; }
         .private { background-color: var(--bg-pink); }
         .group { background-color: var(--bg-green); }
 
         .container { max-width: 600px; margin: 0 auto; padding: 0 25px; }
-        
         h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; text-align: center; }
         .subtitle { font-size: 13px; font-weight: 900; margin: 0 0 25px 0; text-transform: uppercase; text-align: center; }
         
-        .online .subtitle { color: var(--c-blue); }
-        .private .subtitle { color: var(--c-pink); }
-        .group .subtitle { color: var(--c-green); }
-
-        .card { background: #fff; padding: 22px 28px; border-radius: 10px; margin-bottom: 25px; border-left: 7px solid; font-size: 16px; color: var(--text-card); text-align: left; }
+        .card { background: #fff; padding: 22px 28px; border-radius: 10px; margin-bottom: 25px; border-left: 7px solid; font-size: 16px; color: var(--text-card); }
         .card .core-text { color: var(--text-main); font-weight: 900; }
         
         .online .card { border-left-color: var(--c-blue); }
         .private .card { border-left-color: var(--c-pink); }
         .group .card { border-left-color: var(--c-green); }
 
-        ul { list-style: none; padding: 0; margin: 0; text-align: left; }
-        li { margin-bottom: 14px; font-size: 15px; line-height: 1.5; color: var(--text-list); display: flex; align-items: flex-start; }
+        ul { list-style: none; padding: 0; margin: 0; }
+        li { margin-bottom: 14px; font-size: 15px; color: var(--text-list); display: flex; align-items: flex-start; }
         li::before { content: "·"; margin-right: 6px; font-weight: 900; font-size: 22px; line-height: 1; }
-        
         .bold-item { font-weight: bold; color: var(--text-main); }
 
-        /* 頁尾位置調整 */
-        .footer { padding: 15px 0 80px 0; text-align: center; }
-        .footer-msg { color: #888888; font-size: 14px; margin-bottom: 10px; }
+        /* 頁尾：依照 IMG_5889 截圖位置往上移 */
+        .footer { padding: 30px 0 80px 0; text-align: center; }
+        .footer-msg { color: #888888; font-size: 14px; margin-bottom: 8px; }
         .btn { display: inline-block; background-color: #333333; color: #ffffff !important; padding: 15px 75px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="nav-item"><span>教練<br>資歷</span><small>COACH PROFILE</small></a>
-        <a href="courses.html" class="nav-item"><span>課程<br>簡介</span><small>COURSE</small></a>
-        <a href="tools.html" class="nav-item"><span>配速<br>工具</span><small>PACE TOOL</small></a>
-        <a href="training.html" class="nav-item"><span>訓練<br>日誌</span><small>TRAINING LOG</small></a>
-        <a href="match.html" class="nav-item"><span>賽事<br>日誌</span><small>RACE LOG</small></a>
+        <a href="index.html" class="nav-item"><span>教練資歷</span><small>COACH PROFILE</small></a>
+        <a href="courses.html" class="nav-item"><span>課程簡介</span><small>COURSE</small></a>
+        <a href="tools.html" class="nav-item"><span>配速工具</span><small>PACE TOOL</small></a>
+        <a href="training.html" class="nav-item"><span>訓練日誌</span><small>TRAINING LOG</small></a>
+        <a href="match.html" class="nav-item"><span>賽事日誌</span><small>RACE LOG</small></a>
     </nav>
 
     <div class="block-wrapper online">
