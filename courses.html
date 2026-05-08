@@ -25,7 +25,7 @@
             line-height: 1.6;
         }
 
-        /* 導覽列：僅修正按鈕大小使其符合頁面並均分，字級絕對不准動 */
+        /* 導覽列：嚴格對齊 form.html 的按鈕大小與結構 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 22px 0 16px 0;
@@ -42,7 +42,7 @@
             text-decoration: none; 
             text-align: center; 
             color: #ffffff; 
-            flex: 1; /* 修正按鈕大小：強制均分 5 等份符合頁面大小 */
+            flex: 1; /* 確保按鈕寬度分配與 form.html 一致 */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -51,7 +51,7 @@
 
         .nav-item span { 
             display: block; 
-            font-size: 21px; /* 嚴格復原字級 */
+            font-size: 21px; /* 嚴格維持原始字級 */
             font-weight: bold; 
             line-height: 1.1;
             margin-bottom: 2px;
@@ -61,7 +61,7 @@
 
         .nav-item small { 
             display: block; 
-            font-size: 11px; /* 嚴格復原字級 */
+            font-size: 11px; /* 嚴格維持原始字級 */
             text-transform: uppercase; 
             font-weight: 300; 
             opacity: 0.8;
@@ -70,7 +70,7 @@
             white-space: nowrap;
         }
 
-        /* 以下內容百分之百還原，絕對不准改動 */
+        /* 內容區塊：百分之百還原，絕對不准動 */
         .block-wrapper { padding: 40px 0; }
         .online { background-color: var(--bg-blue); margin-top: 5px; }
         .private { background-color: var(--bg-pink); }
@@ -95,7 +95,7 @@
         ul { list-style: none; padding: 0; margin: 0; text-align: left; }
         li { margin-bottom: 14px; font-size: 15px; line-height: 1.5; color: var(--text-list); display: flex; align-items: flex-start; }
         
-        /* 圓點修正：靠近文字並上色 */
+        /* 圓點修正：靠近文字並加上主題顏色 */
         li::before { 
             content: "·"; 
             margin-right: 5px; 
