@@ -25,7 +25,7 @@
             line-height: 1.6;
         }
 
-        /* 導覽列：精準對齊 form.html 的容器大小與比例 */
+        /* 導覽列：透過 container 限制寬度，讓按鈕大小與 form.html 統一 */
         .navbar {
             background-color: var(--nav-bg);
             position: sticky;
@@ -34,9 +34,8 @@
             width: 100%;
         }
 
-        /* 關鍵修正：加入與 form.html 一致的容器限制，確保按鈕大小相同 */
         .nav-container {
-            max-width: 600px;
+            max-width: 600px; /* 關鍵：這會讓 5 個按鈕縮小到與 form.html 一樣的比例 */
             margin: 0 auto;
             display: flex;
             justify-content: center;
@@ -57,7 +56,7 @@
 
         .nav-item span { 
             display: block; 
-            font-size: 21px; /* 嚴格還原 */
+            font-size: 21px; 
             font-weight: bold; 
             line-height: 1.1;
             margin-bottom: 2px;
@@ -67,7 +66,7 @@
 
         .nav-item small { 
             display: block; 
-            font-size: 11px; /* 嚴格還原 */
+            font-size: 11px; 
             text-transform: uppercase; 
             font-weight: 300; 
             opacity: 0.8;
@@ -76,7 +75,7 @@
             white-space: nowrap;
         }
 
-        /* 內容區塊：百分之百還原，絕對不准動 */
+        /* 內容區塊：百分之百完整恢復 */
         .block-wrapper { padding: 40px 0; }
         .online { background-color: var(--bg-blue); margin-top: 5px; }
         .private { background-color: var(--bg-pink); }
@@ -101,7 +100,7 @@
         ul { list-style: none; padding: 0; margin: 0; text-align: left; }
         li { margin-bottom: 14px; font-size: 15px; line-height: 1.5; color: var(--text-list); display: flex; align-items: flex-start; }
         
-        /* 圓點修正：靠近文字、上色 */
+        /* 圓點修正：靠近文字並上色 */
         li::before { 
             content: "·"; 
             margin-right: 5px; 
@@ -144,4 +143,20 @@
             <ul>
                 <li><span class="bold-item">週期化備賽規劃：</span>根據您的目標賽事，科學化安排基礎、強化、巔峰及減量週期。</li>
                 <li><span class="bold-item">數據即時回饋：</span>透過穿戴裝置同步，教練遠端監測心率、步頻及恢復狀態。</li>
-                <li><span class="bold-item">動態課表調整：</span>根據每週身體反
+                <li><span class="bold-item">動態課表調整：</span>根據每週身體反饋與疲勞指標，彈性微調下週訓練強度。</li>
+                <li><span class="bold-item">雙向諮詢機制：</span>提供專屬討論管道，隨時解答訓練中的疑難雜症。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="block-wrapper private">
+        <div class="container">
+            <h2>私人教學</h2>
+            <p class="subtitle">ONE-ON-ONE COACHING</p>
+            <div class="card">
+                ★ <span class="core-text">核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</span>
+            </div>
+            <ul>
+                <li><span class="bold-item">跑姿影像分析：</span>透過高禎數錄影拆解動作，找出能量耗損點並進行校正。</li>
+                <li><span class="bold-item">體感配速建立：</span>教練親自陪跑，引導跑者學會精準控制不同區間的體感強度。</li>
+                <li><span class="
