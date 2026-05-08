@@ -25,12 +25,12 @@
             line-height: 1.6;
         }
 
-        /* 導覽列：統一寬度並符合頁面大小 */
+        /* 導覽列：修正寬度與對齊，確保 5 個按鈕完美平分頁面大小 */
         .navbar {
             background-color: var(--nav-bg);
             padding: 22px 0 16px 0;
             display: flex;
-            justify-content: center;
+            justify-content: space-around; /* 均勻分配空間 */
             align-items: center;
             position: sticky;
             top: 0;
@@ -42,11 +42,10 @@
             text-decoration: none; 
             text-align: center; 
             color: #ffffff; 
-            flex: 1; /* 平分寬度符合頁面大小 */
+            width: 20%; /* 強制 5 個按鈕各佔 20% */
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-width: 0;
         }
 
         .nav-item span { 
@@ -70,7 +69,7 @@
             white-space: nowrap;
         }
 
-        /* 內容區塊排版：還原所有原始文字與間距 */
+        /* 內容區塊排版：還原所有原始文字 */
         .block-wrapper { padding: 40px 0; }
         .online { background-color: var(--bg-blue); margin-top: 5px; }
         .private { background-color: var(--bg-pink); }
@@ -95,7 +94,7 @@
         ul { list-style: none; padding: 0; margin: 0; text-align: left; }
         li { margin-bottom: 14px; font-size: 15px; line-height: 1.5; color: var(--text-list); display: flex; align-items: flex-start; }
         
-        /* 圓點修正：靠近文字並加上顏色 */
+        /* 圓點修正：靠近文字並加上對應顏色 */
         li::before { 
             content: "·"; 
             margin-right: 5px; 
@@ -110,7 +109,7 @@
 
         .bold-item { font-weight: bold; color: var(--text-main); }
 
-        /* 頁尾修正：往上移一點 (縮短 padding-top) */
+        /* 頁尾修正：內容上移 */
         .footer { padding: 25px 0 80px 0; text-align: center; }
         .footer-msg { color: #888888; font-size: 14px; margin-bottom: 15px; }
         .btn { display: inline-block; background-color: #333333; color: #ffffff !important; padding: 15px 75px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
