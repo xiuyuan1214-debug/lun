@@ -3,29 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>課程簡介 - 跑者服務中心</title>
+    <title>聯絡我們 - 跑者服務中心</title>
     <style>
         :root {
             --nav-bg: #333333;
-            --bg-blue: #F5FBFE;  
-            --c-blue: #6A9AC4;   
-            --bg-pink: #FFF5F8; 
-            --c-pink: #D97E96;  
-            --bg-green: #F5FAF7; 
-            --c-green: #5E8C73;  
+            --bg-yellow: #FFFBEB;
             --text-main: #333333;
-            --text-card: #555555;
-            --text-list: #666666;
+            --c-brown: #8B4513;
+            --c-yellow: #FFD700;
         }
 
         body {
             font-family: -apple-system, "Noto Sans TC", sans-serif;
-            margin: 0; padding: 0; background-color: #ffffff;
+            margin: 0; padding: 0; background-color: var(--bg-yellow);
             color: var(--text-main);
             line-height: 1.6;
         }
 
-        /* 導覽列：透過 container 限制寬度，讓按鈕大小與 form.html 統一 */
+        /* 導覽列：透過 container 限制寬度，讓按鈕大小縮小並對齊 */
         .navbar {
             background-color: var(--nav-bg);
             position: sticky;
@@ -35,7 +30,7 @@
         }
 
         .nav-container {
-            max-width: 600px; /* 關鍵：這會讓 5 個按鈕縮小到與 form.html 一樣的比例 */
+            max-width: 600px;
             margin: 0 auto;
             display: flex;
             justify-content: center;
@@ -60,7 +55,6 @@
             font-weight: bold; 
             line-height: 1.1;
             margin-bottom: 2px;
-            letter-spacing: 0.5px;
             white-space: nowrap;
         }
 
@@ -70,55 +64,44 @@
             text-transform: uppercase; 
             font-weight: 300; 
             opacity: 0.8;
-            letter-spacing: 0.5px;
             line-height: 1;
             white-space: nowrap;
         }
 
-        /* 內容區塊：百分之百完整恢復 */
-        .block-wrapper { padding: 40px 0; }
-        .online { background-color: var(--bg-blue); margin-top: 5px; }
-        .private { background-color: var(--bg-pink); }
-        .group { background-color: var(--bg-green); }
+        .container { max-width: 600px; margin: 0 auto; padding: 40px 25px; }
 
-        .container { max-width: 600px; margin: 0 auto; padding: 0 25px; }
-        
-        h2 { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; text-align: center; }
-        .subtitle { font-size: 13px; font-weight: 900; margin: 0 0 25px 0; text-transform: uppercase; text-align: center; }
-        
-        .online .subtitle { color: var(--c-blue); }
-        .private .subtitle { color: var(--c-pink); }
-        .group .subtitle { color: var(--c-green); }
+        h2 { text-align: center; margin-bottom: 30px; font-size: 28px; }
 
-        .card { background: #fff; padding: 22px 28px; border-radius: 10px; margin-bottom: 25px; border-left: 7px solid; font-size: 16px; color: var(--text-card); text-align: left; }
-        .card .core-text { color: var(--text-main); font-weight: 900; }
-        
-        .online .card { border-left-color: var(--c-blue); }
-        .private .card { border-left-color: var(--c-pink); }
-        .group .card { border-left-color: var(--c-green); }
-
-        ul { list-style: none; padding: 0; margin: 0; text-align: left; }
-        li { margin-bottom: 14px; font-size: 15px; line-height: 1.5; color: var(--text-list); display: flex; align-items: flex-start; }
-        
-        /* 圓點修正：靠近文字並上色 */
-        li::before { 
-            content: "·"; 
-            margin-right: 5px; 
-            font-weight: 900; 
-            font-size: 24px; 
-            line-height: 1; 
+        /* 表單與底層內容：完整恢復 */
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; }
+        input, select, textarea { 
+            width: 100%; padding: 12px; border: 1px solid #ccc; 
+            border-radius: 8px; box-sizing: border-box; font-size: 16px;
         }
-        
-        .online li::before { color: var(--c-blue); }
-        .private li::before { color: var(--c-pink); }
-        .group li::before { color: var(--c-green); }
 
-        .bold-item { font-weight: bold; color: var(--text-main); }
+        .verify-box { display: flex; gap: 10px; align-items: center; }
+        .verify-code { 
+            background: #eee; padding: 10px 20px; border-radius: 5px; 
+            font-weight: bold; letter-spacing: 3px; 
+        }
 
-        /* 頁尾修正：內容上移 */
-        .footer { padding: 25px 0 80px 0; text-align: center; }
-        .footer-msg { color: #888888; font-size: 14px; margin-bottom: 15px; }
-        .btn { display: inline-block; background-color: #333333; color: #ffffff !important; padding: 15px 75px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
+        /* 圓點修正：上色且靠近文字 */
+        .info-list { list-style: none; padding: 0; margin-top: 30px; }
+        .info-list li { display: flex; align-items: flex-start; margin-bottom: 10px; }
+        .info-list li::before { 
+            content: "·"; color: var(--c-brown); font-weight: 900; 
+            font-size: 24px; margin-right: 8px; line-height: 1; 
+        }
+
+        /* 頁尾修正：往上移一點 */
+        .footer { padding: 10px 0 80px 0; text-align: center; }
+        .footer-msg { color: #666; font-size: 15px; margin-bottom: 15px; }
+        .submit-btn { 
+            background-color: var(--nav-bg); color: white; border: none; 
+            padding: 15px 80px; border-radius: 8px; font-size: 18px; 
+            font-weight: bold; cursor: pointer; width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -133,30 +116,40 @@
         </div>
     </nav>
 
-    <div class="block-wrapper online">
-        <div class="container">
-            <h2>線上課表</h2>
-            <p class="subtitle">ONLINE PROGRAMMING</p>
-            <div class="card">
-                ★ <span class="core-text">核心重點：數據驅動的週期化訓練，打破地理限制，用科學數據調控每一公里的訓練價值。</span>
+    <div class="container">
+        <h2>預約諮詢表單</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label>姓名 / Name</label>
+                <input type="text" placeholder="您的姓名" required>
             </div>
-            <ul>
-                <li><span class="bold-item">週期化備賽規劃：</span>根據您的目標賽事，科學化安排基礎、強化、巔峰及減量週期。</li>
-                <li><span class="bold-item">數據即時回饋：</span>透過穿戴裝置同步，教練遠端監測心率、步頻及恢復狀態。</li>
-                <li><span class="bold-item">動態課表調整：</span>根據每週身體反饋與疲勞指標，彈性微調下週訓練強度。</li>
-                <li><span class="bold-item">雙向諮詢機制：</span>提供專屬討論管道，隨時解答訓練中的疑難雜症。</li>
+            <div class="form-group">
+                <label>跑者屬性 / Runner Attribute</label>
+                <select required>
+                    <option value="">請選擇</option>
+                    <option value="beginner">初階跑者 (Beginner)</option>
+                    <option value="half">半馬跑者 (Half-marathon)</option>
+                    <option value="full">全馬跑者 (Full-marathon)</option>
+                    <option value="ultra">超馬/越野跑者 (Ultra/Trail)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>諮詢內容 / Message</label>
+                <textarea rows="5" placeholder="請描述您的訓練需求或目標"></textarea>
+            </div>
+            <div class="form-group">
+                <label>驗證碼 / Verification</label>
+                <div class="verify-box">
+                    <input type="text" placeholder="輸入驗證碼" style="flex: 2;">
+                    <div class="verify-code">8X2Y</div>
+                </div>
+            </div>
+            
+            <ul class="info-list">
+                <li>專業的跑步數據分析與建議。</li>
+                <li>針對個人目標賽事提供客製化規劃方案。</li>
+                <li>教練將於 48 小時內回覆您的諮詢請求。</li>
             </ul>
-        </div>
-    </div>
 
-    <div class="block-wrapper private">
-        <div class="container">
-            <h2>私人教學</h2>
-            <p class="subtitle">ONE-ON-ONE COACHING</p>
-            <div class="card">
-                ★ <span class="core-text">核心價值：根據跑者的身體結構優化動力鏈，讓進步不再靠運氣，而是靠精準的科學數據實踐。</span>
-            </div>
-            <ul>
-                <li><span class="bold-item">跑姿影像分析：</span>透過高禎數錄影拆解動作，找出能量耗損點並進行校正。</li>
-                <li><span class="bold-item">體感配速建立：</span>教練親自陪跑，引導跑者學會精準控制不同區間的體感強度。</li>
-                <li><span class="
+            <div class="footer">
+                <p class="footer-msg">讓我們一起跑出健康快樂的
