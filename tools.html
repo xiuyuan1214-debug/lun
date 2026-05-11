@@ -6,35 +6,28 @@
     <title>找尋你の專屬步調</title>
     <style>
         :root {
-            --warm-orange: #FFB74D;
-            --warm-cream: #FFF9F0;
-            --text-brown: #5D4037;
-            --accent-yellow: #FFE082;
-            --box-bg: #FFFFFF;
+            --warm-bg: #FFFDF9;
+            --main-warm-orange: #FFB300;
+            --secondary-warm: #FFE082;
+            --text-color: #5D4037;
         }
 
         body {
             font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
-            background-color: var(--warm-cream);
-            color: var(--text-brown);
+            background-color: var(--warm-bg);
+            color: var(--text-color);
             margin: 0;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 20px;
         }
 
         .container {
-            width: 100%;
             max-width: 400px;
+            margin: 0 auto;
         }
 
-        /* 標題：改為指定文字，無黃線 */
         h1 {
             font-size: 32px;
-            margin-bottom: 30px;
-            text-align: left;
-            font-weight: bold;
+            margin: 0 0 30px 0;
         }
 
         .sub-title {
@@ -44,88 +37,73 @@
             display: block;
         }
 
-        .item-group {
-            margin-bottom: 25px;
-        }
-
-        .label-name {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 12px;
+        .label-text {
+            font-size: 20px;
+            margin-bottom: 15px;
             display: block;
         }
 
-        /* 輸入框控制：距離與配速大小一致，無數字 */
         .input-row {
             display: flex;
             align-items: center;
             gap: 10px;
+            margin-bottom: 20px;
         }
 
         input {
-            width: 80px; /* 統一輸入框大小 */
-            border: 2px solid var(--warm-orange);
-            border-radius: 12px;
+            width: 80px; /* 距離與配速輸入框寬度一致 */
             padding: 10px;
+            border: 2.5px solid var(--main-warm-orange);
+            border-radius: 15px;
             font-size: 18px;
             outline: none;
-            background-color: var(--box-bg);
+            background: white;
             text-align: center;
-            color: var(--text-brown);
-        }
-
-        input:focus {
-            background-color: #FFFDE7;
         }
 
         .unit {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
         }
 
-        /* 顯示框：溫暖活潑感 */
         .display-box {
-            background-color: var(--box-bg);
-            border: 2px solid var(--accent-yellow);
-            border-radius: 15px;
+            background-color: #FFFFFF;
+            border: 2px solid var(--secondary-warm);
+            border-radius: 12px;
             padding: 15px;
-            width: 220px;
+            width: 250px;
             font-size: 24px;
-            font-family: 'Courier New', monospace;
-            color: #E65100;
+            color: #EF6C00;
+            font-family: monospace;
             text-align: center;
-            margin-top: 5px;
-            box-shadow: 3px 3px 0px var(--accent-yellow);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
         }
 
-        /* 按鈕：溫暖配色 Q 彈感 */
-        .btn-calc {
-            background-color: var(--warm-orange);
+        button {
+            background-color: var(--main-warm-orange);
             border: none;
-            border-radius: 25px;
-            padding: 12px 50px;
+            border-radius: 30px;
+            padding: 12px 60px;
             font-size: 20px;
             font-weight: bold;
             color: white;
             cursor: pointer;
-            box-shadow: 0 4px 0 #EF6C00;
-            margin: 25px 0;
-            transition: all 0.1s;
+            box-shadow: 0 4px 0 #E65100;
+            margin: 20px 0;
         }
 
-        .btn-calc:active {
-            transform: translateY(3px);
-            box-shadow: 0 1px 0 #EF6C00;
+        button:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 #E65100;
         }
 
-        /* 最底層文字 */
         .footer-text {
-            margin-top: 40px;
+            margin-top: 50px;
             font-size: 14px;
-            color: #8D6E63;
-            letter-spacing: 1px;
-            text-align: center;
-            line-height: 1.6;
+            color: #A1887F;
+            text-align: left;
+            line-height: 1.8;
         }
     </style>
 </head>
@@ -136,16 +114,51 @@
 
     <span class="sub-title">跑步完賽時間預測</span>
 
-    <div class="item-group">
-        <label class="label-name">距離</label>
-        <div class="input-row">
-            <input type="number" id="distance">
-            <span class="unit">km</span>
-        </div>
+    <label class="label-text">距離</label>
+    <div class="input-row">
+        <input type="number" id="distance">
+        <span class="unit">km</span>
     </div>
 
-    <div class="item-group">
-        <label class="label-name">配速</label>
-        <div class="input-row">
-            <input type="number" id="paceMin">
-            <input type="number" id="
+    <label class="label-text">配速</label>
+    <div class="input-row">
+        <input type="number" id="paceMin">
+        <input type="number" id="paceSec">
+    </div>
+
+    <label class="label-text">時間：</label>
+    <div id="timeDisplay" class="display-box">-- : -- : --</div>
+
+    <button onclick="calculate()">計算</button>
+
+    <label class="label-text">預估完賽時間：</label>
+    <div id="resultDisplay" class="display-box">-- : -- : --</div>
+
+    <div class="footer-text">
+        讓每一滴汗水，都精確地匯聚成通往終點の軌跡
+    </div>
+</div>
+
+<script>
+    function calculate() {
+        const d = parseFloat(document.getElementById('distance').value);
+        const m = parseInt(document.getElementById('paceMin').value) || 0;
+        const s = parseInt(document.getElementById('paceSec').value) || 0;
+
+        if (d > 0 && (m > 0 || s > 0)) {
+            let totalSec = (m * 60 + s) * d;
+            let hrs = Math.floor(totalSec / 3600);
+            let mins = Math.floor((totalSec % 3600) / 60);
+            let secs = Math.round(totalSec % 60);
+
+            const pad = (v) => v.toString().padStart(2, '0');
+            const result = `${pad(hrs)} : ${pad(mins)} : ${pad(secs)}`;
+            
+            document.getElementById('timeDisplay').innerText = result;
+            document.getElementById('resultDisplay').innerText = result;
+        }
+    }
+</script>
+
+</body>
+</html>
