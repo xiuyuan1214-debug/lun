@@ -6,82 +6,177 @@
     <title>配速工具</title>
     <style>
         :root {
-            --main-yellow: #FFD54F;
-            --soft-bg: #FFF9F0;
-            --text-dark: #4E342E;
-            --accent-pink: #FFAB91;
+            --main-yellow: #FFCA28;
+            --bg-cream: #FFFDF5;
+            --text-brown: #5D4037;
+            --input-bg: #FFFFFF;
         }
 
         body {
-            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-            background-color: var(--soft-bg);
-            color: var(--text-dark);
-            display: flex;
-            justify-content: center;
-            padding: 20px;
+            font-family: "PingFang TC", "Heiti TC", sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-brown);
             margin: 0;
+            padding: 20px;
         }
 
         .container {
-            width: 100%;
-            max-width: 400px;
-            background: white;
-            padding: 30px;
-            border-radius: 40px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            border: 6px solid #FFF176;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
+        /* 標題與黃色裝飾線 */
         h1 {
-            font-size: 2.2rem;
-            margin: 0 0 10px 0;
+            font-size: 32px;
+            margin-bottom: 8px;
             letter-spacing: 2px;
         }
 
-        .title-underline {
-            width: 60px;
-            height: 6px;
+        .title-line {
+            width: 120px;
+            height: 8px;
             background-color: var(--main-yellow);
-            border-radius: 10px;
-            margin-bottom: 30px;
+            border-radius: 4px;
+            margin-bottom: 40px;
         }
 
-        .section-title {
-            font-size: 1.2rem;
+        .sub-title {
+            font-size: 20px;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             display: block;
         }
 
-        .label-text {
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin: 15px 0 10px 0;
+        /* 內容區塊 */
+        .item-group {
+            margin-bottom: 25px;
+        }
+
+        .label-name {
+            font-size: 20px;
+            margin-bottom: 15px;
             display: block;
         }
 
         /* 輸入框樣式 */
-        .input-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
         input {
-            border: 2px solid #EEE;
-            border-radius: 15px;
-            padding: 10px;
-            font-size: 1rem;
+            border: 2px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 8px 12px;
+            font-size: 18px;
             outline: none;
-            background: #FAFAFA;
-            transition: all 0.3s;
+            transition: border-color 0.3s;
+            background-color: var(--input-bg);
+            color: var(--text-brown);
         }
 
         input:focus {
             border-color: var(--main-yellow);
-            background: #FFF;
         }
 
-        #distance { width: 80%; }
-        .pace
+        #distance { width: 340px; }
+        .pace-min { width: 120px; }
+        .pace-sec { width: 150px; }
+
+        .unit {
+            font-size: 24px;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        /* 顯示框樣式 */
+        .display-box {
+            background-color: #F8F9FA;
+            border: 2px solid #EEE;
+            border-radius: 15px;
+            padding: 15px;
+            width: 250px;
+            font-size: 24px;
+            color: #4DB6AC;
+            font-family: monospace;
+            text-align: center;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        /* 計算按鈕 */
+        .btn-calc {
+            background-color: var(--main-yellow);
+            border: none;
+            border-radius: 30px;
+            padding: 12px 60px;
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--text-brown);
+            cursor: pointer;
+            box-shadow: 0 4px 0 #F57F17;
+            margin: 20px 0;
+            transition: all 0.1s;
+        }
+
+        .btn-calc:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 #F57F17;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>配速工具</h1>
+    <div class="title-line"></div>
+
+    <span class="sub-title">跑步完賽時間預測</span>
+
+    <div class="item-group">
+        <label class="label-name">距離</label>
+        <input type="number" id="distance" value="10">
+        <p class="unit">km</p>
+    </div>
+
+    <div class="item-group">
+        <label class="label-name">配速</label>
+        <input type="number" id="paceMin" class="pace-min" value="4">
+        <span class="unit">'</span>
+        <br><br>
+        <input type="number" id="paceSec" class="pace-sec" value="50">
+        <span class="unit">"</span>
+    </div>
+
+    <div class="item-group">
+        <label class="label-name">時間：</label>
+        <div id="timeDisplay" class="display-box">-- : -- : --</div>
+    </div>
+
+    <button class="btn-calc" onclick="runCalc()">計算</button>
+
+    <div class="item-group">
+        <label class="label-name">預估完賽時間：</label>
+        <div id="resultDisplay" class="display-box">-- : -- : --</div>
+    </div>
+</div>
+
+<script>
+    function runCalc() {
+        const d = parseFloat(document.getElementById('distance').value) || 0;
+        const m = parseInt(document.getElementById('paceMin').value) || 0;
+        const s = parseInt(document.getElementById('paceSec').value) || 0;
+
+        if (d > 0) {
+            let totalSeconds = (m * 60 + s) * d;
+            let hrs = Math.floor(totalSeconds / 3600);
+            let mins = Math.floor((totalSeconds % 3600) / 60);
+            let secs = Math.round(totalSeconds % 60);
+
+            const pad = (v) => v.toString().padStart(2, '0');
+            const finalStr = `${pad(hrs)} : ${pad(mins)} : ${pad(secs)}`;
+            
+            document.getElementById('timeDisplay').innerText = finalStr;
+            document.getElementById('resultDisplay').innerText = finalStr;
+        }
+    }
+</script>
+
+</body>
+</html>
