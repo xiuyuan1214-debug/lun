@@ -3,180 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>配速工具</title>
+    <title>找尋你の專屬步調</title>
     <style>
         :root {
-            --soft-pink: #FFD1DC;
-            --soft-blue: #B3E5FC;
-            --text-color: #6D4C41;
-            --bg-color: #FFF9FB;
+            --warm-orange: #FFB74D;
+            --warm-cream: #FFF9F0;
+            --text-brown: #5D4037;
+            --accent-yellow: #FFE082;
+            --box-bg: #FFFFFF;
         }
 
         body {
             font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            padding: 30px;
+            background-color: var(--warm-cream);
+            color: var(--text-brown);
             margin: 0;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .container {
-            max-width: 450px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 400px;
         }
 
-        /* 標題 (已刪除下方的黃色線條) */
+        /* 標題：改為指定文字，無黃線 */
         h1 {
-            font-size: 36px;
+            font-size: 32px;
             margin-bottom: 30px;
-            font-weight: 900;
+            text-align: left;
+            font-weight: bold;
         }
 
         .sub-title {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
-            color: #FF80AB;
             margin-bottom: 25px;
             display: block;
         }
 
         .item-group {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .label-name {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             margin-bottom: 12px;
             display: block;
         }
 
-        /* 輸入框：無預設數字、無多餘線條、圓潤活潑風格 */
+        /* 輸入框控制：距離與配速大小一致，無數字 */
+        .input-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         input {
-            border: 3px solid var(--soft-pink);
-            border-radius: 20px;
-            padding: 12px;
+            width: 80px; /* 統一輸入框大小 */
+            border: 2px solid var(--warm-orange);
+            border-radius: 12px;
+            padding: 10px;
             font-size: 18px;
             outline: none;
-            background-color: white;
-            transition: transform 0.2s;
+            background-color: var(--box-bg);
+            text-align: center;
+            color: var(--text-brown);
         }
 
         input:focus {
-            transform: scale(1.02);
-            border-color: #FF80AB;
+            background-color: #FFFDE7;
         }
-
-        #distance { width: 100%; max-width: 300px; }
-        .pace-min { width: 100px; text-align: center; }
-        .pace-sec { width: 100px; text-align: center; }
 
         .unit {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
-            margin-left: 10px;
-            color: #BA68C8;
         }
 
-        /* 顯示框：活潑氣泡感 */
+        /* 顯示框：溫暖活潑感 */
         .display-box {
-            background-color: white;
-            border: 3px dashed var(--soft-blue);
-            border-radius: 25px;
-            padding: 20px;
-            width: 260px;
-            font-size: 26px;
+            background-color: var(--box-bg);
+            border: 2px solid var(--accent-yellow);
+            border-radius: 15px;
+            padding: 15px;
+            width: 220px;
+            font-size: 24px;
             font-family: 'Courier New', monospace;
-            color: #039BE5;
+            color: #E65100;
             text-align: center;
-            margin-top: 10px;
-            box-shadow: 5px 5px 0px var(--soft-blue);
+            margin-top: 5px;
+            box-shadow: 3px 3px 0px var(--accent-yellow);
         }
 
-        /* 按鈕：可愛Q彈風格 */
+        /* 按鈕：溫暖配色 Q 彈感 */
         .btn-calc {
-            background: linear-gradient(135deg, #FF80AB, #FF4081);
+            background-color: var(--warm-orange);
             border: none;
-            border-radius: 50px;
-            padding: 15px 50px;
-            font-size: 22px;
+            border-radius: 25px;
+            padding: 12px 50px;
+            font-size: 20px;
             font-weight: bold;
             color: white;
             cursor: pointer;
-            box-shadow: 0 6px 0 #C2185B;
-            margin: 20px 0;
+            box-shadow: 0 4px 0 #EF6C00;
+            margin: 25px 0;
             transition: all 0.1s;
         }
 
-        .btn-calc:hover {
-            filter: brightness(1.1);
-        }
-
         .btn-calc:active {
-            transform: translateY(4px);
-            box-shadow: 0 2px 0 #C2185B;
+            transform: translateY(3px);
+            box-shadow: 0 1px 0 #EF6C00;
         }
 
-        br { margin-bottom: 15px; }
+        /* 最底層文字 */
+        .footer-text {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #8D6E63;
+            letter-spacing: 1px;
+            text-align: center;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>配速工具</h1>
+    <h1>找尋你の專屬步調</h1>
 
     <span class="sub-title">跑步完賽時間預測</span>
 
     <div class="item-group">
         <label class="label-name">距離</label>
-        <input type="number" id="distance" placeholder="">
-        <span class="unit">km</span>
+        <div class="input-row">
+            <input type="number" id="distance">
+            <span class="unit">km</span>
+        </div>
     </div>
 
     <div class="item-group">
         <label class="label-name">配速</label>
-        <input type="number" id="paceMin" class="pace-min" placeholder="">
-        <span class="unit">'</span>
-        <br>
-        <input type="number" id="paceSec" class="pace-sec" placeholder="">
-        <span class="unit">"</span>
-    </div>
-
-    <div class="item-group">
-        <label class="label-name">時間：</label>
-        <div id="timeDisplay" class="display-box">-- : -- : --</div>
-    </div>
-
-    <button class="btn-calc" onclick="runCalc()">計算</button>
-
-    <div class="item-group">
-        <label class="label-name">預估完賽時間：</label>
-        <div id="resultDisplay" class="display-box">-- : -- : --</div>
-    </div>
-</div>
-
-<script>
-    function runCalc() {
-        const d = parseFloat(document.getElementById('distance').value);
-        const m = parseInt(document.getElementById('paceMin').value) || 0;
-        const s = parseInt(document.getElementById('paceSec').value) || 0;
-
-        if (d > 0 && (m > 0 || s > 0)) {
-            let totalSeconds = (m * 60 + s) * d;
-            let hrs = Math.floor(totalSeconds / 3600);
-            let mins = Math.floor((totalSeconds % 3600) / 60);
-            let secs = Math.round(totalSeconds % 60);
-
-            const pad = (v) => v.toString().padStart(2, '0');
-            const finalStr = `${pad(hrs)} : ${pad(mins)} : ${pad(secs)}`;
-            
-            document.getElementById('timeDisplay').innerText = finalStr;
-            document.getElementById('resultDisplay').innerText = finalStr;
-        } else {
-            alert("請輸入距離與配速喔！🍭");
-        }
-    }
-</script>
-
-</body>
-</html>
+        <div class="input-row">
+            <input type="number" id="paceMin">
+            <input type="number" id="
