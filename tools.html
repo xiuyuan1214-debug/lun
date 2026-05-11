@@ -6,59 +6,111 @@
     <title>找尋你の專屬步調</title>
     <style>
         :root {
-            --warm-bg: #FFFDF9;
-            --main-warm-orange: #FFB300;
-            --secondary-warm: #FFE082;
-            --text-color: #5D4037;
+            --warm-sun: #FF8F00;      /* 暖陽橘 */
+            --cream-bg: #FFFBF2;      /* 奶油底色 */
+            --soft-yellow: #FFF176;   /* 柔光黃 */
+            --text-mocha: #4E342E;    /* 咖啡棕 */
+            --white: #FFFFFF;
         }
 
         body {
             font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
-            background-color: var(--warm-bg);
-            color: var(--text-color);
+            background-color: var(--cream-bg);
+            color: var(--text-mocha);
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .container {
+        /* 最上層導覽按鈕 */
+        .nav-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 20px 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background-color: var(--white);
+            border: 2px solid var(--soft-yellow);
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--text-mocha);
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .nav-btn:hover {
+            background-color: var(--soft-yellow);
+            transform: translateY(-2px);
+        }
+
+        .nav-btn.active {
+            background-color: var(--warm-sun);
+            color: white;
+            border-color: var(--warm-sun);
+        }
+
+        /* 主要內容區 */
+        .main-wrapper {
+            width: 90%;
             max-width: 400px;
-            margin: 0 auto;
+            padding: 20px;
         }
 
         h1 {
             font-size: 32px;
-            margin: 0 0 30px 0;
+            margin: 0 0 10px 0;
+            font-weight: bold;
         }
 
         .sub-title {
             font-size: 20px;
             font-weight: bold;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             display: block;
         }
 
         .label-text {
             font-size: 20px;
-            margin-bottom: 15px;
+            font-weight: bold;
+            margin: 20px 0 12px 0;
             display: block;
         }
 
         .input-row {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 12px;
         }
 
         input {
-            width: 80px; /* 距離與配速輸入框寬度一致 */
-            padding: 10px;
-            border: 2.5px solid var(--main-warm-orange);
+            width: 80px; /* 統一縮小輸入框 */
+            padding: 12px;
+            border: 2.5px solid var(--soft-yellow);
             border-radius: 15px;
             font-size: 18px;
             outline: none;
-            background: white;
             text-align: center;
+            color: var(--text-mocha);
+            background-color: var(--white);
+        }
+
+        input:focus {
+            border-color: var(--warm-sun);
+        }
+
+        .colon {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--warm-sun);
         }
 
         .unit {
@@ -66,99 +118,7 @@
             font-weight: bold;
         }
 
+        /* 顯示框 */
         .display-box {
-            background-color: #FFFFFF;
-            border: 2px solid var(--secondary-warm);
-            border-radius: 12px;
-            padding: 15px;
-            width: 250px;
-            font-size: 24px;
-            color: #EF6C00;
-            font-family: monospace;
-            text-align: center;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-
-        button {
-            background-color: var(--main-warm-orange);
-            border: none;
-            border-radius: 30px;
-            padding: 12px 60px;
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-            cursor: pointer;
-            box-shadow: 0 4px 0 #E65100;
-            margin: 20px 0;
-        }
-
-        button:active {
-            transform: translateY(4px);
-            box-shadow: 0 0 0 #E65100;
-        }
-
-        .footer-text {
-            margin-top: 50px;
-            font-size: 14px;
-            color: #A1887F;
-            text-align: left;
-            line-height: 1.8;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h1>找尋你の專屬步調</h1>
-
-    <span class="sub-title">跑步完賽時間預測</span>
-
-    <label class="label-text">距離</label>
-    <div class="input-row">
-        <input type="number" id="distance">
-        <span class="unit">km</span>
-    </div>
-
-    <label class="label-text">配速</label>
-    <div class="input-row">
-        <input type="number" id="paceMin">
-        <input type="number" id="paceSec">
-    </div>
-
-    <label class="label-text">時間：</label>
-    <div id="timeDisplay" class="display-box">-- : -- : --</div>
-
-    <button onclick="calculate()">計算</button>
-
-    <label class="label-text">預估完賽時間：</label>
-    <div id="resultDisplay" class="display-box">-- : -- : --</div>
-
-    <div class="footer-text">
-        讓每一滴汗水，都精確地匯聚成通往終點の軌跡
-    </div>
-</div>
-
-<script>
-    function calculate() {
-        const d = parseFloat(document.getElementById('distance').value);
-        const m = parseInt(document.getElementById('paceMin').value) || 0;
-        const s = parseInt(document.getElementById('paceSec').value) || 0;
-
-        if (d > 0 && (m > 0 || s > 0)) {
-            let totalSec = (m * 60 + s) * d;
-            let hrs = Math.floor(totalSec / 3600);
-            let mins = Math.floor((totalSec % 3600) / 60);
-            let secs = Math.round(totalSec % 60);
-
-            const pad = (v) => v.toString().padStart(2, '0');
-            const result = `${pad(hrs)} : ${pad(mins)} : ${pad(secs)}`;
-            
-            document.getElementById('timeDisplay').innerText = result;
-            document.getElementById('resultDisplay').innerText = result;
-        }
-    }
-</script>
-
-</body>
-</html>
+            background-color: var(--white);
+            border: 2px dashed
