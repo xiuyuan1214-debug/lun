@@ -121,4 +121,108 @@
         /* 顯示框 */
         .display-box {
             background-color: var(--white);
-            border: 2px dashed
+            border: 2px dashed var(--warm-sun);
+            border-radius: 15px;
+            padding: 15px;
+            width: 250px;
+            font-size: 26px;
+            color: var(--warm-sun);
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        /* 計算按鈕 */
+        .btn-calculate {
+            background-color: var(--warm-sun);
+            border: none;
+            border-radius: 30px;
+            padding: 12px 60px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #E65100;
+            margin: 30px 0;
+            transition: all 0.1s;
+        }
+
+        .btn-calculate:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 #E65100;
+        }
+
+        /* 底部文字 */
+        .footer-text {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #8D6E63;
+            line-height: 1.8;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-container">
+        <a href="courses.html" class="nav-btn">課程簡介</a>
+        <a href="tools.html" class="nav-btn active">配速工具</a>
+        <a href="match.html" class="nav-btn">賽事日誌</a>
+        <a href="training.html" class="nav-btn">訓練日誌</a>
+        <a href="resume.html" class="nav-btn">教練簡歷</a>
+    </nav>
+
+    <div class="main-wrapper">
+        <h1>找尋你の專屬步調</h1>
+        <span class="sub-title">跑步完賽時間預測</span>
+
+        <label class="label-text">距離</label>
+        <div class="input-row">
+            <input type="number" id="distance" placeholder="">
+            <span class="unit">km</span>
+        </div>
+
+        <label class="label-text">配速</label>
+        <div class="input-row">
+            <input type="number" id="paceMin" placeholder="">
+            <span class="colon">:</span>
+            <input type="number" id="paceSec" placeholder="">
+        </div>
+
+        <label class="label-text">時間：</label>
+        <div id="timeDisplay" class="display-box">-- : -- : --</div>
+
+        <button class="btn-calculate" onclick="runCalculation()">計算</button>
+
+        <label class="label-text">預估完賽時間：</label>
+        <div id="resultDisplay" class="display-box">-- : -- : --</div>
+
+        <div class="footer-text">
+            讓每一滴汗水，都精確地匯聚成通往終點の軌跡
+        </div>
+    </div>
+
+<script>
+    function runCalculation() {
+        const d = parseFloat(document.getElementById('distance').value);
+        const m = parseInt(document.getElementById('paceMin').value) || 0;
+        const s = parseInt(document.getElementById('paceSec').value) || 0;
+
+        if (d > 0 && (m > 0 || s > 0)) {
+            let totalSeconds = (m * 60 + s) * d;
+            let hrs = Math.floor(totalSeconds / 3600);
+            let mins = Math.floor((totalSeconds % 3600) / 60);
+            let secs = Math.round(totalSeconds % 60);
+
+            const pad = (v) => v.toString().padStart(2, '0');
+            const resultStr = `${pad(hrs)} : ${pad(mins)} : ${pad(secs)}`;
+            
+            document.getElementById('timeDisplay').innerText = resultStr;
+            document.getElementById('resultDisplay').innerText = resultStr;
+        }
+    }
+</script>
+
+</body>
+</html>
