@@ -1,12 +1,283 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <title>賽事日誌</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>進擊の風火倫</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Noto Sans TC',sans-serif;
+    background:#0f0f0f;
+    color:white;
+    line-height:2;
+}
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
+    url("https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1800&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+}
+
+.hero h1{
+    font-size:68px;
+    letter-spacing:4px;
+    color:#ff3b3b;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:24px;
+    max-width:800px;
+}
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:80px 25px;
+}
+
+h2{
+    color:#ff4040;
+    font-size:40px;
+    margin-bottom:35px;
+    border-left:6px solid #ff4040;
+    padding-left:18px;
+}
+
+.story p{
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+.quote{
+    background:#181818;
+    border-left:5px solid #ff4040;
+    padding:40px;
+    margin:60px 0;
+    font-size:26px;
+    font-weight:bold;
+}
+
+.values{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.card{
+    background:#181818;
+    border-radius:15px;
+    padding:35px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    background:#242424;
+}
+
+.card h3{
+    color:#ff5252;
+    margin-bottom:18px;
+    font-size:24px;
+}
+
+.card p{
+    font-size:18px;
+}
+
+.final{
+    text-align:center;
+    padding:90px 20px;
+    background:linear-gradient(135deg,#990000,#2b0000);
+}
+
+.final h2{
+    border:none;
+    color:white;
+    font-size:50px;
+    margin-bottom:30px;
+}
+
+.final p{
+    font-size:28px;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    padding:35px;
+    background:black;
+    color:#888;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+h2{
+    font-size:30px;
+}
+
+.story p{
+    font-size:18px;
+}
+
+.quote{
+    font-size:22px;
+}
+
+.final h2{
+    font-size:36px;
+}
+
+.final p{
+    font-size:22px;
+}
+
+}
+</style>
+
 </head>
+
 <body>
-    <div style="padding: 20px; text-align: center;">
-        <h2>賽事日誌內容（維持原樣）</h2>
-    </div>
+
+<div class="hero">
+
+<div>
+
+<h1>進擊の風火倫</h1>
+
+<p>
+不是每一次進步，都要比昨天更快。<br>
+有時候，能再次站上起跑線，就是最勇敢的進擊。
+</p>
+
+</div>
+
+</div>
+
+<section class="story">
+
+<h2>品牌故事</h2>
+
+<p>
+進擊の風火倫的誕生，源自於我太太的故事。
+</p>
+
+<p>
+她曾因疾病接受兩次重大腦部手術，被迫暫時離開曾經熱愛的跑道，但她沒有放棄，而是一步一步走過低谷。
+</p>
+
+<p>
+一路走來，她歷經漫長的恢復，在無數次跌倒與重新站起之後，終於再次穿上跑鞋，回到熟悉的起跑線。
+</p>
+
+<p>
+她讓我相信，真正值得喝采的，不是速度，而是即使人生充滿逆風，依然勇敢向前。
+</p>
+
+<div class="quote">
+「真正的進擊，從來不是與他人競爭，而是在面對人生的考驗後，依然選擇勇敢前行。」
+</div>
+
+<p>
+因此，「進擊の風火倫」不只是訓練跑步的地方，更是一個彼此陪伴、互相鼓勵、共同成長的團隊。
+</p>
+
+<p>
+不論您是追求成績、挑戰自我，亦或是在生命低谷後，想重新找回奔跑的勇氣，我們都希望陪伴您，一步一步向前。
+</p>
+
+<p>
+願每位來到這裡的跑者，都能找到屬於自己的節奏，跑出屬於自己的故事。
+</p>
+
+</section>
+
+<section>
+
+<h2>我們相信</h2>
+
+<div class="values">
+
+<div class="card">
+<h3>進擊速度</h3>
+<p>每一步，都比昨天更堅定。</p>
+</div>
+
+<div class="card">
+<h3>進擊 PB</h3>
+<p>突破紀錄，也突破自己的極限。</p>
+</div>
+
+<div class="card">
+<h3>進擊健康</h3>
+<p>跑步，不只是運動，更是找回身體與生活。</p>
+</div>
+
+<div class="card">
+<h3>重新站回起跑線</h3>
+<p>最大的勇氣，不是贏，而是再次出發。</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="final">
+
+<h2>我們想傳遞的一件事</h2>
+
+<p>
+每個人，都有屬於自己的進擊。
+</p>
+
+<br>
+
+<p>
+不是每一次進步，都要比昨天快。<br><br>
+
+有時候，能再次站上起跑線，<br>
+就是最勇敢的進擊。
+</p>
+
+<br><br>
+
+<h2>不只是突破成績，更是突破人生。</h2>
+
+</section>
+
+<footer>
+
+© 2026 進擊の風火倫 All Rights Reserved.
+
+</footer>
+
 </body>
 </html>
